@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waves · Riemann, Understood</title>
+<meta name="description" content="Idea 1: the primes are made of waves, one per zero of zeta. Play with it, then read the Lean files where it lives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main style="padding-top:40px">
+  <a href="./" class="small">← Riemann, Understood</a>
+  <div class="eyebrow" style="margin-top:22px">Idea 1 of 4</div>
+  <h1 style="font-size:clamp(34px,6vw,52px)">Waves</h1>
+  <p class="lede">The primes look random. Riemann found that their count is a smooth curve plus a sum of waves, one wave for each zero of the zeta function. The Riemann Hypothesis says every one of those waves is as quiet as a wave can be.</p>
+
+  <h2>The staircase and the waves</h2>
+  <p>Climb one step at every prime power <code>pᵏ</code>, a step of height <code>log p</code>. That gives the staircase <code>ψ(x)</code> in gold. The smooth line is <code>x</code>, the trend. Each zero <code>ρ = ½ + iγ</code> adds a wave <code>−2 Re(x^ρ / ρ)</code>. Add the waves and the curve snaps onto the staircase.</p>
+  <div class="viz">
+    <canvas id="stairs" aria-label="The prime staircase and the curve built from waves"></canvas>
+    <div class="controls">
+      <label for="n">Waves added</label>
+      <input id="n" type="range" min="0" max="1000" value="30" step="1">
+      <output id="nOut">0</output>
+      <span class="readout" id="err"></span>
+    </div>
+  </div>
+  <p class="small muted" style="margin-top:8px">Exact formula (von Mangoldt, 1895): <code>ψ(x) = x − Σ_ρ x^ρ/ρ − log 2π − ½ log(1 − x⁻²)</code>. Zero heights are from Odlyzko’s tables. The sum uses the first N zeros and their mirror images.</p>
+
+  <h2>One wave</h2>
+  <p>A zero’s <b>height</b> γ sets how fast its wave wiggles. Its <b>left–right position</b> β sets how fast it grows, like <code>x^β</code>. On the line, β = ½, so every wave grows like <code>√x</code> and no faster. Move a zero off the line and watch its wave outgrow everything.</p>
+  <div class="viz">
+    <canvas id="wave" aria-label="One wave, and what happens off the line"></canvas>
+    <div class="controls">
+      <label for="k">Zero #</label>
+      <input id="k" type="range" min="1" max="30" value="1" step="1">
+      <output id="kOut">1</output>
+      <label for="beta">β</label>
+      <input id="beta" type="range" min="0.5" max="0.95" value="0.5" step="0.05">
+      <output id="betaOut">0.50</output>
+      <span class="readout" id="gamma"></span>
+    </div>
+  </div>
+  <p class="small muted" style="margin-top:8px">Drawn: <code>2 x^β cos(γ log x)</code> against the band <code>±2√x</code>. This is a sketch of the growth only; the factor <code>1/|ρ|</code> that sets each wave’s size is left out. Zeros come in mirror pairs, so a zero left of the line has a twin on the right.</p>
+
+  <h2>Where this lives in the Lean</h2>
+  <p class="muted">Six files carry this idea in the proof. The proof shows that no zero lies to the right of the line, then the mirror pairs put every zero on it. Open one, read the draft, and check it against the Lean, or write the reading if there isn’t one.</p>
+  <div id="modules"></div>
+  <p class="small muted">Readings marked “drafted” were written by an AI agent and have not been checked by a person. Treat them as a first guess.</p>
+
+  <footer><a href="./">← Back to all four ideas</a></footer>
+</main>
+<script type="module">
+  import { loadZeros, loadMap, markdown, esc } from './common.js';
+  const Z = await loadZeros();
+
+  // ψ(x): log p at every prime power p^k ≤ x.
+  const XMAX = 60;
+  const steps = [];
+  for (let n = 2; n <= XMAX; n++) {
+    let m = n, p = 0;
+    for (let d = 2; d * d <= m; d++) if (m % d === 0) { while (m % d === 0) m /= d; p = m === 1 ? d : -1; break; }
+    if (p === 0) p = n;
+    if (p > 0) steps.push([n, Math.log(p)]);
+  }
+  const psi = (x) => steps.reduce((s, [n, l]) => (n <= x ? s + l : s), 0);
+  const curve = (x, N) => {
+    const L = Math.log(x), r = Math.sqrt(x);
+    let s = x - Math.log(2 * Math.PI) - 0.5 * Math.log(1 - 1 / (x * x));
+    for (let k = 0; k < N; k++) { const g = Z[k]; s -= 2 * r * (0.5 * Math.cos(g * L) + g * Math.sin(g * L)) / (0.25 + g * g); }
+    return s;
+  };
+
+  function setup(canvas) {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    const ctx = canvas.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    return { ctx, w, h };
+  }
+  function axes(ctx, w, h, pad, xmax, ymin, ymax, ticks) {
+    ctx.strokeStyle = '#1f2a40'; ctx.lineWidth = 1; ctx.fillStyle = '#a9b3c7'; ctx.font = '12px JetBrains Mono, monospace';
+    for (const t of ticks) { const X = pad + (t / xmax) * (w - 2 * pad); ctx.beginPath(); ctx.moveTo(X, pad / 2); ctx.lineTo(X, h - pad); ctx.stroke(); ctx.fillText(String(t), X - 6, h - pad + 16); }
+    const Y0 = h - pad - ((0 - ymin) / (ymax - ymin)) * (h - 1.5 * pad);
+    ctx.strokeStyle = '#2a3654'; ctx.beginPath(); ctx.moveTo(pad, Y0); ctx.lineTo(w - pad / 2, Y0); ctx.stroke();
+  }
+
+  function drawStairs() {
+    const N = Number(document.getElementById('n').value);
+    document.getElementById('nOut').textContent = N;
+    const { ctx, w, h } = setup(document.getElementById('stairs'));
+    const pad = 30, xmin = 1, ymin = -2, ymax = XMAX * 1.05;
+    const X = (x) => pad + (x / XMAX) * (w - 2 * pad);
+    const Y = (y) => h - pad - ((y - ymin) / (ymax - ymin)) * (h - 1.5 * pad);
+    axes(ctx, w, h, pad, XMAX, ymin, ymax, [10, 20, 30, 40, 50, 60]);
+    // trend
+    ctx.strokeStyle = '#3b4a6b'; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(X(xmin), Y(xmin)); ctx.lineTo(X(XMAX), Y(XMAX)); ctx.stroke(); ctx.setLineDash([]);
+    // staircase
+    ctx.strokeStyle = '#f2c46d'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X(xmin), Y(0));
+    let level = 0;
+    for (const [n, l] of steps) { ctx.lineTo(X(n), Y(level)); level += l; ctx.lineTo(X(n), Y(level)); }
+    ctx.lineTo(X(XMAX), Y(level)); ctx.stroke();
+    // curve from waves
+    ctx.strokeStyle = '#8fb7ff'; ctx.lineWidth = 1.6; ctx.beginPath();
+    let worst = 0;
+    const samples = Math.min(1400, Math.floor(w * 2));
+    for (let i = 0; i <= samples; i++) {
+      const x = 1.5 + (XMAX - 1.5) * (i / samples);
+      const y = curve(x, N);
+      if (i === 0) ctx.moveTo(X(x), Y(y)); else ctx.lineTo(X(x), Y(y));
+      const nearStep = steps.some(([n]) => Math.abs(n - x) < 0.35);
+      if (!nearStep) worst = Math.max(worst, Math.abs(y - psi(x)));
+    }
+    ctx.stroke();
+    ctx.fillStyle = '#f2c46d'; ctx.fillText('ψ(x)', X(XMAX) - 40, Y(psi(XMAX)) - 8);
+    ctx.fillStyle = '#8fb7ff'; ctx.fillText(N ? `trend + ${N} waves` : 'trend only', pad + 8, pad / 2 + 10);
+    document.getElementById('err').textContent = `largest gap away from the steps: ${worst.toFixed(2)}`;
+  }
+
+  function drawWave() {
+    const k = Number(document.getElementById('k').value), beta = Number(document.getElementById('beta').value);
+    document.getElementById('kOut').textContent = k;
+    document.getElementById('betaOut').textContent = beta.toFixed(2);
+    const g = Z[k - 1];
+    document.getElementById('gamma').textContent = `γ = ${g.toFixed(4)}${beta > 0.5 ? ' · off the line' : ' · on the line'}`;
+    const { ctx, w, h } = setup(document.getElementById('wave'));
+    const pad = 30, xmax = 400, ymax = 2.3 * Math.pow(xmax, beta);
+    const X = (x) => pad + (x / xmax) * (w - 2 * pad);
+    const Y = (y) => h / 2 - (y / ymax) * (h / 2 - pad / 2);
+    ctx.strokeStyle = '#1f2a40'; ctx.beginPath(); ctx.moveTo(pad, h / 2); ctx.lineTo(w - pad / 2, h / 2); ctx.stroke();
+    // √x band
+    ctx.fillStyle = 'rgba(126,226,160,.08)'; ctx.beginPath();
+    for (let i = 0; i <= 200; i++) { const x = 1 + (xmax - 1) * i / 200; ctx.lineTo(X(x), Y(2 * Math.sqrt(x))); }
+    for (let i = 200; i >= 0; i--) { const x = 1 + (xmax - 1) * i / 200; ctx.lineTo(X(x), Y(-2 * Math.sqrt(x))); }
+    ctx.fill();
+    ctx.fillStyle = '#7ee2a0'; ctx.font = '12px JetBrains Mono, monospace'; ctx.fillText('±2√x', X(xmax) - 44, Y(2 * Math.sqrt(xmax)) - 6);
+    ctx.strokeStyle = beta > 0.5 ? '#ff8f8f' : '#f2c46d'; ctx.lineWidth = 1.6; ctx.beginPath();
+    const samples = Math.min(2400, Math.floor(w * 3));
+    for (let i = 0; i <= samples; i++) {
+      const x = 1 + (xmax - 1) * (i / samples);
+      const y = 2 * Math.pow(x, beta) * Math.cos(g * Math.log(x));
+      if (i === 0) ctx.moveTo(X(x), Y(y)); else ctx.lineTo(X(x), Y(y));
+    }
+    ctx.stroke();
+  }
+
+  const redraw = () => { drawStairs(); drawWave(); };
+  for (const id of ['n', 'k', 'beta']) document.getElementById(id).addEventListener('input', id === 'n' ? drawStairs : drawWave);
+  addEventListener('resize', redraw);
+  redraw();
+
+  // The Lean files of this chapter.
+  const map = await loadMap();
+  const chapter = map.chapters.find((c) => c.id === 'waves');
+  const readings = await Promise.all(chapter.modules.map((m) => (m.reading ? fetch(m.reading).then((r) => (r.ok ? r.text() : '')) : '')));
+  const label = { open: 'open', draft: 'drafted', checked: 'checked' };
+  document.getElementById('modules').innerHTML = chapter.modules.map((m, i) => `
+    <div class="module">
+      <div class="module-top"><a class="path" href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.path)} ↗</a><span class="pill ${esc(m.status)}">${label[m.status]}</span></div>
+      ${readings[i]
+        ? `<details class="reading"><summary>Read the ${m.status === 'checked' ? 'reading' : 'draft reading'}</summary><div class="reading-body">${markdown(readings[i])}</div><div class="byline">${m.status === 'checked' ? 'Checked by ' + esc(m.checkedBy || 'a reader') : 'Drafted by ' + esc(m.by || 'a contributor') + ' · needs a person to check it'}</div></details>`
+        : `<p class="small muted" style="margin:8px 0 0">No reading yet. <a href="https://github.com/Wenrwa/riemann-understood#how-to-contribute">Write the first one</a>.</p>`}
+    </div>`).join('');
+</script>
+</body>
+</html>
