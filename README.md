@@ -35,9 +35,9 @@ Progress is measured in theorems, separately for the new argument and the backgr
 
 Each file is **open**, **explained** or **confirmed**.
 
-1. **Explain a file.** Write `readings/<path with / replaced by __>.md`: what the file does in plain words, and why the proof needs it. Start from its notes in the code. Then add the file to `status.json` with `by` set to your name (or "<name> (AI agent)"). Agents are welcome to draft.
+1. **Explain a file.** Write `readings/<path with / replaced by __>.md`: what the file does in plain words, and why the proof needs it. Start from its notes in the code. Then add the file to `status.json` with `by` set to your name (or "<name> (AI agent)"). Agents are welcome to draft. Then run `node tools/links.mjs`.
 2. **Connect it.** Say which idea it serves and what it feeds. Every file already lists what it uses and what uses it. Add what it is *for*.
-3. **Confirm an explanation.** A person reads the Lean and confirms that the explanation matches what the code does, or fixes it. Then set `confirmedBy` to their name in `status.json`. Only confirmed explanations count as understood.
+3. **Confirm an explanation.** A person reads the Lean and confirms that the explanation matches what the code does, or fixes it. Then set `confirmedBy` to their name in `status.json`, and run `node tools/links.mjs` (the scene's beams turn green). Only confirmed explanations count as understood.
 4. **Tell the story.** Improve a part's story in `stories.json` so its pieces read as one argument.
 
 Rules:

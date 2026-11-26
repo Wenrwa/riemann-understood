@@ -1,0 +1,1853 @@
+{
+ "version": 1,
+ "links": [
+  {
+   "from": "readings/src__New__Main.lean.md",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Main.lean",
+   "state": "explained"
+  },
+  {
+   "from": "readings/src__Lib__Analytic__ZeroSymmetry.lean.md",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/Lib/Analytic/ZeroSymmetry.lean",
+   "state": "explained"
+  },
+  {
+   "from": "readings/src__Main.lean.md",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/Main.lean",
+   "state": "explained"
+  },
+  {
+   "from": "readings/src__Statements.lean.md",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/Statements.lean",
+   "state": "explained"
+  },
+  {
+   "from": "parts/zeros.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Zeros/PrimeError.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/zeros.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Zeros/Criterion.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/zeros.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/zeros.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/OneSidedBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Lattices/Colength.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Lattices/Heights.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Lattices/TwistedLattice.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Data/FieldsAndPlaces.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Data/AdmissibleData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Data/Magnitudes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Data/Existence.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Data/LevelAndTwists.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/Data/Sizes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/PrimeSums.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/setup.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/IntegralTargetForms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/main.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/ShortAndEnough.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/main.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Reduction/MainInequality.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Divisibility/NullFrames.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Divisibility/NormalForm.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Divisibility/Count.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Field/PrimeDecomposition.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Field/WeilData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Field/ChosenPlaces.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/FormalGroup/Exponent.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/FormalGroup/Resolution.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/FormalGroup/ThetaProducts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Vacuum/TightFrames.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Vacuum/IntegralVacuum.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Vacuum/JetIntegrality.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Vacuum/Scale.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Vacuum/ShortVectors.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Vacuum/StandardDataProducts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Vacuum/Divisibility.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Sharpness/OneCurve.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Sharpness/LeastValuation.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Sharpness/Couplings.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Sharpness/NearPairs.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Sharpness/Cases.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Derivatives/Sharpness/BoundAttained.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/InsertBlock.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/AuxiliaryPair.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/Weights.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/LiftChains.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/Parameters.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/Columns.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/Rows.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/RowChain.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/PoincareMap.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Objects/CharactersAtLevel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/StandardLines.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/GluedLevel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/Sandwich.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/Frequency.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/LevelIdeles.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/NeighbourLattice.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/GoodDatum.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/UnfoldingStages.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/Cut.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Seesaw/SeesawIdentity.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/JetExponent.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/MarkedPrimes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/ChainValuation.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/HeckeEdges.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/MarkOperator.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/SetupAtLevel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Divisibility/LocalDivisibility.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Size/ShortColumns.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Size/ClassCount.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Size/Estimates.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/Size/ArchimedeanSize.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/Edges.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/Depth.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremA.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/SecondMoment/PositiveType.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/SecondMoment/FewTranslates.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/SecondMoment/SpanningTheorem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/Basic.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/GramSection.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/Orthonormality.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/MeanValue.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/SobolevBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/Average.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/OpenCellBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/OpenCellPairing.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/LargeFunction.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/CutTailBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/SchurBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Bessel/FillingData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/Setup.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/BesselLevelStructure.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/Terms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/Link.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/ReducedPoints.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/Packing.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/CutoffIntegral.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/AmplitudeSums.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/Climbing.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/ReducedGroups.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/TermStructure.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/SquareExpansion.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/MomentBounds.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/Moments.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/PoincareSeries.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/BesselFormula.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/FrameMass.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/FillingAdmissible.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Unfolding/SeriesPeriod.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/SiegelLemma.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Box.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/FrameCount.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/ColumnLattice.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/OneRealPlace.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/SchurTest.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Discriminants.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/OrbitSize.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Data.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/LinkLattice.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/FrameParts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/SchurOrbit.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/LinkVectors.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Size.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Cut.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Gain.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Count.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/RemainingTerms/Sum.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/SieveSystem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/KloostermanSum.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/Frequencies.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/GlobalSieve.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/FillingLevel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/GlobalToLocal.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/SiegelTopBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/EnergyEstimate.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/MainTerm/BadTypes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/Lengths.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/TwoGauges.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/Levels.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/Correlations.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/QuadricVolumes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/QuadricPlancherel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/Depth.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/Densities.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/OneFrame.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/Gains.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/Shells.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/RealPlaceGauge.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/RealShells.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/RealBandLimits.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/StandardLevel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/BesselVector.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/FiniteDepth.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/FiniteShells.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/FiberMeasures.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/TopCorrelation.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/TopFloor.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremB.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Spanning/Frames/FixedLines.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Twist/FitTwists.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Twist/LongForms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Norms/VectorKernel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Norms/AdjointThetaLift.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/NegativeIndices.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/MatchingPartners.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/EquivariantDifference.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/StableSpacesStandardData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/ConeImage.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/LargeTriple.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/RealVectors.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/RemovingPlanes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/VanishingDescends.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/TheoremForPartners.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/OneSquare.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Exchange/ExplicitMatching.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Chain/SquareLaw.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Chain/TriangleNorms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Chain/Moduli.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Chain/TriangleLifts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Chain/ChainNorms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/Chain/NormOfChain.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/PathData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/DeepLevelVanishing.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/Turns.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/FirstPath.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/LastPath.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/TestedForms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/LiftVolumeHeight.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/OneExchange.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/GluedLattices.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/GluedForms.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/ExchangeData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/FirstFactors.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/ComparisonOperator/GluingMaps.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/FalseLifts/BottomOfTower.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/CharacterLift.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/TwistedRatio.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/CentralAction.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/OneLift/HeckeValues/PeriodAtOne.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FitTwistsExist.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/RibetMethod.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/FittingBlock.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/RibetMatrices.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/RibetLemma.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/OnePrime.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/EvenClasses.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/KummerMaps.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/TiedTraces.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/HeckeStrings.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/TraceRelations.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/RibetElement.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/FirstOrder/DenominatorBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/SelmerData.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/Count.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/Mirror.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/OneSystem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/Descent.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/Untied.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/StickelbergerSystems.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/StickelbergerLine.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/Line.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/RootsOfUnity.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/GeneralTheorem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/MainSummands.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/ClassSums.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/LValueSystems.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Selmer/TwistingTheorem.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/LocalLoss/Basic.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/LocalLoss/CrystallineDefect.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/LocalLoss/TateDualBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/LocalLoss/LocalLattices.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/ExponentLattices.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/HodgeExpansion.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/CupProductBound.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/SidePoints.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/TameCharts.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/LongGap.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/SafeMoves.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/CutExponentBounds.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/DeepPoints.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/FewLowJumps.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/SteepParameters.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/Localization.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/MinorSecondOrder.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/Positions.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/StationaryPosition.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/OneMinor.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/GaussianShape.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/Periods.lean",
+   "state": "open"
+  },
+  {
+   "from": "parts/theoremC.json",
+   "repo": "riemann-hypothesis-source",
+   "to": "src/New/Appendix/DiscreteSeries/PositionGroup.lean",
+   "state": "open"
+  }
+ ]
+}
