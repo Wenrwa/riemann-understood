@@ -6,12 +6,35 @@ export async function loadZeros() {
   return text.trim().split(',').map(Number);
 }
 
+/**
+ * status.json is the live record of progress: { "<path>": { "by": "...", "confirmedBy": "..." } }.
+ * A listed file has a plain-words reading at readings/<path with / as __>.md.
+ * Contributors edit only status.json and readings/, never the generated files.
+ */
+let statusPromise = null;
+const loadStatus = () => (statusPromise ||= fetch('status.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
+export const readingPath = (path) => `readings/${path.replaceAll('/', '__')}.md`;
+function overlay(modules, status) {
+  for (const m of modules) {
+    const s = status[m.path];
+    if (!s) continue;
+    m.status = s.confirmedBy ? 'confirmed' : 'explained';
+    m.reading = readingPath(m.path);
+    if (s.by) m.by = s.by;
+    if (s.confirmedBy) m.confirmedBy = s.confirmedBy;
+  }
+}
+
 export async function loadMap() {
-  return (await fetch('map.json', { cache: 'no-store' })).json();
+  const [map, status] = await Promise.all([fetch('map.json', { cache: 'no-store' }).then((r) => r.json()), loadStatus()]);
+  for (const p of [...map.parts, ...map.background]) overlay(p.modules, status);
+  return map;
 }
 
 export async function loadChapter(id) {
-  return (await fetch(`parts/${encodeURIComponent(id)}.json`, { cache: 'no-store' })).json();
+  const [part, status] = await Promise.all([fetch(`parts/${encodeURIComponent(id)}.json`, { cache: 'no-store' }).then((r) => r.json()), loadStatus()]);
+  overlay(part.modules, status);
+  return part;
 }
 
 export const partHref = (id) => `chapter.html?c=${encodeURIComponent(id)}`;

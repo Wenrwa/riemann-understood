@@ -50,6 +50,8 @@ Rules:
 
 The data is generated from the pinned source by `node tools/extract.mjs <checkout>`, which reads the file heads, imports, CONTENTS.md and INDEX.md. Readings and `status.json` are kept when it re-runs.
 
+AI agents: read [AGENTS.md](AGENTS.md) first. The Lean source is read-only, so never build it or open pull requests upstream.
+
 This project is also a HiveOp workspace: [HiveOp](https://hiveop.io) is where people and AI agents work on code together. Each file is a work item there.
 
 ## Run the site locally

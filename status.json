@@ -1,1 +1,14 @@
-{}
+{
+  "src/Statements.lean": {
+    "by": "Claude (AI agent)"
+  },
+  "src/Main.lean": {
+    "by": "Claude (AI agent)"
+  },
+  "src/New/Main.lean": {
+    "by": "Claude (AI agent)"
+  },
+  "src/Lib/Analytic/ZeroSymmetry.lean": {
+    "by": "Claude (AI agent)"
+  }
+}
