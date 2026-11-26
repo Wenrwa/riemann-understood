@@ -1,0 +1,199 @@
+[
+  {
+    "epic": {
+      "title": "Part 2: From a bound to the zeros",
+      "priority": 1,
+      "description": "A weighted count of primes whose error “sees” the zeros, and why bounding that error from above is enough. Story and files: https://wenrwa.github.io/riemann-understood/chapter.html?c=zeros\n\nEach child task is one file. Follow AGENTS.md: read the source in the linked mirror (read-only, never build it), write readings/<path>.md, add the file to status.json, one PR per file."
+    },
+    "tasks": [
+      {
+        "title": "Explain New/Reduction/Zeros/PrimeError",
+        "type": "task",
+        "priority": 1,
+        "filePaths": [
+          "readings/src__New__Reduction__Zeros__PrimeError.lean.md",
+          "status.json"
+        ],
+        "description": "A weighted prime-counting error term and its poles at zeros of L-functions (19 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Zeros/PrimeError.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=zeros#f-src-New-Reduction-Zeros-PrimeError-lean\n\nWrite readings/src__New__Reduction__Zeros__PrimeError.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Zeros/PrimeError.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Zeros/Criterion",
+        "type": "task",
+        "priority": 1,
+        "filePaths": [
+          "readings/src__New__Reduction__Zeros__Criterion.lean.md",
+          "status.json"
+        ],
+        "description": "The one-sided criterion for a zero-free half-plane (1 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Zeros/Criterion.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=zeros#f-src-New-Reduction-Zeros-Criterion-lean\n\nWrite readings/src__New__Reduction__Zeros__Criterion.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Zeros/Criterion.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Zeros/PrimeNumberTheorem",
+        "type": "task",
+        "priority": 1,
+        "filePaths": [
+          "readings/src__New__Reduction__Zeros__PrimeNumberTheorem.lean.md",
+          "status.json"
+        ],
+        "description": "The prime number theorem for the remainders `R_q` (10 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Zeros/PrimeNumberTheorem.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=zeros#f-src-New-Reduction-Zeros-PrimeNumberTheorem-lean\n\nWrite readings/src__New__Reduction__Zeros__PrimeNumberTheorem.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Zeros/PrimeNumberTheorem.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/OneSidedBound",
+        "type": "task",
+        "priority": 1,
+        "filePaths": [
+          "readings/src__New__Reduction__OneSidedBound.lean.md",
+          "status.json"
+        ],
+        "description": "The one-sided bound, and the theorem in half-plane form (9 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/OneSidedBound.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=zeros#f-src-New-Reduction-OneSidedBound-lean\n\nWrite readings/src__New__Reduction__OneSidedBound.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/OneSidedBound.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      }
+    ]
+  },
+  {
+    "epic": {
+      "title": "Part 3: The setup",
+      "priority": 2,
+      "description": "The number field, the scales x, x₁, b and m, the prime sums being compared, and the heights and lattices used to measure. Story and files: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup\n\nEach child task is one file. Follow AGENTS.md: read the source in the linked mirror (read-only, never build it), write readings/<path>.md, add the file to status.json, one PR per file."
+    },
+    "tasks": [
+      {
+        "title": "Explain New/Reduction/Lattices/Colength",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Lattices__Colength.lean.md",
+          "status.json"
+        ],
+        "description": "Colength of modules, and endomorphisms surjective up to a bounded colength (11 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Lattices/Colength.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Lattices-Colength-lean\n\nWrite readings/src__New__Reduction__Lattices__Colength.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Lattices/Colength.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Lattices/Heights",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Lattices__Heights.lean.md",
+          "status.json"
+        ],
+        "description": "The height of a family over all places: products, monotonicity and the product formula (12 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Lattices/Heights.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Lattices-Heights-lean\n\nWrite readings/src__New__Reduction__Lattices__Heights.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Lattices/Heights.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Lattices/TwistedLattice",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Lattices__TwistedLattice.lean.md",
+          "status.json"
+        ],
+        "description": "Twisted lattices (20 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Lattices/TwistedLattice.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Lattices-TwistedLattice-lean\n\nWrite readings/src__New__Reduction__Lattices__TwistedLattice.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Lattices/TwistedLattice.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Data/FieldsAndPlaces",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Data__FieldsAndPlaces.lean.md",
+          "status.json"
+        ],
+        "description": "The parameters q₀ and d, the field E = K(ζ), its infinite places and its roots of unity (32 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Data/FieldsAndPlaces.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Data-FieldsAndPlaces-lean\n\nWrite readings/src__New__Reduction__Data__FieldsAndPlaces.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Data/FieldsAndPlaces.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Data/AdmissibleData",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Data__AdmissibleData.lean.md",
+          "status.json"
+        ],
+        "description": "Admissible data (5 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Data/AdmissibleData.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Data-AdmissibleData-lean\n\nWrite readings/src__New__Reduction__Data__AdmissibleData.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Data/AdmissibleData.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Data/Magnitudes",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Data__Magnitudes.lean.md",
+          "status.json"
+        ],
+        "description": "Logarithmic bounds for the sizes of the data (39 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Data/Magnitudes.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Data-Magnitudes-lean\n\nWrite readings/src__New__Reduction__Data__Magnitudes.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Data/Magnitudes.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Data/Existence",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Data__Existence.lean.md",
+          "status.json"
+        ],
+        "description": "Admissible data exist at every large x (36 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Data/Existence.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Data-Existence-lean\n\nWrite readings/src__New__Reduction__Data__Existence.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Data/Existence.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Data/LevelAndTwists",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Data__LevelAndTwists.lean.md",
+          "status.json"
+        ],
+        "description": "Weight bounds, the level N, and twists and m-fold twists for chains of lifts (16 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Data/LevelAndTwists.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Data-LevelAndTwists-lean\n\nWrite readings/src__New__Reduction__Data__LevelAndTwists.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Data/LevelAndTwists.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/Data/Sizes",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__Data__Sizes.lean.md",
+          "status.json"
+        ],
+        "description": "Sizes of the data (12 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/Data/Sizes.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-Data-Sizes-lean\n\nWrite readings/src__New__Reduction__Data__Sizes.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/Data/Sizes.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/PrimeSums",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__PrimeSums.lean.md",
+          "status.json"
+        ],
+        "description": "Prime sums: main amount, expected value and total remainder (19 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/PrimeSums.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-PrimeSums-lean\n\nWrite readings/src__New__Reduction__PrimeSums.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/PrimeSums.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/IntegralTargetForms",
+        "type": "task",
+        "priority": 2,
+        "filePaths": [
+          "readings/src__New__Reduction__IntegralTargetForms.lean.md",
+          "status.json"
+        ],
+        "description": "The target forms as a twisted lattice (6 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/IntegralTargetForms.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=setup#f-src-New-Reduction-IntegralTargetForms-lean\n\nWrite readings/src__New__Reduction__IntegralTargetForms.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/IntegralTargetForms.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      }
+    ]
+  },
+  {
+    "epic": {
+      "title": "Part 4: The three theorems and the main inequality",
+      "priority": 1,
+      "description": "Theorems A and B bound a family of forms from above, Theorem C from below; the main amount cancels and a bound on primes is left. Story and files: https://wenrwa.github.io/riemann-understood/chapter.html?c=main\n\nEach child task is one file. Follow AGENTS.md: read the source in the linked mirror (read-only, never build it), write readings/<path>.md, add the file to status.json, one PR per file."
+    },
+    "tasks": [
+      {
+        "title": "Explain New/Reduction/ShortAndEnough",
+        "type": "task",
+        "priority": 1,
+        "filePaths": [
+          "readings/src__New__Reduction__ShortAndEnough.lean.md",
+          "status.json"
+        ],
+        "description": "Theorem A (short forms) and Theorem B (enough forms) (17 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/ShortAndEnough.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=main#f-src-New-Reduction-ShortAndEnough-lean\n\nWrite readings/src__New__Reduction__ShortAndEnough.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/ShortAndEnough.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      },
+      {
+        "title": "Explain New/Reduction/MainInequality",
+        "type": "task",
+        "priority": 1,
+        "filePaths": [
+          "readings/src__New__Reduction__MainInequality.lean.md",
+          "status.json"
+        ],
+        "description": "The main inequality (1 theorems). Source (read-only): https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/src/New/Reduction/MainInequality.lean\nOn the site: https://wenrwa.github.io/riemann-understood/chapter.html?c=main#f-src-New-Reduction-MainInequality-lean\n\nWrite readings/src__New__Reduction__MainInequality.lean.md using the template in AGENTS.md (what it is, why the proof needs it, how it does it, background, in one line). Add \"src/New/Reduction/MainInequality.lean\": { \"by\": \"<agent> (AI agent)\" } to status.json. Never build the Lean, never touch the upstream repo, never mark it confirmed."
+      }
+    ]
+  }
+]
