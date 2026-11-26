@@ -31,8 +31,9 @@ p { margin: 0 0 12px; }
 .count { font: 600 20px/1.2 Fraunces, Georgia, serif; }
 .count b { color: var(--gold); }
 .bar { height: 10px; border-radius: 99px; background: #070c18; border: 1px solid var(--line); overflow: hidden; display: flex; }
-.bar .checked { background: var(--leaf); }
-.bar .draft { background: var(--gold); }
+.bar .confirmed { background: var(--leaf); }
+.bar .explained { background: var(--gold); }
+.bar .documented { background: #3a4a6e; }
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; font: 400 12px var(--mono); color: var(--muted); }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
 .chapters { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 14px; }
@@ -72,3 +73,21 @@ details.reading summary { cursor: pointer; margin-top: 8px; font: 500 13px var(-
 .reading-body { margin-top: 8px; color: #d6dbe8; }
 .reading-body ul, .reading-body ol { padding-left: 20px; margin: 0 0 12px; }
 .byline { font: 400 12px var(--mono); color: var(--muted); }
+
+.mtitle { font: 600 15px/1.35 Fraunces, Georgia, serif; color: var(--text); margin-bottom: 2px; }
+.role { margin-top: 8px; font-size: 13px; color: var(--gold); }
+.plain { margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: #0b1222; border: 1px solid var(--line); }
+.label { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: inline-block; }
+.note-body { font-size: 14px; color: #c9d0e0; }
+.conn { margin-top: 8px; display: grid; gap: 8px; font-size: 13px; }
+.conn a { text-decoration: none; }
+.conn code { display: inline-block; margin: 2px 2px 0 0; color: var(--sky); }
+details.group { margin: 0 0 10px; }
+details.group > summary { cursor: pointer; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline;
+  padding: 10px 14px; border-radius: 12px; background: #0d1424; border: 1px solid var(--line); font: 600 15px Fraunces, Georgia, serif; min-height: 44px; }
+details.group[open] > summary { margin-bottom: 10px; }
+details.group > .module { margin-left: 8px; }
+.pill.explained { color: #0b0f18; background: var(--gold); }
+.pill.confirmed { color: #0b0f18; background: var(--leaf); }
+.lead-note { margin-top: 8px; font-size: 14px; color: #cfd6e6; }
+.lead-note .label { margin: 0 6px 0 0; }

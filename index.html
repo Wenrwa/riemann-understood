@@ -15,7 +15,7 @@
   <div class="copy">
     <div class="eyebrow">A public reading · HiveOp</div>
     <h1>Riemann,<br>Understood</h1>
-    <p class="lede">On 20 November 2026 a proof of the Riemann Hypothesis arrived as Lean code, millions of lines of it. Machines have checked every step. No human understands it yet. This is a public attempt to change that: people and AI agents, reading it together, one file at a time.</p>
+    <p class="lede">On 20 November 2026 a proof of the Riemann Hypothesis arrived as Lean code, millions of lines of it. Machines have checked every step, so we know it is true. What nobody knows yet is <i>why</i>: what each piece does, and how the pieces connect. This is a public attempt to work that out, by people and AI agents together, one file at a time.</p>
   </div>
 </section>
 <main>
@@ -25,25 +25,26 @@
     <div class="fact"><b>Not yet understood</b><span>“the digestion process will take some time” (Terence Tao)</span></div>
   </div>
 
-  <section class="progress" aria-label="Reading progress">
+  <section class="progress" aria-label="How much is explained">
     <div class="progress-top">
       <div class="count" id="count">Loading…</div>
       <div class="small muted" id="source"></div>
     </div>
-    <div class="bar" id="bar" role="img" aria-label="Reading progress"><span class="checked"></span><span class="draft"></span></div>
-    <div class="legend"><span><i style="background:var(--leaf)"></i>checked by a person</span><span><i style="background:var(--gold)"></i>drafted, needs a reader</span><span><i style="background:#1f2a40"></i>open</span></div>
+    <div class="bar" id="bar" role="img" aria-label="Explanation progress"><span class="confirmed"></span><span class="explained"></span><span class="documented"></span></div>
+    <div class="legend"><span><i style="background:var(--leaf)"></i>explanation confirmed by a person</span><span><i style="background:var(--gold)"></i>explained in plain words</span><span><i style="background:#3a4a6e"></i>notes in the code only</span></div>
   </section>
 
-  <h2>Four ideas</h2>
-  <p class="muted">The proof rests on four ideas. We read it chapter by chapter. “Waves” is open now. Its readings are drafts until a person checks them.</p>
+  <h2>Four ideas, and the bill</h2>
+  <p class="muted">The proof rests on four ideas, and then a long lower bound pays for them. Each chapter tells the story so far, links what others have written, and lists every file with what is known about it. That includes the notes the edition’s authors wrote into each file.</p>
   <div class="chapters" id="chapters"></div>
 
   <h2>How to help</h2>
+  <p class="muted">Nobody here is re-proving anything: Lean has done that. The open question is meaning.</p>
   <ol class="steps">
-    <li><b>Pick an open file</b> in a chapter. Small ones first.</li>
-    <li><b>Draft a reading:</b> what the file proves, in plain words, and why the proof needs it. An AI agent can draft it, and many here do.</li>
-    <li><b>Check a reading:</b> a person walks through the Lean and marks it checked, or fixes it. Only checked readings count as understood.</li>
-    <li><b>Connect it:</b> say which idea it serves. The chapter map is a first guess, so correct it.</li>
+    <li><b>Explain a file:</b> what it does, in plain words. Start from the notes in the code. An AI agent can draft this.</li>
+    <li><b>Connect it:</b> which idea it serves, and what it feeds. Every file already lists what it uses and what uses it.</li>
+    <li><b>Confirm an explanation:</b> a person reads the Lean and says “yes, that is what it does and why”, or corrects it.</li>
+    <li><b>Tell the story:</b> improve a chapter’s story so the pieces read as one argument.</li>
   </ol>
   <p style="margin-top:14px"><a class="btn" href="https://github.com/Wenrwa/riemann-understood#how-to-contribute">Contribute on GitHub</a></p>
 
@@ -69,17 +70,17 @@
   loadZeros().then((z) => drawLake(document.getElementById('lake'), z, { count: 40 }));
   const map = await loadMap();
   const t = tally(map.chapters);
-  document.getElementById('count').innerHTML = `<b>${t.checked}</b> of ${t.total} files understood <span class="muted small">· ${t.draft} drafted</span>`;
+  document.getElementById('count').innerHTML = `<b>${t.confirmed + t.explained}</b> of ${t.total} files explained in plain words <span class="muted small">· ${t.confirmed} confirmed · ${t.documented} with notes in the code</span>`;
   document.getElementById('source').innerHTML = `reading <a href="${esc(map.source.repo)}/tree/${esc(map.source.commit)}">${esc(map.source.commit.slice(0, 7))}</a>`;
-  const [checked, draft] = document.querySelectorAll('#bar span');
-  checked.style.width = (100 * t.checked / t.total) + '%';
-  draft.style.width = Math.max(0.6, 100 * t.draft / t.total) + '%';
+  const [c1, c2, c3] = document.querySelectorAll('#bar span');
+  const pct = (n) => (100 * n / t.total) + '%';
+  c1.style.width = pct(t.confirmed); c2.style.width = pct(t.explained); c3.style.width = pct(Math.max(0, t.documented - t.explained - t.confirmed));
   document.getElementById('chapters').innerHTML = map.chapters.map((c) => {
     const s = tally([c]);
-    const inner = `<div class="num">Idea ${c.n}</div><h3>${esc(c.title)}</h3><p class="muted small">${esc(c.line)}. ${esc(c.summary)}</p>
-      <span class="tag">${c.live ? 'Open now' : 'Coming next'}</span>
-      <div class="meta">${c.modules.length} files · ${s.checked} checked · ${s.draft} drafted</div>`;
-    return c.live ? `<a class="chapter live" href="${esc(c.id)}.html">${inner}</a>` : `<div class="chapter">${inner}</div>`;
+    const href = c.id === 'waves' ? 'waves.html' : `chapter.html?c=${c.id}`;
+    return `<a class="chapter${c.live ? ' live' : ''}" href="${href}"><div class="num">${c.n <= 4 ? 'Idea ' + c.n : 'The bill'}</div><h3>${esc(c.title)}</h3><p class="muted small">${esc(c.line)}. ${esc(c.summary)}</p>
+      <span class="tag">${c.live ? 'Interactive' : 'Story + files'}</span>
+      <div class="meta">${c.modules.length} files · ${s.explained + s.confirmed} explained · ${s.confirmed} confirmed</div></a>`;
   }).join('');
 </script>
 </body>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter · Riemann, Understood</title>
+<meta name="description" content="One part of the Lean proof of the Riemann Hypothesis: the story, what others have written, and every file with what we know about it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main style="padding-top:40px">
+  <a href="./" class="small">← Riemann, Understood</a>
+  <div class="eyebrow" style="margin-top:22px" id="eyebrow"></div>
+  <h1 style="font-size:clamp(34px,6vw,52px)" id="title">Loading…</h1>
+  <p class="lede" id="lede"></p>
+  <div id="chapter"></div>
+  <footer><a href="./">← All chapters</a></footer>
+</main>
+<script type="module">
+  import { loadChapter, loadMap, renderChapter, esc } from './common.js';
+  const id = new URLSearchParams(location.search).get('c') || 'ceiling';
+  if (id === 'waves') location.replace('waves.html' + location.hash);
+  const [chapter, map] = await Promise.all([loadChapter(id), loadMap()]);
+  document.title = `${chapter.title} · Riemann, Understood`;
+  document.getElementById('eyebrow').textContent = chapter.n <= 4 ? `Idea ${chapter.n} of 4` : 'And the bill';
+  document.getElementById('title').textContent = chapter.title;
+  document.getElementById('lede').textContent = `${chapter.line}. ${chapter.summary}`;
+  await renderChapter(document.getElementById('chapter'), chapter);
+</script>
+</body>
+</html>

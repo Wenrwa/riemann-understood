@@ -10,20 +10,37 @@ export async function loadMap() {
   return (await fetch('map.json', { cache: 'no-store' })).json();
 }
 
+export async function loadChapter(id) {
+  return (await fetch(`chapters/${encodeURIComponent(id)}.json`, { cache: 'no-store' })).json();
+}
+
 export const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-/** Paragraphs, bullet and numbered lists, **bold**, *italic*, `code`. Nothing else. */
-export function markdown(md) {
-  const inline = (s) => esc(s)
-    .replace(/`([^`]+)`/g, '<code>$1</code>')
+const inline = (s) => {
+  const codes = [];
+  const t = esc(s).replace(/`([^`]+)`/g, (_, c) => { codes.push(c); return `\u0000${codes.length - 1}\u0000`; })
     .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
-    .replace(/\*([^*]+)\*/g, '<i>$1</i>');
+    .replace(/(^|[^*\w])\*([^*\s][^*]*)\*/g, '$1<i>$2</i>');
+  return t.replace(/\u0000(\d+)\u0000/g, (_, i) => `<code>${codes[Number(i)]}</code>`);
+};
+
+/** Paragraphs, headings, bullet ("-" or "*") and numbered lists (with wrapped lines), **bold**, *italic*, `code`. */
+export function markdown(md) {
   const out = [];
-  for (const block of md.trim().split(/\n\s*\n/)) {
+  for (const block of String(md || '').trim().split(/\n\s*\n/)) {
     const lines = block.split('\n');
-    if (lines.every((l) => /^\s*- /.test(l))) out.push('<ul>' + lines.map((l) => `<li>${inline(l.replace(/^\s*- /, ''))}</li>`).join('') + '</ul>');
-    else if (lines.every((l) => /^\s*\d+\. /.test(l))) out.push('<ol>' + lines.map((l) => `<li>${inline(l.replace(/^\s*\d+\. /, ''))}</li>`).join('') + '</ol>');
-    else out.push(`<p>${inline(lines.join(' '))}</p>`);
+    const h = lines[0].match(/^#{1,4}\s+(.+)/);
+    if (h && lines.length === 1) { out.push(`<p><b>${inline(h[1])}</b></p>`); continue; }
+    const items = []; let kind = null; const para = [];
+    for (const l of lines) {
+      const b = l.match(/^\s*[-*] (.*)/), n = l.match(/^\s*\d+\. (.*)/);
+      if (b || n) { kind = kind || (b ? 'ul' : 'ol'); items.push((b || n)[1]); }
+      else if (items.length && /^\s+\S/.test(l)) items[items.length - 1] += ' ' + l.trim();
+      else if (items.length) items[items.length - 1] += ' ' + l.trim();
+      else para.push(l.trim());
+    }
+    if (para.length) out.push(`<p>${inline(para.join(' '))}</p>`);
+    if (items.length) out.push(`<${kind}>` + items.map((i) => `<li>${inline(i)}</li>`).join('') + `</${kind}>`);
   }
   return out.join('');
 }
@@ -32,9 +49,71 @@ export function tally(chapters) {
   const all = chapters.flatMap((c) => c.modules);
   return {
     total: all.length,
-    checked: all.filter((m) => m.status === 'checked').length,
-    draft: all.filter((m) => m.status === 'draft').length,
+    documented: all.filter((m) => m.documented || m.note).length,
+    explained: all.filter((m) => m.status === 'explained').length,
+    confirmed: all.filter((m) => m.status === 'confirmed').length,
   };
+}
+
+export const anchorOf = (path) => 'f-' + path.replace(/[^A-Za-z0-9]+/g, '-');
+const short = (path) => path.replace(/^src\//, '').replace(/\.lean$/, '');
+const STATUS = { open: 'open', explained: 'explained', confirmed: 'confirmed' };
+
+/**
+ * One chapter: its story, other people's write-ups, and every file with
+ * (1) the notes in the code, written by the edition's authors,
+ * (2) a plain-words explanation, when someone has drafted one,
+ * (3) its connections: what it uses and what uses it.
+ */
+export async function renderChapter(el, chapter, where) {
+  const [map, readings] = await Promise.all([
+    loadMap(),
+    Promise.all(chapter.modules.map((m) => (m.reading ? fetch(m.reading).then((r) => (r.ok ? r.text() : '')) : ''))),
+  ]);
+  where = where || {};
+  for (const c of map.chapters) for (const m of c.modules) where[m.path] = c.id;
+  const link = (p) => {
+    const c = where[p];
+    if (!c) return `<code>${esc(short(p))}</code>`;
+    const href = c === chapter.id ? `#${anchorOf(p)}` : `${c === 'waves' ? 'waves.html' : 'chapter.html?c=' + c}#${anchorOf(p)}`;
+    return `<a href="${href}"><code>${esc(short(p))}</code></a>`;
+  };
+  const groups = [];
+  for (const m of chapter.modules) {
+    const key = `${m.folder || ''} · ${m.group || ''}`;
+    let g = groups.find((x) => x.key === key);
+    if (!g) groups.push((g = { key, folder: m.folder, group: m.group, items: [] }));
+    g.items.push(m);
+  }
+  const card = (m) => {
+    const i = chapter.modules.indexOf(m);
+    const plain = readings[i];
+    return `<div class="module" id="${anchorOf(m.path)}">
+      <div class="module-top"><div><div class="mtitle">${inline(m.title || short(m.path))}</div>
+        <a class="path" href="${esc(m.url)}" target="_blank" rel="noopener">${esc(short(m.path))}${m.lines ? ` · ${m.lines} lines` : ''} ↗</a></div>
+        <span class="pill ${esc(m.status)}">${STATUS[m.status]}</span></div>
+      ${(m.role || []).map((r) => `<div class="role">In the final argument: ${inline(r)}</div>`).join('')}
+      ${m.note ? `<div class="lead-note"><span class="label">What its authors say</span> ${inline(m.note.split(/\n\s*\n/)[0].replace(/\s+/g, ' '))}</div>` : ''}
+      ${plain ? `<div class="plain"><div class="label">In plain words</div><div class="reading-body">${markdown(plain)}</div>
+        <div class="byline">${m.status === 'confirmed' ? 'Confirmed by ' + esc(m.confirmedBy || 'a reader') : 'Drafted by ' + esc(m.by || 'a contributor') + ' · not yet confirmed against the code'}</div></div>`
+        : `<p class="small muted" style="margin:8px 0 0">No plain-words explanation yet. <a href="https://github.com/Wenrwa/riemann-understood#how-to-contribute">Write one</a>.</p>`}
+      ${m.note ? `<details class="reading"><summary>Full notes in the code <span class="muted">(by the edition’s authors)</span></summary><div class="reading-body note-body">${markdown(m.note)}</div>${m.literature ? `<div class="label" style="margin-top:8px">Relation to the literature</div><div class="reading-body note-body">${markdown(m.literature)}</div>` : ''}</details>` : ''}
+      ${(m.uses?.length || m.usedBy?.length || m.libUses) ? `<details class="reading"><summary>Connections · uses ${m.uses?.length || 0}${m.libUses ? ` (+${m.libUses} background)` : ''} · used by ${m.usedBy?.length || 0}</summary><div class="conn">
+        ${m.uses?.length ? `<div><span class="label">Uses</span> ${m.uses.map(link).join(' ')}</div>` : ''}
+        ${m.usedBy?.length ? `<div><span class="label">Used by</span> ${m.usedBy.map(link).join(' ')}</div>` : ''}
+        ${m.libUses ? `<div class="small muted">Also stands on ${m.libUses} background file${m.libUses > 1 ? 's' : ''} in <code>Lib/</code>.</div>` : ''}</div></details>` : ''}
+    </div>`;
+  };
+  const t = tally([chapter]);
+  el.innerHTML = `
+    <h2>The story so far</h2>
+    ${chapter.story.map((p) => `<p>${inline(p)}</p>`).join('')}
+    <p class="byline">Story drafted by Claude (AI agent) from the community’s <a href="${esc(map.source.guide)}">GUIDE.md</a>, <a href="${esc(map.source.index)}">INDEX.md</a> and the files’ own notes. Not yet confirmed by a person.</p>
+    ${chapter.elsewhere?.length ? `<h3 style="margin-top:22px">Others who have written about this part</h3><div class="links">${chapter.elsewhere.map((e) => `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.label)}</a>`).join('')}</div>` : ''}
+    <h2>The files, and what we know about each</h2>
+    <p class="muted">${t.total} files · ${t.documented} with notes in the code · ${t.explained} explained in plain words · ${t.confirmed} confirmed. Lean has already checked every step; the work here is explaining what each file does, why the proof needs it, and how it connects.</p>
+    ${groups.map((g, gi) => `<details class="group" ${gi < 2 || groups.length <= 3 ? 'open' : ''}><summary><span>${esc(g.group || g.folder || 'Files')}</span><span class="muted small">${esc(g.folder || '')} · ${g.items.length} file${g.items.length > 1 ? 's' : ''}</span></summary>${g.items.map(card).join('')}</details>`).join('')}`;
+  if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 }
 
 /** Lights on a still lake: one pillar per zero, standing on the critical line. */

@@ -45,15 +45,12 @@
   </div>
   <p class="small muted" style="margin-top:8px">Drawn: <code>2 x^β cos(γ log x)</code> against the band <code>±2√x</code>. This is a sketch of the growth only; the factor <code>1/|ρ|</code> that sets each wave’s size is left out. Zeros come in mirror pairs, so a zero left of the line has a twin on the right.</p>
 
-  <h2>Where this lives in the Lean</h2>
-  <p class="muted">Six files carry this idea in the proof. The proof shows that no zero lies to the right of the line, then the mirror pairs put every zero on it. Open one, read the draft, and check it against the Lean, or write the reading if there isn’t one.</p>
-  <div id="modules"></div>
-  <p class="small muted">Readings marked “drafted” were written by an AI agent and have not been checked by a person. Treat them as a first guess.</p>
+  <div id="chapter"></div>
 
   <footer><a href="./">← Back to all four ideas</a></footer>
 </main>
 <script type="module">
-  import { loadZeros, loadMap, markdown, esc } from './common.js';
+  import { loadZeros, loadChapter, renderChapter } from './common.js';
   const Z = await loadZeros();
 
   // ψ(x): log p at every prime power p^k ≤ x.
@@ -152,18 +149,8 @@
   addEventListener('resize', redraw);
   redraw();
 
-  // The Lean files of this chapter.
-  const map = await loadMap();
-  const chapter = map.chapters.find((c) => c.id === 'waves');
-  const readings = await Promise.all(chapter.modules.map((m) => (m.reading ? fetch(m.reading).then((r) => (r.ok ? r.text() : '')) : '')));
-  const label = { open: 'open', draft: 'drafted', checked: 'checked' };
-  document.getElementById('modules').innerHTML = chapter.modules.map((m, i) => `
-    <div class="module">
-      <div class="module-top"><a class="path" href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.path)} ↗</a><span class="pill ${esc(m.status)}">${label[m.status]}</span></div>
-      ${readings[i]
-        ? `<details class="reading"><summary>Read the ${m.status === 'checked' ? 'reading' : 'draft reading'}</summary><div class="reading-body">${markdown(readings[i])}</div><div class="byline">${m.status === 'checked' ? 'Checked by ' + esc(m.checkedBy || 'a reader') : 'Drafted by ' + esc(m.by || 'a contributor') + ' · needs a person to check it'}</div></details>`
-        : `<p class="small muted" style="margin:8px 0 0">No reading yet. <a href="https://github.com/Wenrwa/riemann-understood#how-to-contribute">Write the first one</a>.</p>`}
-    </div>`).join('');
+  // The story, what others wrote, and the files of this chapter.
+  renderChapter(document.getElementById('chapter'), await loadChapter('waves'));
 </script>
 </body>
 </html>

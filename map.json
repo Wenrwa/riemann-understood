@@ -1,1554 +1,1603 @@
 {
-  "source": {
-    "repo": "https://github.com/leanprover-community/riemann-hypothesis",
-    "commit": "e063a923620ee7787b4a1270421478645bf66bdb",
-    "note": "The community’s condensed edition of Alpöge’s proof (834 files). Chapter assignment beyond “Waves” is a provisional first reading — fix it as you learn more."
-  },
-  "foundations": {
-    "path": "src/Lib/",
-    "modules": 495,
-    "note": "Background library (Galois representations, Shimura varieties, class field theory, p-adic Hodge theory, …) the argument stands on. Not part of the pilot."
-  },
-  "chapters": [
+ "source": {
+  "repo": "https://github.com/leanprover-community/riemann-hypothesis",
+  "commit": "e063a923620ee7787b4a1270421478645bf66bdb",
+  "guide": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/GUIDE.md",
+  "index": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/INDEX.md",
+  "note": "The Lean community’s condensed edition (based on the readable edition of github.com/lsernau/grh-lean). Each file’s “notes in the code” are the file’s own head, written by the edition’s authors; the chapter grouping follows GUIDE.md’s folders."
+ },
+ "foundations": {
+  "path": "src/Lib/",
+  "modules": 495,
+  "note": "Background results the argument stands on, classed as known in the literature (class field theory, Galois representations, Shimura varieties, p-adic Hodge theory, Siegel–Weil, …). Not part of this reading yet."
+ },
+ "chapters": [
+  {
+   "id": "waves",
+   "n": 1,
+   "title": "Waves",
+   "line": "The primes are made of waves",
+   "live": true,
+   "page": "waves.html",
+   "summary": "What the hypothesis says, where the zeros show up in a count of primes, and how the proof turns “nothing to the right of the line” into “everything on it”.",
+   "modules": [
     {
-      "id": "waves",
-      "n": 1,
-      "title": "Waves",
-      "line": "The primes are made of waves",
-      "live": true,
-      "summary": "What the hypothesis says, where the zeros show up in a count of primes, and how the proof turns “nothing to the right of the line” into “everything on it”.",
-      "modules": [
-        {
-          "path": "src/Statements.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Statements.lean",
-          "status": "draft",
-          "reading": "readings/src__Statements.lean.md",
-          "by": "Claude (AI agent)"
-        },
-        {
-          "path": "src/Main.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Main.lean",
-          "status": "draft",
-          "reading": "readings/src__Main.lean.md",
-          "by": "Claude (AI agent)"
-        },
-        {
-          "path": "src/New/Main.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Main.lean",
-          "status": "draft",
-          "reading": "readings/src__New__Main.lean.md",
-          "by": "Claude (AI agent)"
-        },
-        {
-          "path": "src/Lib/Analytic/ZeroSymmetry.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/Analytic/ZeroSymmetry.lean",
-          "status": "draft",
-          "reading": "readings/src__Lib__Analytic__ZeroSymmetry.lean.md",
-          "by": "Claude (AI agent)"
-        },
-        {
-          "path": "src/New/Reduction/Zeros/PrimeError.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Zeros/PrimeError.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
-          "status": "open"
-        }
-      ]
+     "path": "src/Statements.lean",
+     "status": "explained",
+     "documented": false
     },
     {
-      "id": "ceiling",
-      "n": 2,
-      "title": "A ceiling",
-      "line": "One-sided bounds are enough",
-      "summary": "A bound from above on a weighted sum over primes, on far-out stretches of the number line, rules out zeros right of the line.",
-      "modules": [
-        {
-          "path": "src/New/Reduction/Zeros/Criterion.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Zeros/Criterion.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/OneSidedBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/OneSidedBound.lean",
-          "status": "open"
-        }
-      ]
+     "path": "src/Main.lean",
+     "status": "explained",
+     "documented": false
     },
     {
-      "id": "multiplicity",
-      "n": 3,
-      "title": "Multiplicity",
-      "line": "Stepanov’s counting trick, for whole numbers",
-      "summary": "A number cannot have more prime factors than its size: build numbers divisible by many primes, many times over.",
-      "modules": [
-        {
-          "path": "src/New/Derivatives/Divisibility/Count.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Divisibility/Count.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Divisibility/NormalForm.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Divisibility/NormalForm.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Divisibility/NullFrames.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Divisibility/NullFrames.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Field/ChosenPlaces.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Field/ChosenPlaces.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Field/PrimeDecomposition.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Field/PrimeDecomposition.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Field/WeilData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Field/WeilData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/FormalGroup/Exponent.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/FormalGroup/Exponent.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/FormalGroup/Resolution.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/FormalGroup/Resolution.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/FormalGroup/ThetaProducts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/FormalGroup/ThetaProducts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Sharpness/BoundAttained.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Sharpness/BoundAttained.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Sharpness/Cases.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Sharpness/Cases.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Sharpness/Couplings.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Sharpness/Couplings.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Sharpness/LeastValuation.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Sharpness/LeastValuation.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Sharpness/NearPairs.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Sharpness/NearPairs.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Sharpness/OneCurve.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Sharpness/OneCurve.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Vacuum/Divisibility.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Vacuum/Divisibility.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Vacuum/IntegralVacuum.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Vacuum/IntegralVacuum.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Vacuum/JetIntegrality.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Vacuum/JetIntegrality.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Vacuum/Scale.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Vacuum/Scale.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Vacuum/ShortVectors.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Vacuum/ShortVectors.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Vacuum/StandardDataProducts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Vacuum/StandardDataProducts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Derivatives/Vacuum/TightFrames.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Derivatives/Vacuum/TightFrames.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/DenominatorBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/DenominatorBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/EvenClasses.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/EvenClasses.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/FittingBlock.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/FittingBlock.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/HeckeStrings.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/HeckeStrings.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/KummerMaps.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/KummerMaps.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/OnePrime.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/OnePrime.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/RibetElement.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/RibetElement.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/RibetLemma.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/RibetLemma.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/RibetMatrices.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/RibetMatrices.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/RibetMethod.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/RibetMethod.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/TiedTraces.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/TiedTraces.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/TraceRelations.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/TraceRelations.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FirstOrder/TrianglePrimes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/FitTwistsExist.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/FitTwistsExist.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/CupProductBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/CupProductBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/CutExponentBounds.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/CutExponentBounds.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/DeepPoints.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/DeepPoints.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/ExponentLattices.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/FewLowJumps.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/FewLowJumps.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/HodgeExpansion.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/HodgeExpansion.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/LongGap.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/LongGap.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/SafeMoves.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/SafeMoves.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/SidePoints.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/SidePoints.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Lifting/TameCharts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Lifting/TameCharts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/LocalLoss/Basic.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/LocalLoss/Basic.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/LocalLoss/CrystallineDefect.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/LocalLoss/CrystallineDefect.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/LocalLoss/LocalLattices.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/LocalLoss/LocalLattices.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/LocalLoss/TateDualBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/LocalLoss/TateDualBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/ClassSums.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/ClassSums.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/Count.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/Count.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/Descent.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/Descent.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/GeneralTheorem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/GeneralTheorem.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/LValueSystems.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/LValueSystems.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/Line.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/Line.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/MainSummands.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/MainSummands.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/Mirror.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/Mirror.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/OneSystem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/OneSystem.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/RootsOfUnity.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/RootsOfUnity.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/SelmerData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/SelmerData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/StickelbergerLine.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/StickelbergerLine.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/StickelbergerSystems.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/StickelbergerSystems.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/TwistingTheorem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/TwistingTheorem.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Congruences/Selmer/Untied.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Congruences/Selmer/Untied.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Lattices/Colength.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Lattices/Colength.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Lattices/Heights.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Lattices/Heights.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Lattices/TwistedLattice.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Lattices/TwistedLattice.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/IntegralTargetForms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/IntegralTargetForms.lean",
-          "status": "open"
-        }
-      ]
+     "path": "src/New/Main.lean",
+     "status": "explained",
+     "documented": true
     },
     {
-      "id": "chain",
-      "n": 4,
-      "title": "The chain",
-      "line": "A chain of theta lifts, √x long",
-      "summary": "Each lift adds a layer of divisibility; the chain’s length balances cost against error at the square root.",
-      "modules": [
-        {
-          "path": "src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/ExchangeData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/ExchangeData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/FirstFactors.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/FirstFactors.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/GluedForms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/GluedForms.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/GluedLattices.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/GluedLattices.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/GluingMaps.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/GluingMaps.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/OneExchange.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/OneExchange.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/FalseLifts/BottomOfTower.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/FalseLifts/BottomOfTower.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/CentralAction.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/CentralAction.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/CharacterLift.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/CharacterLift.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/PeriodAtOne.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/PeriodAtOne.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/TwistedRatio.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/TwistedRatio.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/LiftVolumeHeight.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/LiftVolumeHeight.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/OneLift/TestedForms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/OneLift/TestedForms.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/Average.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/Average.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/Basic.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/Basic.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/CutTailBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/CutTailBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/FillingData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/FillingData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/GramSection.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/GramSection.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/LargeFunction.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/LargeFunction.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/MeanValue.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/MeanValue.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/OpenCellBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/OpenCellBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/OpenCellPairing.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/OpenCellPairing.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/Orthonormality.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/Orthonormality.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/SchurBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/SchurBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Bessel/SobolevBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Bessel/SobolevBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/BesselVector.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/BesselVector.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/Correlations.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/Correlations.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/Densities.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/Densities.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/Depth.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/Depth.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/FiberMeasures.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/FiberMeasures.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/FiniteDepth.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/FiniteDepth.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/FiniteShells.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/FiniteShells.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/FixedLines.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/FixedLines.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/Gains.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/Gains.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/Lengths.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/Lengths.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/Levels.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/Levels.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/OneFrame.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/OneFrame.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/QuadricPlancherel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/QuadricPlancherel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/QuadricVolumes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/QuadricVolumes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/RealBandLimits.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/RealBandLimits.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/RealPlaceGauge.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/RealPlaceGauge.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/RealShells.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/RealShells.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/Shells.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/Shells.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/StandardLevel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/StandardLevel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/TopCorrelation.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/TopCorrelation.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/TopFloor.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/TopFloor.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Frames/TwoGauges.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Frames/TwoGauges.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/BadTypes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/BadTypes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/EnergyEstimate.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/EnergyEstimate.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/FillingLevel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/FillingLevel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/Frequencies.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/Frequencies.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/GlobalSieve.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/GlobalSieve.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/GlobalToLocal.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/GlobalToLocal.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/KloostermanSum.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/KloostermanSum.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/SiegelTopBound.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/SiegelTopBound.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/MainTerm/SieveSystem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/MainTerm/SieveSystem.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Box.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Box.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/ColumnLattice.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/ColumnLattice.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Count.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Count.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Cut.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Cut.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Data.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Data.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Discriminants.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Discriminants.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/FrameCount.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/FrameCount.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/FrameParts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/FrameParts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Gain.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Gain.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/LinkLattice.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/LinkLattice.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/LinkVectors.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/LinkVectors.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/OneRealPlace.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/OneRealPlace.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/OrbitSize.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/OrbitSize.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/SchurOrbit.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/SchurOrbit.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/SchurTest.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/SchurTest.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/SiegelLemma.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/SiegelLemma.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Size.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Size.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/RemainingTerms/Sum.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/RemainingTerms/Sum.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/SecondMoment/FewTranslates.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/SecondMoment/FewTranslates.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/SecondMoment/PositiveType.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/SecondMoment/PositiveType.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/SecondMoment/SpanningTheorem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/SecondMoment/SpanningTheorem.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/AmplitudeSums.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/AmplitudeSums.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/BesselFormula.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/BesselFormula.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/BesselLevelStructure.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/BesselLevelStructure.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/Climbing.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/Climbing.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/CutoffIntegral.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/CutoffIntegral.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/FillingAdmissible.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/FillingAdmissible.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/FrameMass.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/FrameMass.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/Link.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/Link.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/MomentBounds.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/MomentBounds.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/Moments.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/Moments.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/Packing.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/Packing.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/PoincareSeries.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/PoincareSeries.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/ReducedGroups.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/ReducedGroups.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/ReducedPoints.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/ReducedPoints.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/SeriesPeriod.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/SeriesPeriod.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/Setup.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/Setup.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/SquareExpansion.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/SquareExpansion.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/TermStructure.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/TermStructure.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Spanning/Unfolding/Terms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Spanning/Unfolding/Terms.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/ChainValuation.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/ChainValuation.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/HeckeEdges.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/HeckeEdges.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/JetExponent.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/JetExponent.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/LocalDivisibility.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/LocalDivisibility.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/MarkOperator.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/MarkOperator.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/MarkedPrimes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/MarkedPrimes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/SetupAtLevel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/SetupAtLevel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/Depth.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/Depth.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/Edges.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/Edges.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/AuxiliaryPair.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/AuxiliaryPair.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/CharactersAtLevel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/CharactersAtLevel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/Columns.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/Columns.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/InsertBlock.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/InsertBlock.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/LiftChains.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/LiftChains.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/LiftLawsModuloN.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/Parameters.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/Parameters.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/PoincareMap.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/PoincareMap.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/RowChain.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/RowChain.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/Rows.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/Rows.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Objects/Weights.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Objects/Weights.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/Cut.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/Cut.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/Frequency.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/Frequency.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/GluedLevel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/GluedLevel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/GoodDatum.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/GoodDatum.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/LevelIdeles.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/LevelIdeles.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/NeighbourLattice.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/NeighbourLattice.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/Sandwich.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/Sandwich.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/SeesawIdentity.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/SeesawIdentity.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/StandardLines.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/StandardLines.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Seesaw/UnfoldingStages.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Seesaw/UnfoldingStages.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Size/ArchimedeanSize.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Size/ArchimedeanSize.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Size/ClassCount.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Size/ClassCount.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Size/Estimates.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Size/Estimates.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/UpperBound/Size/ShortColumns.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/UpperBound/Size/ShortColumns.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/DeepLevelVanishing.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/DeepLevelVanishing.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/FirstPath.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/FirstPath.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/GridPaths.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/LastPath.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/LastPath.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/PathData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/PathData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/AuxiliaryForms/Turns.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/AuxiliaryForms/Turns.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Chain/ChainNorms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Chain/ChainNorms.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Chain/Moduli.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Chain/Moduli.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Chain/NormOfChain.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Chain/NormOfChain.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Chain/SquareLaw.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Chain/SquareLaw.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Chain/TriangleLifts.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Chain/TriangleLifts.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Chain/TriangleNorms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Chain/TriangleNorms.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/ConeImage.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/ConeImage.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/EquivariantDifference.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/EquivariantDifference.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/ExplicitMatching.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/ExplicitMatching.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/LargeTriple.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/LargeTriple.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/MatchingPartners.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/MatchingPartners.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/NegativeIndices.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/NegativeIndices.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/OneSquare.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/OneSquare.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/RealVectors.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/RealVectors.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/RemovingPlanes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/RemovingPlanes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/StableSpacesStandardData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/StableSpacesStandardData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/TheoremForPartners.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/TheoremForPartners.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Exchange/VanishingDescends.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Exchange/VanishingDescends.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Norms/AdjointThetaLift.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Norms/AdjointThetaLift.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Norms/VectorKernel.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Norms/VectorKernel.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Twist/FitTwists.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Twist/FitTwists.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Determinant/Twist/LongForms.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Determinant/Twist/LongForms.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Data/AdmissibleData.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Data/AdmissibleData.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Data/Existence.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Data/Existence.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Data/FieldsAndPlaces.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Data/FieldsAndPlaces.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Data/LevelAndTwists.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Data/LevelAndTwists.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Data/Magnitudes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Data/Magnitudes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/Data/Sizes.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/Data/Sizes.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/ShortAndEnough.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/ShortAndEnough.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/MainInequality.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/MainInequality.lean",
-          "status": "open"
-        },
-        {
-          "path": "src/New/Reduction/PrimeSums.lean",
-          "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Reduction/PrimeSums.lean",
-          "status": "open"
-        }
-      ]
+     "path": "src/Lib/Analytic/ZeroSymmetry.lean",
+     "status": "explained",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Zeros/PrimeError.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
+     "status": "open",
+     "documented": true
     }
-  ]
+   ]
+  },
+  {
+   "id": "ceiling",
+   "n": 2,
+   "title": "A ceiling",
+   "line": "A bound from above is enough",
+   "summary": "An upper bound on the prime remainder, never a lower one, rules out zeros to the right of the line. The main inequality supplies it.",
+   "modules": [
+    {
+     "path": "src/New/Reduction/Zeros/Criterion.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Lattices/Colength.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Lattices/Heights.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Lattices/TwistedLattice.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Data/FieldsAndPlaces.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Data/AdmissibleData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Data/Magnitudes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Data/Existence.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Data/LevelAndTwists.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/Data/Sizes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/PrimeSums.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/IntegralTargetForms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/MainInequality.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Reduction/OneSidedBound.lean",
+     "status": "open",
+     "documented": true
+    }
+   ]
+  },
+  {
+   "id": "multiplicity",
+   "n": 3,
+   "title": "Multiplicity",
+   "line": "Derivatives that count primes",
+   "summary": "A nonzero number can’t have more prime factors than its size. Derivatives of theta functions give numbers whose divisibility by primes is guaranteed.",
+   "modules": [
+    {
+     "path": "src/New/Derivatives/Divisibility/NullFrames.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Divisibility/NormalForm.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Divisibility/Count.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Field/PrimeDecomposition.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Field/WeilData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Field/ChosenPlaces.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/Exponent.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/Resolution.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/ThetaProducts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/TightFrames.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/IntegralVacuum.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/JetIntegrality.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/Scale.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/ShortVectors.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/StandardDataProducts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/Divisibility.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/OneCurve.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/LeastValuation.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/Couplings.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/NearPairs.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/Cases.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/BoundAttained.lean",
+     "status": "open",
+     "documented": true
+    }
+   ]
+  },
+  {
+   "id": "chain",
+   "n": 4,
+   "title": "The chain",
+   "line": "A chain of about √x theta lifts",
+   "summary": "Each lift adds a layer of divisibility. The chain’s length, between √x and 2√x lifts, balances cost against error at the square root.",
+   "modules": [
+    {
+     "path": "src/New/Reduction/ShortAndEnough.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/InsertBlock.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/AuxiliaryPair.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Weights.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/LiftChains.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Parameters.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Columns.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Rows.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/RowChain.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/PoincareMap.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Objects/CharactersAtLevel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/StandardLines.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/GluedLevel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/Sandwich.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/Frequency.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/LevelIdeles.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/NeighbourLattice.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/GoodDatum.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/UnfoldingStages.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/Cut.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/SeesawIdentity.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/JetExponent.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/MarkedPrimes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ChainValuation.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/HeckeEdges.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/MarkOperator.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/SetupAtLevel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/LocalDivisibility.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Size/ShortColumns.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Size/ClassCount.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Size/Estimates.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/Size/ArchimedeanSize.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/Edges.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/Depth.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/SecondMoment/PositiveType.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/SecondMoment/FewTranslates.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/SecondMoment/SpanningTheorem.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/Basic.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/GramSection.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/Orthonormality.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/MeanValue.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/SobolevBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/Average.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/OpenCellBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/OpenCellPairing.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/LargeFunction.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/CutTailBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/SchurBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Bessel/FillingData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Setup.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/BesselLevelStructure.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Terms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Link.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/ReducedPoints.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Packing.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/CutoffIntegral.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/AmplitudeSums.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Climbing.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/ReducedGroups.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/TermStructure.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/SquareExpansion.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/MomentBounds.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Moments.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/PoincareSeries.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/BesselFormula.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/FrameMass.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/FillingAdmissible.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/SeriesPeriod.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/SiegelLemma.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Box.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/FrameCount.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/ColumnLattice.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/OneRealPlace.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/SchurTest.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Discriminants.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/OrbitSize.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Data.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/LinkLattice.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/FrameParts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/SchurOrbit.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/LinkVectors.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Size.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Cut.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Gain.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Count.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Sum.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/SieveSystem.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/KloostermanSum.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/Frequencies.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/GlobalSieve.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/FillingLevel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/GlobalToLocal.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/SiegelTopBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/EnergyEstimate.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/BadTypes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/Lengths.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/TwoGauges.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/Levels.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/Correlations.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/QuadricVolumes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/QuadricPlancherel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/Depth.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/Densities.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/OneFrame.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/Gains.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/Shells.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/RealPlaceGauge.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/RealShells.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/RealBandLimits.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/StandardLevel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/BesselVector.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/FiniteDepth.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/FiniteShells.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/FiberMeasures.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/TopCorrelation.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/TopFloor.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Spanning/Frames/FixedLines.lean",
+     "status": "open",
+     "documented": true
+    }
+   ]
+  },
+  {
+   "id": "bill",
+   "n": 5,
+   "title": "Paying for the lifts",
+   "line": "The lower bound, where most of the code lives",
+   "summary": "Theorem C: the lattice can’t be too small. This is where Galois representations, Selmer groups and L-values come in.",
+   "modules": [
+    {
+     "path": "src/New/Determinant/Twist/FitTwists.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Twist/LongForms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Norms/VectorKernel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Norms/AdjointThetaLift.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/NegativeIndices.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/MatchingPartners.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/EquivariantDifference.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/StableSpacesStandardData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/ConeImage.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/LargeTriple.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/RealVectors.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/RemovingPlanes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/VanishingDescends.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/TheoremForPartners.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/OneSquare.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Exchange/ExplicitMatching.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Chain/SquareLaw.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Chain/TriangleNorms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Chain/Moduli.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Chain/TriangleLifts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Chain/ChainNorms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/Chain/NormOfChain.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/PathData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/DeepLevelVanishing.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/Turns.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/FirstPath.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/LastPath.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/TestedForms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/LiftVolumeHeight.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/OneExchange.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/GluedLattices.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/GluedForms.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ExchangeData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/FirstFactors.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/GluingMaps.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/FalseLifts/BottomOfTower.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/CharacterLift.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/TwistedRatio.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/CentralAction.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/PeriodAtOne.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FitTwistsExist.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetMethod.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/FittingBlock.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetMatrices.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetLemma.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/OnePrime.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/EvenClasses.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/KummerMaps.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TiedTraces.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/HeckeStrings.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TraceRelations.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetElement.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/DenominatorBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/SelmerData.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Count.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Mirror.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/OneSystem.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Descent.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Untied.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/StickelbergerSystems.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/StickelbergerLine.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Line.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/RootsOfUnity.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/GeneralTheorem.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/MainSummands.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/ClassSums.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/LValueSystems.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Selmer/TwistingTheorem.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/Basic.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/CrystallineDefect.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/TateDualBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/LocalLattices.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/HodgeExpansion.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/CupProductBound.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/SidePoints.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/TameCharts.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/LongGap.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/SafeMoves.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/CutExponentBounds.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/DeepPoints.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/FewLowJumps.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/SteepParameters.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/Localization.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/MinorSecondOrder.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/Positions.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/StationaryPosition.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/OneMinor.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/GaussianShape.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/Periods.lean",
+     "status": "open",
+     "documented": true
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/PositionGroup.lean",
+     "status": "open",
+     "documented": true
+    }
+   ]
+  }
+ ]
 }
