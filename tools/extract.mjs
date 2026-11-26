@@ -12,7 +12,7 @@ import { join } from 'node:path';
 
 const CHECKOUT = process.argv[2] || 'rhrepo';
 const OUT = process.argv[3] || '.';
-const COMMIT = 'e063a923620ee7787b4a1270421478645bf66bdb';
+const COMMIT = 'a7231db2ec4917f8c63b88c2e09bfc2086e3f613';
 const REPO = 'https://github.com/leanprover-community/riemann-hypothesis';
 const read = (p) => readFileSync(join(CHECKOUT, p), 'utf8');
 
@@ -48,7 +48,7 @@ const files = walk('src').map((path) => {
   const lit = doc.match(/## Relation to the literature\s*([\s\S]*?)(\n## |\s*$)/);
   const note = doc.replace(/^#\s+.+\n?/, '').replace(/## Relation to the literature[\s\S]*$/, '').trim();
   const heading = (doc.match(/^#\s+(.+)/m) || [])[1];
-  const imports = [...src.matchAll(/^import\s+(\S+)/gm)].map((x) => x[1])
+  const imports = [...src.matchAll(/^(?:public\s+|private\s+|meta\s+)*import\s+(\S+)/gm)].map((x) => x[1])
     .filter((x) => x.startsWith('New.') || x.startsWith('Lib.')).map((x) => `src/${x.split('.').join('/')}.lean`);
   const theorems = (src.match(/^\s*(?:@\[[^\]]*\]\s*)?(?:private |protected |noncomputable )*(?:theorem|lemma)\s/gm) || []).length;
   return {

@@ -1,9 +1,9 @@
 {
  "source": {
   "repo": "https://github.com/leanprover-community/riemann-hypothesis",
-  "commit": "e063a923620ee7787b4a1270421478645bf66bdb",
-  "guide": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/GUIDE.md",
-  "index": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/INDEX.md",
+  "commit": "a7231db2ec4917f8c63b88c2e09bfc2086e3f613",
+  "guide": "https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/GUIDE.md",
+  "index": "https://github.com/leanprover-community/riemann-hypothesis/blob/a7231db2ec4917f8c63b88c2e09bfc2086e3f613/INDEX.md",
   "note": "The Lean community’s condensed edition (based on the readable edition of github.com/lsernau/grh-lean). Parts follow its GUIDE.md and INDEX.md."
  },
  "parts": [
@@ -20,28 +20,28 @@
      "status": "explained",
      "documented": true,
      "theorems": 2,
-     "lines": 66
+     "lines": 45
     },
     {
      "path": "src/Lib/Analytic/ZeroSymmetry.lean",
      "status": "explained",
      "documented": true,
      "theorems": 4,
-     "lines": 83
+     "lines": 87
     },
     {
      "path": "src/Main.lean",
      "status": "explained",
      "documented": false,
      "theorems": 5,
-     "lines": 23
+     "lines": 27
     },
     {
      "path": "src/Statements.lean",
      "status": "explained",
      "documented": false,
      "theorems": 0,
-     "lines": 17
+     "lines": 21
     }
    ]
   },
@@ -58,28 +58,28 @@
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 441
+     "lines": 445
     },
     {
      "path": "src/New/Reduction/Zeros/Criterion.lean",
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 93
+     "lines": 91
     },
     {
      "path": "src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
      "status": "open",
      "documented": true,
-     "theorems": 11,
-     "lines": 240
+     "theorems": 10,
+     "lines": 235
     },
     {
      "path": "src/New/Reduction/OneSidedBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 267
+     "lines": 271
     }
    ]
   },
@@ -95,78 +95,78 @@
      "path": "src/New/Reduction/Lattices/Colength.lean",
      "status": "open",
      "documented": true,
-     "theorems": 13,
-     "lines": 265
+     "theorems": 11,
+     "lines": 217
     },
     {
      "path": "src/New/Reduction/Lattices/Heights.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 235
+     "lines": 239
     },
     {
      "path": "src/New/Reduction/Lattices/TwistedLattice.lean",
      "status": "open",
      "documented": true,
-     "theorems": 23,
-     "lines": 517
+     "theorems": 20,
+     "lines": 501
     },
     {
      "path": "src/New/Reduction/Data/FieldsAndPlaces.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 527
+     "lines": 530
     },
     {
      "path": "src/New/Reduction/Data/AdmissibleData.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 363
+     "lines": 367
     },
     {
      "path": "src/New/Reduction/Data/Magnitudes.lean",
      "status": "open",
      "documented": true,
      "theorems": 39,
-     "lines": 613
+     "lines": 636
     },
     {
      "path": "src/New/Reduction/Data/Existence.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 913
+     "lines": 918
     },
     {
      "path": "src/New/Reduction/Data/LevelAndTwists.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 396
+     "lines": 400
     },
     {
      "path": "src/New/Reduction/Data/Sizes.lean",
      "status": "open",
      "documented": true,
-     "theorems": 20,
-     "lines": 240
+     "theorems": 12,
+     "lines": 184
     },
     {
      "path": "src/New/Reduction/PrimeSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 302
+     "lines": 306
     },
     {
      "path": "src/New/Reduction/IntegralTargetForms.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 121
+     "lines": 125
     }
    ]
   },
@@ -182,15 +182,15 @@
      "path": "src/New/Reduction/ShortAndEnough.lean",
      "status": "open",
      "documented": true,
-     "theorems": 22,
-     "lines": 458
+     "theorems": 17,
+     "lines": 397
     },
     {
      "path": "src/New/Reduction/MainInequality.lean",
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 159
+     "lines": 163
     }
    ]
   },
@@ -207,546 +207,546 @@
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 448
+     "lines": 452
     },
     {
      "path": "src/New/Derivatives/Divisibility/NormalForm.lean",
      "status": "open",
      "documented": true,
-     "theorems": 26,
-     "lines": 420
+     "theorems": 25,
+     "lines": 401
     },
     {
      "path": "src/New/Derivatives/Divisibility/Count.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 830
+     "lines": 834
     },
     {
      "path": "src/New/Derivatives/Field/PrimeDecomposition.lean",
      "status": "open",
      "documented": true,
-     "theorems": 70,
-     "lines": 879
+     "theorems": 67,
+     "lines": 818
     },
     {
      "path": "src/New/Derivatives/Field/WeilData.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 546
+     "lines": 550
     },
     {
      "path": "src/New/Derivatives/Field/ChosenPlaces.lean",
      "status": "open",
      "documented": true,
-     "theorems": 23,
-     "lines": 456
+     "theorems": 22,
+     "lines": 434
     },
     {
      "path": "src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 432
+     "lines": 437
     },
     {
      "path": "src/New/Derivatives/FormalGroup/Exponent.lean",
      "status": "open",
      "documented": true,
      "theorems": 34,
-     "lines": 750
+     "lines": 754
     },
     {
      "path": "src/New/Derivatives/FormalGroup/Resolution.lean",
      "status": "open",
      "documented": true,
-     "theorems": 11,
-     "lines": 256
+     "theorems": 10,
+     "lines": 243
     },
     {
      "path": "src/New/Derivatives/FormalGroup/ThetaProducts.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 480
+     "lines": 484
     },
     {
      "path": "src/New/Derivatives/Vacuum/TightFrames.lean",
      "status": "open",
      "documented": true,
-     "theorems": 39,
-     "lines": 934
+     "theorems": 37,
+     "lines": 916
     },
     {
      "path": "src/New/Derivatives/Vacuum/IntegralVacuum.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 657
+     "lines": 661
     },
     {
      "path": "src/New/Derivatives/Vacuum/JetIntegrality.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 327
+     "lines": 331
     },
     {
      "path": "src/New/Derivatives/Vacuum/Scale.lean",
      "status": "open",
      "documented": true,
-     "theorems": 6,
-     "lines": 155
+     "theorems": 4,
+     "lines": 120
     },
     {
      "path": "src/New/Derivatives/Vacuum/ShortVectors.lean",
      "status": "open",
      "documented": true,
      "theorems": 41,
-     "lines": 810
+     "lines": 814
     },
     {
      "path": "src/New/Derivatives/Vacuum/StandardDataProducts.lean",
      "status": "open",
      "documented": true,
-     "theorems": 18,
-     "lines": 553
+     "theorems": 17,
+     "lines": 546
     },
     {
      "path": "src/New/Derivatives/Vacuum/Divisibility.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 276
+     "lines": 280
     },
     {
      "path": "src/New/Derivatives/Sharpness/OneCurve.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 355
+     "lines": 359
     },
     {
      "path": "src/New/Derivatives/Sharpness/LeastValuation.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 614
+     "lines": 620
     },
     {
      "path": "src/New/Derivatives/Sharpness/Couplings.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 624
+     "lines": 628
     },
     {
      "path": "src/New/Derivatives/Sharpness/NearPairs.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 473
+     "lines": 480
     },
     {
      "path": "src/New/Derivatives/Sharpness/Cases.lean",
      "status": "open",
      "documented": true,
-     "theorems": 31,
-     "lines": 691
+     "theorems": 30,
+     "lines": 683
     },
     {
      "path": "src/New/Derivatives/Sharpness/BoundAttained.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 448
+     "lines": 452
     },
     {
      "path": "src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 897
+     "lines": 902
     },
     {
      "path": "src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 563
+     "lines": 569
     },
     {
      "path": "src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 375
+     "lines": 378
     },
     {
      "path": "src/New/UpperBound/Objects/InsertBlock.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 337
+     "lines": 341
     },
     {
      "path": "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
      "status": "open",
      "documented": true,
-     "theorems": 47,
-     "lines": 937
+     "theorems": 46,
+     "lines": 912
     },
     {
      "path": "src/New/UpperBound/Objects/AuxiliaryPair.lean",
      "status": "open",
      "documented": true,
-     "theorems": 38,
-     "lines": 1142
+     "theorems": 37,
+     "lines": 1143
     },
     {
      "path": "src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
      "status": "open",
      "documented": true,
-     "theorems": 16,
-     "lines": 428
+     "theorems": 15,
+     "lines": 426
     },
     {
      "path": "src/New/UpperBound/Objects/Weights.lean",
      "status": "open",
      "documented": true,
      "theorems": 49,
-     "lines": 660
+     "lines": 664
     },
     {
      "path": "src/New/UpperBound/Objects/LiftChains.lean",
      "status": "open",
      "documented": true,
-     "theorems": 30,
-     "lines": 629
+     "theorems": 29,
+     "lines": 627
     },
     {
      "path": "src/New/UpperBound/Objects/Parameters.lean",
      "status": "open",
      "documented": true,
-     "theorems": 53,
-     "lines": 992
+     "theorems": 50,
+     "lines": 969
     },
     {
      "path": "src/New/UpperBound/Objects/Columns.lean",
      "status": "open",
      "documented": true,
      "theorems": 41,
-     "lines": 1013
+     "lines": 1016
     },
     {
      "path": "src/New/UpperBound/Objects/Rows.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 875
+     "lines": 879
     },
     {
      "path": "src/New/UpperBound/Objects/RowChain.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 458
+     "lines": 462
     },
     {
      "path": "src/New/UpperBound/Objects/PoincareMap.lean",
      "status": "open",
      "documented": true,
-     "theorems": 13,
-     "lines": 260
+     "theorems": 12,
+     "lines": 256
     },
     {
      "path": "src/New/UpperBound/Objects/CharactersAtLevel.lean",
      "status": "open",
      "documented": true,
-     "theorems": 9,
-     "lines": 201
+     "theorems": 6,
+     "lines": 167
     },
     {
      "path": "src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 427
+     "lines": 431
     },
     {
      "path": "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
      "status": "open",
      "documented": true,
      "theorems": 33,
-     "lines": 908
+     "lines": 917
     },
     {
      "path": "src/New/UpperBound/Seesaw/StandardLines.lean",
      "status": "open",
      "documented": true,
-     "theorems": 25,
-     "lines": 570
+     "theorems": 24,
+     "lines": 545
     },
     {
      "path": "src/New/UpperBound/Seesaw/GluedLevel.lean",
      "status": "open",
      "documented": true,
      "theorems": 4,
-     "lines": 166
+     "lines": 171
     },
     {
      "path": "src/New/UpperBound/Seesaw/Sandwich.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 268
+     "lines": 272
     },
     {
      "path": "src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
      "status": "open",
      "documented": true,
-     "theorems": 40,
-     "lines": 1200
+     "theorems": 38,
+     "lines": 1182
     },
     {
      "path": "src/New/UpperBound/Seesaw/Frequency.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 347
+     "lines": 351
     },
     {
      "path": "src/New/UpperBound/Seesaw/LevelIdeles.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 155
+     "lines": 159
     },
     {
      "path": "src/New/UpperBound/Seesaw/NeighbourLattice.lean",
      "status": "open",
      "documented": true,
      "theorems": 57,
-     "lines": 1042
+     "lines": 1046
     },
     {
      "path": "src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 380
+     "lines": 384
     },
     {
      "path": "src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 813
+     "lines": 817
     },
     {
      "path": "src/New/UpperBound/Seesaw/GoodDatum.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 576
+     "lines": 580
     },
     {
      "path": "src/New/UpperBound/Seesaw/UnfoldingStages.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 1169
+     "lines": 1173
     },
     {
      "path": "src/New/UpperBound/Seesaw/Cut.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 374
+     "lines": 379
     },
     {
      "path": "src/New/UpperBound/Seesaw/SeesawIdentity.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 667
+     "lines": 671
     },
     {
      "path": "src/New/UpperBound/Divisibility/JetExponent.lean",
      "status": "open",
      "documented": true,
-     "theorems": 24,
-     "lines": 561
+     "theorems": 23,
+     "lines": 558
     },
     {
      "path": "src/New/UpperBound/Divisibility/MarkedPrimes.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 530
+     "lines": 534
     },
     {
      "path": "src/New/UpperBound/Divisibility/ChainValuation.lean",
      "status": "open",
      "documented": true,
-     "theorems": 13,
-     "lines": 457
+     "theorems": 12,
+     "lines": 404
     },
     {
      "path": "src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 1030
+     "lines": 1035
     },
     {
      "path": "src/New/UpperBound/Divisibility/HeckeEdges.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 869
+     "lines": 873
     },
     {
      "path": "src/New/UpperBound/Divisibility/MarkOperator.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 417
+     "lines": 422
     },
     {
      "path": "src/New/UpperBound/Divisibility/SetupAtLevel.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 334
+     "lines": 338
     },
     {
      "path": "src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 436
+     "lines": 440
     },
     {
      "path": "src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 562
+     "lines": 567
     },
     {
      "path": "src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
      "status": "open",
      "documented": true,
-     "theorems": 10,
-     "lines": 293
+     "theorems": 8,
+     "lines": 256
     },
     {
      "path": "src/New/UpperBound/Divisibility/LocalDivisibility.lean",
      "status": "open",
      "documented": true,
-     "theorems": 16,
-     "lines": 529
+     "theorems": 15,
+     "lines": 485
     },
     {
      "path": "src/New/UpperBound/Size/ShortColumns.lean",
      "status": "open",
      "documented": true,
      "theorems": 42,
-     "lines": 1018
+     "lines": 1028
     },
     {
      "path": "src/New/UpperBound/Size/ClassCount.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 191
+     "lines": 195
     },
     {
      "path": "src/New/UpperBound/Size/Estimates.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 400
+     "lines": 376
     },
     {
      "path": "src/New/UpperBound/Size/ArchimedeanSize.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 566
+     "lines": 570
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 446
+     "lines": 450
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
      "status": "open",
      "documented": true,
      "theorems": 66,
-     "lines": 1070
+     "lines": 1074
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
      "status": "open",
      "documented": true,
      "theorems": 51,
-     "lines": 972
+     "lines": 976
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/Edges.lean",
      "status": "open",
      "documented": true,
-     "theorems": 32,
-     "lines": 814
+     "theorems": 25,
+     "lines": 681
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/Depth.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 800
+     "lines": 804
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 822
+     "lines": 826
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 623
+     "lines": 628
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 532
+     "lines": 536
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 988
+     "lines": 992
     },
     {
      "path": "src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
      "status": "open",
      "documented": true,
-     "theorems": 44,
-     "lines": 1248
+     "theorems": 43,
+     "lines": 1223
     }
    ]
   },
@@ -763,630 +763,630 @@
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 212
+     "lines": 216
     },
     {
      "path": "src/New/Spanning/SecondMoment/FewTranslates.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 552
+     "lines": 556
     },
     {
      "path": "src/New/Spanning/SecondMoment/SpanningTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 369
+     "lines": 373
     },
     {
      "path": "src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 491
+     "lines": 495
     },
     {
      "path": "src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 413
+     "lines": 417
     },
     {
      "path": "src/New/Spanning/Bessel/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 46,
-     "lines": 1058
+     "lines": 1063
     },
     {
      "path": "src/New/Spanning/Bessel/GramSection.lean",
      "status": "open",
      "documented": true,
-     "theorems": 42,
-     "lines": 693
+     "theorems": 41,
+     "lines": 690
     },
     {
      "path": "src/New/Spanning/Bessel/Orthonormality.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 218
+     "lines": 222
     },
     {
      "path": "src/New/Spanning/Bessel/MeanValue.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 622
+     "lines": 627
     },
     {
      "path": "src/New/Spanning/Bessel/SobolevBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 656
+     "lines": 660
     },
     {
      "path": "src/New/Spanning/Bessel/Average.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 162
+     "lines": 166
     },
     {
      "path": "src/New/Spanning/Bessel/OpenCellBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 726
+     "lines": 731
     },
     {
      "path": "src/New/Spanning/Bessel/OpenCellPairing.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 275
+     "lines": 279
     },
     {
      "path": "src/New/Spanning/Bessel/LargeFunction.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 772
+     "lines": 777
     },
     {
      "path": "src/New/Spanning/Bessel/CutTailBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 466
+     "lines": 470
     },
     {
      "path": "src/New/Spanning/Bessel/SchurBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 324
+     "lines": 328
     },
     {
      "path": "src/New/Spanning/Bessel/FillingData.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 553
+     "lines": 557
     },
     {
      "path": "src/New/Spanning/Unfolding/Setup.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 762
+     "lines": 766
     },
     {
      "path": "src/New/Spanning/Unfolding/BesselLevelStructure.lean",
      "status": "open",
      "documented": true,
-     "theorems": 56,
-     "lines": 949
+     "theorems": 54,
+     "lines": 930
     },
     {
      "path": "src/New/Spanning/Unfolding/Terms.lean",
      "status": "open",
      "documented": true,
-     "theorems": 42,
-     "lines": 629
+     "theorems": 40,
+     "lines": 600
     },
     {
      "path": "src/New/Spanning/Unfolding/Link.lean",
      "status": "open",
      "documented": true,
-     "theorems": 63,
-     "lines": 945
+     "theorems": 62,
+     "lines": 942
     },
     {
      "path": "src/New/Spanning/Unfolding/ReducedPoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 671
+     "lines": 675
     },
     {
      "path": "src/New/Spanning/Unfolding/Packing.lean",
      "status": "open",
      "documented": true,
-     "theorems": 17,
-     "lines": 539
+     "theorems": 16,
+     "lines": 528
     },
     {
      "path": "src/New/Spanning/Unfolding/CutoffIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 33,
-     "lines": 750
+     "lines": 755
     },
     {
      "path": "src/New/Spanning/Unfolding/AmplitudeSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 34,
-     "lines": 954
+     "lines": 960
     },
     {
      "path": "src/New/Spanning/Unfolding/Climbing.lean",
      "status": "open",
      "documented": true,
-     "theorems": 60,
-     "lines": 1287
+     "theorems": 54,
+     "lines": 1214
     },
     {
      "path": "src/New/Spanning/Unfolding/ReducedGroups.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 423
+     "lines": 427
     },
     {
      "path": "src/New/Spanning/Unfolding/TermStructure.lean",
      "status": "open",
      "documented": true,
-     "theorems": 72,
-     "lines": 898
+     "theorems": 65,
+     "lines": 824
     },
     {
      "path": "src/New/Spanning/Unfolding/SquareExpansion.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 699
+     "lines": 704
     },
     {
      "path": "src/New/Spanning/Unfolding/MomentBounds.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 518
+     "lines": 522
     },
     {
      "path": "src/New/Spanning/Unfolding/Moments.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 1254
+     "lines": 1259
     },
     {
      "path": "src/New/Spanning/Unfolding/PoincareSeries.lean",
      "status": "open",
      "documented": true,
-     "theorems": 50,
-     "lines": 1028
+     "theorems": 46,
+     "lines": 1000
     },
     {
      "path": "src/New/Spanning/Unfolding/BesselFormula.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 430
+     "lines": 432
     },
     {
      "path": "src/New/Spanning/Unfolding/FrameMass.lean",
      "status": "open",
      "documented": true,
-     "theorems": 22,
-     "lines": 355
+     "theorems": 18,
+     "lines": 279
     },
     {
      "path": "src/New/Spanning/Unfolding/FillingAdmissible.lean",
      "status": "open",
      "documented": true,
-     "theorems": 26,
-     "lines": 786
+     "theorems": 23,
+     "lines": 752
     },
     {
      "path": "src/New/Spanning/Unfolding/SeriesPeriod.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 756
+     "lines": 760
     },
     {
      "path": "src/New/Spanning/RemainingTerms/SiegelLemma.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 683
+     "lines": 687
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Box.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 342
+     "lines": 348
     },
     {
      "path": "src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
      "status": "open",
      "documented": true,
-     "theorems": 32,
-     "lines": 785
+     "theorems": 31,
+     "lines": 781
     },
     {
      "path": "src/New/Spanning/RemainingTerms/FrameCount.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 738
+     "lines": 743
     },
     {
      "path": "src/New/Spanning/RemainingTerms/ColumnLattice.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 276
+     "lines": 280
     },
     {
      "path": "src/New/Spanning/RemainingTerms/OneRealPlace.lean",
      "status": "open",
      "documented": true,
-     "theorems": 49,
-     "lines": 1031
+     "theorems": 48,
+     "lines": 1032
     },
     {
      "path": "src/New/Spanning/RemainingTerms/SchurTest.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 327
+     "lines": 331
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Discriminants.lean",
      "status": "open",
      "documented": true,
      "theorems": 41,
-     "lines": 735
+     "lines": 739
     },
     {
      "path": "src/New/Spanning/RemainingTerms/OrbitSize.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 397
+     "lines": 401
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Data.lean",
      "status": "open",
      "documented": true,
-     "theorems": 4,
-     "lines": 154
+     "theorems": 3,
+     "lines": 151
     },
     {
      "path": "src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 506
+     "lines": 510
     },
     {
      "path": "src/New/Spanning/RemainingTerms/LinkLattice.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 843
+     "lines": 847
     },
     {
      "path": "src/New/Spanning/RemainingTerms/FrameParts.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 692
+     "lines": 697
     },
     {
      "path": "src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 609
+     "lines": 613
     },
     {
      "path": "src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 829
+     "lines": 833
     },
     {
      "path": "src/New/Spanning/RemainingTerms/SchurOrbit.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 1004
+     "lines": 1007
     },
     {
      "path": "src/New/Spanning/RemainingTerms/LinkVectors.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 278
+     "lines": 282
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Size.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 790
+     "lines": 794
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Cut.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 708
+     "lines": 712
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Gain.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 922
+     "lines": 927
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Count.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 215
+     "lines": 219
     },
     {
      "path": "src/New/Spanning/RemainingTerms/Sum.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 836
+     "lines": 845
     },
     {
      "path": "src/New/Spanning/MainTerm/SieveSystem.lean",
      "status": "open",
      "documented": true,
-     "theorems": 15,
-     "lines": 331
+     "theorems": 13,
+     "lines": 305
     },
     {
      "path": "src/New/Spanning/MainTerm/KloostermanSum.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 256
+     "lines": 258
     },
     {
      "path": "src/New/Spanning/MainTerm/Frequencies.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 283
+     "lines": 287
     },
     {
      "path": "src/New/Spanning/MainTerm/GlobalSieve.lean",
      "status": "open",
      "documented": true,
      "theorems": 47,
-     "lines": 1207
+     "lines": 1211
     },
     {
      "path": "src/New/Spanning/MainTerm/FillingLevel.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 559
+     "lines": 565
     },
     {
      "path": "src/New/Spanning/MainTerm/GlobalToLocal.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 943
+     "lines": 948
     },
     {
      "path": "src/New/Spanning/MainTerm/SiegelTopBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 969
+     "lines": 973
     },
     {
      "path": "src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 333
+     "lines": 337
     },
     {
      "path": "src/New/Spanning/MainTerm/EnergyEstimate.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 687
+     "lines": 691
     },
     {
      "path": "src/New/Spanning/MainTerm/BadTypes.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 275
+     "lines": 279
     },
     {
      "path": "src/New/Spanning/Frames/Lengths.lean",
      "status": "open",
      "documented": true,
      "theorems": 45,
-     "lines": 635
+     "lines": 639
     },
     {
      "path": "src/New/Spanning/Frames/TwoGauges.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 436
+     "lines": 440
     },
     {
      "path": "src/New/Spanning/Frames/Levels.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 850
+     "lines": 854
     },
     {
      "path": "src/New/Spanning/Frames/Correlations.lean",
      "status": "open",
      "documented": true,
-     "theorems": 24,
-     "lines": 562
+     "theorems": 22,
+     "lines": 545
     },
     {
      "path": "src/New/Spanning/Frames/QuadricVolumes.lean",
      "status": "open",
      "documented": true,
-     "theorems": 21,
-     "lines": 559
+     "theorems": 19,
+     "lines": 532
     },
     {
      "path": "src/New/Spanning/Frames/QuadricPlancherel.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 420
+     "lines": 424
     },
     {
      "path": "src/New/Spanning/Frames/Depth.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 918
+     "lines": 922
     },
     {
      "path": "src/New/Spanning/Frames/Densities.lean",
      "status": "open",
      "documented": true,
-     "theorems": 18,
-     "lines": 714
+     "theorems": 16,
+     "lines": 671
     },
     {
      "path": "src/New/Spanning/Frames/OneFrame.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 791
+     "lines": 793
     },
     {
      "path": "src/New/Spanning/Frames/Gains.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 1012
+     "lines": 1016
     },
     {
      "path": "src/New/Spanning/Frames/Shells.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 284
+     "lines": 288
     },
     {
      "path": "src/New/Spanning/Frames/RealPlaceGauge.lean",
      "status": "open",
      "documented": true,
-     "theorems": 52,
-     "lines": 1338
+     "theorems": 47,
+     "lines": 1266
     },
     {
      "path": "src/New/Spanning/Frames/RealShells.lean",
      "status": "open",
      "documented": true,
-     "theorems": 27,
-     "lines": 745
+     "theorems": 26,
+     "lines": 738
     },
     {
      "path": "src/New/Spanning/Frames/RealBandLimits.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 759
+     "lines": 763
     },
     {
      "path": "src/New/Spanning/Frames/StandardLevel.lean",
      "status": "open",
      "documented": true,
-     "theorems": 35,
-     "lines": 1010
+     "theorems": 34,
+     "lines": 1005
     },
     {
      "path": "src/New/Spanning/Frames/BesselVector.lean",
      "status": "open",
      "documented": true,
-     "theorems": 31,
-     "lines": 700
+     "theorems": 28,
+     "lines": 671
     },
     {
      "path": "src/New/Spanning/Frames/FiniteDepth.lean",
      "status": "open",
      "documented": true,
-     "theorems": 13,
-     "lines": 549
+     "theorems": 12,
+     "lines": 535
     },
     {
      "path": "src/New/Spanning/Frames/FiniteShells.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 731
+     "lines": 735
     },
     {
      "path": "src/New/Spanning/Frames/FiberMeasures.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 525
+     "lines": 530
     },
     {
      "path": "src/New/Spanning/Frames/TopCorrelation.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 761
+     "lines": 765
     },
     {
      "path": "src/New/Spanning/Frames/TopFloor.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 732
+     "lines": 736
     },
     {
      "path": "src/New/Spanning/Frames/FixedLines.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 898
+     "lines": 902
     }
    ]
   },
@@ -1403,181 +1403,181 @@
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 234
+     "lines": 238
     },
     {
      "path": "src/New/Determinant/Twist/LongForms.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 267
+     "lines": 270
     },
     {
      "path": "src/New/Determinant/Norms/VectorKernel.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 174
+     "lines": 178
     },
     {
      "path": "src/New/Determinant/Norms/AdjointThetaLift.lean",
      "status": "open",
      "documented": true,
-     "theorems": 46,
-     "lines": 1080
+     "theorems": 45,
+     "lines": 1076
     },
     {
      "path": "src/New/Determinant/Exchange/NegativeIndices.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 515
+     "lines": 519
     },
     {
      "path": "src/New/Determinant/Exchange/MatchingPartners.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 640
+     "lines": 644
     },
     {
      "path": "src/New/Determinant/Exchange/EquivariantDifference.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 352
+     "lines": 356
     },
     {
      "path": "src/New/Determinant/Exchange/StableSpacesStandardData.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 849
+     "lines": 856
     },
     {
      "path": "src/New/Determinant/Exchange/ConeImage.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 476
+     "lines": 480
     },
     {
      "path": "src/New/Determinant/Exchange/LargeTriple.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 1186
+     "lines": 1190
     },
     {
      "path": "src/New/Determinant/Exchange/RealVectors.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 789
+     "lines": 796
     },
     {
      "path": "src/New/Determinant/Exchange/RemovingPlanes.lean",
      "status": "open",
      "documented": true,
-     "theorems": 19,
-     "lines": 686
+     "theorems": 20,
+     "lines": 695
     },
     {
      "path": "src/New/Determinant/Exchange/VanishingDescends.lean",
      "status": "open",
      "documented": true,
-     "theorems": 4,
-     "lines": 186
+     "theorems": 3,
+     "lines": 184
     },
     {
      "path": "src/New/Determinant/Exchange/TheoremForPartners.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 1110
+     "lines": 1114
     },
     {
      "path": "src/New/Determinant/Exchange/OneSquare.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 1043
+     "lines": 1047
     },
     {
      "path": "src/New/Determinant/Exchange/ExplicitMatching.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 940
+     "lines": 944
     },
     {
      "path": "src/New/Determinant/Chain/SquareLaw.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 512
+     "lines": 516
     },
     {
      "path": "src/New/Determinant/Chain/TriangleNorms.lean",
      "status": "open",
      "documented": true,
-     "theorems": 17,
-     "lines": 499
+     "theorems": 15,
+     "lines": 469
     },
     {
      "path": "src/New/Determinant/Chain/Moduli.lean",
      "status": "open",
      "documented": true,
-     "theorems": 29,
-     "lines": 431
+     "theorems": 28,
+     "lines": 425
     },
     {
      "path": "src/New/Determinant/Chain/TriangleLifts.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 659
+     "lines": 663
     },
     {
      "path": "src/New/Determinant/Chain/ChainNorms.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 808
+     "lines": 813
     },
     {
      "path": "src/New/Determinant/Chain/NormOfChain.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 529
+     "lines": 533
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 369
+     "lines": 373
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 166
+     "lines": 170
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 762
+     "lines": 766
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/PathData.lean",
      "status": "open",
      "documented": true,
-     "theorems": 38,
+     "theorems": 37,
      "lines": 819
     },
     {
@@ -1585,651 +1585,651 @@
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 769
+     "lines": 772
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 811
+     "lines": 815
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/Turns.lean",
      "status": "open",
      "documented": true,
-     "theorems": 43,
-     "lines": 1003
+     "theorems": 42,
+     "lines": 1004
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 673
+     "lines": 677
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/FirstPath.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 463
+     "lines": 458
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/LastPath.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 1152
+     "lines": 1156
     },
     {
      "path": "src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 797
+     "lines": 801
     },
     {
      "path": "src/New/OneLift/TestedForms.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 623
+     "lines": 627
     },
     {
      "path": "src/New/OneLift/LiftVolumeHeight.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 782
+     "lines": 786
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/OneExchange.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 567
+     "lines": 572
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/GluedLattices.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 856
+     "lines": 860
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/GluedForms.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 635
+     "lines": 639
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/ExchangeData.lean",
      "status": "open",
      "documented": true,
      "theorems": 34,
-     "lines": 822
+     "lines": 826
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 174
+     "lines": 178
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 1055
+     "lines": 1059
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
      "status": "open",
      "documented": true,
-     "theorems": 23,
-     "lines": 765
+     "theorems": 22,
+     "lines": 752
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/FirstFactors.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 772
+     "lines": 776
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 1027
+     "lines": 1031
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 912
+     "lines": 917
     },
     {
      "path": "src/New/OneLift/ComparisonOperator/GluingMaps.lean",
      "status": "open",
      "documented": true,
-     "theorems": 52,
-     "lines": 1123
+     "theorems": 50,
+     "lines": 1072
     },
     {
      "path": "src/New/OneLift/FalseLifts/BottomOfTower.lean",
      "status": "open",
      "documented": true,
      "theorems": 79,
-     "lines": 1492
+     "lines": 1496
     },
     {
      "path": "src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 480
+     "lines": 484
     },
     {
      "path": "src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
      "status": "open",
      "documented": true,
-     "theorems": 14,
-     "lines": 779
+     "theorems": 13,
+     "lines": 740
     },
     {
      "path": "src/New/OneLift/HeckeValues/CharacterLift.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 819
+     "lines": 826
     },
     {
      "path": "src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
      "status": "open",
      "documented": true,
-     "theorems": 19,
-     "lines": 601
+     "theorems": 18,
+     "lines": 582
     },
     {
      "path": "src/New/OneLift/HeckeValues/TwistedRatio.lean",
      "status": "open",
      "documented": true,
-     "theorems": 25,
-     "lines": 443
+     "theorems": 22,
+     "lines": 411
     },
     {
      "path": "src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 392
+     "lines": 396
     },
     {
      "path": "src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 526
+     "lines": 530
     },
     {
      "path": "src/New/OneLift/HeckeValues/CentralAction.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 349
+     "lines": 353
     },
     {
      "path": "src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 1092
+     "lines": 1096
     },
     {
      "path": "src/New/OneLift/HeckeValues/PeriodAtOne.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 301
+     "lines": 305
     },
     {
      "path": "src/New/Congruences/FitTwistsExist.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 536
+     "lines": 540
     },
     {
      "path": "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
      "status": "open",
      "documented": true,
-     "theorems": 27,
-     "lines": 740
+     "theorems": 25,
+     "lines": 712
     },
     {
      "path": "src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 705
+     "lines": 709
     },
     {
      "path": "src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 763
+     "lines": 767
     },
     {
      "path": "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
      "status": "open",
      "documented": true,
-     "theorems": 17,
-     "lines": 705
+     "theorems": 15,
+     "lines": 612
     },
     {
      "path": "src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 565
+     "lines": 568
     },
     {
      "path": "src/New/Congruences/FirstOrder/RibetMethod.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 564
+     "lines": 568
     },
     {
      "path": "src/New/Congruences/FirstOrder/FittingBlock.lean",
      "status": "open",
      "documented": true,
-     "theorems": 18,
-     "lines": 764
+     "theorems": 17,
+     "lines": 710
     },
     {
      "path": "src/New/Congruences/FirstOrder/RibetMatrices.lean",
      "status": "open",
      "documented": true,
-     "theorems": 43,
-     "lines": 1018
+     "theorems": 41,
+     "lines": 946
     },
     {
      "path": "src/New/Congruences/FirstOrder/RibetLemma.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 686
+     "lines": 690
     },
     {
      "path": "src/New/Congruences/FirstOrder/OnePrime.lean",
      "status": "open",
      "documented": true,
      "theorems": 45,
-     "lines": 864
+     "lines": 868
     },
     {
      "path": "src/New/Congruences/FirstOrder/EvenClasses.lean",
      "status": "open",
      "documented": true,
-     "theorems": 7,
-     "lines": 265
+     "theorems": 5,
+     "lines": 263
     },
     {
      "path": "src/New/Congruences/FirstOrder/KummerMaps.lean",
      "status": "open",
      "documented": true,
      "theorems": 52,
-     "lines": 867
+     "lines": 871
     },
     {
      "path": "src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 300
+     "lines": 304
     },
     {
      "path": "src/New/Congruences/FirstOrder/TiedTraces.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 817
+     "lines": 819
     },
     {
      "path": "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 707
+     "lines": 712
     },
     {
      "path": "src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 715
+     "lines": 717
     },
     {
      "path": "src/New/Congruences/FirstOrder/HeckeStrings.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 497
+     "lines": 502
     },
     {
      "path": "src/New/Congruences/FirstOrder/TraceRelations.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 983
+     "lines": 988
     },
     {
      "path": "src/New/Congruences/FirstOrder/RibetElement.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 421
+     "lines": 425
     },
     {
      "path": "src/New/Congruences/FirstOrder/DenominatorBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 33,
-     "lines": 1334
+     "lines": 1339
     },
     {
      "path": "src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 497
+     "lines": 501
     },
     {
      "path": "src/New/Congruences/Selmer/SelmerData.lean",
      "status": "open",
      "documented": true,
      "theorems": 33,
-     "lines": 719
+     "lines": 723
     },
     {
      "path": "src/New/Congruences/Selmer/Count.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 560
+     "lines": 564
     },
     {
      "path": "src/New/Congruences/Selmer/Mirror.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 708
+     "lines": 712
     },
     {
      "path": "src/New/Congruences/Selmer/OneSystem.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 474
+     "lines": 478
     },
     {
      "path": "src/New/Congruences/Selmer/Descent.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 705
+     "lines": 709
     },
     {
      "path": "src/New/Congruences/Selmer/Untied.lean",
      "status": "open",
      "documented": true,
-     "theorems": 20,
-     "lines": 579
+     "theorems": 19,
+     "lines": 580
     },
     {
      "path": "src/New/Congruences/Selmer/StickelbergerSystems.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 323
+     "lines": 327
     },
     {
      "path": "src/New/Congruences/Selmer/StickelbergerLine.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 540
+     "lines": 544
     },
     {
      "path": "src/New/Congruences/Selmer/Line.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 687
+     "lines": 691
     },
     {
      "path": "src/New/Congruences/Selmer/RootsOfUnity.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 514
+     "lines": 518
     },
     {
      "path": "src/New/Congruences/Selmer/GeneralTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 454
+     "lines": 458
     },
     {
      "path": "src/New/Congruences/Selmer/MainSummands.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 354
+     "lines": 358
     },
     {
      "path": "src/New/Congruences/Selmer/ClassSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 478
+     "lines": 482
     },
     {
      "path": "src/New/Congruences/Selmer/LValueSystems.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 390
+     "lines": 394
     },
     {
      "path": "src/New/Congruences/Selmer/TwistingTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 452
+     "lines": 456
     },
     {
      "path": "src/New/Congruences/LocalLoss/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 662
+     "lines": 666
     },
     {
      "path": "src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 650
+     "lines": 657
     },
     {
      "path": "src/New/Congruences/LocalLoss/CrystallineDefect.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 670
+     "lines": 675
     },
     {
      "path": "src/New/Congruences/LocalLoss/TateDualBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 273
+     "lines": 277
     },
     {
      "path": "src/New/Congruences/LocalLoss/LocalLattices.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 274
+     "lines": 278
     },
     {
      "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
      "status": "open",
      "documented": true,
-     "theorems": 74,
-     "lines": 1185
+     "theorems": 70,
+     "lines": 1148
     },
     {
      "path": "src/New/Congruences/Lifting/HodgeExpansion.lean",
      "status": "open",
      "documented": true,
-     "theorems": 26,
-     "lines": 775
+     "theorems": 23,
+     "lines": 732
     },
     {
      "path": "src/New/Congruences/Lifting/CupProductBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 1249
+     "lines": 1264
     },
     {
      "path": "src/New/Congruences/Lifting/SidePoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 844
+     "lines": 848
     },
     {
      "path": "src/New/Congruences/Lifting/TameCharts.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 639
+     "lines": 643
     },
     {
      "path": "src/New/Congruences/Lifting/LongGap.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 478
+     "lines": 482
     },
     {
      "path": "src/New/Congruences/Lifting/SafeMoves.lean",
      "status": "open",
      "documented": true,
      "theorems": 44,
-     "lines": 827
+     "lines": 831
     },
     {
      "path": "src/New/Congruences/Lifting/CutExponentBounds.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 1053
+     "lines": 1057
     },
     {
      "path": "src/New/Congruences/Lifting/DeepPoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 412
+     "lines": 416
     },
     {
      "path": "src/New/Congruences/Lifting/FewLowJumps.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 1031
+     "lines": 1036
     },
     {
      "path": "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
      "status": "open",
      "documented": true,
-     "theorems": 24,
-     "lines": 601
+     "theorems": 23,
+     "lines": 596
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/SteepParameters.lean",
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 129
+     "lines": 133
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/Localization.lean",
      "status": "open",
      "documented": true,
      "theorems": 34,
-     "lines": 721
+     "lines": 726
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/MinorSecondOrder.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 586
+     "lines": 590
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/Positions.lean",
      "status": "open",
      "documented": true,
-     "theorems": 29,
-     "lines": 485
+     "theorems": 28,
+     "lines": 475
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/StationaryPosition.lean",
      "status": "open",
      "documented": true,
      "theorems": 39,
-     "lines": 752
+     "lines": 756
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/OneMinor.lean",
      "status": "open",
      "documented": true,
      "theorems": 33,
-     "lines": 629
+     "lines": 634
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/GaussianShape.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 393
+     "lines": 397
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/Periods.lean",
      "status": "open",
      "documented": true,
-     "theorems": 22,
-     "lines": 549
+     "theorems": 21,
+     "lines": 548
     },
     {
      "path": "src/New/Appendix/DiscreteSeries/PositionGroup.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 744
+     "lines": 752
     }
    ]
   }
@@ -2248,119 +2248,119 @@
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 601
+     "lines": 605
     },
     {
      "path": "src/Lib/Adelic/Adeles/Basic.lean",
      "status": "open",
      "documented": true,
-     "theorems": 113,
-     "lines": 1216
+     "theorems": 114,
+     "lines": 1211
     },
     {
      "path": "src/Lib/Adelic/Adeles/AdditiveCharacter.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 496
+     "lines": 500
     },
     {
      "path": "src/Lib/Adelic/Adeles/StrongApproximation.lean",
      "status": "open",
      "documented": true,
      "theorems": 33,
-     "lines": 767
+     "lines": 774
     },
     {
      "path": "src/Lib/Adelic/Adeles/IdeleModulus.lean",
      "status": "open",
      "documented": true,
      "theorems": 39,
-     "lines": 600
+     "lines": 607
     },
     {
      "path": "src/Lib/Adelic/Adeles/LocalFactors.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 471
+     "lines": 475
     },
     {
      "path": "src/Lib/Adelic/Adeles/SemilocalProducts.lean",
      "status": "open",
      "documented": true,
-     "theorems": 24,
-     "lines": 438
+     "theorems": 23,
+     "lines": 440
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 466
+     "lines": 470
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/RealConvolution.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 609
+     "lines": 613
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/UnipotentRadical.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 484
+     "lines": 488
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/Cuspidality.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 947
+     "lines": 951
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/SmoothAlgebraicForms.lean",
      "status": "open",
      "documented": true,
-     "theorems": 24,
-     "lines": 569
+     "theorems": 23,
+     "lines": 561
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/AutomorphicAsAlgebraic.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 418
+     "lines": 422
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/HeckeEigenforms.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 504
+     "lines": 508
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/BlockPeriods.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 207
+     "lines": 211
     },
     {
      "path": "src/Lib/Adelic/AutomorphicForms/PAdicGauge.lean",
      "status": "open",
      "documented": true,
      "theorems": 37,
-     "lines": 887
+     "lines": 889
     },
     {
      "path": "src/Lib/Adelic/Hecke/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 421
+     "lines": 425
     },
     {
      "path": "src/Lib/Adelic/Hecke/ClassSums.lean",
@@ -2374,252 +2374,252 @@
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 874
+     "lines": 878
     },
     {
      "path": "src/Lib/Adelic/QuotientMeasure/IwasawaUnfolding.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 662
+     "lines": 666
     },
     {
      "path": "src/Lib/Adelic/QuotientMeasure/MovingTheQuotient.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 98
+     "lines": 102
     },
     {
      "path": "src/Lib/Adelic/QuotientMeasure/UnfoldingInStages.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 396
+     "lines": 400
     },
     {
      "path": "src/Lib/Adelic/Reduction/FirstMinimumShortBases.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 958
+     "lines": 962
     },
     {
      "path": "src/Lib/Adelic/Reduction/MinkowskiTheorems.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 738
+     "lines": 742
     },
     {
      "path": "src/Lib/Adelic/Reduction/FiniteVolume.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 778
+     "lines": 785
     },
     {
      "path": "src/Lib/Adelic/Reduction/DefiniteClassSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 391
+     "lines": 395
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/LineDeterminant.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 368
+     "lines": 372
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/LevelAlgebra.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 106
+     "lines": 110
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/LineCount.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 328
+     "lines": 333
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/TestFunction.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 252
+     "lines": 256
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/CuspidalType.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 272
+     "lines": 276
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/FibreIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 587
+     "lines": 591
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/IsotropicStabiliser.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 242
+     "lines": 246
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/LineStabiliser.lean",
      "status": "open",
      "documented": true,
      "theorems": 65,
-     "lines": 852
+     "lines": 856
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/OffPlace.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 151
+     "lines": 155
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/Stretch.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 112
+     "lines": 116
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/CoprimeFactors.lean",
      "status": "open",
      "documented": true,
      "theorems": 43,
-     "lines": 813
+     "lines": 817
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/LevelCut.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 386
+     "lines": 390
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/ChangingSigns.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 412
+     "lines": 416
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/KernelBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 352
+     "lines": 356
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/Convergence.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 483
+     "lines": 487
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/ReduciblePolynomials.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 261
+     "lines": 265
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/OrbitalUnfolding.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 652
+     "lines": 656
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/TraceComparison.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 713
+     "lines": 717
     },
     {
      "path": "src/Lib/Adelic/TraceFormula/CuspidalComparison.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 115
+     "lines": 119
     },
     {
      "path": "src/Lib/Adelic/Unitary/Defs.lean",
      "status": "open",
      "documented": true,
      "theorems": 35,
-     "lines": 591
+     "lines": 595
     },
     {
      "path": "src/Lib/Adelic/Unitary/ComponentsAndBlockSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 43,
-     "lines": 582
+     "lines": 587
     },
     {
      "path": "src/Lib/Adelic/Unitary/CongruenceLevels.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 575
+     "lines": 580
     },
     {
      "path": "src/Lib/Adelic/Unitary/GramMatrix.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 141
+     "lines": 145
     },
     {
      "path": "src/Lib/Adelic/Unitary/WeakApproximation.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 409
+     "lines": 411
     },
     {
      "path": "src/Lib/Adelic/Unitary/RationalPoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 242
+     "lines": 246
     },
     {
      "path": "src/Lib/Adelic/Witt/WittTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 808
+     "lines": 813
     },
     {
      "path": "src/Lib/Adelic/Witt/SmoothWitt.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 112
+     "lines": 116
     },
     {
      "path": "src/Lib/Adelic/Witt/IwasawaDecomposition.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 658
+     "lines": 662
     }
    ]
   },
@@ -2636,63 +2636,63 @@
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 206
+     "lines": 207
     },
     {
      "path": "src/Lib/Analytic/DirichletTheta.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 528
+     "lines": 527
     },
     {
      "path": "src/Lib/Analytic/EntireLFunction.lean",
      "status": "open",
      "documented": true,
-     "theorems": 11,
-     "lines": 210
+     "theorems": 12,
+     "lines": 213
     },
     {
      "path": "src/Lib/Analytic/Landau.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 264
+     "lines": 268
     },
     {
      "path": "src/Lib/Analytic/QuadraticTwist.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 838
+     "lines": 836
     },
     {
      "path": "src/Lib/Analytic/Primes.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 454
+     "lines": 459
     },
     {
      "path": "src/Lib/Analytic/PrimeNumberTheorem/LFunctionGrowth.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 389
+     "lines": 393
     },
     {
      "path": "src/Lib/Analytic/PrimeNumberTheorem/Tauberian.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 379
+     "lines": 383
     },
     {
      "path": "src/Lib/Analytic/PrimeNumberTheorem/ZeroFreeRegion.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 206
+     "lines": 210
     }
    ]
   },
@@ -2709,112 +2709,112 @@
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 397
+     "lines": 401
     },
     {
      "path": "src/Lib/CM/GoodReduction.lean",
      "status": "open",
      "documented": true,
      "theorems": 41,
-     "lines": 821
+     "lines": 826
     },
     {
      "path": "src/Lib/CM/ConjugateCurve.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 765
+     "lines": 769
     },
     {
      "path": "src/Lib/CM/FiniteLattices.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 190
+     "lines": 194
     },
     {
      "path": "src/Lib/CM/ChowlaSelberg.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 758
+     "lines": 753
     },
     {
      "path": "src/Lib/CM/FormalGroup/IntegralParameter.lean",
      "status": "open",
      "documented": true,
      "theorems": 47,
-     "lines": 660
+     "lines": 664
     },
     {
      "path": "src/Lib/CM/FormalGroup/PrimeNotation.lean",
      "status": "open",
      "documented": true,
      "theorems": 41,
-     "lines": 407
+     "lines": 411
     },
     {
      "path": "src/Lib/CM/FormalGroup/InseparableDegree.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 390
+     "lines": 394
     },
     {
      "path": "src/Lib/CM/FormalGroup/FormalParameter.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 319
+     "lines": 323
     },
     {
      "path": "src/Lib/CM/Integrality/Doubling.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 365
+     "lines": 369
     },
     {
      "path": "src/Lib/CM/Integrality/TorsionValues.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 440
+     "lines": 444
     },
     {
      "path": "src/Lib/CM/Integrality/IntegralSections.lean",
      "status": "open",
      "documented": true,
      "theorems": 35,
-     "lines": 538
+     "lines": 542
     },
     {
      "path": "src/Lib/CM/Integrality/IsogenyIntegrality.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 167
+     "lines": 171
     },
     {
      "path": "src/Lib/CM/Integrality/LogTheta.lean",
      "status": "open",
      "documented": true,
      "theorems": 48,
-     "lines": 706
+     "lines": 710
     },
     {
      "path": "src/Lib/CM/Sigma/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 60,
-     "lines": 972
+     "lines": 969
     },
     {
      "path": "src/Lib/CM/Sigma/ThetaSections.lean",
      "status": "open",
      "documented": true,
      "theorems": 61,
-     "lines": 939
+     "lines": 943
     }
    ]
   },
@@ -2831,294 +2831,294 @@
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 937
+     "lines": 950
     },
     {
      "path": "src/Lib/ClassField/Avatar/HeckeBaseChange.lean",
      "status": "open",
      "documented": true,
-     "theorems": 17,
-     "lines": 452
+     "theorems": 16,
+     "lines": 444
     },
     {
      "path": "src/Lib/ClassField/Avatar/LocalGlobalCompatibility.lean",
      "status": "open",
      "documented": true,
      "theorems": 4,
-     "lines": 227
+     "lines": 231
     },
     {
      "path": "src/Lib/ClassField/GaloisCohomology/ContinuousCocycles.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 726
+     "lines": 724
     },
     {
      "path": "src/Lib/ClassField/GaloisCohomology/ShapiroCorestriction.lean",
      "status": "open",
      "documented": true,
-     "theorems": 16,
-     "lines": 406
+     "theorems": 15,
+     "lines": 424
     },
     {
      "path": "src/Lib/ClassField/GaloisCohomology/TateIndexFormula.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 465
+     "lines": 469
     },
     {
      "path": "src/Lib/ClassField/GaloisCohomology/KummerCyclicClasses.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 747
+     "lines": 751
     },
     {
      "path": "src/Lib/ClassField/GaloisCohomology/TameSelmerCocycles.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 305
+     "lines": 308
     },
     {
      "path": "src/Lib/ClassField/Global/ArtinMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 306
+     "lines": 312
     },
     {
      "path": "src/Lib/ClassField/Global/AlbertBrauerHasseNoether.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 746
+     "lines": 751
     },
     {
      "path": "src/Lib/ClassField/Global/ArtinReciprocity.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 564
+     "lines": 568
     },
     {
      "path": "src/Lib/ClassField/Global/NormTheorems.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 239
+     "lines": 243
     },
     {
      "path": "src/Lib/ClassField/Global/CMSplittingCharacters.lean",
      "status": "open",
      "documented": true,
-     "theorems": 44,
-     "lines": 920
+     "theorems": 43,
+     "lines": 909
     },
     {
      "path": "src/Lib/ClassField/Global/Chebotarev.lean",
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 110
+     "lines": 114
     },
     {
      "path": "src/Lib/ClassField/Global/ExistenceTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 34,
-     "lines": 1019
+     "lines": 1021
     },
     {
      "path": "src/Lib/ClassField/GreenbergWiles/SelmerLevels.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 659
+     "lines": 664
     },
     {
      "path": "src/Lib/ClassField/GreenbergWiles/SplitPrimeReciprocity.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 938
+     "lines": 942
     },
     {
      "path": "src/Lib/ClassField/GreenbergWiles/CocycleCounts.lean",
      "status": "open",
      "documented": true,
-     "theorems": 21,
-     "lines": 799
+     "theorems": 20,
+     "lines": 789
     },
     {
      "path": "src/Lib/ClassField/GreenbergWiles/SelmerRelations.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 489
+     "lines": 493
     },
     {
      "path": "src/Lib/ClassField/GreenbergWiles/Relations.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 620
+     "lines": 624
     },
     {
      "path": "src/Lib/ClassField/GreenbergWiles/RelationsModL.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 472
+     "lines": 476
     },
     {
      "path": "src/Lib/ClassField/HeckeCharacter/Basic.lean",
      "status": "open",
      "documented": true,
-     "theorems": 38,
-     "lines": 830
+     "theorems": 35,
+     "lines": 781
     },
     {
      "path": "src/Lib/ClassField/HeckeCharacter/AlgebraicValues.lean",
      "status": "open",
      "documented": true,
-     "theorems": 19,
-     "lines": 477
+     "theorems": 17,
+     "lines": 471
     },
     {
      "path": "src/Lib/ClassField/HeckeCharacter/SplitTameCharacters.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 434
+     "lines": 438
     },
     {
      "path": "src/Lib/ClassField/HeckeCharacter/SplittingCharacters.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 190
+     "lines": 194
     },
     {
      "path": "src/Lib/ClassField/HeckeCharacter/TameModulus.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 436
+     "lines": 440
     },
     {
      "path": "src/Lib/ClassField/HeckeL/EulerProduct.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 622
+     "lines": 627
     },
     {
      "path": "src/Lib/ClassField/HeckeL/IdelicThetaSum.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 448
+     "lines": 450
     },
     {
      "path": "src/Lib/ClassField/HeckeL/ContinuationAtOne.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 958
+     "lines": 957
     },
     {
      "path": "src/Lib/ClassField/Local/InvariantMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 353
+     "lines": 357
     },
     {
      "path": "src/Lib/ClassField/Local/ArtinMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 1116
+     "lines": 1120
     },
     {
      "path": "src/Lib/ClassField/LocalDuality/KummerFiniteness.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 389
+     "lines": 393
     },
     {
      "path": "src/Lib/ClassField/LocalDuality/DualityInequality.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 374
+     "lines": 378
     },
     {
      "path": "src/Lib/ClassField/LocalDuality/CrystallineDuality.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 857
+     "lines": 861
     },
     {
      "path": "src/Lib/ClassField/Places/GaloisDefs.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 257
+     "lines": 261
     },
     {
      "path": "src/Lib/ClassField/Places/ProfiniteGalois.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 273
+     "lines": 277
     },
     {
      "path": "src/Lib/ClassField/Places/DecompositionCyclotomic.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 395
+     "lines": 399
     },
     {
      "path": "src/Lib/ClassField/Places/ValuationSubrings.lean",
      "status": "open",
      "documented": true,
-     "theorems": 43,
-     "lines": 631
+     "theorems": 42,
+     "lines": 630
     },
     {
      "path": "src/Lib/ClassField/Places/LocalFields.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 696
+     "lines": 700
     },
     {
      "path": "src/Lib/ClassField/Places/DecompositionCompletion.lean",
      "status": "open",
      "documented": true,
-     "theorems": 32,
-     "lines": 845
+     "theorems": 30,
+     "lines": 829
     },
     {
      "path": "src/Lib/ClassField/Places/Ideles.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 435
+     "lines": 439
     },
     {
      "path": "src/Lib/ClassField/Places/TameInertia.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 535
+     "lines": 539
     }
    ]
   },
@@ -3135,210 +3135,210 @@
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 351
+     "lines": 355
     },
     {
      "path": "src/Lib/Cohomology/TorsionTheories.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 1000
+     "lines": 1005
     },
     {
      "path": "src/Lib/Cohomology/SmoothBaseChange.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 324
+     "lines": 328
     },
     {
      "path": "src/Lib/Cohomology/WoodsHole.lean",
      "status": "open",
      "documented": true,
      "theorems": 4,
-     "lines": 295
+     "lines": 304
     },
     {
      "path": "src/Lib/Cohomology/Etale/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 1212
+     "lines": 1215
     },
     {
      "path": "src/Lib/Cohomology/Etale/BijectiveComparisons.lean",
      "status": "open",
      "documented": true,
      "theorems": 43,
-     "lines": 952
+     "lines": 956
     },
     {
      "path": "src/Lib/Cohomology/Etale/DenseSubfunctors.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 613
+     "lines": 617
     },
     {
      "path": "src/Lib/Cohomology/Etale/FilteredLimits.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 938
+     "lines": 942
     },
     {
      "path": "src/Lib/Cohomology/Etale/RelativeChains.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 488
+     "lines": 492
     },
     {
      "path": "src/Lib/Cohomology/Etale/EllAdicCohomology.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 204
+     "lines": 208
     },
     {
      "path": "src/Lib/Cohomology/Etale/ProperFunctors.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 1006
+     "lines": 1010
     },
     {
      "path": "src/Lib/Cohomology/Hodge/CupProduct.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 574
+     "lines": 578
     },
     {
      "path": "src/Lib/Cohomology/Hodge/Site.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 402
+     "lines": 407
     },
     {
      "path": "src/Lib/Cohomology/Hodge/DepthVanishing.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 344
+     "lines": 348
     },
     {
      "path": "src/Lib/Cohomology/Hodge/GrothendieckSymbol.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 1069
+     "lines": 1073
     },
     {
      "path": "src/Lib/Cohomology/Hodge/Kunneth.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 364
+     "lines": 368
     },
     {
      "path": "src/Lib/Cohomology/Hodge/DiagonalClass.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 283
+     "lines": 287
     },
     {
      "path": "src/Lib/Cohomology/Hodge/FixedPointFormula.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 1042
+     "lines": 1046
     },
     {
      "path": "src/Lib/Cohomology/PointClass/NoetherNormalization.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 814
+     "lines": 820
     },
     {
      "path": "src/Lib/Cohomology/PointClass/ProjectiveSpace.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 627
+     "lines": 631
     },
     {
      "path": "src/Lib/Cohomology/PointClass/ProjectiveNonvanishing.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 953
+     "lines": 954
     },
     {
      "path": "src/Lib/Cohomology/PointClass/LinearIndependence.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 647
+     "lines": 654
     },
     {
      "path": "src/Lib/Cohomology/ProjectiveLine/ChernClass.lean",
      "status": "open",
      "documented": true,
      "theorems": 42,
-     "lines": 1079
+     "lines": 1083
     },
     {
      "path": "src/Lib/Cohomology/ProjectiveLine/PerfectLine.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 522
+     "lines": 526
     },
     {
      "path": "src/Lib/Cohomology/ProjectiveLine/TiltedLineFormula.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 1057
+     "lines": 1063
     },
     {
      "path": "src/Lib/Cohomology/ProjectiveLine/ConstantLineFormula.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 502
+     "lines": 506
     },
     {
      "path": "src/Lib/Cohomology/ProperBaseChange/LineCharts.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 631
+     "lines": 635
     },
     {
      "path": "src/Lib/Cohomology/ProperBaseChange/PlaceSpace.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 573
+     "lines": 577
     },
     {
      "path": "src/Lib/Cohomology/ProperBaseChange/SubringSplitting.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 552
+     "lines": 556
     },
     {
      "path": "src/Lib/Cohomology/ProperBaseChange/Theorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 1200
+     "lines": 1205
     }
    ]
   },
@@ -3355,35 +3355,35 @@
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 462
+     "lines": 466
     },
     {
      "path": "src/Lib/Cyclotomic/Stickelberger.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 414
+     "lines": 418
     },
     {
      "path": "src/Lib/Cyclotomic/OddSha.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 682
+     "lines": 686
     },
     {
      "path": "src/Lib/Cyclotomic/Kolyvagin/DerivativeCocycles.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 1035
+     "lines": 1039
     },
     {
      "path": "src/Lib/Cyclotomic/Kolyvagin/ReciprocityComponentBounds.lean",
      "status": "open",
      "documented": true,
      "theorems": 45,
-     "lines": 1169
+     "lines": 1173
     }
    ]
   },
@@ -3400,280 +3400,280 @@
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 399
+     "lines": 403
     },
     {
      "path": "src/Lib/DiscreteSeries/Bessel/Basic.lean",
      "status": "open",
      "documented": true,
-     "theorems": 23,
-     "lines": 680
+     "theorems": 24,
+     "lines": 690
     },
     {
      "path": "src/Lib/DiscreteSeries/Bessel/SchurBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 673
+     "lines": 678
     },
     {
      "path": "src/Lib/DiscreteSeries/Bessel/UnipotentHaarMeasure.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 950
+     "lines": 956
     },
     {
      "path": "src/Lib/DiscreteSeries/Bessel/FrameFibre.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 327
+     "lines": 331
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/FloorGroups.lean",
      "status": "open",
      "documented": true,
      "theorems": 77,
-     "lines": 1017
+     "lines": 1024
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/FloorMeasures.lean",
      "status": "open",
      "documented": true,
      "theorems": 60,
-     "lines": 1139
+     "lines": 1143
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/QuadricBlocks.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 283
+     "lines": 287
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/BigCell.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 406
+     "lines": 410
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/FourierKernels.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 515
+     "lines": 519
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/ComplexPlace.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 444
+     "lines": 448
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/FloorFibre.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 462
+     "lines": 466
     },
     {
      "path": "src/Lib/DiscreteSeries/Bruhat/SphereFibres.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 131
+     "lines": 135
     },
     {
      "path": "src/Lib/DiscreteSeries/Character/WeylCharacterFormula.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 991
+     "lines": 995
     },
     {
      "path": "src/Lib/DiscreteSeries/Character/MultiplicityOrbitalIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 904
+     "lines": 908
     },
     {
      "path": "src/Lib/DiscreteSeries/Character/OpenOrbitIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 633
+     "lines": 637
     },
     {
      "path": "src/Lib/DiscreteSeries/Character/FormalDegree.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 593
+     "lines": 597
     },
     {
      "path": "src/Lib/DiscreteSeries/FlenstedJensen/Defs.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 434
+     "lines": 438
     },
     {
      "path": "src/Lib/DiscreteSeries/FlenstedJensen/RightDerivatives.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 509
+     "lines": 513
     },
     {
      "path": "src/Lib/DiscreteSeries/FlenstedJensen/FlagDensities.lean",
      "status": "open",
      "documented": true,
      "theorems": 43,
-     "lines": 795
+     "lines": 799
     },
     {
      "path": "src/Lib/DiscreteSeries/FlenstedJensen/CasimirEigenfunction.lean",
      "status": "open",
      "documented": true,
      "theorems": 35,
-     "lines": 849
+     "lines": 853
     },
     {
      "path": "src/Lib/DiscreteSeries/FlenstedJensen/PsiKTypes.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 496
+     "lines": 500
     },
     {
      "path": "src/Lib/DiscreteSeries/FlenstedJensen/SquareIntegrability.lean",
      "status": "open",
      "documented": true,
      "theorems": 43,
-     "lines": 956
+     "lines": 960
     },
     {
      "path": "src/Lib/DiscreteSeries/Haar/CayleyChart.lean",
      "status": "open",
      "documented": true,
-     "theorems": 33,
-     "lines": 798
+     "theorems": 32,
+     "lines": 797
     },
     {
      "path": "src/Lib/DiscreteSeries/Haar/GramCoordinates.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 447
+     "lines": 451
     },
     {
      "path": "src/Lib/DiscreteSeries/Haar/GramPolar.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 428
+     "lines": 432
     },
     {
      "path": "src/Lib/DiscreteSeries/Haar/TotalMass.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 483
+     "lines": 488
     },
     {
      "path": "src/Lib/DiscreteSeries/Haar/GramFibre.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 378
+     "lines": 382
     },
     {
      "path": "src/Lib/DiscreteSeries/Holomorphic/MaximalCompactMinors.lean",
      "status": "open",
      "documented": true,
-     "theorems": 21,
-     "lines": 313
+     "theorems": 20,
+     "lines": 311
     },
     {
      "path": "src/Lib/DiscreteSeries/Holomorphic/HighestVectorExtension.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 778
+     "lines": 782
     },
     {
      "path": "src/Lib/DiscreteSeries/Holomorphic/ModelFunction.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 699
+     "lines": 703
     },
     {
      "path": "src/Lib/DiscreteSeries/Holomorphic/PeaksAwayFromCusp.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 622
+     "lines": 626
     },
     {
      "path": "src/Lib/DiscreteSeries/Rigidity/RepresentationsAndCasimirs.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 463
+     "lines": 467
     },
     {
      "path": "src/Lib/DiscreteSeries/Rigidity/HighestVectorsAndFiltration.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 938
+     "lines": 942
     },
     {
      "path": "src/Lib/DiscreteSeries/Rigidity/KernelFixes.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 624
+     "lines": 628
     },
     {
      "path": "src/Lib/DiscreteSeries/Theta/FockDualPair.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 723
+     "lines": 727
     },
     {
      "path": "src/Lib/DiscreteSeries/Theta/BlockRule.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 453
+     "lines": 457
     },
     {
      "path": "src/Lib/DiscreteSeries/Theta/FockJointHarmonics.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 670
+     "lines": 677
     },
     {
      "path": "src/Lib/DiscreteSeries/Theta/CasimirComparison.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 452
+     "lines": 456
     },
     {
      "path": "src/Lib/DiscreteSeries/Theta/LocalCorrespondence.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 805
+     "lines": 809
     }
    ]
   },
@@ -3690,91 +3690,91 @@
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 714
+     "lines": 718
     },
     {
      "path": "src/Lib/GLn/Branching/IntegralMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 526
+     "lines": 531
     },
     {
      "path": "src/Lib/GLn/Dual.lean",
      "status": "open",
      "documented": true,
      "theorems": 38,
-     "lines": 1152
+     "lines": 1157
     },
     {
      "path": "src/Lib/GLn/SchurModule/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 41,
-     "lines": 771
+     "lines": 777
     },
     {
      "path": "src/Lib/GLn/SchurModule/MinorBasis.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 884
+     "lines": 889
     },
     {
      "path": "src/Lib/GLn/SchurModule/SchurMatrix.lean",
      "status": "open",
      "documented": true,
      "theorems": 45,
-     "lines": 1015
+     "lines": 1021
     },
     {
      "path": "src/Lib/GLn/SchurModule/TensorModel.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 346
+     "lines": 350
     },
     {
      "path": "src/Lib/GLn/SchurModule/WeylKernel.lean",
      "status": "open",
      "documented": true,
      "theorems": 35,
-     "lines": 694
+     "lines": 698
     },
     {
      "path": "src/Lib/GLn/SchurModule/GramMatrix.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 717
+     "lines": 721
     },
     {
      "path": "src/Lib/GLn/SchurModule/LeadingRows.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 503
+     "lines": 507
     },
     {
      "path": "src/Lib/GLn/SchurModule/SchurOrthogonality.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 335
+     "lines": 339
     },
     {
      "path": "src/Lib/GLn/SchurModule/Polarisation.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 330
+     "lines": 334
     },
     {
      "path": "src/Lib/GLn/SchurModule/SchurNorm.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 379
+     "lines": 383
     }
    ]
   },
@@ -3791,20 +3791,20 @@
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 729
+     "lines": 734
     },
     {
      "path": "src/Lib/GaloisRep/Hilbert90/UnitaryGroups.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 509
+     "lines": 513
     },
     {
      "path": "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
      "status": "open",
      "documented": true,
-     "theorems": 21,
+     "theorems": 20,
      "lines": 654
     },
     {
@@ -3812,196 +3812,196 @@
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 712
+     "lines": 716
     },
     {
      "path": "src/Lib/GaloisRep/KillingPolynomials.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 493
+     "lines": 497
     },
     {
      "path": "src/Lib/GaloisRep/WeightCongruence.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 738
+     "lines": 742
     },
     {
      "path": "src/Lib/GaloisRep/TaylorWiles.lean",
      "status": "open",
      "documented": true,
-     "theorems": 19,
-     "lines": 851
+     "theorems": 35,
+     "lines": 933
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/Defs.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 234
+     "lines": 238
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 643
+     "lines": 647
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/StepMatchingPairs.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 591
+     "lines": 595
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/GlobalRoot.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 1016
+     "lines": 1024
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/CongruenceLevelMatching.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 901
+     "lines": 905
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/TwistedTraceIdentity.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 1027
+     "lines": 1031
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 923
+     "lines": 927
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 838
+     "lines": 842
     },
     {
      "path": "src/Lib/GaloisRep/BaseChange/ShintaniLift.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 401
+     "lines": 405
     },
     {
      "path": "src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 381
+     "lines": 386
     },
     {
      "path": "src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 731
+     "lines": 736
     },
     {
      "path": "src/Lib/GaloisRep/LocalGlobal/LabelCompatibility.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 516
+     "lines": 520
     },
     {
      "path": "src/Lib/GaloisRep/Main/SelmerModules.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 316
+     "lines": 320
     },
     {
      "path": "src/Lib/GaloisRep/Main/DivisibleSelmerModules.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 172
+     "lines": 176
     },
     {
      "path": "src/Lib/GaloisRep/Main/Defs.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 325
+     "lines": 329
     },
     {
      "path": "src/Lib/GaloisRep/Main/LocalConditions.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 530
+     "lines": 534
     },
     {
      "path": "src/Lib/GaloisRep/Main/QuadraticStep.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 575
+     "lines": 580
     },
     {
      "path": "src/Lib/GaloisRep/Main/CuspidalTypes.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 561
+     "lines": 565
     },
     {
      "path": "src/Lib/GaloisRep/Main/AttachedRepresentations.lean",
      "status": "open",
      "documented": true,
-     "theorems": 17,
-     "lines": 434
+     "theorems": 15,
+     "lines": 420
     },
     {
      "path": "src/Lib/GaloisRep/Main/SeedRepresentation.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 863
+     "lines": 867
     },
     {
      "path": "src/Lib/GaloisRep/Main/SplitCase.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 670
+     "lines": 677
     },
     {
      "path": "src/Lib/GaloisRep/Main/OddRank.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 518
+     "lines": 523
     },
     {
      "path": "src/Lib/GaloisRep/Main/ThetaLift.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 513
+     "lines": 518
     },
     {
      "path": "src/Lib/GaloisRep/Main/AllRanks.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 799
+     "lines": 804
     }
    ]
   },
@@ -4018,490 +4018,490 @@
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 78
+     "lines": 82
     },
     {
      "path": "src/Lib/Base.lean",
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 18
+     "lines": 22
     },
     {
      "path": "src/Lib/General/Combinatorics.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 417
+     "lines": 421
     },
     {
      "path": "src/Lib/General/Topology.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 179
+     "lines": 183
     },
     {
      "path": "src/Lib/General/Algebra/AbsIntegrallyClosed.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 156
+     "lines": 164
     },
     {
      "path": "src/Lib/General/Algebra/AdicCompletion.lean",
      "status": "open",
      "documented": true,
      "theorems": 42,
-     "lines": 772
+     "lines": 777
     },
     {
      "path": "src/Lib/General/Algebra/SeriesCongruences.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 396
+     "lines": 399
     },
     {
      "path": "src/Lib/General/Algebra/CartanMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 641
+     "lines": 645
     },
     {
      "path": "src/Lib/General/Algebra/LongExactSequences.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 570
+     "lines": 590
     },
     {
      "path": "src/Lib/General/Algebra/MultivariatePolynomials.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 441
+     "lines": 445
     },
     {
      "path": "src/Lib/General/Algebra/ResidueSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 114
+     "lines": 118
     },
     {
      "path": "src/Lib/General/Algebra/CohomologyBaseChange.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 306
+     "lines": 310
     },
     {
      "path": "src/Lib/General/Algebra/IntegralPowerSeries.lean",
      "status": "open",
      "documented": true,
-     "theorems": 16,
-     "lines": 286
+     "theorems": 14,
+     "lines": 263
     },
     {
      "path": "src/Lib/General/Algebra/PerfectAlgebras.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 542
+     "lines": 547
     },
     {
      "path": "src/Lib/General/Algebra/FittingIdealsAndLengths.lean",
      "status": "open",
      "documented": true,
      "theorems": 37,
-     "lines": 721
+     "lines": 725
     },
     {
      "path": "src/Lib/General/Algebra/BlockFittingBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 182
+     "lines": 186
     },
     {
      "path": "src/Lib/General/Algebra/SeriesBounds.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 427
+     "lines": 413
     },
     {
      "path": "src/Lib/General/Algebra/SharpMinors.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 276
+     "lines": 281
     },
     {
      "path": "src/Lib/General/Algebra/LevelModulus.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 393
+     "lines": 397
     },
     {
      "path": "src/Lib/General/Analysis/FiniteFourier.lean",
      "status": "open",
      "documented": true,
-     "theorems": 11,
-     "lines": 261
+     "theorems": 10,
+     "lines": 254
     },
     {
      "path": "src/Lib/General/Analysis/GaussianIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 237
+     "lines": 241
     },
     {
      "path": "src/Lib/General/Analysis/FourierTransforms.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 347
+     "lines": 352
     },
     {
      "path": "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 692
+     "lines": 694
     },
     {
      "path": "src/Lib/General/Analysis/PackingAndSobolev.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 262
+     "lines": 266
     },
     {
      "path": "src/Lib/General/Analysis/MeanValueAndTaylor.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 269
+     "lines": 273
     },
     {
      "path": "src/Lib/General/Geometry/LineBundles.lean",
      "status": "open",
      "documented": true,
      "theorems": 76,
-     "lines": 1002
+     "lines": 1006
     },
     {
      "path": "src/Lib/General/Geometry/ProjectiveSpace.lean",
      "status": "open",
      "documented": true,
      "theorems": 46,
-     "lines": 867
+     "lines": 871
     },
     {
      "path": "src/Lib/General/Geometry/DenseComplexPoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 432
+     "lines": 438
     },
     {
      "path": "src/Lib/General/Geometry/GeometricPoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 499
+     "lines": 504
     },
     {
      "path": "src/Lib/General/Geometry/EtaleCharts.lean",
      "status": "open",
      "documented": true,
      "theorems": 39,
-     "lines": 1062
+     "lines": 1066
     },
     {
      "path": "src/Lib/General/Geometry/PointsOfProperSchemes.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 551
+     "lines": 555
     },
     {
      "path": "src/Lib/General/Geometry/SerreTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 410
+     "lines": 414
     },
     {
      "path": "src/Lib/General/Geometry/GaloisCovers.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 836
+     "lines": 841
     },
     {
      "path": "src/Lib/General/Geometry/SmoothnessCriterion.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 463
+     "lines": 468
     },
     {
      "path": "src/Lib/General/Groups/CongruenceSubgroups.lean",
      "status": "open",
      "documented": true,
      "theorems": 39,
-     "lines": 482
+     "lines": 486
     },
     {
      "path": "src/Lib/General/Groups/IndexOfProduct.lean",
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 26
+     "lines": 30
     },
     {
      "path": "src/Lib/General/Groups/BesselGroups.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 308
+     "lines": 312
     },
     {
      "path": "src/Lib/General/Groups/ProfiniteCharacters.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 414
+     "lines": 418
     },
     {
      "path": "src/Lib/General/Groups/CharacterTheory.lean",
      "status": "open",
      "documented": true,
-     "theorems": 56,
-     "lines": 846
+     "theorems": 52,
+     "lines": 832
     },
     {
      "path": "src/Lib/General/LinearAlgebra/TensorChains.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 312
+     "lines": 316
     },
     {
      "path": "src/Lib/General/LinearAlgebra/Eigenvalues.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 786
+     "lines": 790
     },
     {
      "path": "src/Lib/General/LinearAlgebra/HermitianMatrices.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 397
+     "lines": 401
     },
     {
      "path": "src/Lib/General/LinearAlgebra/IntegralLattices.lean",
      "status": "open",
      "documented": true,
      "theorems": 50,
-     "lines": 839
+     "lines": 843
     },
     {
      "path": "src/Lib/General/LinearAlgebra/MatricesNearIdentity.lean",
      "status": "open",
      "documented": true,
      "theorems": 34,
-     "lines": 406
+     "lines": 410
     },
     {
      "path": "src/Lib/General/LinearAlgebra/MinorProducts.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 472
+     "lines": 477
     },
     {
      "path": "src/Lib/General/LinearAlgebra/GramDeterminant.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 140
+     "lines": 144
     },
     {
      "path": "src/Lib/General/LinearAlgebra/MatrixPolynomials.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 226
+     "lines": 230
     },
     {
      "path": "src/Lib/General/LinearAlgebra/IdempotentRadical.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 187
+     "lines": 191
     },
     {
      "path": "src/Lib/General/LinearAlgebra/HermiteForm.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 252
+     "lines": 257
     },
     {
      "path": "src/Lib/General/LinearAlgebra/MatrixNormBounds.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 163
+     "lines": 167
     },
     {
      "path": "src/Lib/General/LinearAlgebra/PartnerAlgebra.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 373
+     "lines": 377
     },
     {
      "path": "src/Lib/General/LinearAlgebra/PolarDecomposition.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 242
+     "lines": 246
     },
     {
      "path": "src/Lib/General/LinearAlgebra/BlockEmbeddings.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 408
+     "lines": 412
     },
     {
      "path": "src/Lib/General/Measure/FibreMeasure.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 236
+     "lines": 240
     },
     {
      "path": "src/Lib/General/Measure/IdempotentKernel.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 226
+     "lines": 230
     },
     {
      "path": "src/Lib/General/Measure/HaarNormalisation.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 228
+     "lines": 232
     },
     {
      "path": "src/Lib/General/Measure/IntegralOperators.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 451
+     "lines": 455
     },
     {
      "path": "src/Lib/General/Measure/HaarModulus.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 492
+     "lines": 497
     },
     {
      "path": "src/Lib/General/Measure/QuadricDisintegration.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 650
+     "lines": 654
     },
     {
      "path": "src/Lib/General/NumberTheory/FrobeniusOrbits.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 270
+     "lines": 274
     },
     {
      "path": "src/Lib/General/NumberTheory/EmbeddingsAndDifferent.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 277
+     "lines": 282
     },
     {
      "path": "src/Lib/General/NumberTheory/ImaginaryQuadraticField.lean",
      "status": "open",
      "documented": true,
      "theorems": 34,
-     "lines": 589
+     "lines": 592
     },
     {
      "path": "src/Lib/General/NumberTheory/SUnitsAndClassNumber.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 281
+     "lines": 241
     },
     {
      "path": "src/Lib/General/NumberTheory/CMFields.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 213
+     "lines": 217
     },
     {
      "path": "src/Lib/General/NumberTheory/CoefficientRings.lean",
      "status": "open",
      "documented": true,
      "theorems": 12,
-     "lines": 215
+     "lines": 219
     },
     {
      "path": "src/Lib/General/NumberTheory/LatticeCovolumes.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 802
+     "lines": 806
     },
     {
      "path": "src/Lib/General/NumberTheory/PadicLimitsValuation.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 370
+     "lines": 376
     },
     {
      "path": "src/Lib/General/NumberTheory/GaussValuation.lean",
      "status": "open",
      "documented": true,
      "theorems": 43,
-     "lines": 508
+     "lines": 515
     },
     {
      "path": "src/Lib/General/NumberTheory/LargeResidueField.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 164
+     "lines": 168
     },
     {
      "path": "src/Lib/General/NumberTheory/CoefficientInclusion.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 105
+     "lines": 109
     }
    ]
   },
@@ -4518,91 +4518,91 @@
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 628
+     "lines": 632
     },
     {
      "path": "src/Lib/LocalGL/Green/HallAlgebra.lean",
      "status": "open",
      "documented": true,
      "theorems": 44,
-     "lines": 1116
+     "lines": 1120
     },
     {
      "path": "src/Lib/LocalGL/Green/CuspidalFunctions.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 742
+     "lines": 746
     },
     {
      "path": "src/Lib/LocalGL/Green/TauFunctions.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 804
+     "lines": 808
     },
     {
      "path": "src/Lib/LocalGL/Green/LabelCharacters.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 664
+     "lines": 668
     },
     {
      "path": "src/Lib/LocalGL/Iwahori/ParahoricStructure.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 817
+     "lines": 821
     },
     {
      "path": "src/Lib/LocalGL/Iwahori/QuadraticRelation.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 477
+     "lines": 481
     },
     {
      "path": "src/Lib/LocalGL/Iwahori/HeckeDegrees.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 656
+     "lines": 660
     },
     {
      "path": "src/Lib/LocalGL/Iwahori/SortedExponents.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 919
+     "lines": 923
     },
     {
      "path": "src/Lib/LocalGL/Iwahori/SphericalExponents.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 640
+     "lines": 644
     },
     {
      "path": "src/Lib/LocalGL/Shintani/CosetRootChoice.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 540
+     "lines": 544
     },
     {
      "path": "src/Lib/LocalGL/Shintani/CosetDescent.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 830
+     "lines": 834
     },
     {
      "path": "src/Lib/LocalGL/Shintani/LiftingGreenCharacters.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 745
+     "lines": 749
     }
    ]
   },
@@ -4619,56 +4619,56 @@
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 519
+     "lines": 526
     },
     {
      "path": "src/Lib/PadicComparison/ToricTower.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 838
+     "lines": 844
     },
     {
      "path": "src/Lib/PadicComparison/CrystallineFrobenius.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 828
+     "lines": 833
     },
     {
      "path": "src/Lib/PadicComparison/Crystalline/DividedPowerEnvelope.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 585
+     "lines": 589
     },
     {
      "path": "src/Lib/PadicComparison/Crystalline/ComparisonMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 1279
+     "lines": 1283
     },
     {
      "path": "src/Lib/PadicComparison/Descent/TestCategory.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 658
+     "lines": 662
     },
     {
      "path": "src/Lib/PadicComparison/Descent/TestCovers.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 620
+     "lines": 624
     },
     {
      "path": "src/Lib/PadicComparison/Descent/AlmostDescent.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 941
+     "lines": 945
     },
     {
      "path": "src/Lib/PadicComparison/Duality/LineIntegration.lean",
@@ -4682,63 +4682,63 @@
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 728
+     "lines": 733
     },
     {
      "path": "src/Lib/PadicComparison/HodgeTate/ExtCocycles.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 356
+     "lines": 374
     },
     {
      "path": "src/Lib/PadicComparison/HodgeTate/GenericFibre.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 498
+     "lines": 502
     },
     {
      "path": "src/Lib/PadicComparison/HodgeTate/Map.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 856
+     "lines": 860
     },
     {
      "path": "src/Lib/PadicComparison/HodgeTate/GaloisWeight.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 273
+     "lines": 277
     },
     {
      "path": "src/Lib/PadicComparison/HodgeTate/PeriodMap.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 376
+     "lines": 380
     },
     {
      "path": "src/Lib/PadicComparison/Primitive/PeriodCoefficients.lean",
      "status": "open",
      "documented": true,
-     "theorems": 15,
-     "lines": 697
+     "theorems": 16,
+     "lines": 716
     },
     {
      "path": "src/Lib/PadicComparison/Primitive/Periods.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 322
+     "lines": 326
     },
     {
      "path": "src/Lib/PadicComparison/Primitive/ComparisonTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 7,
-     "lines": 431
+     "lines": 435
     }
    ]
   },
@@ -4755,168 +4755,168 @@
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 551
+     "lines": 555
     },
     {
      "path": "src/Lib/PadicHodge/ArtinSchreierSequence.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 519
+     "lines": 523
     },
     {
      "path": "src/Lib/PadicHodge/BlochKato.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 899
+     "lines": 903
     },
     {
      "path": "src/Lib/PadicHodge/RadiusLemma.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 543
+     "lines": 548
     },
     {
      "path": "src/Lib/PadicHodge/Characters.lean",
      "status": "open",
      "documented": true,
      "theorems": 48,
-     "lines": 1105
+     "lines": 1109
     },
     {
      "path": "src/Lib/PadicHodge/Crystalline/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 696
+     "lines": 700
     },
     {
      "path": "src/Lib/PadicHodge/Crystalline/HodgeTateForms.lean",
      "status": "open",
      "documented": true,
      "theorems": 4,
-     "lines": 181
+     "lines": 185
     },
     {
      "path": "src/Lib/PadicHodge/Crystalline/HodgeTateJumps.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 887
+     "lines": 891
     },
     {
      "path": "src/Lib/PadicHodge/Crystalline/FixedRatios.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 402
+     "lines": 406
     },
     {
      "path": "src/Lib/PadicHodge/Crystalline/Regularity.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 788
+     "lines": 792
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/Charts.lean",
      "status": "open",
      "documented": true,
      "theorems": 43,
-     "lines": 830
+     "lines": 834
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/Bicommutant.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 580
+     "lines": 584
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/KummerChartExistence.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 459
+     "lines": 463
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/PeriodMatrixBasis.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 1034
+     "lines": 1038
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/KummerChartDeRham.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 485
+     "lines": 491
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/PeriodMatrixFrame.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 509
+     "lines": 514
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/Modules.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 738
+     "lines": 742
     },
     {
      "path": "src/Lib/PadicHodge/Kisin/FrameTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 49,
-     "lines": 1063
+     "lines": 1068
     },
     {
      "path": "src/Lib/PadicHodge/Limit/CrystallineLimit.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 726
+     "lines": 730
     },
     {
      "path": "src/Lib/PadicHodge/Limit/TraceLimit.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 920
+     "lines": 925
     },
     {
      "path": "src/Lib/PadicHodge/PeriodRings/AxTheorem.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 535
+     "lines": 532
     },
     {
      "path": "src/Lib/PadicHodge/PeriodRings/Ainf.lean",
      "status": "open",
      "documented": true,
      "theorems": 75,
-     "lines": 1038
+     "lines": 1042
     },
     {
      "path": "src/Lib/PadicHodge/PeriodRings/CrystallineRings.lean",
      "status": "open",
      "documented": true,
-     "theorems": 46,
-     "lines": 1091
+     "theorems": 45,
+     "lines": 1092
     },
     {
      "path": "src/Lib/PadicHodge/PeriodRings/DeRhamPeriods.lean",
      "status": "open",
      "documented": true,
-     "theorems": 19,
-     "lines": 448
+     "theorems": 18,
+     "lines": 449
     }
    ]
   },
@@ -4933,301 +4933,301 @@
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 737
+     "lines": 741
     },
     {
      "path": "src/Lib/Shimura/ComplexTheta/DimensionFormula.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 791
+     "lines": 795
     },
     {
      "path": "src/Lib/Shimura/ThetaGroup.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 539
+     "lines": 543
     },
     {
      "path": "src/Lib/Shimura/ArcExtension.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 620
+     "lines": 625
     },
     {
      "path": "src/Lib/Shimura/Eigenspace.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 770
+     "lines": 762
     },
     {
      "path": "src/Lib/Shimura/AbelianScheme/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 512
+     "lines": 517
     },
     {
      "path": "src/Lib/Shimura/AbelianScheme/Pairings.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 390
+     "lines": 394
     },
     {
      "path": "src/Lib/Shimura/AbelianScheme/IsogenyFlatness.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 291
+     "lines": 296
     },
     {
      "path": "src/Lib/Shimura/AbelianScheme/TangentCoordinates.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 579
+     "lines": 583
     },
     {
      "path": "src/Lib/Shimura/CongruenceRelation/KernelReduction.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 888
+     "lines": 892
     },
     {
      "path": "src/Lib/Shimura/CongruenceRelation/EichlerShimura.lean",
      "status": "open",
      "documented": true,
      "theorems": 4,
-     "lines": 220
+     "lines": 224
     },
     {
      "path": "src/Lib/Shimura/CongruenceRelation/HeckeNeighbours.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 1054
+     "lines": 1058
     },
     {
      "path": "src/Lib/Shimura/Deformation/TangentCount.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 502
+     "lines": 506
     },
     {
      "path": "src/Lib/Shimura/Deformation/TangentBound.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 861
+     "lines": 865
     },
     {
      "path": "src/Lib/Shimura/GoodReduction/TorsionSizes.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 481
+     "lines": 489
     },
     {
      "path": "src/Lib/Shimura/GoodReduction/GaussSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 479
+     "lines": 483
     },
     {
      "path": "src/Lib/Shimura/GoodReduction/MultiplicativeNorm.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 1000
+     "lines": 1011
     },
     {
      "path": "src/Lib/Shimura/HeckeTower/HeckeData.lean",
      "status": "open",
      "documented": true,
      "theorems": 41,
-     "lines": 1001
+     "lines": 1005
     },
     {
      "path": "src/Lib/Shimura/HeckeTower/Model.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 930
+     "lines": 934
     },
     {
      "path": "src/Lib/Shimura/IntegralModel/PELDataExistence.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 472
+     "lines": 477
     },
     {
      "path": "src/Lib/Shimura/IntegralModel/UniversalFamily.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 1057
+     "lines": 1061
     },
     {
      "path": "src/Lib/Shimura/IntegralModel/BallImmersion.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 493
+     "lines": 497
     },
     {
      "path": "src/Lib/Shimura/IntegralModel/TowerExistence.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 477
+     "lines": 480
     },
     {
      "path": "src/Lib/Shimura/ThetaModuli/FlatClosure.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 949
+     "lines": 953
     },
     {
      "path": "src/Lib/Shimura/ThetaModuli/PELThetaTori.lean",
      "status": "open",
      "documented": true,
      "theorems": 47,
-     "lines": 1145
+     "lines": 1150
     },
     {
      "path": "src/Lib/Shimura/ThetaModuli/ThetaFamilyRigidity.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 623
+     "lines": 627
     },
     {
      "path": "src/Lib/Shimura/ThetaModuli/FamilyFromPoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 1111
+     "lines": 1115
     },
     {
      "path": "src/Lib/Shimura/ThetaModuli/UniversalFamily.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 536
+     "lines": 540
     },
     {
      "path": "src/Lib/Shimura/ThetaNormality/NormalGeneration.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 714
+     "lines": 718
     },
     {
      "path": "src/Lib/Shimura/ThetaNormality/RiemannRelation.lean",
      "status": "open",
      "documented": true,
      "theorems": 13,
-     "lines": 722
+     "lines": 726
     },
     {
      "path": "src/Lib/Shimura/TraceFormula/TestFunction.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 389
+     "lines": 395
     },
     {
      "path": "src/Lib/Shimura/TraceFormula/DefiniteTrace.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 608
+     "lines": 615
     },
     {
      "path": "src/Lib/Shimura/TraceFormula/MarkedDefiniteSums.lean",
      "status": "open",
      "documented": true,
-     "theorems": 50,
-     "lines": 851
+     "theorems": 49,
+     "lines": 852
     },
     {
      "path": "src/Lib/Shimura/Transfer/MarkedPairs.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 232
+     "lines": 236
     },
     {
      "path": "src/Lib/Shimura/Transfer/Lefschetz.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 547
+     "lines": 551
     },
     {
      "path": "src/Lib/Shimura/Transfer/WeightOccurs.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 711
+     "lines": 715
     },
     {
      "path": "src/Lib/Shimura/Uniformisation/AdelicFrames.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 678
+     "lines": 682
     },
     {
      "path": "src/Lib/Shimura/Uniformisation/HolomorphicFamilies.lean",
      "status": "open",
      "documented": true,
      "theorems": 35,
-     "lines": 979
+     "lines": 983
     },
     {
      "path": "src/Lib/Shimura/Uniformisation/AppellHumbert.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 472
+     "lines": 476
     },
     {
      "path": "src/Lib/Shimura/Uniformisation/LieExponential.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 791
+     "lines": 795
     },
     {
      "path": "src/Lib/Shimura/Uniformisation/BallModel.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 997
+     "lines": 1001
     },
     {
      "path": "src/Lib/Shimura/Uniformisation/TorusModel.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 803
+     "lines": 807
     },
     {
      "path": "src/Lib/Shimura/Uniformisation/ModelExists.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 463
+     "lines": 467
     }
    ]
   },
@@ -5244,189 +5244,189 @@
      "status": "open",
      "documented": true,
      "theorems": 33,
-     "lines": 697
+     "lines": 701
     },
     {
      "path": "src/Lib/SiegelWeil/Mass.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 464
+     "lines": 471
     },
     {
      "path": "src/Lib/SiegelWeil/UnramifiedSeries/VacuumCoefficients.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 665
+     "lines": 669
     },
     {
      "path": "src/Lib/SiegelWeil/UnramifiedSeries/RallisSeries.lean",
      "status": "open",
      "documented": true,
      "theorems": 28,
-     "lines": 671
+     "lines": 675
     },
     {
      "path": "src/Lib/SiegelWeil/RallisInner/Doubling.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 657
+     "lines": 661
     },
     {
      "path": "src/Lib/SiegelWeil/RallisInner/SharpData.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 982
+     "lines": 986
     },
     {
      "path": "src/Lib/SiegelWeil/Reproduction.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 455
+     "lines": 459
     },
     {
      "path": "src/Lib/SiegelWeil/Formula/LagrangianZeroTerms.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 964
+     "lines": 968
     },
     {
      "path": "src/Lib/SiegelWeil/Formula/StrongApproximation.lean",
      "status": "open",
      "documented": true,
      "theorems": 3,
-     "lines": 229
+     "lines": 233
     },
     {
      "path": "src/Lib/SiegelWeil/Formula/WeilRange.lean",
      "status": "open",
      "documented": true,
      "theorems": 15,
-     "lines": 827
+     "lines": 831
     },
     {
      "path": "src/Lib/SiegelWeil/OneVector/FinitePlaceDensity.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 744
+     "lines": 749
     },
     {
      "path": "src/Lib/SiegelWeil/OneVector/ResidueClasses.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 93
+     "lines": 97
     },
     {
      "path": "src/Lib/SiegelWeil/OneVector/ClassGaussSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 257
+     "lines": 261
     },
     {
      "path": "src/Lib/SiegelWeil/OneVector/SemilocalDensityBounds.lean",
      "status": "open",
      "documented": true,
-     "theorems": 6,
-     "lines": 238
+     "theorems": 4,
+     "lines": 178
     },
     {
      "path": "src/Lib/SiegelWeil/OneVector/StandardQuadrics.lean",
      "status": "open",
      "documented": true,
      "theorems": 5,
-     "lines": 182
+     "lines": 186
     },
     {
      "path": "src/Lib/SiegelWeil/OneVector/SiegelClassSum.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 891
+     "lines": 895
     },
     {
      "path": "src/Lib/SiegelWeil/SingularForms/CentreCoefficients.lean",
      "status": "open",
      "documented": true,
      "theorems": 47,
-     "lines": 842
+     "lines": 846
     },
     {
      "path": "src/Lib/SiegelWeil/SingularForms/UnimodularCoefficients.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 865
+     "lines": 869
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/PrincipalIdeles.lean",
      "status": "open",
      "documented": true,
      "theorems": 2,
-     "lines": 95
+     "lines": 99
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/LineTerms.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 366
+     "lines": 370
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/ConstantTerm.lean",
      "status": "open",
      "documented": true,
      "theorems": 30,
-     "lines": 722
+     "lines": 726
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/LineGaussSums.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 667
+     "lines": 689
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/RealConeIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 10,
-     "lines": 254
+     "lines": 258
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/FiniteTateIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 27,
-     "lines": 375
+     "lines": 379
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/TestVector.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 420
+     "lines": 424
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/LargeSideConstantTerm.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 900
+     "lines": 904
     },
     {
      "path": "src/Lib/SiegelWeil/Tower/FunctionalEquation.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 445
+     "lines": 449
     }
    ]
   },
@@ -5443,413 +5443,413 @@
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 305
+     "lines": 309
     },
     {
      "path": "src/Lib/Weil/Lift.lean",
      "status": "open",
      "documented": true,
-     "theorems": 32,
-     "lines": 978
+     "theorems": 31,
+     "lines": 981
     },
     {
      "path": "src/Lib/Weil/Seesaw.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 742
+     "lines": 746
     },
     {
      "path": "src/Lib/Weil/CompactLift/ThetaKernelDefs.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 422
+     "lines": 427
     },
     {
      "path": "src/Lib/Weil/CompactLift/DefiniteThetaLift.lean",
      "status": "open",
      "documented": true,
      "theorems": 6,
-     "lines": 352
+     "lines": 357
     },
     {
      "path": "src/Lib/Weil/Construction/HeisenbergModel.lean",
      "status": "open",
      "documented": true,
      "theorems": 46,
-     "lines": 741
+     "lines": 745
     },
     {
      "path": "src/Lib/Weil/Construction/WeilOperators.lean",
      "status": "open",
      "documented": true,
      "theorems": 36,
-     "lines": 882
+     "lines": 886
     },
     {
      "path": "src/Lib/Weil/Construction/WeilData.lean",
      "status": "open",
      "documented": true,
      "theorems": 2,
-     "lines": 194
+     "lines": 198
     },
     {
      "path": "src/Lib/Weil/Construction/FiniteMultiplier.lean",
      "status": "open",
      "documented": true,
      "theorems": 78,
-     "lines": 1051
+     "lines": 1062
     },
     {
      "path": "src/Lib/Weil/Construction/FiniteCocycle.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 476
+     "lines": 481
     },
     {
      "path": "src/Lib/Weil/Construction/AdelicRepresentation.lean",
      "status": "open",
      "documented": true,
-     "theorems": 56,
-     "lines": 1076
+     "theorems": 55,
+     "lines": 1079
     },
     {
      "path": "src/Lib/Weil/Construction/VacuumProjections.lean",
      "status": "open",
      "documented": true,
      "theorems": 66,
-     "lines": 982
+     "lines": 987
     },
     {
      "path": "src/Lib/Weil/Construction/ProductsAndTransport.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 440
+     "lines": 444
     },
     {
      "path": "src/Lib/Weil/Construction/ThetaJets.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 297
+     "lines": 302
     },
     {
      "path": "src/Lib/Weil/Construction/CanonicalTheta.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 228
+     "lines": 232
     },
     {
      "path": "src/Lib/Weil/Construction/ThetaDictionary.lean",
      "status": "open",
      "documented": true,
      "theorems": 47,
-     "lines": 627
+     "lines": 631
     },
     {
      "path": "src/Lib/Weil/Construction/FourierInversion.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 493
+     "lines": 497
     },
     {
      "path": "src/Lib/Weil/DualPair/Kronecker.lean",
      "status": "open",
      "documented": true,
      "theorems": 1,
-     "lines": 54
+     "lines": 58
     },
     {
      "path": "src/Lib/Weil/DualPair/Defs.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 721
+     "lines": 725
     },
     {
      "path": "src/Lib/Weil/DualPair/ShortIsotropicVectors.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 599
+     "lines": 603
     },
     {
      "path": "src/Lib/Weil/DualPair/WeilAction.lean",
      "status": "open",
      "documented": true,
      "theorems": 49,
-     "lines": 819
+     "lines": 824
     },
     {
      "path": "src/Lib/Weil/DualPair/FiniteAction.lean",
      "status": "open",
      "documented": true,
      "theorems": 29,
-     "lines": 528
+     "lines": 532
     },
     {
      "path": "src/Lib/Weil/DualPair/MixedModel.lean",
      "status": "open",
      "documented": true,
      "theorems": 19,
-     "lines": 436
+     "lines": 440
     },
     {
      "path": "src/Lib/Weil/DualPair/ThetaLiftConvergence.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 554
+     "lines": 558
     },
     {
      "path": "src/Lib/Weil/DualPair/GaloisLaw.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 412
+     "lines": 416
     },
     {
      "path": "src/Lib/Weil/DualPair/KernelDecay.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 593
+     "lines": 597
     },
     {
      "path": "src/Lib/Weil/DualPair/KernelLaws.lean",
      "status": "open",
      "documented": true,
      "theorems": 22,
-     "lines": 561
+     "lines": 565
     },
     {
      "path": "src/Lib/Weil/DualPair/Flip.lean",
      "status": "open",
      "documented": true,
      "theorems": 14,
-     "lines": 612
+     "lines": 618
     },
     {
      "path": "src/Lib/Weil/DualPair/ThetaIntegrals.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 501
+     "lines": 505
     },
     {
      "path": "src/Lib/Weil/DualPair/HolomorphicData.lean",
      "status": "open",
      "documented": true,
      "theorems": 11,
-     "lines": 335
+     "lines": 339
     },
     {
      "path": "src/Lib/Weil/DualPair/TwoEdges.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 312
+     "lines": 316
     },
     {
      "path": "src/Lib/Weil/Fock/Basic.lean",
      "status": "open",
      "documented": true,
      "theorems": 32,
-     "lines": 933
+     "lines": 937
     },
     {
      "path": "src/Lib/Weil/Fock/WeightedNorms.lean",
      "status": "open",
      "documented": true,
      "theorems": 23,
-     "lines": 609
+     "lines": 613
     },
     {
      "path": "src/Lib/Weil/Fock/PolynomialVectors.lean",
      "status": "open",
      "documented": true,
      "theorems": 17,
-     "lines": 468
+     "lines": 472
     },
     {
      "path": "src/Lib/Weil/Fock/OscillatorPair.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 610
+     "lines": 620
     },
     {
      "path": "src/Lib/Weil/MixedModel/FockSections.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 413
+     "lines": 417
     },
     {
      "path": "src/Lib/Weil/MixedModel/SchwartzBruhat.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 622
+     "lines": 627
     },
     {
      "path": "src/Lib/Weil/MixedModel/IsotropicSplitting.lean",
      "status": "open",
      "documented": true,
      "theorems": 81,
-     "lines": 1194
+     "lines": 1198
     },
     {
      "path": "src/Lib/Weil/MixedModel/NamedData.lean",
      "status": "open",
      "documented": true,
      "theorems": 25,
-     "lines": 609
+     "lines": 613
     },
     {
      "path": "src/Lib/Weil/MixedModel/RealTheta.lean",
      "status": "open",
      "documented": true,
      "theorems": 18,
-     "lines": 552
+     "lines": 561
     },
     {
      "path": "src/Lib/Weil/MixedModel/ZeroTerm.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 818
+     "lines": 822
     },
     {
      "path": "src/Lib/Weil/MixedModel/ThetaInvariance.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 643
+     "lines": 647
     },
     {
      "path": "src/Lib/Weil/MixedModel/AdaptedSplitting.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 338
+     "lines": 342
     },
     {
      "path": "src/Lib/Weil/MixedModel/Slices.lean",
      "status": "open",
      "documented": true,
      "theorems": 20,
-     "lines": 646
+     "lines": 651
     },
     {
      "path": "src/Lib/Weil/MixedModel/TargetZeroTerm.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 358
+     "lines": 362
     },
     {
      "path": "src/Lib/Weil/Periods/Grading.lean",
      "status": "open",
      "documented": true,
      "theorems": 52,
-     "lines": 941
+     "lines": 949
     },
     {
      "path": "src/Lib/Weil/Periods/PointLattice.lean",
      "status": "open",
      "documented": true,
      "theorems": 35,
-     "lines": 468
+     "lines": 472
     },
     {
      "path": "src/Lib/Weil/Periods/GradedLattice.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 332
+     "lines": 336
     },
     {
      "path": "src/Lib/Weil/Periods/LatticeBounds.lean",
      "status": "open",
      "documented": true,
      "theorems": 9,
-     "lines": 226
+     "lines": 230
     },
     {
      "path": "src/Lib/Weil/Periods/StringPowers.lean",
      "status": "open",
      "documented": true,
-     "theorems": 18,
-     "lines": 305
+     "theorems": 14,
+     "lines": 238
     },
     {
      "path": "src/Lib/Weil/Periods/BesselIntegral.lean",
      "status": "open",
      "documented": true,
      "theorems": 16,
-     "lines": 826
+     "lines": 830
     },
     {
      "path": "src/Lib/Weil/Periods/Equivariant.lean",
      "status": "open",
      "documented": true,
      "theorems": 31,
-     "lines": 422
+     "lines": 426
     },
     {
      "path": "src/Lib/Weil/Periods/ConstantTerm.lean",
      "status": "open",
      "documented": true,
      "theorems": 37,
-     "lines": 914
+     "lines": 918
     },
     {
      "path": "src/Lib/Weil/Periods/RealAndFinitePoints.lean",
      "status": "open",
      "documented": true,
      "theorems": 8,
-     "lines": 178
+     "lines": 183
     },
     {
      "path": "src/Lib/Weil/Periods/DescentVanishing.lean",
      "status": "open",
      "documented": true,
      "theorems": 40,
-     "lines": 980
+     "lines": 984
     },
     {
      "path": "src/Lib/Weil/Periods/Unfolding.lean",
      "status": "open",
      "documented": true,
      "theorems": 21,
-     "lines": 583
+     "lines": 587
     },
     {
      "path": "src/Lib/Weil/Unramified/HeckeGL.lean",
      "status": "open",
      "documented": true,
      "theorems": 37,
-     "lines": 663
+     "lines": 671
     },
     {
      "path": "src/Lib/Weil/Unramified/SplitHecke.lean",
      "status": "open",
      "documented": true,
      "theorems": 24,
-     "lines": 528
+     "lines": 532
     },
     {
      "path": "src/Lib/Weil/Unramified/HeckeTransfer.lean",
      "status": "open",
      "documented": true,
      "theorems": 26,
-     "lines": 730
+     "lines": 734
     }
    ]
   }

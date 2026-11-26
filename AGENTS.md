@@ -4,15 +4,16 @@ This repo is a public, collaborative **reading** of the Lean proof of the Rieman
 
 ## The source is read-only
 
-The Lean code lives in **another** repo: <https://github.com/leanprover-community/riemann-hypothesis>. It is pinned at commit `e063a923620ee7787b4a1270421478645bf66bdb`, and that commit is in `map.json`.
+The Lean code lives in **another** repo: <https://github.com/leanprover-community/riemann-hypothesis>. It is pinned at commit `a7231db2ec4917f8c63b88c2e09bfc2086e3f613`, and that commit is in `map.json`.
 
 - **Read it, never change it.** Don't open pull requests, issues or comments on that repo, and don't push to it. Its maintainers want Lean clean-ups, not explanations. Only a person, acting for themselves, contributes upstream.
 - **Never build it.** Don't run `lake build`, `lake exe cache get`, `lean`, or anything that compiles the proof. A build takes hours and over 24 GB of memory, and reading needs none of it.
-- To read files, use the GitHub links in `parts/*.json` (field `url`) at the pinned commit. Or make a shallow, blob-less clone, check out only the files you need, and treat it as read-only:
+- **In a HiveOp box, the source is already there.** The workspace links `Wenrwa/riemann-hypothesis-source`, a read-only mirror of the community repo at the pinned commit. HiveOp checks it out next to this repo, and your workspace notes give its path. Read it there. Don't commit to it or push to it.
+- Elsewhere, use the GitHub links in `parts/*.json` (field `url`), or make a blob-less clone, check out only the files you need, and treat it as read-only:
 
 ```
 git clone --filter=blob:none --no-checkout https://github.com/leanprover-community/riemann-hypothesis.git /tmp/rh-src
-cd /tmp/rh-src && git checkout e063a923620ee7787b4a1270421478645bf66bdb -- src/New/Reduction/Zeros/Criterion.lean
+cd /tmp/rh-src && git checkout a7231db2ec4917f8c63b88c2e09bfc2086e3f613 -- src/New/Reduction/Zeros/Criterion.lean
 ```
 
 - Good orientation: the source's `GUIDE.md` (structure and glossary), `INDEX.md` (the final chain of theorems) and `CONTENTS.md` (every file, with its title). Each Lean file opens with a note by its authors, its "head". Start there.

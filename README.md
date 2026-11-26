@@ -11,7 +11,7 @@ Lean has settled that the proof is correct. What nobody knows yet is **why**: wh
 
 We read the Lean community's condensed edition ([leanprover-community/riemann-hypothesis](https://github.com/leanprover-community/riemann-hypothesis)), pinned to a commit. All of it is here:
 
-- **The new argument:** 308 files, about 7,100 theorems and lemmas, in seven parts that follow the community's [GUIDE.md](https://github.com/leanprover-community/riemann-hypothesis/blob/main/GUIDE.md) and INDEX.md:
+- **The new argument:** 308 files, about 7,000 theorems and lemmas, in seven parts that follow the community's [GUIDE.md](https://github.com/leanprover-community/riemann-hypothesis/blob/main/GUIDE.md) and INDEX.md:
   1. The statement and the last step
   2. From a bound to the zeros
   3. The setup
