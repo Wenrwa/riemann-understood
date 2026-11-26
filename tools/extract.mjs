@@ -1,91 +1,126 @@
-// Build ru/map.json from the pinned community edition: file heads, imports,
-// CONTENTS.md order/titles, INDEX.md roles. Our plain readings in ru/readings.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+// Build the site's data from the pinned community edition of the proof.
+//
+//   node tools/extract.mjs <path-to-a-checkout-of-the-community-repo>
+//
+// Reads every Lean file's head (its authors' notes), its imports, its count of
+// theorems/lemmas and lines, CONTENTS.md (order and titles) and INDEX.md (roles
+// in the final argument). Writes map.json (light index), parts/<id>.json (one
+// per part of the proof, and one per background subject). Recorded reading
+// statuses (explained / confirmed) are kept across runs.
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+
+const CHECKOUT = process.argv[2] || 'rhrepo';
+const OUT = process.argv[3] || '.';
 const COMMIT = 'e063a923620ee7787b4a1270421478645bf66bdb';
 const REPO = 'https://github.com/leanprover-community/riemann-hypothesis';
-const SRC = 'rhrepo/src';
+const read = (p) => readFileSync(join(CHECKOUT, p), 'utf8');
 
-// CONTENTS.md: order, line counts and titles of every New file.
-const contents = [];
-let group = null, folder = null;
-for (const line of readFileSync('CONTENTS.md', 'utf8').split('\n')) {
-  if (line.startsWith('## Lib')) break;
-  const f = line.match(/^### (.+)/); if (f) { folder = f[1].trim(); continue; }
-  const g = line.match(/^\*\*(.+)\*\*$/); if (g) { group = g[1].trim(); continue; }
+// ---- CONTENTS.md: order, titles, folders, groups ----
+const listed = [];
+let section = null, folder = null, group = null;
+for (const line of read('CONTENTS.md').split('\n')) {
+  if (line.startsWith('## ')) { section = line.slice(3).trim(); folder = group = null; continue; }
+  const f = line.match(/^### (.+)/); if (f) { folder = f[1].trim(); group = null; continue; }
+  const g = line.match(/^\*\*(.+?)\*\*:?\s*(.*)$/); if (g) { group = g[2] ? g[2].trim() : g[1].trim(); continue; }
   const m = line.match(/^- `([^`]+)` \((\d+)\): (.+)$/);
-  if (m) contents.push({ path: `src/${m[1]}.lean`, lines: Number(m[2]), title: m[3].trim(), folder, group });
+  if (m) listed.push({ path: `src/${m[1]}.lean`, title: m[3].trim(), section, folder, group });
 }
+const titleOf = new Map(listed.map((l) => [l.path, l]));
 
-// INDEX.md "The last step": the role of a file in the final argument.
+// ---- INDEX.md "The last step": the role of a file in the final argument ----
 const roles = {};
-const idx = readFileSync('INDEX.md', 'utf8');
-const last = idx.slice(idx.indexOf('## The last step'), idx.indexOf('## Steps of the argument'));
-for (const row of last.split('\n').filter((l) => l.startsWith('| `'))) {
+const idx = read('INDEX.md');
+for (const row of idx.slice(idx.indexOf('## The last step'), idx.indexOf('## Steps of the argument')).split('\n').filter((l) => l.startsWith('| `'))) {
   const cells = row.split('|').map((c) => c.trim());
   const file = (cells[2].match(/`([^`]+)`/) || [])[1];
   if (file) (roles[`src/${file}.lean`] ||= []).push(cells[3]);
 }
 
-function head(path) {
-  const src = readFileSync(`${SRC}/${path.slice(4)}`, 'utf8');
+// ---- every Lean file ----
+function walk(dir) {
+  return readdirSync(join(CHECKOUT, dir), { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? walk(`${dir}/${e.name}`) : e.name.endsWith('.lean') ? [`${dir}/${e.name}`] : []);
+}
+const files = walk('src').map((path) => {
+  const src = read(path);
   const doc = (src.match(/\/-!([\s\S]*?)-\//) || [, ''])[1].trim();
   const lit = doc.match(/## Relation to the literature\s*([\s\S]*?)(\n## |\s*$)/);
-  const summary = doc.replace(/^#\s+.+\n?/, '').replace(/## Relation to the literature[\s\S]*$/, '').trim();
-  const imports = [...src.matchAll(/^import\s+(\S+)/gm)].map((x) => x[1]).filter((x) => x.startsWith('New.') || x.startsWith('Lib.')).map((x) => `src/${x.split('.').join('/')}.lean`);
-  return { summary, literature: lit ? lit[1].trim() : null, imports };
-}
+  const note = doc.replace(/^#\s+.+\n?/, '').replace(/## Relation to the literature[\s\S]*$/, '').trim();
+  const heading = (doc.match(/^#\s+(.+)/m) || [])[1];
+  const imports = [...src.matchAll(/^import\s+(\S+)/gm)].map((x) => x[1])
+    .filter((x) => x.startsWith('New.') || x.startsWith('Lib.')).map((x) => `src/${x.split('.').join('/')}.lean`);
+  const theorems = (src.match(/^\s*(?:@\[[^\]]*\]\s*)?(?:private |protected |noncomputable )*(?:theorem|lemma)\s/gm) || []).length;
+  return {
+    path, note: note || null, literature: lit ? lit[1].trim() : null, imports, theorems, lines: src.split('\n').length,
+    title: titleOf.get(path)?.title || heading || null, folder: titleOf.get(path)?.folder || null, group: titleOf.get(path)?.group || null,
+  };
+});
+const byPath = new Map(files.map((f) => [f.path, f]));
 
-const chapterOf = (p) => {
-  if (['src/Statements.lean', 'src/Main.lean', 'src/New/Main.lean', 'src/Lib/Analytic/ZeroSymmetry.lean', 'src/New/Reduction/Zeros/PrimeError.lean', 'src/New/Reduction/Zeros/PrimeNumberTheorem.lean'].includes(p)) return 'waves';
-  if (p.startsWith('src/New/Reduction/ShortAndEnough')) return 'chain';
-  if (p.startsWith('src/New/Reduction/')) return 'ceiling';
-  if (p.startsWith('src/New/Derivatives/')) return 'multiplicity';
-  if (p.startsWith('src/New/UpperBound/') || p.startsWith('src/New/Spanning/')) return 'chain';
-  if (/^src\/New\/(Determinant|OneLift|Congruences|Appendix)\//.test(p)) return 'bill';
+// ---- the parts of the proof, following GUIDE.md / INDEX.md ----
+const STATEMENT = ['src/Statements.lean', 'src/Main.lean', 'src/New/Main.lean', 'src/Lib/Analytic/ZeroSymmetry.lean'];
+function partOf(p) {
+  if (STATEMENT.includes(p)) return 'statement';
+  if (p.startsWith('src/New/Reduction/Zeros/') || p === 'src/New/Reduction/OneSidedBound.lean') return 'zeros';
+  if (p.startsWith('src/New/Reduction/Data/') || p.startsWith('src/New/Reduction/Lattices/') || p === 'src/New/Reduction/PrimeSums.lean' || p === 'src/New/Reduction/IntegralTargetForms.lean') return 'setup';
+  if (p === 'src/New/Reduction/MainInequality.lean' || p === 'src/New/Reduction/ShortAndEnough.lean') return 'main';
+  if (p.startsWith('src/New/UpperBound/') || p.startsWith('src/New/Derivatives/')) return 'theoremA';
+  if (p.startsWith('src/New/Spanning/')) return 'theoremB';
+  if (/^src\/New\/(Determinant|OneLift|Congruences|Appendix)\//.test(p)) return 'theoremC';
+  if (p === 'src/Lib/Speed.lean' || p === 'src/Lib/Base.lean') return 'lib-General';
+  if (p.startsWith('src/Lib/')) return 'lib-' + (p.split('/')[2].replace('.lean', ''));
   return null;
-};
-
-const extra = [
-  { path: 'src/Statements.lean', title: 'The statements, in Mathlib’s terms', folder: 'The theorem', group: 'The top' },
-  { path: 'src/Main.lean', title: 'The five theorems', folder: 'The theorem', group: 'The top' },
-  { path: 'src/New/Main.lean', title: 'From non-vanishing in Re s > 1/2 to zeros on the critical line', folder: 'The theorem', group: 'The top' },
-  { path: 'src/Lib/Analytic/ZeroSymmetry.lean', title: 'Zeros of L(s, χ) and of L(1 − s, χ⁻¹)', folder: 'Background used here', group: 'The top' },
-];
-const files = [...extra, ...contents.filter((c) => !extra.some((e) => e.path === c.path))]
-  .filter((f) => chapterOf(f.path))
-  .map((f) => ({ ...f, ...head(f.path) }));
-const known = new Set(files.map((f) => f.path));
+}
+const partFor = new Map(files.map((f) => [f.path, partOf(f.path)]));
 const usedBy = {};
-for (const f of files) for (const i of f.imports) if (known.has(i)) (usedBy[i] ||= []).push(f.path);
+for (const f of files) for (const i of f.imports) if (byPath.has(i)) (usedBy[i] ||= []).push(f.path);
 
-// Keep any reading status already recorded (draft/confirmed) from the old map.
-const old = existsSync('ru/map.json') ? JSON.parse(readFileSync('ru/map.json', 'utf8')) : { chapters: [] };
-const oldMods = new Map(old.chapters.flatMap((c) => c.modules).map((m) => [m.path, m]));
+// ---- statuses recorded so far ----
+const statusFile = join(OUT, 'status.json');
+const status = existsSync(statusFile) ? JSON.parse(readFileSync(statusFile, 'utf8')) : {};
+const story = JSON.parse(readFileSync(join(OUT, 'stories.json'), 'utf8'));
 
 const mod = (f) => {
-  const o = oldMods.get(f.path) || {};
+  const s = status[f.path] || {};
   const readingFile = `readings/${f.path.replaceAll('/', '__')}.md`;
-  const reading = existsSync('ru/' + readingFile) ? readingFile : null;
-  const status = o.status === 'confirmed' || o.status === 'checked' ? 'confirmed' : reading ? 'explained' : 'open';
+  const reading = existsSync(join(OUT, readingFile)) ? readingFile : null;
+  const st = s.confirmedBy ? 'confirmed' : reading ? 'explained' : 'open';
+  const others = new Set((usedBy[f.path] || []).map((u) => partFor.get(u)).filter((p) => p && p !== partFor.get(f.path) && !p.startsWith('lib-')));
   return {
-    path: f.path, url: `${REPO}/blob/${COMMIT}/${f.path}`, title: f.title, folder: f.folder, group: f.group, lines: f.lines ?? null,
-    note: f.summary || null, literature: f.literature,
-    uses: f.imports.filter((i) => known.has(i)), libUses: f.imports.filter((i) => i.startsWith('src/Lib/') && !known.has(i)).length,
+    path: f.path, url: `${REPO}/blob/${COMMIT}/${f.path}`, title: f.title, folder: f.folder, group: f.group,
+    lines: f.lines, theorems: f.theorems, note: f.note, literature: f.literature,
+    uses: f.imports.filter((i) => byPath.has(i) && !i.startsWith('src/Lib/')),
+    libUses: f.imports.filter((i) => i.startsWith('src/Lib/')),
     usedBy: usedBy[f.path] || [],
+    ...(others.size >= 2 ? { shared: [...others] } : {}),
     ...(roles[f.path] ? { role: roles[f.path] } : {}),
-    status, ...(reading ? { reading, by: o.by || 'Claude (AI agent)' } : {}), ...(o.checkedBy ? { confirmedBy: o.checkedBy } : {}), ...(o.confirmedBy ? { confirmedBy: o.confirmedBy } : {}),
+    status: st, ...(reading ? { reading, by: s.by || 'Claude (AI agent)' } : {}), ...(s.confirmedBy ? { confirmedBy: s.confirmedBy } : {}),
   };
 };
-const story = JSON.parse(readFileSync(existsSync('ru/stories.json') ? 'ru/stories.json' : 'stories.json', 'utf8'));
-const chapters = story.map((c) => ({ ...c, modules: files.filter((f) => chapterOf(f.path) === c.id).map(mod) }));
-import { mkdirSync } from 'node:fs';
-mkdirSync('ru/chapters', { recursive: true });
-for (const c of chapters) writeFileSync(`ru/chapters/${c.id}.json`, JSON.stringify(c, null, 1) + '\n');
-const slim = chapters.map(({ modules, story, elsewhere, ...c }) => ({ ...c, modules: modules.map((m) => ({ path: m.path, status: m.status, documented: !!m.note })) }));
-writeFileSync('ru/map.json', JSON.stringify({
+// CONTENTS order inside a part; anything unlisted at the end.
+const order = new Map(listed.map((l, i) => [l.path, i]));
+const sorted = (arr) => arr.sort((a, b) => (order.get(a.path) ?? 1e9) - (order.get(b.path) ?? 1e9) || a.path.localeCompare(b.path));
+
+mkdirSync(join(OUT, 'parts'), { recursive: true });
+const parts = story.parts.map((p) => {
+  const mods = sorted(files.filter((f) => partFor.get(f.path) === p.id)).map(mod);
+  return { ...p, kind: 'part', modules: mods };
+});
+const subjects = [...new Set(files.map((f) => partFor.get(f.path)).filter((p) => p && p.startsWith('lib-')))].sort().map((id, i) => {
+  const name = id.slice(4);
+  const folderTitle = listed.find((l) => l.path.startsWith(`src/Lib/${name}/`))?.folder || name;
+  const [short, ...rest] = folderTitle.split(':');
+  return { id, n: i + 1, kind: 'background', title: rest.length ? rest.join(':').trim() : short, line: `Background: Lib/${name}`, summary: `Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.`, story: [], elsewhere: [], modules: sorted(files.filter((f) => partFor.get(f.path) === id)).map(mod) };
+});
+for (const p of [...parts, ...subjects]) writeFileSync(join(OUT, 'parts', `${p.id}.json`), JSON.stringify(p, null, 1) + '\n');
+
+const light = (p) => ({ id: p.id, n: p.n, kind: p.kind, title: p.title, line: p.line, summary: p.summary,
+  modules: p.modules.map((m) => ({ path: m.path, status: m.status, documented: !!m.note, theorems: m.theorems, lines: m.lines })) });
+writeFileSync(join(OUT, 'map.json'), JSON.stringify({
   source: { repo: REPO, commit: COMMIT, guide: `${REPO}/blob/${COMMIT}/GUIDE.md`, index: `${REPO}/blob/${COMMIT}/INDEX.md`,
-    note: 'The Lean community’s condensed edition (based on the readable edition of github.com/lsernau/grh-lean). Each file’s “notes in the code” are the file’s own head, written by the edition’s authors; the chapter grouping follows GUIDE.md’s folders.' },
-  foundations: { path: 'src/Lib/', modules: 495, note: 'Background results the argument stands on, classed as known in the literature (class field theory, Galois representations, Shimura varieties, p-adic Hodge theory, Siegel–Weil, …). Not part of this reading yet.' },
-  chapters: slim,
+    note: 'The Lean community’s condensed edition (based on the readable edition of github.com/lsernau/grh-lean). Parts follow its GUIDE.md and INDEX.md.' },
+  parts: parts.map(light), background: subjects.map(light), ideas: story.ideas,
 }, null, 1) + '\n');
-for (const c of chapters) console.log(c.id, c.modules.length, 'notes:', c.modules.filter((m) => m.note).length, 'roles:', c.modules.filter((m) => m.role).length);
+
+for (const p of [...parts, ...subjects]) console.log(p.id.padEnd(22), String(p.modules.length).padStart(4), 'files', String(p.modules.reduce((s, m) => s + m.theorems, 0)).padStart(6), 'theorems');

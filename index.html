@@ -26,17 +26,29 @@
   </div>
 
   <section class="progress" aria-label="How much is explained">
-    <div class="progress-top">
-      <div class="count" id="count">Loading…</div>
-      <div class="small muted" id="source"></div>
+    <div class="meter">
+      <div class="progress-top"><div class="count" id="count-new">Loading…</div><div class="small muted" id="source"></div></div>
+      <div class="bar" id="bar-new" role="img" aria-label="The new argument"><span class="confirmed"></span><span class="explained"></span></div>
     </div>
-    <div class="bar" id="bar" role="img" aria-label="Explanation progress"><span class="confirmed"></span><span class="explained"></span><span class="documented"></span></div>
-    <div class="legend"><span><i style="background:var(--leaf)"></i>explanation confirmed by a person</span><span><i style="background:var(--gold)"></i>explained in plain words</span><span><i style="background:#3a4a6e"></i>notes in the code only</span></div>
+    <div class="meter">
+      <div class="progress-top"><div class="count" id="count-lib"></div></div>
+      <div class="bar" id="bar-lib" role="img" aria-label="The background library"><span class="confirmed"></span><span class="explained"></span></div>
+    </div>
+    <div class="legend"><span><i style="background:var(--leaf)"></i>explanation confirmed by a person</span><span><i style="background:var(--gold)"></i>explained in plain words</span><span><i style="background:#1f2a40"></i>authors’ notes only</span></div>
+    <p class="small muted" style="margin:10px 0 0">Measured in theorems and lemmas, not files: a file holds anywhere from one to a hundred.</p>
   </section>
 
-  <h2>Four ideas, and the bill</h2>
-  <p class="muted">The proof rests on four ideas, and then a long lower bound pays for them. Each chapter tells the story so far, links what others have written, and lists every file with what is known about it. That includes the notes the edition’s authors wrote into each file.</p>
-  <div class="chapters" id="chapters"></div>
+  <h2>The big picture: four ideas</h2>
+  <p class="muted">The explainers describe the proof through four ideas. Each one lives in several parts of the proof below.</p>
+  <div class="chapters" id="ideas"></div>
+
+  <h2>The proof, part by part</h2>
+  <p class="muted">The parts follow the community’s own reading guide. Every file of the argument is in exactly one part. Files that several parts lean on are marked “used across the proof”.</p>
+  <div class="chapters" id="parts"></div>
+
+  <h2>The background library</h2>
+  <p class="muted">These results are classed as known in the literature, but they were proved fresh for this proof, with their own definitions. They make up most of the code.</p>
+  <div class="subjects" id="background"></div>
 
   <h2>How to help</h2>
   <p class="muted">Nobody here is re-proving anything: Lean has done that. The open question is meaning.</p>
@@ -66,21 +78,35 @@
   <footer>Made with HiveOp, where people and AI agents work on code together. The zero heights come from Andrew Odlyzko’s tables. The Lean source is Apache-2.0 and is read at a pinned commit.</footer>
 </main>
 <script type="module">
-  import { loadZeros, loadMap, tally, drawLake, esc } from './common.js';
+  import { loadZeros, loadMap, tally, drawLake, esc, fmt, partHref } from './common.js';
   loadZeros().then((z) => drawLake(document.getElementById('lake'), z, { count: 40 }));
   const map = await loadMap();
-  const t = tally(map.chapters);
-  document.getElementById('count').innerHTML = `<b>${t.confirmed + t.explained}</b> of ${t.total} files explained in plain words <span class="muted small">· ${t.confirmed} confirmed · ${t.documented} with notes in the code</span>`;
+  const meter = (id, label, parts) => {
+    const t = tally(parts);
+    document.getElementById('count-' + id).innerHTML = `${label}: <b>${fmt(t.theoremsExplained)}</b> of ${fmt(t.theorems)} theorems explained <span class="muted small">· ${fmt(t.theoremsConfirmed)} confirmed · ${t.total} files</span>`;
+    const [c1, c2] = document.querySelectorAll(`#bar-${id} span`);
+    c1.style.width = (100 * t.theoremsConfirmed / t.theorems) + '%';
+    c2.style.width = Math.max(t.theoremsExplained ? 0.5 : 0, 100 * (t.theoremsExplained - t.theoremsConfirmed) / t.theorems) + '%';
+  };
+  meter('new', 'The new argument', map.parts);
+  meter('lib', 'The background library', map.background);
   document.getElementById('source').innerHTML = `reading <a href="${esc(map.source.repo)}/tree/${esc(map.source.commit)}">${esc(map.source.commit.slice(0, 7))}</a>`;
-  const [c1, c2, c3] = document.querySelectorAll('#bar span');
-  const pct = (n) => (100 * n / t.total) + '%';
-  c1.style.width = pct(t.confirmed); c2.style.width = pct(t.explained); c3.style.width = pct(Math.max(0, t.documented - t.explained - t.confirmed));
-  document.getElementById('chapters').innerHTML = map.chapters.map((c) => {
-    const s = tally([c]);
-    const href = c.id === 'waves' ? 'waves.html' : `chapter.html?c=${c.id}`;
-    return `<a class="chapter${c.live ? ' live' : ''}" href="${href}"><div class="num">${c.n <= 4 ? 'Idea ' + c.n : 'The bill'}</div><h3>${esc(c.title)}</h3><p class="muted small">${esc(c.line)}. ${esc(c.summary)}</p>
-      <span class="tag">${c.live ? 'Interactive' : 'Story + files'}</span>
-      <div class="meta">${c.modules.length} files · ${s.explained + s.confirmed} explained · ${s.confirmed} confirmed</div></a>`;
+  const partTitle = Object.fromEntries(map.parts.map((p) => [p.id, p]));
+  document.getElementById('ideas').innerHTML = map.ideas.map((i) => {
+    const where = i.where.map((id) => `<a href="${partHref(id)}">Part ${partTitle[id].n}</a>`).join(', ');
+    const head = `<div class="num">Idea ${i.n}</div><h3>${esc(i.title)}</h3><p class="muted small">${esc(i.line)}. ${esc(i.text)}</p>`;
+    return i.page
+      ? `<div class="chapter live">${head}<a class="tag" href="${esc(i.page)}" style="text-decoration:none">Interactive</a><div class="idea-where">Lives in ${where}</div></div>`
+      : `<div class="chapter">${head}<div class="idea-where">Lives in ${where}</div></div>`;
+  }).join('');
+  document.getElementById('parts').innerHTML = map.parts.map((p) => {
+    const t = tally([p]);
+    return `<a class="chapter" href="${partHref(p.id)}"><div class="num">Part ${p.n}</div><h3>${esc(p.title)}</h3><p class="muted small">${esc(p.line)}. ${esc(p.summary)}</p>
+      <div class="meta">${t.total} files · ${fmt(t.theorems)} theorems · ${t.explained + t.confirmed} explained · ${t.confirmed} confirmed</div></a>`;
+  }).join('');
+  document.getElementById('background').innerHTML = map.background.map((p) => {
+    const t = tally([p]);
+    return `<a href="${partHref(p.id)}">${esc(p.title)}<small>${t.total} files · ${fmt(t.theorems)} theorems</small></a>`;
   }).join('');
 </script>
 </body>

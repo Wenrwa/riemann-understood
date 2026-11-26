@@ -4,53 +4,5867 @@
   "commit": "e063a923620ee7787b4a1270421478645bf66bdb",
   "guide": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/GUIDE.md",
   "index": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/INDEX.md",
-  "note": "The Lean community’s condensed edition (based on the readable edition of github.com/lsernau/grh-lean). Each file’s “notes in the code” are the file’s own head, written by the edition’s authors; the chapter grouping follows GUIDE.md’s folders."
+  "note": "The Lean community’s condensed edition (based on the readable edition of github.com/lsernau/grh-lean). Parts follow its GUIDE.md and INDEX.md."
  },
- "foundations": {
-  "path": "src/Lib/",
-  "modules": 495,
-  "note": "Background results the argument stands on, classed as known in the literature (class field theory, Galois representations, Shimura varieties, p-adic Hodge theory, Siegel–Weil, …). Not part of this reading yet."
- },
- "chapters": [
+ "parts": [
+  {
+   "id": "statement",
+   "n": 1,
+   "kind": "part",
+   "title": "The statement and the last step",
+   "line": "What is proved, and the final move",
+   "summary": "The five theorems in Mathlib’s terms, and how “no zeros to the right of the line” becomes “all zeros on it”.",
+   "modules": [
+    {
+     "path": "src/New/Main.lean",
+     "status": "explained",
+     "documented": true,
+     "theorems": 2,
+     "lines": 66
+    },
+    {
+     "path": "src/Lib/Analytic/ZeroSymmetry.lean",
+     "status": "explained",
+     "documented": true,
+     "theorems": 4,
+     "lines": 83
+    },
+    {
+     "path": "src/Main.lean",
+     "status": "explained",
+     "documented": false,
+     "theorems": 5,
+     "lines": 23
+    },
+    {
+     "path": "src/Statements.lean",
+     "status": "explained",
+     "documented": false,
+     "theorems": 0,
+     "lines": 17
+    }
+   ]
+  },
+  {
+   "id": "zeros",
+   "n": 2,
+   "kind": "part",
+   "title": "From a bound to the zeros",
+   "line": "A one-sided bound on primes rules out zeros",
+   "summary": "A weighted count of primes whose error “sees” the zeros, and why bounding that error from above is enough.",
+   "modules": [
+    {
+     "path": "src/New/Reduction/Zeros/PrimeError.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 441
+    },
+    {
+     "path": "src/New/Reduction/Zeros/Criterion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 93
+    },
+    {
+     "path": "src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 240
+    },
+    {
+     "path": "src/New/Reduction/OneSidedBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 267
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "n": 3,
+   "kind": "part",
+   "title": "The setup",
+   "line": "The data, the scales and the yardsticks",
+   "summary": "The number field, the scales x, x₁, b and m, the prime sums being compared, and the heights and lattices used to measure.",
+   "modules": [
+    {
+     "path": "src/New/Reduction/Lattices/Colength.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 265
+    },
+    {
+     "path": "src/New/Reduction/Lattices/Heights.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 235
+    },
+    {
+     "path": "src/New/Reduction/Lattices/TwistedLattice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 517
+    },
+    {
+     "path": "src/New/Reduction/Data/FieldsAndPlaces.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 527
+    },
+    {
+     "path": "src/New/Reduction/Data/AdmissibleData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 363
+    },
+    {
+     "path": "src/New/Reduction/Data/Magnitudes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 39,
+     "lines": 613
+    },
+    {
+     "path": "src/New/Reduction/Data/Existence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 913
+    },
+    {
+     "path": "src/New/Reduction/Data/LevelAndTwists.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 396
+    },
+    {
+     "path": "src/New/Reduction/Data/Sizes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 240
+    },
+    {
+     "path": "src/New/Reduction/PrimeSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 302
+    },
+    {
+     "path": "src/New/Reduction/IntegralTargetForms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 121
+    }
+   ]
+  },
+  {
+   "id": "main",
+   "n": 4,
+   "kind": "part",
+   "title": "The three theorems and the main inequality",
+   "line": "Where everything meets",
+   "summary": "Theorems A and B bound a family of forms from above, Theorem C from below; the main amount cancels and a bound on primes is left.",
+   "modules": [
+    {
+     "path": "src/New/Reduction/ShortAndEnough.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 458
+    },
+    {
+     "path": "src/New/Reduction/MainInequality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 159
+    }
+   ]
+  },
+  {
+   "id": "theoremA",
+   "n": 5,
+   "kind": "part",
+   "title": "Theorem A: the composite lift",
+   "line": "A chain of about √x theta lifts, highly divisible",
+   "summary": "Theta lifts chained m times, derivatives that count primes, the seesaw identity: short lifts with small index.",
+   "modules": [
+    {
+     "path": "src/New/Derivatives/Divisibility/NullFrames.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 448
+    },
+    {
+     "path": "src/New/Derivatives/Divisibility/NormalForm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 420
+    },
+    {
+     "path": "src/New/Derivatives/Divisibility/Count.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 830
+    },
+    {
+     "path": "src/New/Derivatives/Field/PrimeDecomposition.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 70,
+     "lines": 879
+    },
+    {
+     "path": "src/New/Derivatives/Field/WeilData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 546
+    },
+    {
+     "path": "src/New/Derivatives/Field/ChosenPlaces.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 456
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 432
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/Exponent.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 34,
+     "lines": 750
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/Resolution.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 256
+    },
+    {
+     "path": "src/New/Derivatives/FormalGroup/ThetaProducts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 480
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/TightFrames.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 39,
+     "lines": 934
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/IntegralVacuum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 657
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/JetIntegrality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 327
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/Scale.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 155
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/ShortVectors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 41,
+     "lines": 810
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/StandardDataProducts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 553
+    },
+    {
+     "path": "src/New/Derivatives/Vacuum/Divisibility.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 276
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/OneCurve.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 355
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/LeastValuation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 614
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/Couplings.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 624
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/NearPairs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 473
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/Cases.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 691
+    },
+    {
+     "path": "src/New/Derivatives/Sharpness/BoundAttained.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 448
+    },
+    {
+     "path": "src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 897
+    },
+    {
+     "path": "src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 563
+    },
+    {
+     "path": "src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 375
+    },
+    {
+     "path": "src/New/UpperBound/Objects/InsertBlock.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 337
+    },
+    {
+     "path": "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 47,
+     "lines": 937
+    },
+    {
+     "path": "src/New/UpperBound/Objects/AuxiliaryPair.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 1142
+    },
+    {
+     "path": "src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 428
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Weights.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 49,
+     "lines": 660
+    },
+    {
+     "path": "src/New/UpperBound/Objects/LiftChains.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 629
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Parameters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 53,
+     "lines": 992
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Columns.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 41,
+     "lines": 1013
+    },
+    {
+     "path": "src/New/UpperBound/Objects/Rows.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 875
+    },
+    {
+     "path": "src/New/UpperBound/Objects/RowChain.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 458
+    },
+    {
+     "path": "src/New/UpperBound/Objects/PoincareMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 260
+    },
+    {
+     "path": "src/New/UpperBound/Objects/CharactersAtLevel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 201
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 427
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 908
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/StandardLines.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 570
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/GluedLevel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 4,
+     "lines": 166
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/Sandwich.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 268
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 1200
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/Frequency.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 347
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/LevelIdeles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 155
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/NeighbourLattice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 57,
+     "lines": 1042
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 380
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 813
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/GoodDatum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 576
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/UnfoldingStages.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 1169
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/Cut.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 374
+    },
+    {
+     "path": "src/New/UpperBound/Seesaw/SeesawIdentity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 667
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/JetExponent.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 561
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/MarkedPrimes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 530
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ChainValuation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 457
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 1030
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/HeckeEdges.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 869
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/MarkOperator.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 417
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/SetupAtLevel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 334
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 436
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 562
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 293
+    },
+    {
+     "path": "src/New/UpperBound/Divisibility/LocalDivisibility.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 529
+    },
+    {
+     "path": "src/New/UpperBound/Size/ShortColumns.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 42,
+     "lines": 1018
+    },
+    {
+     "path": "src/New/UpperBound/Size/ClassCount.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 191
+    },
+    {
+     "path": "src/New/UpperBound/Size/Estimates.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 400
+    },
+    {
+     "path": "src/New/UpperBound/Size/ArchimedeanSize.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 566
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 446
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 66,
+     "lines": 1070
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 51,
+     "lines": 972
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/Edges.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 814
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/Depth.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 800
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 822
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 623
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 532
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 988
+    },
+    {
+     "path": "src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 44,
+     "lines": 1248
+    }
+   ]
+  },
+  {
+   "id": "theoremB",
+   "n": 6,
+   "kind": "part",
+   "title": "Theorem B: enough forms",
+   "line": "A second moment shows a few translates span",
+   "summary": "A Petersson-type second moment, with Bessel functions and unfolding, shows a few translates span almost all target forms.",
+   "modules": [
+    {
+     "path": "src/New/Spanning/SecondMoment/PositiveType.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 212
+    },
+    {
+     "path": "src/New/Spanning/SecondMoment/FewTranslates.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 552
+    },
+    {
+     "path": "src/New/Spanning/SecondMoment/SpanningTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 369
+    },
+    {
+     "path": "src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 491
+    },
+    {
+     "path": "src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 413
+    },
+    {
+     "path": "src/New/Spanning/Bessel/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 46,
+     "lines": 1058
+    },
+    {
+     "path": "src/New/Spanning/Bessel/GramSection.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 42,
+     "lines": 693
+    },
+    {
+     "path": "src/New/Spanning/Bessel/Orthonormality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 218
+    },
+    {
+     "path": "src/New/Spanning/Bessel/MeanValue.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 622
+    },
+    {
+     "path": "src/New/Spanning/Bessel/SobolevBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 656
+    },
+    {
+     "path": "src/New/Spanning/Bessel/Average.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 162
+    },
+    {
+     "path": "src/New/Spanning/Bessel/OpenCellBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 726
+    },
+    {
+     "path": "src/New/Spanning/Bessel/OpenCellPairing.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 275
+    },
+    {
+     "path": "src/New/Spanning/Bessel/LargeFunction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 772
+    },
+    {
+     "path": "src/New/Spanning/Bessel/CutTailBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 466
+    },
+    {
+     "path": "src/New/Spanning/Bessel/SchurBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 324
+    },
+    {
+     "path": "src/New/Spanning/Bessel/FillingData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 553
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Setup.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 762
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/BesselLevelStructure.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 56,
+     "lines": 949
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Terms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 42,
+     "lines": 629
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Link.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 63,
+     "lines": 945
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/ReducedPoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 671
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Packing.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 539
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/CutoffIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 750
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/AmplitudeSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 34,
+     "lines": 954
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Climbing.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 60,
+     "lines": 1287
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/ReducedGroups.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 423
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/TermStructure.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 72,
+     "lines": 898
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/SquareExpansion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 699
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/MomentBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 518
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/Moments.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 1254
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/PoincareSeries.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 50,
+     "lines": 1028
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/BesselFormula.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 430
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/FrameMass.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 355
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/FillingAdmissible.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 786
+    },
+    {
+     "path": "src/New/Spanning/Unfolding/SeriesPeriod.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 756
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/SiegelLemma.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 683
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Box.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 342
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 785
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/FrameCount.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 738
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/ColumnLattice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 276
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/OneRealPlace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 49,
+     "lines": 1031
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/SchurTest.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 327
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Discriminants.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 41,
+     "lines": 735
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/OrbitSize.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 397
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Data.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 4,
+     "lines": 154
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 506
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/LinkLattice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 843
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/FrameParts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 692
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 609
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 829
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/SchurOrbit.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 1004
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/LinkVectors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 278
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Size.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 790
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Cut.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 708
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Gain.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 922
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Count.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 215
+    },
+    {
+     "path": "src/New/Spanning/RemainingTerms/Sum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 836
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/SieveSystem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 331
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/KloostermanSum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 256
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/Frequencies.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 283
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/GlobalSieve.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 47,
+     "lines": 1207
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/FillingLevel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 559
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/GlobalToLocal.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 943
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/SiegelTopBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 969
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 333
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/EnergyEstimate.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 687
+    },
+    {
+     "path": "src/New/Spanning/MainTerm/BadTypes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 275
+    },
+    {
+     "path": "src/New/Spanning/Frames/Lengths.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 45,
+     "lines": 635
+    },
+    {
+     "path": "src/New/Spanning/Frames/TwoGauges.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 436
+    },
+    {
+     "path": "src/New/Spanning/Frames/Levels.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 850
+    },
+    {
+     "path": "src/New/Spanning/Frames/Correlations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 562
+    },
+    {
+     "path": "src/New/Spanning/Frames/QuadricVolumes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 559
+    },
+    {
+     "path": "src/New/Spanning/Frames/QuadricPlancherel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 420
+    },
+    {
+     "path": "src/New/Spanning/Frames/Depth.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 918
+    },
+    {
+     "path": "src/New/Spanning/Frames/Densities.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 714
+    },
+    {
+     "path": "src/New/Spanning/Frames/OneFrame.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 791
+    },
+    {
+     "path": "src/New/Spanning/Frames/Gains.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 1012
+    },
+    {
+     "path": "src/New/Spanning/Frames/Shells.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 284
+    },
+    {
+     "path": "src/New/Spanning/Frames/RealPlaceGauge.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 52,
+     "lines": 1338
+    },
+    {
+     "path": "src/New/Spanning/Frames/RealShells.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 745
+    },
+    {
+     "path": "src/New/Spanning/Frames/RealBandLimits.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 759
+    },
+    {
+     "path": "src/New/Spanning/Frames/StandardLevel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 35,
+     "lines": 1010
+    },
+    {
+     "path": "src/New/Spanning/Frames/BesselVector.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 700
+    },
+    {
+     "path": "src/New/Spanning/Frames/FiniteDepth.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 549
+    },
+    {
+     "path": "src/New/Spanning/Frames/FiniteShells.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 731
+    },
+    {
+     "path": "src/New/Spanning/Frames/FiberMeasures.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 525
+    },
+    {
+     "path": "src/New/Spanning/Frames/TopCorrelation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 761
+    },
+    {
+     "path": "src/New/Spanning/Frames/TopFloor.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 732
+    },
+    {
+     "path": "src/New/Spanning/Frames/FixedLines.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 898
+    }
+   ]
+  },
+  {
+   "id": "theoremC",
+   "n": 7,
+   "kind": "part",
+   "title": "Theorem C: the lower bound",
+   "line": "Paying for the lifts",
+   "summary": "Determinants, one lift at a time, and congruences: covolume and twice the index are at least about the main amount.",
+   "modules": [
+    {
+     "path": "src/New/Determinant/Twist/FitTwists.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 234
+    },
+    {
+     "path": "src/New/Determinant/Twist/LongForms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 267
+    },
+    {
+     "path": "src/New/Determinant/Norms/VectorKernel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 174
+    },
+    {
+     "path": "src/New/Determinant/Norms/AdjointThetaLift.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 46,
+     "lines": 1080
+    },
+    {
+     "path": "src/New/Determinant/Exchange/NegativeIndices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 515
+    },
+    {
+     "path": "src/New/Determinant/Exchange/MatchingPartners.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 640
+    },
+    {
+     "path": "src/New/Determinant/Exchange/EquivariantDifference.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 352
+    },
+    {
+     "path": "src/New/Determinant/Exchange/StableSpacesStandardData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 849
+    },
+    {
+     "path": "src/New/Determinant/Exchange/ConeImage.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 476
+    },
+    {
+     "path": "src/New/Determinant/Exchange/LargeTriple.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 1186
+    },
+    {
+     "path": "src/New/Determinant/Exchange/RealVectors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 789
+    },
+    {
+     "path": "src/New/Determinant/Exchange/RemovingPlanes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 686
+    },
+    {
+     "path": "src/New/Determinant/Exchange/VanishingDescends.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 4,
+     "lines": 186
+    },
+    {
+     "path": "src/New/Determinant/Exchange/TheoremForPartners.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 1110
+    },
+    {
+     "path": "src/New/Determinant/Exchange/OneSquare.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 1043
+    },
+    {
+     "path": "src/New/Determinant/Exchange/ExplicitMatching.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 940
+    },
+    {
+     "path": "src/New/Determinant/Chain/SquareLaw.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 512
+    },
+    {
+     "path": "src/New/Determinant/Chain/TriangleNorms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 499
+    },
+    {
+     "path": "src/New/Determinant/Chain/Moduli.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 431
+    },
+    {
+     "path": "src/New/Determinant/Chain/TriangleLifts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 659
+    },
+    {
+     "path": "src/New/Determinant/Chain/ChainNorms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 808
+    },
+    {
+     "path": "src/New/Determinant/Chain/NormOfChain.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 529
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 369
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 166
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 762
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/PathData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 819
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/DeepLevelVanishing.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 769
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 811
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/Turns.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 1003
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 673
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/FirstPath.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 463
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/LastPath.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 1152
+    },
+    {
+     "path": "src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 797
+    },
+    {
+     "path": "src/New/OneLift/TestedForms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 623
+    },
+    {
+     "path": "src/New/OneLift/LiftVolumeHeight.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 782
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/OneExchange.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 567
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/GluedLattices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 856
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/GluedForms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 635
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ExchangeData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 34,
+     "lines": 822
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 174
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 1055
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 765
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/FirstFactors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 772
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 1027
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 912
+    },
+    {
+     "path": "src/New/OneLift/ComparisonOperator/GluingMaps.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 52,
+     "lines": 1123
+    },
+    {
+     "path": "src/New/OneLift/FalseLifts/BottomOfTower.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 79,
+     "lines": 1492
+    },
+    {
+     "path": "src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 480
+    },
+    {
+     "path": "src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 779
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/CharacterLift.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 819
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 601
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/TwistedRatio.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 443
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 392
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 526
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/CentralAction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 349
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 1092
+    },
+    {
+     "path": "src/New/OneLift/HeckeValues/PeriodAtOne.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 301
+    },
+    {
+     "path": "src/New/Congruences/FitTwistsExist.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 536
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 740
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 705
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 763
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 705
+    },
+    {
+     "path": "src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 565
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetMethod.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 564
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/FittingBlock.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 764
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetMatrices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 1018
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetLemma.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 686
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/OnePrime.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 45,
+     "lines": 864
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/EvenClasses.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 265
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/KummerMaps.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 52,
+     "lines": 867
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 300
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TiedTraces.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 817
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 707
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 715
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/HeckeStrings.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 497
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/TraceRelations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 983
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/RibetElement.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 421
+    },
+    {
+     "path": "src/New/Congruences/FirstOrder/DenominatorBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 1334
+    },
+    {
+     "path": "src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 497
+    },
+    {
+     "path": "src/New/Congruences/Selmer/SelmerData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 719
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Count.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 560
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Mirror.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 708
+    },
+    {
+     "path": "src/New/Congruences/Selmer/OneSystem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 474
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Descent.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 705
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Untied.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 579
+    },
+    {
+     "path": "src/New/Congruences/Selmer/StickelbergerSystems.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 323
+    },
+    {
+     "path": "src/New/Congruences/Selmer/StickelbergerLine.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 540
+    },
+    {
+     "path": "src/New/Congruences/Selmer/Line.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 687
+    },
+    {
+     "path": "src/New/Congruences/Selmer/RootsOfUnity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 514
+    },
+    {
+     "path": "src/New/Congruences/Selmer/GeneralTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 454
+    },
+    {
+     "path": "src/New/Congruences/Selmer/MainSummands.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 354
+    },
+    {
+     "path": "src/New/Congruences/Selmer/ClassSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 478
+    },
+    {
+     "path": "src/New/Congruences/Selmer/LValueSystems.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 390
+    },
+    {
+     "path": "src/New/Congruences/Selmer/TwistingTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 452
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 662
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 650
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/CrystallineDefect.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 670
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/TateDualBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 273
+    },
+    {
+     "path": "src/New/Congruences/LocalLoss/LocalLattices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 274
+    },
+    {
+     "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 74,
+     "lines": 1185
+    },
+    {
+     "path": "src/New/Congruences/Lifting/HodgeExpansion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 775
+    },
+    {
+     "path": "src/New/Congruences/Lifting/CupProductBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 1249
+    },
+    {
+     "path": "src/New/Congruences/Lifting/SidePoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 844
+    },
+    {
+     "path": "src/New/Congruences/Lifting/TameCharts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 639
+    },
+    {
+     "path": "src/New/Congruences/Lifting/LongGap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 478
+    },
+    {
+     "path": "src/New/Congruences/Lifting/SafeMoves.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 44,
+     "lines": 827
+    },
+    {
+     "path": "src/New/Congruences/Lifting/CutExponentBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 1053
+    },
+    {
+     "path": "src/New/Congruences/Lifting/DeepPoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 412
+    },
+    {
+     "path": "src/New/Congruences/Lifting/FewLowJumps.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 1031
+    },
+    {
+     "path": "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 601
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/SteepParameters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 129
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/Localization.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 34,
+     "lines": 721
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/MinorSecondOrder.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 586
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/Positions.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 485
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/StationaryPosition.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 39,
+     "lines": 752
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/OneMinor.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 629
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/GaussianShape.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 393
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/Periods.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 549
+    },
+    {
+     "path": "src/New/Appendix/DiscreteSeries/PositionGroup.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 744
+    }
+   ]
+  }
+ ],
+ "background": [
+  {
+   "id": "lib-Adelic",
+   "n": 1,
+   "kind": "background",
+   "title": "Adeles, unitary groups and automorphic forms",
+   "line": "Background: Lib/Adelic",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/Adelic/Landherr.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 601
+    },
+    {
+     "path": "src/Lib/Adelic/Adeles/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 113,
+     "lines": 1216
+    },
+    {
+     "path": "src/Lib/Adelic/Adeles/AdditiveCharacter.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 496
+    },
+    {
+     "path": "src/Lib/Adelic/Adeles/StrongApproximation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 767
+    },
+    {
+     "path": "src/Lib/Adelic/Adeles/IdeleModulus.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 39,
+     "lines": 600
+    },
+    {
+     "path": "src/Lib/Adelic/Adeles/LocalFactors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 471
+    },
+    {
+     "path": "src/Lib/Adelic/Adeles/SemilocalProducts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 438
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 466
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/RealConvolution.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 609
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/UnipotentRadical.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 484
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/Cuspidality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 947
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/SmoothAlgebraicForms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 569
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/AutomorphicAsAlgebraic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 418
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/HeckeEigenforms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 504
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/BlockPeriods.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 207
+    },
+    {
+     "path": "src/Lib/Adelic/AutomorphicForms/PAdicGauge.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 37,
+     "lines": 887
+    },
+    {
+     "path": "src/Lib/Adelic/Hecke/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 421
+    },
+    {
+     "path": "src/Lib/Adelic/Hecke/ClassSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 824
+    },
+    {
+     "path": "src/Lib/Adelic/QuotientMeasure/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 874
+    },
+    {
+     "path": "src/Lib/Adelic/QuotientMeasure/IwasawaUnfolding.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 662
+    },
+    {
+     "path": "src/Lib/Adelic/QuotientMeasure/MovingTheQuotient.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 98
+    },
+    {
+     "path": "src/Lib/Adelic/QuotientMeasure/UnfoldingInStages.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 396
+    },
+    {
+     "path": "src/Lib/Adelic/Reduction/FirstMinimumShortBases.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 958
+    },
+    {
+     "path": "src/Lib/Adelic/Reduction/MinkowskiTheorems.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 738
+    },
+    {
+     "path": "src/Lib/Adelic/Reduction/FiniteVolume.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 778
+    },
+    {
+     "path": "src/Lib/Adelic/Reduction/DefiniteClassSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 391
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/LineDeterminant.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 368
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/LevelAlgebra.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 106
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/LineCount.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 328
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/TestFunction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 252
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/CuspidalType.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 272
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/FibreIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 587
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/IsotropicStabiliser.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 242
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/LineStabiliser.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 65,
+     "lines": 852
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/OffPlace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 151
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/Stretch.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 112
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/CoprimeFactors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 813
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/LevelCut.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 386
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/ChangingSigns.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 412
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/KernelBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 352
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/Convergence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 483
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/ReduciblePolynomials.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 261
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/OrbitalUnfolding.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 652
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/TraceComparison.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 713
+    },
+    {
+     "path": "src/Lib/Adelic/TraceFormula/CuspidalComparison.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 115
+    },
+    {
+     "path": "src/Lib/Adelic/Unitary/Defs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 35,
+     "lines": 591
+    },
+    {
+     "path": "src/Lib/Adelic/Unitary/ComponentsAndBlockSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 582
+    },
+    {
+     "path": "src/Lib/Adelic/Unitary/CongruenceLevels.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 575
+    },
+    {
+     "path": "src/Lib/Adelic/Unitary/GramMatrix.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 141
+    },
+    {
+     "path": "src/Lib/Adelic/Unitary/WeakApproximation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 409
+    },
+    {
+     "path": "src/Lib/Adelic/Unitary/RationalPoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 242
+    },
+    {
+     "path": "src/Lib/Adelic/Witt/WittTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 808
+    },
+    {
+     "path": "src/Lib/Adelic/Witt/SmoothWitt.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 112
+    },
+    {
+     "path": "src/Lib/Adelic/Witt/IwasawaDecomposition.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 658
+    }
+   ]
+  },
+  {
+   "id": "lib-Analytic",
+   "n": 2,
+   "kind": "background",
+   "title": "Analytic number theory",
+   "line": "Background: Lib/Analytic",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/Analytic/PolyaVinogradov.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 206
+    },
+    {
+     "path": "src/Lib/Analytic/DirichletTheta.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 528
+    },
+    {
+     "path": "src/Lib/Analytic/EntireLFunction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 210
+    },
+    {
+     "path": "src/Lib/Analytic/Landau.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 264
+    },
+    {
+     "path": "src/Lib/Analytic/QuadraticTwist.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 838
+    },
+    {
+     "path": "src/Lib/Analytic/Primes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 454
+    },
+    {
+     "path": "src/Lib/Analytic/PrimeNumberTheorem/LFunctionGrowth.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 389
+    },
+    {
+     "path": "src/Lib/Analytic/PrimeNumberTheorem/Tauberian.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 379
+    },
+    {
+     "path": "src/Lib/Analytic/PrimeNumberTheorem/ZeroFreeRegion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 206
+    }
+   ]
+  },
+  {
+   "id": "lib-CM",
+   "n": 3,
+   "kind": "background",
+   "title": "Complex multiplication",
+   "line": "Background: Lib/CM",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/CM/KroneckerLimit.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 397
+    },
+    {
+     "path": "src/Lib/CM/GoodReduction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 41,
+     "lines": 821
+    },
+    {
+     "path": "src/Lib/CM/ConjugateCurve.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 765
+    },
+    {
+     "path": "src/Lib/CM/FiniteLattices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 190
+    },
+    {
+     "path": "src/Lib/CM/ChowlaSelberg.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 758
+    },
+    {
+     "path": "src/Lib/CM/FormalGroup/IntegralParameter.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 47,
+     "lines": 660
+    },
+    {
+     "path": "src/Lib/CM/FormalGroup/PrimeNotation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 41,
+     "lines": 407
+    },
+    {
+     "path": "src/Lib/CM/FormalGroup/InseparableDegree.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 390
+    },
+    {
+     "path": "src/Lib/CM/FormalGroup/FormalParameter.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 319
+    },
+    {
+     "path": "src/Lib/CM/Integrality/Doubling.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 365
+    },
+    {
+     "path": "src/Lib/CM/Integrality/TorsionValues.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 440
+    },
+    {
+     "path": "src/Lib/CM/Integrality/IntegralSections.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 35,
+     "lines": 538
+    },
+    {
+     "path": "src/Lib/CM/Integrality/IsogenyIntegrality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 167
+    },
+    {
+     "path": "src/Lib/CM/Integrality/LogTheta.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 48,
+     "lines": 706
+    },
+    {
+     "path": "src/Lib/CM/Sigma/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 60,
+     "lines": 972
+    },
+    {
+     "path": "src/Lib/CM/Sigma/ThetaSections.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 61,
+     "lines": 939
+    }
+   ]
+  },
+  {
+   "id": "lib-ClassField",
+   "n": 4,
+   "kind": "background",
+   "title": "Class field theory and Galois cohomology",
+   "line": "Background: Lib/ClassField",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/ClassField/Grunwald.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 937
+    },
+    {
+     "path": "src/Lib/ClassField/Avatar/HeckeBaseChange.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 452
+    },
+    {
+     "path": "src/Lib/ClassField/Avatar/LocalGlobalCompatibility.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 4,
+     "lines": 227
+    },
+    {
+     "path": "src/Lib/ClassField/GaloisCohomology/ContinuousCocycles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 726
+    },
+    {
+     "path": "src/Lib/ClassField/GaloisCohomology/ShapiroCorestriction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 406
+    },
+    {
+     "path": "src/Lib/ClassField/GaloisCohomology/TateIndexFormula.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 465
+    },
+    {
+     "path": "src/Lib/ClassField/GaloisCohomology/KummerCyclicClasses.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 747
+    },
+    {
+     "path": "src/Lib/ClassField/GaloisCohomology/TameSelmerCocycles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 305
+    },
+    {
+     "path": "src/Lib/ClassField/Global/ArtinMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 306
+    },
+    {
+     "path": "src/Lib/ClassField/Global/AlbertBrauerHasseNoether.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 746
+    },
+    {
+     "path": "src/Lib/ClassField/Global/ArtinReciprocity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 564
+    },
+    {
+     "path": "src/Lib/ClassField/Global/NormTheorems.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 239
+    },
+    {
+     "path": "src/Lib/ClassField/Global/CMSplittingCharacters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 44,
+     "lines": 920
+    },
+    {
+     "path": "src/Lib/ClassField/Global/Chebotarev.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 110
+    },
+    {
+     "path": "src/Lib/ClassField/Global/ExistenceTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 34,
+     "lines": 1019
+    },
+    {
+     "path": "src/Lib/ClassField/GreenbergWiles/SelmerLevels.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 659
+    },
+    {
+     "path": "src/Lib/ClassField/GreenbergWiles/SplitPrimeReciprocity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 938
+    },
+    {
+     "path": "src/Lib/ClassField/GreenbergWiles/CocycleCounts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 799
+    },
+    {
+     "path": "src/Lib/ClassField/GreenbergWiles/SelmerRelations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 489
+    },
+    {
+     "path": "src/Lib/ClassField/GreenbergWiles/Relations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 620
+    },
+    {
+     "path": "src/Lib/ClassField/GreenbergWiles/RelationsModL.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 472
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeCharacter/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 830
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeCharacter/AlgebraicValues.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 477
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeCharacter/SplitTameCharacters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 434
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeCharacter/SplittingCharacters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 190
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeCharacter/TameModulus.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 436
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeL/EulerProduct.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 622
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeL/IdelicThetaSum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 448
+    },
+    {
+     "path": "src/Lib/ClassField/HeckeL/ContinuationAtOne.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 958
+    },
+    {
+     "path": "src/Lib/ClassField/Local/InvariantMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 353
+    },
+    {
+     "path": "src/Lib/ClassField/Local/ArtinMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 1116
+    },
+    {
+     "path": "src/Lib/ClassField/LocalDuality/KummerFiniteness.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 389
+    },
+    {
+     "path": "src/Lib/ClassField/LocalDuality/DualityInequality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 374
+    },
+    {
+     "path": "src/Lib/ClassField/LocalDuality/CrystallineDuality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 857
+    },
+    {
+     "path": "src/Lib/ClassField/Places/GaloisDefs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 257
+    },
+    {
+     "path": "src/Lib/ClassField/Places/ProfiniteGalois.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 273
+    },
+    {
+     "path": "src/Lib/ClassField/Places/DecompositionCyclotomic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 395
+    },
+    {
+     "path": "src/Lib/ClassField/Places/ValuationSubrings.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 631
+    },
+    {
+     "path": "src/Lib/ClassField/Places/LocalFields.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 696
+    },
+    {
+     "path": "src/Lib/ClassField/Places/DecompositionCompletion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 845
+    },
+    {
+     "path": "src/Lib/ClassField/Places/Ideles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 435
+    },
+    {
+     "path": "src/Lib/ClassField/Places/TameInertia.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 535
+    }
+   ]
+  },
+  {
+   "id": "lib-Cohomology",
+   "n": 5,
+   "kind": "background",
+   "title": "Cohomology of schemes",
+   "line": "Background: Lib/Cohomology",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/Cohomology/LerayHirsch.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 351
+    },
+    {
+     "path": "src/Lib/Cohomology/TorsionTheories.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 1000
+    },
+    {
+     "path": "src/Lib/Cohomology/SmoothBaseChange.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 324
+    },
+    {
+     "path": "src/Lib/Cohomology/WoodsHole.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 4,
+     "lines": 295
+    },
+    {
+     "path": "src/Lib/Cohomology/Etale/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 1212
+    },
+    {
+     "path": "src/Lib/Cohomology/Etale/BijectiveComparisons.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 952
+    },
+    {
+     "path": "src/Lib/Cohomology/Etale/DenseSubfunctors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 613
+    },
+    {
+     "path": "src/Lib/Cohomology/Etale/FilteredLimits.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 938
+    },
+    {
+     "path": "src/Lib/Cohomology/Etale/RelativeChains.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 488
+    },
+    {
+     "path": "src/Lib/Cohomology/Etale/EllAdicCohomology.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 204
+    },
+    {
+     "path": "src/Lib/Cohomology/Etale/ProperFunctors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 1006
+    },
+    {
+     "path": "src/Lib/Cohomology/Hodge/CupProduct.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 574
+    },
+    {
+     "path": "src/Lib/Cohomology/Hodge/Site.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 402
+    },
+    {
+     "path": "src/Lib/Cohomology/Hodge/DepthVanishing.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 344
+    },
+    {
+     "path": "src/Lib/Cohomology/Hodge/GrothendieckSymbol.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 1069
+    },
+    {
+     "path": "src/Lib/Cohomology/Hodge/Kunneth.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 364
+    },
+    {
+     "path": "src/Lib/Cohomology/Hodge/DiagonalClass.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 283
+    },
+    {
+     "path": "src/Lib/Cohomology/Hodge/FixedPointFormula.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 1042
+    },
+    {
+     "path": "src/Lib/Cohomology/PointClass/NoetherNormalization.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 814
+    },
+    {
+     "path": "src/Lib/Cohomology/PointClass/ProjectiveSpace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 627
+    },
+    {
+     "path": "src/Lib/Cohomology/PointClass/ProjectiveNonvanishing.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 953
+    },
+    {
+     "path": "src/Lib/Cohomology/PointClass/LinearIndependence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 647
+    },
+    {
+     "path": "src/Lib/Cohomology/ProjectiveLine/ChernClass.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 42,
+     "lines": 1079
+    },
+    {
+     "path": "src/Lib/Cohomology/ProjectiveLine/PerfectLine.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 522
+    },
+    {
+     "path": "src/Lib/Cohomology/ProjectiveLine/TiltedLineFormula.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 1057
+    },
+    {
+     "path": "src/Lib/Cohomology/ProjectiveLine/ConstantLineFormula.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 502
+    },
+    {
+     "path": "src/Lib/Cohomology/ProperBaseChange/LineCharts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 631
+    },
+    {
+     "path": "src/Lib/Cohomology/ProperBaseChange/PlaceSpace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 573
+    },
+    {
+     "path": "src/Lib/Cohomology/ProperBaseChange/SubringSplitting.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 552
+    },
+    {
+     "path": "src/Lib/Cohomology/ProperBaseChange/Theorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 1200
+    }
+   ]
+  },
+  {
+   "id": "lib-Cyclotomic",
+   "n": 6,
+   "kind": "background",
+   "title": "Cyclotomic fields",
+   "line": "Background: Lib/Cyclotomic",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/Cyclotomic/Voronoi.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 462
+    },
+    {
+     "path": "src/Lib/Cyclotomic/Stickelberger.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 414
+    },
+    {
+     "path": "src/Lib/Cyclotomic/OddSha.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 682
+    },
+    {
+     "path": "src/Lib/Cyclotomic/Kolyvagin/DerivativeCocycles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 1035
+    },
+    {
+     "path": "src/Lib/Cyclotomic/Kolyvagin/ReciprocityComponentBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 45,
+     "lines": 1169
+    }
+   ]
+  },
+  {
+   "id": "lib-DiscreteSeries",
+   "n": 7,
+   "kind": "background",
+   "title": "Discrete series of U(p,q)",
+   "line": "Background: Lib/DiscreteSeries",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/DiscreteSeries/CuspKernel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 399
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bessel/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 680
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bessel/SchurBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 673
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bessel/UnipotentHaarMeasure.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 950
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bessel/FrameFibre.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 327
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/FloorGroups.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 77,
+     "lines": 1017
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/FloorMeasures.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 60,
+     "lines": 1139
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/QuadricBlocks.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 283
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/BigCell.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 406
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/FourierKernels.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 515
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/ComplexPlace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 444
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/FloorFibre.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 462
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Bruhat/SphereFibres.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 131
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Character/WeylCharacterFormula.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 991
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Character/MultiplicityOrbitalIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 904
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Character/OpenOrbitIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 633
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Character/FormalDegree.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 593
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/FlenstedJensen/Defs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 434
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/FlenstedJensen/RightDerivatives.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 509
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/FlenstedJensen/FlagDensities.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 795
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/FlenstedJensen/CasimirEigenfunction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 35,
+     "lines": 849
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/FlenstedJensen/PsiKTypes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 496
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/FlenstedJensen/SquareIntegrability.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 956
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Haar/CayleyChart.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 798
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Haar/GramCoordinates.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 447
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Haar/GramPolar.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 428
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Haar/TotalMass.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 483
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Haar/GramFibre.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 378
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Holomorphic/MaximalCompactMinors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 313
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Holomorphic/HighestVectorExtension.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 778
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Holomorphic/ModelFunction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 699
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Holomorphic/PeaksAwayFromCusp.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 622
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Rigidity/RepresentationsAndCasimirs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 463
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Rigidity/HighestVectorsAndFiltration.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 938
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Rigidity/KernelFixes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 624
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Theta/FockDualPair.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 723
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Theta/BlockRule.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 453
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Theta/FockJointHarmonics.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 670
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Theta/CasimirComparison.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 452
+    },
+    {
+     "path": "src/Lib/DiscreteSeries/Theta/LocalCorrespondence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 805
+    }
+   ]
+  },
+  {
+   "id": "lib-GLn",
+   "n": 8,
+   "kind": "background",
+   "title": "Polynomial representations of GL(n)",
+   "line": "Background: Lib/GLn",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/GLn/Branching/NormBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 714
+    },
+    {
+     "path": "src/Lib/GLn/Branching/IntegralMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 526
+    },
+    {
+     "path": "src/Lib/GLn/Dual.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 38,
+     "lines": 1152
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 41,
+     "lines": 771
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/MinorBasis.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 884
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/SchurMatrix.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 45,
+     "lines": 1015
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/TensorModel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 346
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/WeylKernel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 35,
+     "lines": 694
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/GramMatrix.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 717
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/LeadingRows.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 503
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/SchurOrthogonality.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 335
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/Polarisation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 330
+    },
+    {
+     "path": "src/Lib/GLn/SchurModule/SchurNorm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 379
+    }
+   ]
+  },
+  {
+   "id": "lib-GaloisRep",
+   "n": 9,
+   "kind": "background",
+   "title": "Galois representations",
+   "line": "Background: Lib/GaloisRep",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/GaloisRep/Hilbert90/TameActions.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 729
+    },
+    {
+     "path": "src/Lib/GaloisRep/Hilbert90/UnitaryGroups.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 509
+    },
+    {
+     "path": "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 654
+    },
+    {
+     "path": "src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 712
+    },
+    {
+     "path": "src/Lib/GaloisRep/KillingPolynomials.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 493
+    },
+    {
+     "path": "src/Lib/GaloisRep/WeightCongruence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 738
+    },
+    {
+     "path": "src/Lib/GaloisRep/TaylorWiles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 851
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/Defs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 234
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 643
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/StepMatchingPairs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 591
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/GlobalRoot.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 1016
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/CongruenceLevelMatching.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 901
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/TwistedTraceIdentity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 1027
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 923
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 838
+    },
+    {
+     "path": "src/Lib/GaloisRep/BaseChange/ShintaniLift.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 401
+    },
+    {
+     "path": "src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 381
+    },
+    {
+     "path": "src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 731
+    },
+    {
+     "path": "src/Lib/GaloisRep/LocalGlobal/LabelCompatibility.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 516
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/SelmerModules.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 316
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/DivisibleSelmerModules.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 172
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/Defs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 325
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/LocalConditions.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 530
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/QuadraticStep.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 575
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/CuspidalTypes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 561
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/AttachedRepresentations.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 434
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/SeedRepresentation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 863
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/SplitCase.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 670
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/OddRank.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 518
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/ThetaLift.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 513
+    },
+    {
+     "path": "src/Lib/GaloisRep/Main/AllRanks.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 799
+    }
+   ]
+  },
+  {
+   "id": "lib-General",
+   "n": 10,
+   "kind": "background",
+   "title": "General lemmas",
+   "line": "Background: Lib/General",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/Speed.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 78
+    },
+    {
+     "path": "src/Lib/Base.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 18
+    },
+    {
+     "path": "src/Lib/General/Combinatorics.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 417
+    },
+    {
+     "path": "src/Lib/General/Topology.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 179
+    },
+    {
+     "path": "src/Lib/General/Algebra/AbsIntegrallyClosed.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 156
+    },
+    {
+     "path": "src/Lib/General/Algebra/AdicCompletion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 42,
+     "lines": 772
+    },
+    {
+     "path": "src/Lib/General/Algebra/SeriesCongruences.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 396
+    },
+    {
+     "path": "src/Lib/General/Algebra/CartanMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 641
+    },
+    {
+     "path": "src/Lib/General/Algebra/LongExactSequences.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 570
+    },
+    {
+     "path": "src/Lib/General/Algebra/MultivariatePolynomials.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 441
+    },
+    {
+     "path": "src/Lib/General/Algebra/ResidueSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 114
+    },
+    {
+     "path": "src/Lib/General/Algebra/CohomologyBaseChange.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 306
+    },
+    {
+     "path": "src/Lib/General/Algebra/IntegralPowerSeries.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 286
+    },
+    {
+     "path": "src/Lib/General/Algebra/PerfectAlgebras.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 542
+    },
+    {
+     "path": "src/Lib/General/Algebra/FittingIdealsAndLengths.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 37,
+     "lines": 721
+    },
+    {
+     "path": "src/Lib/General/Algebra/BlockFittingBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 182
+    },
+    {
+     "path": "src/Lib/General/Algebra/SeriesBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 427
+    },
+    {
+     "path": "src/Lib/General/Algebra/SharpMinors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 276
+    },
+    {
+     "path": "src/Lib/General/Algebra/LevelModulus.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 393
+    },
+    {
+     "path": "src/Lib/General/Analysis/FiniteFourier.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 261
+    },
+    {
+     "path": "src/Lib/General/Analysis/GaussianIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 237
+    },
+    {
+     "path": "src/Lib/General/Analysis/FourierTransforms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 347
+    },
+    {
+     "path": "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 692
+    },
+    {
+     "path": "src/Lib/General/Analysis/PackingAndSobolev.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 262
+    },
+    {
+     "path": "src/Lib/General/Analysis/MeanValueAndTaylor.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 269
+    },
+    {
+     "path": "src/Lib/General/Geometry/LineBundles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 76,
+     "lines": 1002
+    },
+    {
+     "path": "src/Lib/General/Geometry/ProjectiveSpace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 46,
+     "lines": 867
+    },
+    {
+     "path": "src/Lib/General/Geometry/DenseComplexPoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 432
+    },
+    {
+     "path": "src/Lib/General/Geometry/GeometricPoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 499
+    },
+    {
+     "path": "src/Lib/General/Geometry/EtaleCharts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 39,
+     "lines": 1062
+    },
+    {
+     "path": "src/Lib/General/Geometry/PointsOfProperSchemes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 551
+    },
+    {
+     "path": "src/Lib/General/Geometry/SerreTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 410
+    },
+    {
+     "path": "src/Lib/General/Geometry/GaloisCovers.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 836
+    },
+    {
+     "path": "src/Lib/General/Geometry/SmoothnessCriterion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 463
+    },
+    {
+     "path": "src/Lib/General/Groups/CongruenceSubgroups.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 39,
+     "lines": 482
+    },
+    {
+     "path": "src/Lib/General/Groups/IndexOfProduct.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 26
+    },
+    {
+     "path": "src/Lib/General/Groups/BesselGroups.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 308
+    },
+    {
+     "path": "src/Lib/General/Groups/ProfiniteCharacters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 414
+    },
+    {
+     "path": "src/Lib/General/Groups/CharacterTheory.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 56,
+     "lines": 846
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/TensorChains.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 312
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/Eigenvalues.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 786
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/HermitianMatrices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 397
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/IntegralLattices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 50,
+     "lines": 839
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/MatricesNearIdentity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 34,
+     "lines": 406
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/MinorProducts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 472
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/GramDeterminant.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 140
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/MatrixPolynomials.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 226
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/IdempotentRadical.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 187
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/HermiteForm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 252
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/MatrixNormBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 163
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/PartnerAlgebra.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 373
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/PolarDecomposition.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 242
+    },
+    {
+     "path": "src/Lib/General/LinearAlgebra/BlockEmbeddings.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 408
+    },
+    {
+     "path": "src/Lib/General/Measure/FibreMeasure.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 236
+    },
+    {
+     "path": "src/Lib/General/Measure/IdempotentKernel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 226
+    },
+    {
+     "path": "src/Lib/General/Measure/HaarNormalisation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 228
+    },
+    {
+     "path": "src/Lib/General/Measure/IntegralOperators.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 451
+    },
+    {
+     "path": "src/Lib/General/Measure/HaarModulus.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 492
+    },
+    {
+     "path": "src/Lib/General/Measure/QuadricDisintegration.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 650
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/FrobeniusOrbits.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 270
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/EmbeddingsAndDifferent.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 277
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/ImaginaryQuadraticField.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 34,
+     "lines": 589
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/SUnitsAndClassNumber.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 281
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/CMFields.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 213
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/CoefficientRings.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 12,
+     "lines": 215
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/LatticeCovolumes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 802
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/PadicLimitsValuation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 370
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/GaussValuation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 508
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/LargeResidueField.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 164
+    },
+    {
+     "path": "src/Lib/General/NumberTheory/CoefficientInclusion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 105
+    }
+   ]
+  },
+  {
+   "id": "lib-LocalGL",
+   "n": 11,
+   "kind": "background",
+   "title": "GL(n) over finite and local fields",
+   "line": "Background: Lib/LocalGL",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/LocalGL/SphericalChainLemma.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 628
+    },
+    {
+     "path": "src/Lib/LocalGL/Green/HallAlgebra.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 44,
+     "lines": 1116
+    },
+    {
+     "path": "src/Lib/LocalGL/Green/CuspidalFunctions.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 742
+    },
+    {
+     "path": "src/Lib/LocalGL/Green/TauFunctions.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 804
+    },
+    {
+     "path": "src/Lib/LocalGL/Green/LabelCharacters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 664
+    },
+    {
+     "path": "src/Lib/LocalGL/Iwahori/ParahoricStructure.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 817
+    },
+    {
+     "path": "src/Lib/LocalGL/Iwahori/QuadraticRelation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 477
+    },
+    {
+     "path": "src/Lib/LocalGL/Iwahori/HeckeDegrees.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 656
+    },
+    {
+     "path": "src/Lib/LocalGL/Iwahori/SortedExponents.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 919
+    },
+    {
+     "path": "src/Lib/LocalGL/Iwahori/SphericalExponents.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 640
+    },
+    {
+     "path": "src/Lib/LocalGL/Shintani/CosetRootChoice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 540
+    },
+    {
+     "path": "src/Lib/LocalGL/Shintani/CosetDescent.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 830
+    },
+    {
+     "path": "src/Lib/LocalGL/Shintani/LiftingGreenCharacters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 745
+    }
+   ]
+  },
+  {
+   "id": "lib-PadicComparison",
+   "n": 12,
+   "kind": "background",
+   "title": "p-adic comparison theorems",
+   "line": "Background: Lib/PadicComparison",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/PadicComparison/Completion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 519
+    },
+    {
+     "path": "src/Lib/PadicComparison/ToricTower.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 838
+    },
+    {
+     "path": "src/Lib/PadicComparison/CrystallineFrobenius.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 828
+    },
+    {
+     "path": "src/Lib/PadicComparison/Crystalline/DividedPowerEnvelope.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 585
+    },
+    {
+     "path": "src/Lib/PadicComparison/Crystalline/ComparisonMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 1279
+    },
+    {
+     "path": "src/Lib/PadicComparison/Descent/TestCategory.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 658
+    },
+    {
+     "path": "src/Lib/PadicComparison/Descent/TestCovers.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 620
+    },
+    {
+     "path": "src/Lib/PadicComparison/Descent/AlmostDescent.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 941
+    },
+    {
+     "path": "src/Lib/PadicComparison/Duality/LineIntegration.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 979
+    },
+    {
+     "path": "src/Lib/PadicComparison/Duality/GoodPairs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 728
+    },
+    {
+     "path": "src/Lib/PadicComparison/HodgeTate/ExtCocycles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 356
+    },
+    {
+     "path": "src/Lib/PadicComparison/HodgeTate/GenericFibre.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 498
+    },
+    {
+     "path": "src/Lib/PadicComparison/HodgeTate/Map.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 856
+    },
+    {
+     "path": "src/Lib/PadicComparison/HodgeTate/GaloisWeight.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 273
+    },
+    {
+     "path": "src/Lib/PadicComparison/HodgeTate/PeriodMap.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 376
+    },
+    {
+     "path": "src/Lib/PadicComparison/Primitive/PeriodCoefficients.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 697
+    },
+    {
+     "path": "src/Lib/PadicComparison/Primitive/Periods.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 322
+    },
+    {
+     "path": "src/Lib/PadicComparison/Primitive/ComparisonTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 7,
+     "lines": 431
+    }
+   ]
+  },
+  {
+   "id": "lib-PadicHodge",
+   "n": 13,
+   "kind": "background",
+   "title": "p-adic Hodge theory",
+   "line": "Background: Lib/PadicHodge",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/PadicHodge/TateSen.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 551
+    },
+    {
+     "path": "src/Lib/PadicHodge/ArtinSchreierSequence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 519
+    },
+    {
+     "path": "src/Lib/PadicHodge/BlochKato.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 899
+    },
+    {
+     "path": "src/Lib/PadicHodge/RadiusLemma.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 543
+    },
+    {
+     "path": "src/Lib/PadicHodge/Characters.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 48,
+     "lines": 1105
+    },
+    {
+     "path": "src/Lib/PadicHodge/Crystalline/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 696
+    },
+    {
+     "path": "src/Lib/PadicHodge/Crystalline/HodgeTateForms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 4,
+     "lines": 181
+    },
+    {
+     "path": "src/Lib/PadicHodge/Crystalline/HodgeTateJumps.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 887
+    },
+    {
+     "path": "src/Lib/PadicHodge/Crystalline/FixedRatios.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 402
+    },
+    {
+     "path": "src/Lib/PadicHodge/Crystalline/Regularity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 788
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/Charts.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 43,
+     "lines": 830
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/Bicommutant.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 580
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/KummerChartExistence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 459
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/PeriodMatrixBasis.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 1034
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/KummerChartDeRham.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 485
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/PeriodMatrixFrame.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 509
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/Modules.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 738
+    },
+    {
+     "path": "src/Lib/PadicHodge/Kisin/FrameTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 49,
+     "lines": 1063
+    },
+    {
+     "path": "src/Lib/PadicHodge/Limit/CrystallineLimit.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 726
+    },
+    {
+     "path": "src/Lib/PadicHodge/Limit/TraceLimit.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 920
+    },
+    {
+     "path": "src/Lib/PadicHodge/PeriodRings/AxTheorem.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 535
+    },
+    {
+     "path": "src/Lib/PadicHodge/PeriodRings/Ainf.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 75,
+     "lines": 1038
+    },
+    {
+     "path": "src/Lib/PadicHodge/PeriodRings/CrystallineRings.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 46,
+     "lines": 1091
+    },
+    {
+     "path": "src/Lib/PadicHodge/PeriodRings/DeRhamPeriods.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 448
+    }
+   ]
+  },
+  {
+   "id": "lib-Shimura",
+   "n": 14,
+   "kind": "background",
+   "title": "Moduli of abelian varieties",
+   "line": "Background: Lib/Shimura",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/Shimura/ComplexTheta/AppellHumbertData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 737
+    },
+    {
+     "path": "src/Lib/Shimura/ComplexTheta/DimensionFormula.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 791
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaGroup.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 539
+    },
+    {
+     "path": "src/Lib/Shimura/ArcExtension.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 620
+    },
+    {
+     "path": "src/Lib/Shimura/Eigenspace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 770
+    },
+    {
+     "path": "src/Lib/Shimura/AbelianScheme/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 512
+    },
+    {
+     "path": "src/Lib/Shimura/AbelianScheme/Pairings.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 390
+    },
+    {
+     "path": "src/Lib/Shimura/AbelianScheme/IsogenyFlatness.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 291
+    },
+    {
+     "path": "src/Lib/Shimura/AbelianScheme/TangentCoordinates.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 579
+    },
+    {
+     "path": "src/Lib/Shimura/CongruenceRelation/KernelReduction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 888
+    },
+    {
+     "path": "src/Lib/Shimura/CongruenceRelation/EichlerShimura.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 4,
+     "lines": 220
+    },
+    {
+     "path": "src/Lib/Shimura/CongruenceRelation/HeckeNeighbours.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 1054
+    },
+    {
+     "path": "src/Lib/Shimura/Deformation/TangentCount.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 502
+    },
+    {
+     "path": "src/Lib/Shimura/Deformation/TangentBound.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 861
+    },
+    {
+     "path": "src/Lib/Shimura/GoodReduction/TorsionSizes.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 481
+    },
+    {
+     "path": "src/Lib/Shimura/GoodReduction/GaussSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 479
+    },
+    {
+     "path": "src/Lib/Shimura/GoodReduction/MultiplicativeNorm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 1000
+    },
+    {
+     "path": "src/Lib/Shimura/HeckeTower/HeckeData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 41,
+     "lines": 1001
+    },
+    {
+     "path": "src/Lib/Shimura/HeckeTower/Model.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 930
+    },
+    {
+     "path": "src/Lib/Shimura/IntegralModel/PELDataExistence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 472
+    },
+    {
+     "path": "src/Lib/Shimura/IntegralModel/UniversalFamily.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 1057
+    },
+    {
+     "path": "src/Lib/Shimura/IntegralModel/BallImmersion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 493
+    },
+    {
+     "path": "src/Lib/Shimura/IntegralModel/TowerExistence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 477
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaModuli/FlatClosure.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 949
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaModuli/PELThetaTori.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 47,
+     "lines": 1145
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaModuli/ThetaFamilyRigidity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 623
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaModuli/FamilyFromPoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 1111
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaModuli/UniversalFamily.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 536
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaNormality/NormalGeneration.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 714
+    },
+    {
+     "path": "src/Lib/Shimura/ThetaNormality/RiemannRelation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 13,
+     "lines": 722
+    },
+    {
+     "path": "src/Lib/Shimura/TraceFormula/TestFunction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 389
+    },
+    {
+     "path": "src/Lib/Shimura/TraceFormula/DefiniteTrace.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 608
+    },
+    {
+     "path": "src/Lib/Shimura/TraceFormula/MarkedDefiniteSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 50,
+     "lines": 851
+    },
+    {
+     "path": "src/Lib/Shimura/Transfer/MarkedPairs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 232
+    },
+    {
+     "path": "src/Lib/Shimura/Transfer/Lefschetz.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 547
+    },
+    {
+     "path": "src/Lib/Shimura/Transfer/WeightOccurs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 711
+    },
+    {
+     "path": "src/Lib/Shimura/Uniformisation/AdelicFrames.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 678
+    },
+    {
+     "path": "src/Lib/Shimura/Uniformisation/HolomorphicFamilies.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 35,
+     "lines": 979
+    },
+    {
+     "path": "src/Lib/Shimura/Uniformisation/AppellHumbert.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 472
+    },
+    {
+     "path": "src/Lib/Shimura/Uniformisation/LieExponential.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 791
+    },
+    {
+     "path": "src/Lib/Shimura/Uniformisation/BallModel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 997
+    },
+    {
+     "path": "src/Lib/Shimura/Uniformisation/TorusModel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 803
+    },
+    {
+     "path": "src/Lib/Shimura/Uniformisation/ModelExists.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 463
+    }
+   ]
+  },
+  {
+   "id": "lib-SiegelWeil",
+   "n": 15,
+   "kind": "background",
+   "title": "Siegel–Weil and Rallis formulas",
+   "line": "Background: Lib/SiegelWeil",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/SiegelWeil/NeighbourLattices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 33,
+     "lines": 697
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Mass.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 464
+    },
+    {
+     "path": "src/Lib/SiegelWeil/UnramifiedSeries/VacuumCoefficients.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 665
+    },
+    {
+     "path": "src/Lib/SiegelWeil/UnramifiedSeries/RallisSeries.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 28,
+     "lines": 671
+    },
+    {
+     "path": "src/Lib/SiegelWeil/RallisInner/Doubling.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 657
+    },
+    {
+     "path": "src/Lib/SiegelWeil/RallisInner/SharpData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 982
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Reproduction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 455
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Formula/LagrangianZeroTerms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 964
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Formula/StrongApproximation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 3,
+     "lines": 229
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Formula/WeilRange.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 15,
+     "lines": 827
+    },
+    {
+     "path": "src/Lib/SiegelWeil/OneVector/FinitePlaceDensity.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 744
+    },
+    {
+     "path": "src/Lib/SiegelWeil/OneVector/ResidueClasses.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 93
+    },
+    {
+     "path": "src/Lib/SiegelWeil/OneVector/ClassGaussSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 257
+    },
+    {
+     "path": "src/Lib/SiegelWeil/OneVector/SemilocalDensityBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 238
+    },
+    {
+     "path": "src/Lib/SiegelWeil/OneVector/StandardQuadrics.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 5,
+     "lines": 182
+    },
+    {
+     "path": "src/Lib/SiegelWeil/OneVector/SiegelClassSum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 891
+    },
+    {
+     "path": "src/Lib/SiegelWeil/SingularForms/CentreCoefficients.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 47,
+     "lines": 842
+    },
+    {
+     "path": "src/Lib/SiegelWeil/SingularForms/UnimodularCoefficients.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 865
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/PrincipalIdeles.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 2,
+     "lines": 95
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/LineTerms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 366
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/ConstantTerm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 30,
+     "lines": 722
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/LineGaussSums.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 667
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/RealConeIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 10,
+     "lines": 254
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/FiniteTateIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 27,
+     "lines": 375
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/TestVector.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 420
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/LargeSideConstantTerm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 900
+    },
+    {
+     "path": "src/Lib/SiegelWeil/Tower/FunctionalEquation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 445
+    }
+   ]
+  },
+  {
+   "id": "lib-Weil",
+   "n": 16,
+   "kind": "background",
+   "title": "The Weil representation and theta lifts",
+   "line": "Background: Lib/Weil",
+   "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+   "modules": [
+    {
+     "path": "src/Lib/Weil/TameGaussSum.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 305
+    },
+    {
+     "path": "src/Lib/Weil/Lift.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 978
+    },
+    {
+     "path": "src/Lib/Weil/Seesaw.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 742
+    },
+    {
+     "path": "src/Lib/Weil/CompactLift/ThetaKernelDefs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 422
+    },
+    {
+     "path": "src/Lib/Weil/CompactLift/DefiniteThetaLift.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 6,
+     "lines": 352
+    },
+    {
+     "path": "src/Lib/Weil/Construction/HeisenbergModel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 46,
+     "lines": 741
+    },
+    {
+     "path": "src/Lib/Weil/Construction/WeilOperators.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 36,
+     "lines": 882
+    },
+    {
+     "path": "src/Lib/Weil/Construction/WeilData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 2,
+     "lines": 194
+    },
+    {
+     "path": "src/Lib/Weil/Construction/FiniteMultiplier.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 78,
+     "lines": 1051
+    },
+    {
+     "path": "src/Lib/Weil/Construction/FiniteCocycle.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 476
+    },
+    {
+     "path": "src/Lib/Weil/Construction/AdelicRepresentation.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 56,
+     "lines": 1076
+    },
+    {
+     "path": "src/Lib/Weil/Construction/VacuumProjections.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 66,
+     "lines": 982
+    },
+    {
+     "path": "src/Lib/Weil/Construction/ProductsAndTransport.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 440
+    },
+    {
+     "path": "src/Lib/Weil/Construction/ThetaJets.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 297
+    },
+    {
+     "path": "src/Lib/Weil/Construction/CanonicalTheta.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 228
+    },
+    {
+     "path": "src/Lib/Weil/Construction/ThetaDictionary.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 47,
+     "lines": 627
+    },
+    {
+     "path": "src/Lib/Weil/Construction/FourierInversion.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 493
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/Kronecker.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 1,
+     "lines": 54
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/Defs.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 721
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/ShortIsotropicVectors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 599
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/WeilAction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 49,
+     "lines": 819
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/FiniteAction.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 29,
+     "lines": 528
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/MixedModel.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 19,
+     "lines": 436
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/ThetaLiftConvergence.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 554
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/GaloisLaw.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 412
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/KernelDecay.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 593
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/KernelLaws.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 22,
+     "lines": 561
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/Flip.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 14,
+     "lines": 612
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/ThetaIntegrals.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 501
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/HolomorphicData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 11,
+     "lines": 335
+    },
+    {
+     "path": "src/Lib/Weil/DualPair/TwoEdges.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 312
+    },
+    {
+     "path": "src/Lib/Weil/Fock/Basic.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 32,
+     "lines": 933
+    },
+    {
+     "path": "src/Lib/Weil/Fock/WeightedNorms.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 23,
+     "lines": 609
+    },
+    {
+     "path": "src/Lib/Weil/Fock/PolynomialVectors.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 17,
+     "lines": 468
+    },
+    {
+     "path": "src/Lib/Weil/Fock/OscillatorPair.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 610
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/FockSections.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 413
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/SchwartzBruhat.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 622
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/IsotropicSplitting.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 81,
+     "lines": 1194
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/NamedData.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 25,
+     "lines": 609
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/RealTheta.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 552
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/ZeroTerm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 818
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/ThetaInvariance.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 643
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/AdaptedSplitting.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 338
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/Slices.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 20,
+     "lines": 646
+    },
+    {
+     "path": "src/Lib/Weil/MixedModel/TargetZeroTerm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 358
+    },
+    {
+     "path": "src/Lib/Weil/Periods/Grading.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 52,
+     "lines": 941
+    },
+    {
+     "path": "src/Lib/Weil/Periods/PointLattice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 35,
+     "lines": 468
+    },
+    {
+     "path": "src/Lib/Weil/Periods/GradedLattice.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 332
+    },
+    {
+     "path": "src/Lib/Weil/Periods/LatticeBounds.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 9,
+     "lines": 226
+    },
+    {
+     "path": "src/Lib/Weil/Periods/StringPowers.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 18,
+     "lines": 305
+    },
+    {
+     "path": "src/Lib/Weil/Periods/BesselIntegral.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 16,
+     "lines": 826
+    },
+    {
+     "path": "src/Lib/Weil/Periods/Equivariant.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 31,
+     "lines": 422
+    },
+    {
+     "path": "src/Lib/Weil/Periods/ConstantTerm.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 37,
+     "lines": 914
+    },
+    {
+     "path": "src/Lib/Weil/Periods/RealAndFinitePoints.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 8,
+     "lines": 178
+    },
+    {
+     "path": "src/Lib/Weil/Periods/DescentVanishing.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 40,
+     "lines": 980
+    },
+    {
+     "path": "src/Lib/Weil/Periods/Unfolding.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 21,
+     "lines": 583
+    },
+    {
+     "path": "src/Lib/Weil/Unramified/HeckeGL.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 37,
+     "lines": 663
+    },
+    {
+     "path": "src/Lib/Weil/Unramified/SplitHecke.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 24,
+     "lines": 528
+    },
+    {
+     "path": "src/Lib/Weil/Unramified/HeckeTransfer.lean",
+     "status": "open",
+     "documented": true,
+     "theorems": 26,
+     "lines": 730
+    }
+   ]
+  }
+ ],
+ "ideas": [
   {
    "id": "waves",
    "n": 1,
    "title": "Waves",
    "line": "The primes are made of waves",
-   "live": true,
    "page": "waves.html",
-   "summary": "What the hypothesis says, where the zeros show up in a count of primes, and how the proof turns “nothing to the right of the line” into “everything on it”.",
-   "modules": [
-    {
-     "path": "src/Statements.lean",
-     "status": "explained",
-     "documented": false
-    },
-    {
-     "path": "src/Main.lean",
-     "status": "explained",
-     "documented": false
-    },
-    {
-     "path": "src/New/Main.lean",
-     "status": "explained",
-     "documented": true
-    },
-    {
-     "path": "src/Lib/Analytic/ZeroSymmetry.lean",
-     "status": "explained",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Zeros/PrimeError.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
-     "status": "open",
-     "documented": true
-    }
+   "text": "The count of primes is a smooth curve plus one wave per zero of zeta. The hypothesis says every wave grows like √x and no faster.",
+   "where": [
+    "statement",
+    "zeros"
    ]
   },
   {
@@ -58,78 +5872,10 @@
    "n": 2,
    "title": "A ceiling",
    "line": "A bound from above is enough",
-   "summary": "An upper bound on the prime remainder, never a lower one, rules out zeros to the right of the line. The main inequality supplies it.",
-   "modules": [
-    {
-     "path": "src/New/Reduction/Zeros/Criterion.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Lattices/Colength.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Lattices/Heights.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Lattices/TwistedLattice.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Data/FieldsAndPlaces.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Data/AdmissibleData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Data/Magnitudes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Data/Existence.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Data/LevelAndTwists.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/Data/Sizes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/PrimeSums.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/IntegralTargetForms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/MainInequality.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Reduction/OneSidedBound.lean",
-     "status": "open",
-     "documented": true
-    }
+   "text": "To rule out zeros to the right of the line, an upper bound on a weighted prime sum is enough. No lower bound is needed.",
+   "where": [
+    "zeros",
+    "main"
    ]
   },
   {
@@ -137,1466 +5883,21 @@
    "n": 3,
    "title": "Multiplicity",
    "line": "Derivatives that count primes",
-   "summary": "A nonzero number can’t have more prime factors than its size. Derivatives of theta functions give numbers whose divisibility by primes is guaranteed.",
-   "modules": [
-    {
-     "path": "src/New/Derivatives/Divisibility/NullFrames.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Divisibility/NormalForm.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Divisibility/Count.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Field/PrimeDecomposition.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Field/WeilData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Field/ChosenPlaces.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/FormalGroup/Exponent.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/FormalGroup/Resolution.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/FormalGroup/ThetaProducts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Vacuum/TightFrames.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Vacuum/IntegralVacuum.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Vacuum/JetIntegrality.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Vacuum/Scale.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Vacuum/ShortVectors.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Vacuum/StandardDataProducts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Vacuum/Divisibility.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Sharpness/OneCurve.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Sharpness/LeastValuation.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Sharpness/Couplings.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Sharpness/NearPairs.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Sharpness/Cases.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Derivatives/Sharpness/BoundAttained.lean",
-     "status": "open",
-     "documented": true
-    }
+   "text": "A nonzero number can’t have more prime factors than its size. Derivatives of theta functions give numbers whose divisibility by primes is guaranteed.",
+   "where": [
+    "theoremA"
    ]
   },
   {
    "id": "chain",
    "n": 4,
    "title": "The chain",
-   "line": "A chain of about √x theta lifts",
-   "summary": "Each lift adds a layer of divisibility. The chain’s length, between √x and 2√x lifts, balances cost against error at the square root.",
-   "modules": [
-    {
-     "path": "src/New/Reduction/ShortAndEnough.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/InsertBlock.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/AuxiliaryPair.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/Weights.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/LiftChains.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/Parameters.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/Columns.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/Rows.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/RowChain.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/PoincareMap.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Objects/CharactersAtLevel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/StandardLines.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/GluedLevel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/Sandwich.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/Frequency.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/LevelIdeles.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/NeighbourLattice.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/GoodDatum.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/UnfoldingStages.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/Cut.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Seesaw/SeesawIdentity.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/JetExponent.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/MarkedPrimes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/ChainValuation.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/HeckeEdges.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/MarkOperator.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/SetupAtLevel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Divisibility/LocalDivisibility.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Size/ShortColumns.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Size/ClassCount.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Size/Estimates.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/Size/ArchimedeanSize.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/Edges.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/Depth.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/SecondMoment/PositiveType.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/SecondMoment/FewTranslates.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/SecondMoment/SpanningTheorem.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/Basic.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/GramSection.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/Orthonormality.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/MeanValue.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/SobolevBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/Average.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/OpenCellBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/OpenCellPairing.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/LargeFunction.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/CutTailBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/SchurBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Bessel/FillingData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/Setup.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/BesselLevelStructure.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/Terms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/Link.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/ReducedPoints.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/Packing.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/CutoffIntegral.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/AmplitudeSums.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/Climbing.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/ReducedGroups.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/TermStructure.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/SquareExpansion.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/MomentBounds.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/Moments.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/PoincareSeries.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/BesselFormula.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/FrameMass.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/FillingAdmissible.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Unfolding/SeriesPeriod.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/SiegelLemma.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Box.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/FrameCount.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/ColumnLattice.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/OneRealPlace.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/SchurTest.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Discriminants.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/OrbitSize.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Data.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/LinkLattice.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/FrameParts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/SchurOrbit.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/LinkVectors.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Size.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Cut.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Gain.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Count.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/RemainingTerms/Sum.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/SieveSystem.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/KloostermanSum.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/Frequencies.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/GlobalSieve.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/FillingLevel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/GlobalToLocal.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/SiegelTopBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/EnergyEstimate.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/MainTerm/BadTypes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/Lengths.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/TwoGauges.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/Levels.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/Correlations.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/QuadricVolumes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/QuadricPlancherel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/Depth.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/Densities.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/OneFrame.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/Gains.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/Shells.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/RealPlaceGauge.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/RealShells.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/RealBandLimits.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/StandardLevel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/BesselVector.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/FiniteDepth.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/FiniteShells.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/FiberMeasures.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/TopCorrelation.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/TopFloor.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Spanning/Frames/FixedLines.lean",
-     "status": "open",
-     "documented": true
-    }
-   ]
-  },
-  {
-   "id": "bill",
-   "n": 5,
-   "title": "Paying for the lifts",
-   "line": "The lower bound, where most of the code lives",
-   "summary": "Theorem C: the lattice can’t be too small. This is where Galois representations, Selmer groups and L-values come in.",
-   "modules": [
-    {
-     "path": "src/New/Determinant/Twist/FitTwists.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Twist/LongForms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Norms/VectorKernel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Norms/AdjointThetaLift.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/NegativeIndices.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/MatchingPartners.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/EquivariantDifference.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/StableSpacesStandardData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/ConeImage.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/LargeTriple.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/RealVectors.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/RemovingPlanes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/VanishingDescends.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/TheoremForPartners.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/OneSquare.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Exchange/ExplicitMatching.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Chain/SquareLaw.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Chain/TriangleNorms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Chain/Moduli.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Chain/TriangleLifts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Chain/ChainNorms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/Chain/NormOfChain.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/PathData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/DeepLevelVanishing.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/Turns.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/FirstPath.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/LastPath.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/TestedForms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/LiftVolumeHeight.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/OneExchange.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/GluedLattices.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/GluedForms.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/ExchangeData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/FirstFactors.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/ComparisonOperator/GluingMaps.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/FalseLifts/BottomOfTower.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/CharacterLift.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/TwistedRatio.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/CentralAction.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/OneLift/HeckeValues/PeriodAtOne.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FitTwistsExist.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/RibetMethod.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/FittingBlock.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/RibetMatrices.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/RibetLemma.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/OnePrime.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/EvenClasses.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/KummerMaps.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/TiedTraces.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/HeckeStrings.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/TraceRelations.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/RibetElement.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/FirstOrder/DenominatorBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/SelmerData.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/Count.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/Mirror.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/OneSystem.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/Descent.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/Untied.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/StickelbergerSystems.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/StickelbergerLine.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/Line.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/RootsOfUnity.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/GeneralTheorem.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/MainSummands.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/ClassSums.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/LValueSystems.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Selmer/TwistingTheorem.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/LocalLoss/Basic.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/LocalLoss/CrystallineDefect.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/LocalLoss/TateDualBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/LocalLoss/LocalLattices.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/HodgeExpansion.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/CupProductBound.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/SidePoints.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/TameCharts.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/LongGap.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/SafeMoves.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/CutExponentBounds.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/DeepPoints.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/FewLowJumps.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/SteepParameters.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/Localization.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/MinorSecondOrder.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/Positions.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/StationaryPosition.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/OneMinor.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/GaussianShape.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/Periods.lean",
-     "status": "open",
-     "documented": true
-    },
-    {
-     "path": "src/New/Appendix/DiscreteSeries/PositionGroup.lean",
-     "status": "open",
-     "documented": true
-    }
+   "line": "About √x theta lifts",
+   "text": "Each lift adds a layer of divisibility, and each has a price. The number of lifts, between √x and 2√x, balances them at the square root.",
+   "where": [
+    "setup",
+    "theoremA",
+    "theoremC"
    ]
   }
  ]

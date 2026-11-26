@@ -16,15 +16,14 @@
   <h1 style="font-size:clamp(34px,6vw,52px)" id="title">Loading…</h1>
   <p class="lede" id="lede"></p>
   <div id="chapter"></div>
-  <footer><a href="./">← All chapters</a></footer>
+  <footer><a href="./">← The whole proof</a></footer>
 </main>
 <script type="module">
   import { loadChapter, loadMap, renderChapter, esc } from './common.js';
-  const id = new URLSearchParams(location.search).get('c') || 'ceiling';
-  if (id === 'waves') location.replace('waves.html' + location.hash);
+  const id = new URLSearchParams(location.search).get('c') || 'statement';
   const [chapter, map] = await Promise.all([loadChapter(id), loadMap()]);
   document.title = `${chapter.title} · Riemann, Understood`;
-  document.getElementById('eyebrow').textContent = chapter.n <= 4 ? `Idea ${chapter.n} of 4` : 'And the bill';
+  document.getElementById('eyebrow').textContent = chapter.kind === 'background' ? 'Background library' : `Part ${chapter.n} of 7`;
   document.getElementById('title').textContent = chapter.title;
   document.getElementById('lede').textContent = `${chapter.line}. ${chapter.summary}`;
   await renderChapter(document.getElementById('chapter'), chapter);

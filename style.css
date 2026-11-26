@@ -91,3 +91,12 @@ details.group > .module { margin-left: 8px; }
 .pill.confirmed { color: #0b0f18; background: var(--leaf); }
 .lead-note { margin-top: 8px; font-size: 14px; color: #cfd6e6; }
 .lead-note .label { margin: 0 6px 0 0; }
+.shared { margin-top: 6px; font-size: 13px; color: var(--sky); }
+.shared a { color: var(--sky); }
+.subjects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 10px; }
+.subjects a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; color: var(--text); text-decoration: none; }
+.subjects a small { display: block; color: var(--muted); font: 400 12px var(--mono); margin-top: 2px; }
+.subjects a:hover { border-color: var(--gold-dim); }
+.idea-where { font: 400 12px var(--mono); color: var(--muted); margin-top: auto; }
+.idea-where a { color: var(--gold); }
+.meter + .meter { margin-top: 18px; }

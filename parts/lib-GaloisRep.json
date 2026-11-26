@@ -1,0 +1,679 @@
+{
+ "id": "lib-GaloisRep",
+ "n": 9,
+ "kind": "background",
+ "title": "Galois representations",
+ "line": "Background: Lib/GaloisRep",
+ "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+ "story": [],
+ "elsewhere": [],
+ "modules": [
+  {
+   "path": "src/Lib/GaloisRep/Hilbert90/TameActions.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Hilbert90/TameActions.lean",
+   "title": "Hilbert 90 for GL_n and units under tame actions on Artinian, finite or profinite rings",
+   "folder": "GaloisRep: Galois representations",
+   "group": null,
+   "lines": 729,
+   "theorems": 31,
+   "note": "This file gives versions of Hilbert's theorem 90, with congruence conditions, for a ring\nendomorphism `σ` of finite order of a finite, Artinian or profinite ring. It proves Hilbert 90 for\n`GL n` and for units at level `m`, and the surjectivity of the norm onto fixed units `≡ 1 mod m`.\n`New.IsTameAtLevel σ p m` means: `σ ^ p = 1` with `0 < p`, `σ m = m`, some element has trace `1`\nmodulo `m`, and no `σ ^ i` with `0 < i < p` is trivial modulo a prime not containing `m`.\n`New.IsProfiniteRing R` means: every sequence `x` has a unique `L` with `x N ≡ L` modulo each\nnatural number `M ≠ 0`, for `N` in a set of the hyperfilter.\n`New.twistedNorm τ p δ` is the twisted norm `δ · τ δ ⋯ τ^(p-1) δ` of `δ` in a monoid.\n\n## Main definitions and results\n\n* `New.IsTameAtLevel.hilbert90_gl`, `New.IsTameAtLevel.hilbert90_unit`: a cocycle `≡ 1 mod m` is a\n  coboundary of an element `≡ 1 mod m`, for `GL n` and for units.\n* `New.IsTameAtLevel.exists_prod_range_pow_apply_eq`: a fixed unit `≡ 1 mod m` is the norm of a unit\n  `≡ 1 mod m`.\n* `New.IsProfiniteRing.exists_algHom_semiconj`, `New.IsProfiniteRing.finite_quotient_natCast`,\n  `New.isTameAtLevel_quotientNatMap`, bundled in\n  `New.IsTameAtLevel.exists_algHom_semiconj_quotientNatMap`: a limit map from the finite quotients\n  `R ⧸ (N !)` reduces the profinite case to the finite one.",
+   "literature": "Known result: Hilbert 90 for GL_n and norm surjectivity on units, cyclic action, congruence level.\nThis is done over Artinian, finite or profinite rings, where the action need only be free away from\nan invariant element m and have an element of trace one modulo m. Cocycles, coboundaries and units\nare congruent to 1 modulo m. Source: A. Speiser 1919;\nJ.-P. Serre, Corps locaux, 1962, Ch. X §1 Prop. 3 and Ch. V §2; S. Chase, D. Harrison, A. Rosenberg,\nGalois theory and Galois cohomology of commutative rings, Mem. AMS 52, 1965; for the norm on O[γ],\nP. Scholze, The Langlands-Kottwitz approach for some simple Shimura varieties, 2013, Lemma 2.2.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/LinearAlgebra/MatrixPolynomials.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Hilbert90/UnitaryGroups.lean",
+    "src/Lib/LocalGL/Shintani/CosetRootChoice.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Hilbert90/UnitaryGroups.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Hilbert90/UnitaryGroups.lean",
+   "title": "Hilbert 90 for unitary groups over profinite rings and for finite ideles",
+   "folder": "GaloisRep: Galois representations",
+   "group": null,
+   "lines": 509,
+   "theorems": 14,
+   "note": "This file proves Hilbert 90 for the unitary group over a profinite ring, with a congruence modulo\n`m`. On the way it constructs fixed units in `O[X]/Q`\n(`New.exists_fixed_isUnit_pow_mul_one_add_mul_eq_pow`) and orthonormal frames fixed by `τ` for\ninvertible hermitian matrices (`New.exists_fixed_orthonormal_frame`). It also proves Hilbert 90 for\nthe finite ideles of `L`, for an automorphism `σ` of `L/K` acting through `New.adeleMap`. This\nfollows from Galois descent for the semilinear map `x ↦ u * σ x`, together with the fact that two of\nits fixed points have a common divisor that is again fixed.\n\nThe main results `New.exists_fixed_orthonormal_frame` and `New.unitary_hilbert90_at_level` share\nthese hypotheses: `New.IsProfiniteRing O` (`O` is profinite); `New.IsTameAtLevel τ p 0`, which says\nthat `τ ^ p = 1`, `0 < p` and some element has trace `1`; `τ` commutes with `star` and fixes `c`,\nand `c - star c` is a unit.\n\nThe lemmas before them concern the polynomial `X * (-w) ^ k`, for an inverse `w` of `1 + m X` modulo\n`Q`, and endomorphisms of `O[X]/Q`; they state their own hypotheses.\n\n## Main definitions and results\n\n* `New.unitary_hilbert90_at_level`: Hilbert 90 for the unitary group, with a congruence modulo `m`.\n* `New.hilbert90_finite_idele`: Hilbert 90 for the finite ideles, for an automorphism of `L/K`.\n\nNotions from other files:\n* `New.IsTameAtLevel σ p m`: `σ ^ p = 1` with `0 < p`, `σ m = m`, some element has trace `1` modulo\n  `m`, and no `σ ^ i` with `0 < i < p` is trivial modulo a prime not containing `m`.\n* `New.IsProfiniteRing R`: every sequence has a unique limit modulo each natural number `M ≠ 0`,\n  along the hyperfilter.",
+   "literature": "Known; see `Lib.GaloisRep.Hilbert90.TameActions` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Hilbert90/TameActions.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Witt/WittTheorem.lean",
+    "src/Lib/ClassField/HeckeCharacter/Basic.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+   "title": "Semisimple representations: conjugacy, continuity, cancellation and stable lattices",
+   "folder": "GaloisRep: Galois representations",
+   "group": null,
+   "lines": 654,
+   "theorems": 21,
+   "note": "This file studies representations `r : G →* GL n k` over an algebraically closed field `k` of\ncharacteristic zero, with semisimplicity expressed by `New.IsTraceNondeg r`. It proves the\nWedderburn–Artin decomposition for maps with semiprime span and Clifford's theorem for\nrestriction to a normal subgroup. It then shows that equal traces give conjugate\nrepresentations, and that continuity follows from the trace. It treats twists by characters\nand the cancellation of characters. For continuous ℓ-adic representations of compact groups it\nconstructs stable lattices over rings of integers `O`.\n\n## Main definitions and results\n\n* `New.IsTraceNondeg.exists_conj_of_trace_eq`: equal traces give conjugate representations.\n* `New.IsTraceNondeg.continuous_of_trace`: continuity from the trace.\n* `New.IsTraceNondeg.exists_cancel_chars`: if two representations have the same trace after\n  subtracting two families of characters with no common member, this common function is the trace\n  of a representation.\n* `New.eventually_exists_isLatticeIn`: a continuous representation r of a compact group has a\n  lattice over every large enough O.\n\nNotions from other files:\n* `New.IsTraceNondeg`: Non-degeneracy of the trace form on the span of r(G): any x in that span with\n  tr(x r(g)) = 0 for all g is zero.\n* `New.CoeffRing`: Rings of integers of finite Galois extensions of `ℚ_ℓ` inside `ℚ̄_ℓ`, where the\n  class `ThePrime ℓ` records that ℓ is the fixed prime.",
+   "literature": "Known; see `Lib.GaloisRep.Pseudocharacter.Pseudorepresentations` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/ClassField/Places/DecompositionCompletion.lean",
+    "src/Lib/General/LinearAlgebra/Eigenvalues.lean",
+    "src/Lib/General/LinearAlgebra/MatrixNormBounds.lean",
+    "src/Lib/General/NumberTheory/CoefficientRings.lean",
+    "src/Lib/PadicComparison/Descent/TestCategory.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean",
+    "src/Lib/PadicHodge/Limit/CrystallineLimit.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean",
+   "title": "Spanning criteria, limits of traces and pseudorepresentations",
+   "folder": "GaloisRep: Galois representations",
+   "group": null,
+   "lines": 712,
+   "theorems": 23,
+   "note": "This file gives a criterion for the image of a lattice to span the matrix algebra over the\ncoefficient ring `O`, using a tame pair with incongruent eigenvalues. It studies uniform\napproximation of eigensystems through `New.IsApproximatingMonoid`, and Newton's identities through\n`New.newtonPoly`. It proves that over an algebraically closed field of characteristic `0`, a\nfunction obeying every polynomial identity among traces is the trace of a representation. It also\nproves that a limit of traces of continuous representations is such a trace.\n\n## Main definitions and results\n\n* `New.exists_rep_of_trace_identities`: over an algebraically closed field of characteristic `0`, a\n  function on `G` that obeys every polynomial identity among traces of homomorphisms `G → GL n k` is\n  the trace of such a homomorphism with non-degenerate trace form (`New.IsTraceNondeg`).\n* `New.GaloisRep.exists_continuous_isTraceNondeg_of_tendsto_trace`: a limit, in the sense of\n  `IsApproximatingMonoid` (uniform approximation by linear combinations), of traces of continuous\n  representations is the trace of a continuous representation.\n\nNotions from other files:\n* `New.IsTraceNondeg`: Non-degeneracy of the trace form on the span of r(G): any x in that span with\n  tr(x r(g)) = 0 for all g is zero.\n* `New.CoeffRing`: Rings of integers of finite Galois extensions of `ℚ_ℓ` inside `ℚ̄_ℓ`, where the\n  class `ThePrime ℓ` records that ℓ is the fixed prime.\n* `New.Selmer.IsLatticeIn`: an `O`-valued representation `u` is conjugate in `GL n ℚ̄_ℓ` to a given\n  ℓ-adic representation `r`.",
+   "literature": "Known result: a function obeying the trace identities is the trace of a representation\n(pseudocharacters), and the lattice stable under a family spanning the matrix algebra is unique up\nto scalars. Here all polynomial identities among traces are assumed, not only the Frobenius\nidentity, so no invariant theory is needed.\nSemisimple means a non-degenerate trace form on the span of the image, in characteristic 0. The file\nalso proves that a limit of traces of continuous representations is the trace of a continuous\nrepresentation. Source: R. Taylor, Galois representations associated to Siegel modular forms of low\nweight, Duke Math. J. 63 (1991), Theorem 1; R. Rouquier, Caractérisation des caractères et\npseudo-caractères, J. Algebra 180 (1996); K. Conrad, Compact subgroups of GL_n(Qbar_p) (note).\n\nSee also `Lib.GaloisRep.WeightCongruence`.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+    "src/Lib/General/NumberTheory/PadicLimitsValuation.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/CuspidalTypes.lean",
+    "src/Lib/GaloisRep/WeightCongruence.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/KillingPolynomials.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/KillingPolynomials.lean",
+   "title": "Free cocharacter weights force rank n and identify killing polynomials",
+   "folder": "GaloisRep: Galois representations",
+   "group": null,
+   "lines": 493,
+   "theorems": 16,
+   "note": "A Galois representation that is only known to be killed, for most Frobenius elements (the filter\n`New.mostFrobenii`), by monic polynomials of degree `n` is shown to have rank `n`, given that the\nspan of its image contains the diagonal matrices and that a one-parameter torus with `n` free\nweights (`New.HasNoSmallRelations`) lies in the Zariski closure of a conjugate of the image of every\nneighbourhood of `1`.\n\n* `New.powMinor y m a`: a minor of order `m` of the matrix whose column `j < m` lists the entries of\n  `y ^ j`. Over a field all of them vanish exactly when `1, y, …, y ^ (m - 1)` are linearly\n  dependent.\n* `New.exists_factor_charpoly`: over an integrally closed domain, if these minors all vanish, a\n  factor of degree less than `m` of the characteristic polynomial of `y` kills `y`.\n* `New.HasNoSmallRelations.inv_scalar_on_blocks`: if these minors vanish, with `m ≤ n + 1` and `c`\n  surjective, for `diagonal (T ∘ e ∘ c) * x` over the Laurent polynomials, then `n < m` and on each\n  fibre of `c` the block of `x⁻¹` is a scalar matrix.\n* `New.card_eq_and_charpoly_eq`: the rank is `n` and the polynomials are the characteristic\n  polynomials.\n\nNotions from other files:\n* `New.Ω`: the field `Ω` is an algebraic closure of `ℚ`: it has characteristic zero, is\n  algebraically closed and is algebraic over `ℚ`.\n* `New.HasNoSmallRelations e`: for `e : Fin n → ℤ`, distinct exponent vectors `α` of the same total\n  degree at most `(n + 1) ^ 2` have distinct weights `∑ i, α i * e i`.\n* `New.FrobeniusDatum E`: a place of degree one of `E` with a Frobenius element `frob` above it.\n* `New.mostFrobenii E`: the filter of sets of such data that, inside every nonempty open set of\n  `Gal(Ω/E)`, contain all data at almost all places whose Frobenius lies in a smaller nonempty open\n  set.\n* `T i`: the monomial of degree `i` in the Laurent polynomials `k[T;T⁻¹]`.",
+   "literature": "Known result: Rank n and characteristic polynomials from Frobenius polynomial relations. Let a\ncontinuous representation have image spanning the diagonal matrices, and let monic degree-n\npolynomials kill it at most Frobenius elements. If a cocharacter with free (very different)\nexponents constrains it, then its rank is n and the polynomials are its characteristic polynomials\nat most Frobenius elements. This is one step inside the known construction of Galois representations\nfor definite unitary groups. In the literature, Frobenius polynomial relations on a dense set\ndetermine a representation when the n-dimensional one is known and large. Related work:\nBoston–Lenstra–Ribet 1991; Nekovář, Eichler–Shimura relations and semisimplicity, 2018;\nFayad–Nekovář 2019; Harris–Taylor 2001, VII.1.8.\n\nSee also `Lib.GaloisRep.Main.OddRank`.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Main/Defs.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/SeedRepresentation.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/WeightCongruence.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/WeightCongruence.lean",
+   "title": "ℓ-adic models of algebraic forms and congruences that change the weight",
+   "folder": "GaloisRep: Galois representations",
+   "group": null,
+   "lines": 738,
+   "theorems": 16,
+   "note": "A prime `l` and an isomorphism `ιℓ` from `ℂ` to the algebraic closure of `ℚ_[l]` are fixed. Twisting\nan algebraic modular form by its weight, evaluated at the components of `g` above `l`, gives its\n`l`-adic model. An ultrametric Stone–Weierstrass theorem is proved. It shows that combinations of\nmatrix coefficients of free weights are uniformly dense among continuous `l`-adic functions that\nfactor through general linear groups over one finite extension of `ℚ_[l]`.\n\n## Main definitions and results\n\n* `New.padicComponents`: the continuous homomorphism sending `g` to its components at the places\n  above `l` induced by the embeddings `New.weightEmbedding`, one for each infinite place.\n* `New.padicModel`: the `ιℓ`-semilinear map `f ↦ (g ↦ M ρ_κ'(z g)⁻¹ ιℓ(f g))`, where `ρ` is\n  `New.weylRep` and `z` is `New.padicComponents`.\n* `New.stoneWeierstrass_ultrametric`: a function that agrees with an element of `N` on each fibre of\n  the family of all multipliers lies in the closure of `N`.\n* `New.mem_uniformClosure_weylRep_coeff`: a continuous function that factors through\n  `z : X → ∏ GL_N(k)`, whose entries lie in one finite extension of `ℚ_[l]`, is a uniform limit\n  (`New.uniformClosure`) of combinations of matrix coefficients of free weights.\n* `New.GaloisRep.exists_padicModel_hecke_contraction`: a Hecke operator at a split place, acting on\n  `l`-adic functions without increasing the sup norm. It acts on the model of an eigenform by a\n  fixed multiple of a coefficient of the Hecke polynomial.\n* `New.padicModel_mem_uniformClosure`: the model of a form `f` is a uniform limit from the span of\n  models of forms of level `K` and character `θ` whose weights are free (`New.HasNoSmallRelations`)\n  at a chosen set `T` of places, if the elements of `K` trivial over `T` fix `f` and have `θ = 1`.\n\nNotions from other files:\n* `New.Space.forms`: Algebraic modular forms of weight κ on a definite space V: functions f on G_f\n  with open right stabiliser and f(γg) = ρ_κ(γ)f(g) for rational γ, ρ_κ = `New.Space.weightRep`.\n* `New.Weight`: for `κ : Weight E` and an infinite place `v` of `E`, `κ.1 v h` is the number of\n  columns of height `h` of a Young diagram, and `κ.2 v` is an integer exponent of the determinant.\n* `New.weylRep`: The monoid homomorphism from ∏_τ GL(n_τ,R) to square matrices sending g to ∏_τ\n  det(g_τ)^{e_τ} times the Schur matrix of g, for integers e_τ; its rows and columns are indexed by\n  `WeylIndex`/`WeylIndexFamily`, the coordinates of vectors of weight κ.\n* `New.HasHeckePolyAt`: At the split place w, f is fixed by K_w, each Hecke operator T_{w,j} acts on\n  f by a scalar t_j, and P = Σ(−1)^j q_w^{j(j−1)/2} t_j X^{n−j}.\n* `New.ofSplitPlace`: For a split place w, the homomorphism GL_n(E_w) → G_f sending g to the unitary\n  element with component g at w and 1 off w, w̄.",
+   "literature": "Known result: Non-archimedean Stone–Weierstrass theorem for modules (localisation form). The result\nconcerns scalar-valued functions on a compact space over an ultrametric normed field. A continuous\nfunction that agrees with some member of a subspace on each level set of the subspace's multipliers\nlies in the closure of that subspace. Source: Dieudonné 1944; Kaplansky, The Weierstrass theorem in\nfields with valuations (1950); module form as in Prolla, Approximation of Vector Valued Functions\n(1977) and Topics in Functional Analysis over Valued Division Rings (1982).\n\nKnown result: Density of algebraic vectors, congruences to supercuspidal types, and limits of\neigensystems. For definite unitary groups, a form is an l-adic uniform limit of forms with very\ndifferent weight gaps at some embeddings and a prescribed character on the level, such as a wild\ntype. No completed cohomology or congruences modulo powers of l are used. Source: M. Emerton, V.\nPaškūnas, On the density of supercuspidal points of fixed regular weight, J. Éc. polytech. Math. 7\n(2020); J. Fintzen, S. W. Shin, Congruences of algebraic automorphic forms and supercuspidal\nrepresentations, Camb. J. Math. 9 (2021); Kaplansky, Proc. AMS 1 (1950).",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/AutomorphicForms/PAdicGauge.lean",
+    "src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/SplitCase.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/TaylorWiles.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/TaylorWiles.lean",
+   "title": "Auxiliary places, base level, integral Hecke algebra and operators at the auxiliary places",
+   "folder": "GaloisRep: Galois representations",
+   "group": null,
+   "lines": 851,
+   "theorems": 19,
+   "note": "Base data `D` consist of a finite set `D.places` of places and a space `D.forms` of forms of a fixed\ntype at `D.places`. The forms of principal level at finitely many further places make up a\nfinite-dimensional space with an integral lattice. Functions on the systems of eigenvalues act on\nthis space, by a scalar on the forms of each system. Those that keep integral forms make up a closed\nintegral Hecke algebra. At the auxiliary places, translations and the action of `GL_N` over the\nresidue fields give operators that commute with this algebra.\n\n## Main definitions and results\n\n* `New.Patching.TaylorWilesPlaces`: Frobenius data at places `w j` whose residue fields have\n  order ≡ 1 mod m.\n* `New.Patching.BaseLevel.formsOfLevel`: the forms of that type and principal level at `L`, with the\n  lattice `New.Patching.BaseLevel.ellIntegralForms` of integral forms and the algebra\n  `New.Patching.BaseLevel.integralEnd` that keeps it.\n* `New.Patching.BaseLevel.heckeAlgebra`, `New.Patching.BaseLevel.heckeAction`: the functions whose\n  operator keeps integral forms, and their action; `New.Patching.BaseLevel.isClosed_heckeAlgebra`:\n  they form a closed set for the product topology on functions from systems to `PadicAlgCl ℓ`.\n* `New.Patching.BaseLevel.localOperators`: the operators that come from translations at one place\n  `w j`. They commute with the Hecke algebra.\n* `New.Patching.BaseLevel.residueRep`: the action of the groups `GL_N` over the residue fields,\n  `N = |n|`; its fixed forms are those of base level\n  (`New.Patching.BaseLevel.mem_formsOfLevel_empty_iff_residueRep_fixed`).\n* `New.Patching.BaseLevel.exists_higman_operator`: for a finite group `Δ` embedded in the product of\n  the groups `GL_N` over the residue fields at the places `w j` (all off level), an operator `Ψ`\n  with `∑ g⁻¹ Ψ g = c`.\n\nNotions from other files:\n* `New.levelOf`: The elements of K₀ = `stdLevel E n` whose reductions modulo the places w_i lie in a\n  subgroup H of ∏_i GL_n(k_{w_i}); for H = ⊥ this is the principal level at these places.\n* `New.Space.forms`: Algebraic modular forms of weight κ on a definite space V: functions f on G_f\n  with open right stabiliser and f(γg) = ρ_κ(γ)f(g) for rational γ, ρ_κ = `New.Space.weightRep`.\n* `New.Patching.Isotypic`: An isotypic space of forms: for a system t of Hecke eigenvalues at the\n  finite places, the forms that are Hecke eigenforms with eigenvalues t at almost all places.\n* `New.Patching.localFormRep`: The action of GL_N(E_w), N = |n|, on forms at a split place w.",
+   "literature": "Known result: Taylor–Wiles freeness at auxiliary primes, up to the orders of the stabilisers. Here\nthe setting is integral forms of principal level on a definite unitary group, with any finite\nsubgroup of the product of the finite general linear groups at the auxiliary places. Freeness holds\nonly up to a fixed integer and is expressed as one Higman operator. Source: Taylor–Wiles, Ann. Math.\n141 (1995); Clozel–Harris–Taylor, Publ. IHES 108 (2008), §3.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
+    "src/Lib/GaloisRep/Main/AllRanks.lean"
+   ],
+   "usedBy": [
+    "src/New/Congruences/FirstOrder/TiedTraces.lean",
+    "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
+    "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/Defs.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/Defs.lean",
+   "title": "Twisted norms, matching pairs and base change maps for unitary groups",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 234,
+   "theorems": 7,
+   "note": "This file sets up base change for unitary groups along a ring endomorphism `σ` of finite order.\nFinally it defines the Galois action on `New.Gf E' n` and the base change map from the finite adelic\nunitary group `New.Gf E n`, the matrices `g` over the finite adeles with `gᴴ g = 1`, for an\nextension `E'/E` of CM fields.\n\n## Main definitions and results\n\n* `New.twistedNorm`: the twisted norm `δ · τ δ ⋯ τ^(p-1) δ` in a monoid. `New.twistedNorm_conj`\n  shows that twisted conjugation of `δ` conjugates the norm. `New.twistedNorm_mem` and\n  `New.map_twistedNorm` show that it respects stable subgroups and equivariant maps.\n* `New.IsTameAtLevel`: the conditions on a ring endomorphism `σ` and a level `m` under which descent\n  works.\n* `New.IsRootQuotient`, `New.IsNormRoot`: a polynomial `z`, depending only on the characteristic\n  polynomial of `γ`, that gives a candidate `a = z(γ) / z(γ)ᴴ` for an element of norm `γ`.\n* `New.IsMatchingPair`: `φ` is invariant under twisted conjugation by `K`, and `f` and `φ` match\n  point by point along `γ ↦ a`.\n* `New.CocyclesSplit`: the cocycles in `K` are coboundaries on the support of `u`.\n* `New.baseChangeGf`: the map `Gf E n → Gf E' n` induced by the inclusion of finite adeles.\n\nNotions from other files:\n* `New.U J`: the unitary group of a matrix `J` over a commutative ring with involution, the `g` in\n  `GL_n(R)` with `gᴴ J g = J`. In this file `J = 1`.\n* `New.U.map`: for a ring homomorphism `f` commuting with the involutions and carrying `J` to `J'`,\n  the homomorphism `U(J) → U(J')` applying `f` to each entry.\n* `New.FinPlace E`: the finite places of a number field `E`. For a finite place `u`, `u.comap f` is\n  the place below `u` along a ring homomorphism `f`, and `u.below E` is the place of `E` below `u`.\n* `New.adeleMap`: for an embedding of number fields, the induced ring homomorphism of finite adeles.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Unitary/Defs.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/LinearAlgebra/MatrixPolynomials.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean",
+   "title": "Steps E'/E of base change and commuting families of Hecke operators",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 643,
+   "theorems": 22,
+   "note": "This file sets up base change along an extension `E'/E` of prime degree. It records\nplace-by-place properties of base change `New.baseChangeGf` and of the Galois action\n`New.galoisGf` on the finite adelic unitary group. It defines matching pairs of test functions at\nthe places above a set `S` of places. It relates operators on fixed vectors to functions on the\ngroup through a common element of the group ring, and builds commuting families of local and\nspherical Hecke operators.\n\n## Main definitions and results\n\n* `New.IsStep`: the extension `E'/E` with a character `μ` of the finite ideles of `E` that detects\n  norms: `μ (z z̄) = 1` exactly when `z` is a principal idele times a norm from `E'`.\n* `New.IsMatched`: the places of `E` that split completely in `E'` and at which `μ` is trivial.\n* `New.placesAbove E' S`: the places of `E'` above `S ∪ S̄`; `New.IsMatchingPairAbove`: matching\n  pairs of functions (`New.IsMatchingPair`) at these places.\n* `New.IsLocalRetraction`, `New.isLocalRetraction_ofSplitPlace`: a group `A` that is a retract of\n  the finite adelic unitary group at a set `S` of places; GL_n of the completion at a split place is\n  one.\n* `New.exists_isHeckeFunctionRelation`: the Hecke operators of `A` and spherical operators away from\n  `S` commute on the vectors fixed by the level, and their products are operators of functions.\n\nNotions from other files:\n* `New.adeleNorm`: for an extension `L/K` of number fields, the norm from the finite adeles of `L`\n  to the finite adeles of `K`, as a multiplicative map.\n* `New.Gf.supportedOn`, `New.Gf.trivialOn`: the elements with component `1` at every place outside\n  `S ∪ S̄`, and those with component `1` at every place of `S`.\n* `New.localLevel`: the elements whose component at each `w ∈ S` lies in `K w`; by default `K w` is\n  `New.localIntGL`, the integral matrices with integral inverse.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` and `Lib.Adelic.Hecke.ClassSums` for\nsources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Shimura/HeckeTower/HeckeData.lean",
+    "src/Lib/Weil/Unramified/SplitHecke.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/Grunwald.lean",
+    "src/Lib/GaloisRep/BaseChange/CongruenceLevelMatching.lean",
+    "src/Lib/GaloisRep/BaseChange/GlobalRoot.lean",
+    "src/Lib/GaloisRep/BaseChange/StepMatchingPairs.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/StepMatchingPairs.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/StepMatchingPairs.lean",
+   "title": "Hecke-stable matching pairs for a step E'/E at split matched places",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 591,
+   "theorems": 10,
+   "note": "This file constructs sets of matching pairs of test functions (`New.IsMatchingPairAbove`) for a\nstep `E'/E` that are stable under Hecke operators. It works at places of `E` that are split over\n`E⁺` and matched (`New.IsMatched`: `μ` is trivial there and the places above are permuted freely\nby the Galois group). The pairs come from functions that are bi-invariant under the elements\nintegral at a set `V` of places of `E'` with one place above each pair `{w, star w}`. This file\nalso gives a criterion, `New.IsStep.isNormRoot_of_one_side`, for a root (`New.IsNormRoot`) that\nis `1` outside the places above a set `T` of places of `E` containing no two conjugate ones.\n\n## Main definitions and results\n\n* `New.biInvariantPairs`, `New.isMatchingPairAbove_of_mem_biInvariantPairs`: the pairs\n  `(F ∘ baseChangeGf, 1_K * F)`, where `F` is bi-invariant at `V`; they are matching pairs above\n  the places below `V`.\n* `New.exists_isHeckeStableMatching`: a set of matching pairs that contains the pair of indicator\n  functions of the level and is stable under the Hecke operators `(T_{w,j}, T_{u,j})`.\n\nNotions from other files:\n* `New.Gf.supportedOn`, `New.Gf.trivialOn`: the elements with component `1` at every place outside\n  `S ∪ S̄`, and those with component `1` at every place of `S`.\n* `New.localLevel`: the elements whose component at each `w ∈ S` lies in `K w`; by default `K w` is\n  `New.localIntGL`, the integral matrices with integral inverse.\n* `New.IsStep`: the extension `E'/E` with a character `μ` of the finite ideles of `E` that detects\n  norms.\n* `New.IsMatched`: the places of `E` that split completely in `E'` and at which `μ` is trivial.\n* `New.IsMatchingPairAbove`: matching pairs of functions at the places of `E'` above `S ∪ S̄`.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` and `Lib.Adelic.Hecke.ClassSums` for\nsources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/GlobalRoot.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/GlobalRoot.lean",
+   "title": "Idele Hasse principle, unitary roots and rationality of adelic roots up to coboundary",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 1016,
+   "theorems": 30,
+   "note": "The main setting is a cyclic extension `E'/E` of CM fields of prime degree with character `μ`\n(`New.IsStep`: `μ` kills `Eˣ`, and each idele `t` of `E` with `μ (t * star t) = 1` is a norm from\n`E'` times an element of `Eˣ`) and Galois automorphism `σ`. For a unitary matrix `γ` and a\npolynomial `z`, `New.IsRootQuotient γ z a` means `a * z(γ)ᴴ = z(γ)`. The file proves a Hasse\nprinciple for ideles in a single CM field `L` and develops the calculus of this relation. It\ncombines the two to show that an adelic root for a `σ`-fixed characteristic polynomial is rational\nup to a coboundary.\n\n## Main definitions and results\n\n* `New.exists_isSelfAdjoint_principalIdele_mul`: an adele `w` with `w = x * star w`, `x` in `L`,\n  becomes conjugation invariant after multiplication by an element of `Lˣ`.\n* `New.IsStep.exists_isSelfAdjoint_of_mem_kerCompNorm`: the twisted form, for an idele in\n  `kerCompNorm L μ` whose norm under a Galois automorphism `g` has this property, where `x` is fixed\n  by `g` and `E'[x] = ⊤`. It uses the Artin map, Hasse's norm theorem and Hilbert 90 for ideles.\n* `New.U.existsUnique_isRootQuotient`: if `z(γ)` is invertible there is exactly one unitary `a`.\n* `New.exists_global_root`: let `z` be a root for `P`, where `P` is the characteristic polynomial of\n  a unitary matrix over `E'` and is fixed by `σ`. Then there are a rational `w` and an adelic `c`\n  with the following property. Let `x = w * z * σ c`. At every adelic unitary `γ` killed by the\n  radical of `P`, `x(γ)` is invertible, and `a = x(γ) / x(γ)ᴴ` satisfies `a * c(γ)ᴴ = c(γ)`.\n\nNotions from other files:\n* `New.adeleMap`: For an embedding f: K → L of number fields, the induced ring homomorphism from the\n  finite adeles of K to those of L.\n* `New.kerCompNorm`: The group of finite ideles of E' whose norm to E is killed by μ.\n* `New.U.mapEnd`: The endomorphism of the unitary group {g : gᴴg = 1} over R given by applying\n  entrywise a ring endomorphism σ commuting with the involution.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/ClassField/Global/CMSplittingCharacters.lean",
+    "src/Lib/ClassField/Global/ExistenceTheorem.lean",
+    "src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean",
+    "src/Lib/General/NumberTheory/CMFields.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/BaseChange/TwistedTraceIdentity.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/CongruenceLevelMatching.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/CongruenceLevelMatching.lean",
+   "title": "Matching unit pairs at congruence levels and at unramified places of a step",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 901,
+   "theorems": 28,
+   "note": "This file concerns base change along a step `E' / E` (`New.IsStep`): an extension of prime degree\nwith a character `μ` of the finite ideles of `E`. It constructs levels at which the unit functions\nmatch in the sense of `New.IsMatchingPair`.\n\n## Main definitions and results\n\n* `New.cocyclesSplit_and_isMatchingPair_of_congruence`: at a principal congruence level over a\n  profinite ring with tame action, the cocycles split and the indicator functions of the level form\n  a matching pair.\n* `New.IsStepUnramifiedAt`: `w` is unramified in `E'`, and `μ ∘ Nm` kills the local units above `w`.\n* `New.exists_isTameAtLevel_intAdeleMap`: `σ ≠ 1` is tame (`New.IsTameAtLevel`) on the integral\n  adeles of `E'` at every `σ`-fixed level that vanishes at the totally ramified places dividing a\n  fixed integer `C`.\n* `New.exists_isBaseChangeLevel`: below any open subgroup `H` over `E` there are local levels over\n  `E'` whose groups above any set of places are `σ`-stable, have split cocycles, and carry matching\n  indicator functions.\n\nNotions from other files:\n* `New.IsTameAtLevel`: the conditions on a ring endomorphism `τ` with `τ ^ p = 1` and a level `m`\n  under which descent works.\n* `New.CocyclesSplit`: every `s` in `K` of twisted norm `1` under `τ` is a coboundary `t * (τ t)⁻¹`\n  on the support of `u`, for some `t ∈ K` that is `1` off it.\n* `New.IsMatchingPair`: a function `f` and a twisted function `φ` match, one characteristic\n  polynomial at a time, through a polynomial root (`New.IsNormRoot`).\n* `New.localLevel`: the elements of `New.Gf E n` whose component at each place of a set `S` lies in\n  a given local group, by default `GL_n` of the local integers, with no condition outside `S`.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/AutomorphicForms/HeckeEigenforms.lean",
+    "src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/TwistedTraceIdentity.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/TwistedTraceIdentity.lean",
+   "title": "Twisted trace identity for a step E'/E of CM fields of prime degree",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 1027,
+   "theorems": 22,
+   "note": "The main result is `New.twisted_trace_identity`. For a step `E'/E` (`New.IsStep`) of prime degree,\nit compares a `σ`-twisted trace on forms over `E'` with a trace on forms over `E`, on the definite\nunitary groups of `New.stdSpace`, for matching pairs of test functions. Both sides are expanded by\n`New.Space.isSampleTotal_twisted_trace` as weighted sums over samples of pairs\n(`New.IsSampleTotal`).\n\n## Main definitions and results\n\n* `New.IsSampleTotal`: a number `a` is a weighted sum of `F` over finitely many points, and the\n  weighted number of moves from these points to each relevant point is `c`.\n* `New.IsSampleTotal.mul_eq_mul_of_bijOn`: two such sums `a`, `b` with weights `c`, `d` satisfy\n  `b * c = d * a` when a map between the point sets matches values and moves.\n* `New.Weight.baseChange`: the weight of `E'` that has at each infinite place the data of `κ` at the\n  place below.\n* `New.exists_trace_mul_weightRep_eq_of_twistedNorm_eq`: the twisted character of `κ.baseChange` at\n  `δ` is the character of `κ` at the norm of `δ`.\n\nNotions from other files:\n* `New.Space.forms V κ`: the forms of weight `κ` on a space `V`, smooth functions `ψ` on the finite\n  adelic unitary group `Gf E n` (`U (1 : Matrix n n (𝔸f E))`; `U V.J` is the rational one) with\n  `ψ (V.embFin γ * g) = ρ γ (ψ g)` for rational `γ`, where `ρ` is `V.weightRep κ.fst κ.snd` and\n  `V.embFin` embeds the rational unitary group; `V.formTranslation κ` is right translation on them.\n* `levelSpace π L`: the vectors fixed by `π k` for every `k ∈ L`.\n* `New.IsOperatorOf π L T φ`: `T` is the Hecke operator of `φ` on the `L`-fixed vectors.\n* `New.stdSpace`: the definite space `I_n`, the sum of `n` norms with its standard lattice.\n* `New.twistedNorm τ p δ`: the product `δ * τ δ * ⋯ * τ^[p - 1] δ`.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/AutomorphicForms/HeckeEigenforms.lean",
+    "src/Lib/Adelic/Landherr.lean",
+    "src/Lib/GaloisRep/BaseChange/GlobalRoot.lean",
+    "src/Lib/Shimura/TraceFormula/DefiniteTrace.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
+   "title": "Base change in prime degree for definite U(n): a weak base change eigenform",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 923,
+   "theorems": 23,
+   "note": "Base change of algebraic modular forms on the definite unitary group along a step E'/E of prime\ndegree (`New.IsStep`), from the twisted trace identity `New.twisted_trace_identity`.\n\n* `New.IsWeakBaseChange`: f' is a weak base change of f off a finite set of places.\n* `New.IsLocalMatching`: matching test functions over E and E' above a finite set Z of places.\n* `New.exists_isWeakBaseChange_of_matching`: an eigenform over E' that is a weak base change of f\n  and has prescribed eigenvalues for the local operators.\n\nNotions from other files that the statements use:\n* `New.IsStep E' μ`: `E` contains a primitive 5040th root of unity, `E'` is a CM field, Galois of\n  prime degree over `E`, with an integer of trace `1`, and `μ` is a character of the finite ideles\n  of `E` with open kernel, trivial on `E^×`, such that `μ (z z̄) = 1` exactly when `z` is an element\n  of `E^×` times the norm of a finite idele of `E'`.\n* `Z.conjClosure` is `Z ∪ Z̄`, and `New.placesAbove E' Z` is the set of places of `E'` above it.\n* `New.sphericalAt π w`: the vectors fixed by the integral elements supported at `w` and `w̄`.\n  `New.HasHeckePolyAt f w hw P`: `f` is spherical at `w` and an eigenvector of each `New.heckeSplit`\n  there, and `P` is built from the eigenvalues and the norm of `w`.\n* `New.IsMatchingPairAbove σ μ Z K f φ`: `(f, φ)` is a matching pair of test functions for the\n  twisted trace identity at the places above `Z`, at level `K`.\n* `New.heckeFun ρ L F` is the Hecke operator `∑_{g ∈ G/L} F g • ρ g`, `New.levelSpace ρ L` is the\n  `L`-fixed space, and `New.Weight.baseChange` is the weight pulled back to `E'`.",
+   "literature": "Known result: Cyclic base change of prime degree for definite unitary groups (weak lift, local\nmatching). Here the lift goes from U(n) over E to U(n) over E' rather than to GL_n, with E'/E tame\nand E containing enough roots of unity, and only existence is proved. Hecke polynomials match where\nthe place splits completely and an auxiliary character is trivial, tame types are kept, and class\nsums are compared directly, without stabilisation. Source: J.-P. Labesse, Changement de base CM et\nséries discrètes, in On the stabilization of the trace formula, 2011, Cor. 5.3, and Cohomologie,\nstabilisation et changement de base, Astérisque 257, 1999; J. Arthur and L. Clozel, Simple algebras,\nbase change, and the advanced theory of the trace formula, Ann. Math. Studies 120, 1989; local\nmatching after P. Scholze, The Langlands-Kottwitz approach for some simple Shimura varieties, 2013,\nProp. 2.1 (norms inverted inside O[γ]) and J.-P. Labesse, Fonctions élémentaires et lemme\nfondamental pour le changement de base stable, Duke Math. J. 61, 1990.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/CongruenceLevelMatching.lean",
+    "src/Lib/GaloisRep/BaseChange/StepMatchingPairs.lean",
+    "src/Lib/GaloisRep/BaseChange/TwistedTraceIdentity.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
+    "src/Lib/GaloisRep/BaseChange/ShintaniLift.lean",
+    "src/Lib/GaloisRep/Main/OddRank.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
+   "title": "Hilbert 90 for the pro-p Iwahori group and base change of Iwahori eigenforms",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 838,
+   "theorems": 22,
+   "note": "`F` is a valued field with compact ring of integers, and `σ` is an isometric endomorphism with\n`σ ^ p = 1`. `New.proIwahori` is the pro-`p` Iwahori subgroup of `GL n F`, the matrices that are\nupper unitriangular modulo the maximal ideal. `New.twistedNorm τ p δ = δ * τ δ * ⋯ * τ ^ (p - 1) δ`\nis the twisted norm. The file proves a Hilbert 90 statement and a matching of dominant double cosets\nfor this group. These local results give matching local data at a place with exactly one place above\nit.\n\n## Main definitions and results\n\n* `New.exists_coboundary_proIwahori`: if some integer of `F` has `σ`-trace `1`, an element of\n  `New.proIwahori` of norm `1` is a coboundary `t * (σ t)⁻¹` with `t` in `New.proIwahori`.\n* `New.proIwahori_doubleCoset_match`: the double cosets of a strictly dominant diagonal matrix over\n  `F` and of its norm over the fixed field correspond under `γ ↦ z γ` for a polynomial `z`\n  (`New.IsIwahoriMatchingPolynomial`).\n* `New.isLocalMatching_proIwahori`: the indicator functions of the double cosets `K N(t) K` at `w`\n  and `K' t K'` at `u` are matching local data (`New.IsLocalMatching`). It globalises\n  `New.proIwahori_doubleCoset_match` and `New.exists_coboundary_proIwahori`.\n* `New.exists_baseChange_isIwahoriEigen`: feeding these into\n  `New.exists_isWeakBaseChange_of_matching` gives a base change whose eigencharacter at `u` is that\n  of `f` at `w` composed with `N`.\n\nNotions from other files:\n* `New.IsStep E' μ`: a step `E'/E`. The field `E` contains a primitive `5040`-th root of unity,\n  `E'` is a CM field Galois over `E` of prime degree with an integer of trace `1`, and `μ` is the\n  character of the finite ideles of `E` that goes with the extension.\n* `New.locIdele`: the homomorphism that sends `x` in the units of the completion at `v` to the\n  finite idele with component `x` at `v` and `1` elsewhere.\n* `New.iwahoriDoubleCoset t`: the double coset `K t K` of the diagonal matrix `t`, where `K` is\n  `New.proIwahori`.\n* `New.diagGL t`: the diagonal matrix with the units `t i` on the diagonal, as an element of `GL`.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
+    "src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
+    "src/Lib/LocalGL/Iwahori/HeckeDegrees.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/BaseChange/ShintaniLift.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/BaseChange/ShintaniLift.lean",
+   "title": "Base change at an inert place carries a label to its Shintani lift",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Cyclic base change for definite unitary groups",
+   "lines": 401,
+   "theorems": 7,
+   "note": "Base change along a step `E'/E` (`New.IsStep E' μ`, which among other things makes `[E' : E]` prime)\nat a place `w` of `E` that is split over `E⁺` and inert in `E'`: the local matching comes from\nShintani lifting for `GL n` over the residue fields.\n\n* `New.inflateConj`: the conjugate of a function on `GL n` of the residue field, pulled back along\n  reduction to `GL n 𝒪_w` and extended by zero to `GL n` of the completion.\n* `New.exists_representation_heckeFun_inflateConj`: on forms of principal level at `w`, its Hecke\n  operator is the action of a group algebra element of the finite group.\n* `New.isLocalMatching_shintani`: inflated `Ξ` and, for some `φ`, inflated `g ↦ S ⟨g, φ⟩` are\n  matching local data, where `S` is a class function on the semidirect product that descends to `Ξ`.\n* `New.exists_baseChange_hasLabel`: a form with label `Ξ` at `w` has a weak base change with the\n  lift `Ξ'` as label at the place `u` above `w`.\n\n`New.localCongruence n w 0` is the kernel of reduction of `GL n 𝒪_w`; `New.HasLabel f hw χ` says\nthat this kernel fixes `f` and that `∑ conj (χ x) x` does not kill `f`.\n\nNotions from other files:\n* `New.Lift`: F lifts to F' over Z if, for every m, one Z-combination of characters of GL_m(k') ⋊\n  Gal(k'/k) descends to both F (over k) and F' (over k').\n* `New.IsLocalMatching`: Retracts G, G' of the adelic groups above a finite set of places,\n  compatible levels, and bi-invariant functions that form matching pairs at a level where σ-cocycles\n  split.",
+   "literature": "Known; see `Lib.GaloisRep.BaseChange.PrimeDegreeTransfer` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
+    "src/Lib/LocalGL/Shintani/LiftingGreenCharacters.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/LocalGlobal/LabelCompatibility.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
+   "title": "Local GL_N(E_w)-action on forms, parahoric types and labels at a split place",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Local-global compatibility at split places",
+   "lines": 381,
+   "theorems": 7,
+   "note": "This file relates forms on a definite hermitian space `V` to the local theory of `GL_N(E_w)` at a\nsplit place `w`. The action of `GL n (𝒪_w)` on a function on the finite adelic group is then\ndescribed through the finite group `GL n (k_w)`, in two ways: by parahoric types and by labels.\n\n## Main definitions and results\n\n* `New.Patching.localFormRep`: the local representation on forms. It is smooth, and the vectors\n  fixed by the pro-`p` Iwahori subgroup `New.proIwahori` in the span of the translates of one form\n  (`New.cyclicSpan`) are finite-dimensional; both are instances.\n* `New.hasHeckePolyAt_iff_localFormRep`: the Hecke polynomial at `w` read in the local\n  representation.\n* `New.HasParahoricType`: `f` has a parahoric type: the parabolic subgroup with blocks `b` acts\n  through characters of the determinant on all blocks but one, and on the remaining block through a\n  character of the determinant times a function `F`.\n* `New.HasProductLabel`: `f` has a label: the class function of `GL n (k_w)` built from a polynomial\n  and characters does not kill `f` (`New.HasLabel`).\n* `New.HasParahoricType.hasProductLabel`: a type gives a label.\n\nNotions from other files:\n* `New.ofSplitPlace`: For a split place w, the homomorphism GL_n(E_w) → G_f sending g to the unitary\n  element with component g at w and 1 off w, w̄; `New.offPartComap` is the open subgroup of G_f\n  pulled back along the map replacing the components of an element of G_f at w and w̄ by 1.\n* `New.ResField`: The residue field of the completion E_w of E at the finite place w.\n* `New.labelChar`: The multiplicative map sending `c` to the parabolic-induction product of the\n  class functions attached to the monic irreducible factors of `c`, with multiplicity.",
+   "literature": "Known; see `Lib.GaloisRep.LocalGlobal.LabelCompatibility` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/AutomorphicForms/HeckeEigenforms.lean",
+    "src/Lib/General/LinearAlgebra/BlockEmbeddings.lean",
+    "src/Lib/LocalGL/Shintani/LiftingGreenCharacters.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
+    "src/Lib/GaloisRep/TaylorWiles.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean",
+   "title": "Local-global compatibility at split places for Iwahori eigencharacters and parahoric types",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Local-global compatibility at split places",
+   "lines": 731,
+   "theorems": 16,
+   "note": "Let `r` be an `ℓ`-adic Galois representation attached to an eigenform on a definite unitary group\nover a CM field `E`, and let `w` be a split place. Level information on the form at `w` gives\npolynomials that kill geometric Frobenius and inertia elements under `r`, in the sense of\n`New.GaloisRep.PolyKillsAt`. At pro-`p` Iwahori level, with eigencharacter `New.torusChar ξ`, the\ncharacters `ξ i` are tamely ramified and, when sorted, give the roots of such polynomials. For `w`\nnot above `ℓ`, when a parahoric subgroup acts by scalars there are analogous polynomials for the\nFrobenius and inertia matrices. For the stabiliser in `GL_N(𝒪_w)` of a line modulo `w`, the Hecke\noperator of `diag (ϖ, 1, …, 1)` acts like Frobenius on the image of `T - 1`, for the matrix `T` of\nan inertia element, in the sense of an identity between traces. Here `p` is the residue\ncharacteristic of `w`.\n\n## Main definitions and results\n\n* `New.GaloisRep.Attached.local_global_of_eigencharacter`: the main result, for `ξ i` sorted by size\n  at a uniformiser.\n* `New.Patching.IsParahoricCompatible`: commuting matrices `F`, `T` are killed by polynomials read\n  off given scalars and an exponent that is not zero on a given vector.\n* `New.Patching.isParahoricCompatible_galRep`: the Frobenius and inertia matrices have this property\n  for a non-zero pro-`p` Iwahori fixed form on which a parahoric subgroup acts by scalars that tell\n  its blocks apart.\n* `New.Patching.hecke_eq_frob_on_parahoricEigenspace`: for the stabiliser in `GL_N(𝒪_w)` of a line\n  modulo `w`, acting by a scalar character that is not of order dividing `N !` at the unit, the\n  Hecke operator of `diag (ϖ, 1, …, 1)` acts like Frobenius on the image of `T - 1`, with `T` the\n  inertia matrix, in the sense of an identity between traces.\n\nNotions from other files:\n* `New.GaloisRep.PolyKillsAt r A s P`: `P (r s) = 0` if `ℓ` is a unit at `A`; above `ℓ`, for every\n  Weil pair `(s, k)`, `r` is potentially crystalline and `P` kills `New.Period.linearFrob`.\n* `New.IsFrob A q σ`: `σ` stabilises `A` and acts as `x ↦ x ^ q` on its residue field.\n* `New.Patching.localFormRep V κ hw`: the representation of `GL_N(E_w)`, with `N` the cardinality\n  of `n`, on the forms of weight `κ` on `V` at the split place `w`.\n* `New.IsIwahoriEigen ρ ξ x`: `x ≠ 0` is fixed by the pro-`p` Iwahori subgroup, and\n  `U_t x = ξ t • x` for dominant diagonal `t`.\n* `New.torusChar θ`: the character `t ↦ ∏ i, θ i (t i) * |t i| ^ (N - 1 - i)` of the diagonal torus\n  of `GL_N`.",
+   "literature": "Known; see `Lib.GaloisRep.LocalGlobal.LabelCompatibility` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
+    "src/Lib/GaloisRep/Main/AllRanks.lean",
+    "src/Lib/LocalGL/Iwahori/SortedExponents.lean",
+    "src/Lib/LocalGL/Iwahori/SphericalExponents.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/LocalGlobal/LabelCompatibility.lean",
+    "src/New/Congruences/FirstOrder/TiedTraces.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/LocalGlobal/LabelCompatibility.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/LocalGlobal/LabelCompatibility.lean",
+   "title": "Tame exponents of inertia and local-global compatibility for labelled forms",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Local-global compatibility at split places",
+   "lines": 516,
+   "theorems": 12,
+   "note": "Let `w` be a finite place of `E` whose residue field `k_w` has order `q`, let `A` be a valuation\nsubring of an algebraic closure `Ω` lying over `w`, and let `T` be an injective complex-valued\nmultiplicative character of an algebraically closed extension `K` of `k_w`.\n\n## Main definitions and results\n\n* `New.GaloisRep.IsTameExponent w A T f s a`: the inertial element `s` moves a `(q ^ f - 1)`-th root\n  of a uniformiser by the root of unity that `T` reads as `exp (2πi a / (q ^ f - 1))`.\n* `New.GaloisRep.IsLabelledAt`: for a polynomial `c` over the residue field, the polynomial with\n  roots `ιℓ ((T ^ a) x)` satisfies a given condition at each such `s`. Here `x` runs over the roots\n  of `c`, `ιℓ` is the fixed map from `ℂ` to `PadicAlgCl ℓ`, and `T ^ a` is the `a`-th power of the\n  character `T`.\n* `New.GaloisRep.IsTameExponent.pow_apply_charName`: comparison with the local Artin map, for\n  characters of `k_wˣ`.\n* `New.GaloisRep.exists_isTameExponent`: exponents exist when `f` is a factorial.\n* `New.GaloisRep.Attached.isLabelledAt`: if an eigenform has, at a split place `w`, a type for\n  `GL n` of the residue field given by a label (`New.HasProductLabel`: a polynomial `c` of degree\n  `d` and characters `χ l` with multiplicities `t l`, where `d + ∑ l, t l` is the rank and the roots\n  of `c` and the names of the `χ l` are all distinct), then inertia at `w` acts on the attached\n  Galois representation through the tame characters given by the roots of the polynomial of the\n  label (`New.GaloisRep.IsLabelledAt`, `New.GaloisRep.IsTameExponent`). The proof uses base changes\n  of prime degree in which `w` is inert to reduce to the case where `c` splits into linear factors.\n  That case follows from `New.GaloisRep.Attached.local_global_of_eigencharacter` applied to local\n  units.\n\nNotions from other files:\n* `New.IsPlaceOver A w`: the valuation subring `A` of `Ω` lies over `w`, that is, an integer of `E`\n  is in the maximal ideal of `A` exactly when it lies in `w`.\n* `New.Cohomology.centrePrime Ω A`: the integers of `Ω` that lie in the maximal ideal of `A`.\n* `New.charName T χ`: the unit of `k_w` that names the character `χ` of `k_wˣ`; the map `χ ↦ x_χ` is\n  an isomorphism from the character group of `k_wˣ` to `k_wˣ` that depends on `T`.\n* `New.GaloisRep.PolyKillsAt r A s Q`: the polynomial `Q` kills `r s` if `ℓ` is a unit at `A`, and\n  kills the action of `s` on the periods of `r` if `A` lies above `ℓ`.",
+   "literature": "Known result: Local-global compatibility at tame level, away from ℓ and at ℓ. Here it is proved only\nat split places, for depth-zero types induced from a squarefree type and characters of the\ndeterminant. It is stated as polynomials that kill inertia elements, without the local Langlands\ncorrespondence, and it is reduced by cyclic base change to the case of sorted tame Iwahori\neigencharacters. Source: Harris, Taylor, The geometry and cohomology of some simple Shimura\nvarieties (2001); Taylor, Yoshida, J. Amer. Math. Soc. 20 (2007); Barnet-Lamb, Gee, Geraghty,\nTaylor, Local-global compatibility for l = p, II (2014), Thm 1.1.\n\nSee also `Lib.ClassField.Local.ArtinMap`.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/ShintaniLift.lean",
+    "src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean"
+   ],
+   "usedBy": [
+    "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/SelmerModules.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/SelmerModules.lean",
+   "title": "Selmer modules, Tate twists, components of cocycles and places above a prime",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 316,
+   "theorems": 7,
+   "note": "`E` is a CM field and `Ω ⊇ E` is an algebraic closure of `ℚ`. The class `New.CMFieldWithRoot5040`\nbundles these hypotheses on `E` with a primitive root of unity of order `5040`. Linear conditions on\nfunctions `Gal(Ω/E) → n → B` are sets of relations, and `New.obeying R B` is the module of functions\nthat obey all of `R`. Over `ℚ` we define modules of cocycles for the inverses of characters\n`Υ = cyc ^ e * ψ`, into which Selmer groups over cyclotomic fields decompose, and we prove basic\nfacts on places of `Ω` above a rational prime for use with Gauss sums.\n\n## Main definitions and results\n\n* `New.IsFromU1`: Galois characters that come from idele class characters through `x ↦ x / x̄`.\n* `New.selmerModule`: locally constant cocycles, unramified outside `S`, that obey the relations\n  `L`.\n* `New.Selmer.tateTwist`, `New.Selmer.shaOdd`: the Tate twist `Λ(-e)` and a module of cocycles that\n  for `e ≠ 0` describes the odd part of `Ш¹`.\n* `New.cyclotomicPowDirichlet l e ψ`: the character of `Gal(Ω/ℚ)` with values in `Oˣ` that is the\n  `e`-th power of the `l`-adic cyclotomic character times the Dirichlet character `ψ` modulo `N`.\n  The latter is read through the action on `N`-th roots of unity.\n* `New.OddPart.component l e ψ ν`: the component for `Υ = cyc ^ e * ψ`, with values in `O / l ^ ν`.\n\nNotions from other files:\n* `New.cyclotomicChar`, `New.cyclotomicCharIn Λ`: the `ℓ`-adic cyclotomic character `cyc`, with\n  values in `ℤ_[ℓ]ˣ` and in `Λˣ`.\n* `New.cycloGalGroup`: The subgroup of Gal(ℚ̄/ℚ) fixing all N-th roots of unity: the absolute Galois\n  group of ℚ(ζ_N).\n* `New.IsPlaceOver`: The valuation subring A of Ω lies over the prime w of E: an integer of E is in\n  the maximal ideal of A exactly when it lies in w.\n* `Set.conjClosure`: The set S ∪ S̄ of the finite places in S and their complex conjugates.",
+   "literature": "Known; see `Lib.Cyclotomic.OddSha`, `Lib.ClassField.Global.CMSplittingCharacters`,\n`Lib.Cyclotomic.Kolyvagin.ReciprocityComponentBounds`,\n`Lib.ClassField.GaloisCohomology.KummerCyclicClasses` and `Lib.ClassField.Places.LocalFields` for\nsources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Adeles/LocalFactors.lean",
+    "src/Lib/ClassField/Global/AlbertBrauerHasseNoether.lean",
+    "src/Lib/Cyclotomic/Voronoi.lean",
+    "src/Lib/General/Algebra/FittingIdealsAndLengths.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/Global/CMSplittingCharacters.lean",
+    "src/Lib/Cyclotomic/Stickelberger.lean",
+    "src/Lib/GaloisRep/Main/DivisibleSelmerModules.lean",
+    "src/Lib/General/NumberTheory/PadicLimitsValuation.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/DivisibleSelmerModules.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/DivisibleSelmerModules.lean",
+   "title": "Selmer modules with divisible coefficients",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 172,
+   "theorems": 8,
+   "note": "`O` is a discrete valuation ring and `New.Selmer.DivisibleQuot O` is the module `Frac(O) / O`. For a\nmatrix-valued function `ρ` on the Galois group `Gal(Ω/E)` of `Ω` over the number field `E`\n(`EmbeddedNumberField E`) with entries in `O` and `a ≠ 0`, the Selmer module with coefficients in\n`O / a` is identified with the `a`-torsion of the Selmer module with coefficients in `Frac(O) / O`,\nso it is no longer than the latter.\n\n## Main definitions and results\n\n* `New.Selmer.comp_mem_selmerModule_iff`, `New.Selmer.selmerModuleMapOfInjective`: an injective map\n  of coefficient modules preserves and reflects the Selmer conditions, and so maps Selmer modules\n  injectively.\n* `New.Selmer.length_torsionBy_selmerModule`: if the map identifies `O / a` with the `a`-torsion of\n  the coefficients, the Selmer module with coefficients in `O / a` has the length of the `a`-torsion\n  of the other.\n* `New.Selmer.divisibleSelmerLength`, `New.Selmer.length_le_divisibleSelmerLength`: the length of\n  the Selmer module with coefficients in `Frac(O) / O` (for `E` with `CMFieldWithRoot5040 E`), which\n  bounds the lengths of those with coefficients in `O / a`.\n\nNotions from other files:\n* `New.selmerModule ρ S L B`: the locally constant cocycles for `ρ` with values in `B ^ n` that are\n  unramified outside `S` and obey the linear relations `L`.",
+   "literature": "Known. The comparison of Selmer groups with coefficients in `O / a` and in `Frac(O) / O` is\nstandard; here it is immediate, because cocycles are counted and not classes.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Main/SelmerModules.lean",
+    "src/Lib/General/Algebra/BlockFittingBound.lean"
+   ],
+   "usedBy": [
+    "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
+    "src/New/Congruences/Selmer/Descent.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/Defs.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/Defs.lean",
+   "title": "Weights, Hecke polynomials, eigenforms and the filter of most Frobenii",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 325,
+   "theorems": 8,
+   "note": "The automorphic side concerns functions `f` on the finite adelic points `New.Gf E n` of the definite\nunitary group, with values in a complex vector space, under right translation `New.rightRegular`. At\na split place `w` (one with `star w ≠ w`), `GL n (E_w)` acts through `New.ofSplitPlace`, and\n`q = New.FinPlace.q w` is the order of the residue field. We define weights and their jumps, Hecke\npolynomials built from the eigenvalues of the Hecke operators `New.heckeSplit`, and eigenforms.\n\n## Main definitions and results\n\n* `New.Weight`, `New.jumps`: weights, and the multiset of integers attached to an embedding.\n* `New.heckePoly`, `New.HasHeckePolyAt`: the polynomial made from the eigenvalues of the Hecke\n  operators `New.heckeSplit`, and the statement that `f` is spherical at `w` with this polynomial.\n* `New.IsEigenform`, `New.IsSphericalOff`: eigenforms at almost all places of prime norm, and at all\n  split places outside a finite set and its conjugate.\n* `New.HasHeckePolyAt.isMonicOfDegree`: the Hecke polynomial of a nonzero spherical eigenvector\n  (`New.HasHeckePolyAt`) of rank `n` is monic of degree `n`.\n* `New.mostFrobenii`: the filter. `New.mostFrobeniiAt` adds that the Frobenius element `frob` tends\n  to `g`.\n* `New.dense_of_mostFrobenii`: a property of most Frobenius elements holds on a dense set; hence the\n  filters `New.mostFrobeniiAt` are not trivial.\n\nNotions from other files:\n* `New.IsFrob`: `σ` stabilises the valuation subring `A` and `σ • x ≡ x ^ q` modulo the maximal\n  ideal for all `x ∈ A`.\n* `New.IsPlaceOver`: The valuation subring A of Ω lies over the prime w of E: an integer of E is in\n  the maximal ideal of A exactly when it lies in w.\n* `New.stdLevel`: The subgroup K_0 = G_f ∩ GL_n(Ô) of the finite adelic unitary group, the\n  stabiliser of the standard lattice Ô^n.",
+   "literature": "Known; see `Lib.GaloisRep.Main.OddRank`, `Lib.GaloisRep.LocalGlobal.LabelCompatibility` and\n`Lib.ClassField.Global.Chebotarev` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/ClassField/Global/Chebotarev.lean",
+    "src/Lib/Weil/Unramified/SplitHecke.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/AutomorphicForms/SmoothAlgebraicForms.lean",
+    "src/Lib/ClassField/LocalDuality/CrystallineDuality.lean",
+    "src/Lib/GaloisRep/KillingPolynomials.lean",
+    "src/Lib/GaloisRep/Main/LocalConditions.lean",
+    "src/Lib/LocalGL/SphericalChainLemma.lean",
+    "src/New/Congruences/FirstOrder/KummerMaps.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/LocalConditions.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/LocalConditions.lean",
+   "title": "Local conditions on ℓ-adic Galois representations and their passage to retracts",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 530,
+   "theorems": 19,
+   "note": "This file defines local conditions on an `ℓ`-adic representation `r` of `Gal(Ω/E)` (`New.GalRep`) at\na place `A` of `Ω`, that is a `ClosurePlace`: a valuation subring of the fixed field `Ω`, with\nvaluation `A.valuation`. For `A` above `ℓ`, each condition is stated along the local data\n`New.GaloisRep.PadicPlaceEmbedding E A ℓ`. These data consist of an embedding of `Ω` in `ℚ̄_ℓ` that\ninduces `A`, and a map with open image from the decomposition group to the Galois group of `ℚ_ℓ`.\nThis map respects Frobenius elements, inertia and the cyclotomic character. Finite type and killing\npolynomials pass from a representation to one that embeds in it near the identity. This covers\nsubrepresentations, restriction to open subgroups and conjugation by automorphisms of `Ω`.\n\n## Main definitions and results\n\n* `New.GaloisRep.IsGoodAt`: unramified, or crystalline.\n* `New.GaloisRep.IsFiniteTypeAt`: trivial on an open part of inertia, or potentially crystalline.\n* `New.GaloisRep.PolyKillsAt`: the polynomial `P` kills `s`.\n* `New.GaloisRep.JumpsRelAt`, `New.GaloisRep.HasJumpsAt`: the Hodge–Tate jumps compared with\n  multisets `J`.\n* `New.GaloisRep.IsSphericalAbove`: the three conditions that hold at a spherical place `w` of `E`.\n* `New.GaloisRep.isFiniteTypeAt_of_retract`, `New.GaloisRep.polyKillsAt_of_retract`,\n  `New.GaloisRep.jumpsRelAt_of_retract` (under an extra hypothesis), bundled in\n  `New.GaloisRep.local_clauses_of_retract`: finite type, killing polynomials and jumps pass from\n  `r'` to a representation `r` that embeds in `r'` near the identity.\n\nNotions from other files:\n* `New.Gp`: The absolute Galois group G_p = Gal(Q̄_p over Q_p).\n* `New.Period.IsCrystalline`: The elements of B⊗T fixed by the whole group (for\n  `New.Period.IsPotentiallyCrystalline`: by the elements near 1) span B⊗T over the period ring B.\n* `New.Period.IsWeilPair`: (s, m) with s in G_p acting on the residue field as x ↦ x^(1/p^m).\n* `New.Period.IsKilledBy`: T is potentially crystalline and P(β_{s,m}) = 0 on B⊗T, where β_{s,m} is\n  the operator `New.Period.linearFrob` of the pair (s, m).\n* `New.IsFrob`: `σ` stabilises the valuation subring `A` and `σ • x ≡ x ^ q` modulo the maximal\n  ideal for all `x ∈ A`.\n* `New.inertiaGroup`: the σ with `New.IsFrob A 1 σ`.",
+   "literature": "Known; see `Lib.GaloisRep.Main.OddRank` and `Lib.ClassField.Places.LocalFields` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Main/Defs.lean",
+    "src/Lib/PadicHodge/Crystalline/HodgeTateJumps.lean",
+    "src/Lib/PadicHodge/Crystalline/Regularity.lean"
+   ],
+   "usedBy": [
+    "src/Lib/PadicComparison/HodgeTate/PeriodMap.lean",
+    "src/Lib/PadicHodge/Characters.lean",
+    "src/Lib/PadicHodge/Limit/TraceLimit.lean",
+    "src/New/Congruences/LocalLoss/Basic.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/QuadraticStep.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/QuadraticStep.lean",
+   "title": "Split places over ℚ(√−d) and quadratic steps with prescribed splitting",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 575,
+   "theorems": 19,
+   "note": "Let `K = ℚ(√-d)` (`New.QuadField` d, d ≡ 3 mod 4). For a CM field `E` containing `K`, we study the\nplaces of `E` above split places of `K` prime to `d` (`New.GaloisRep.IsSplitPrimeToDisc`). For\nstably unramified `E`, above each such place of `K` one can be chosen so that neither it nor its\nconjugate equals one of two given places. We also construct a quadratic step `E'` over any stably\nunramified CM field `E` (`New.HasPrimitiveRoot5040`: `E` contains a primitive 5040th root of unity).\nThe field `E'` contains `ℚ(√-D)` and has prescribed behaviour at the places over a given integer\n`n`.\n\n## Main definitions and results\n\n* `New.GaloisRep.IsSplitPrimeToDisc.isSplit_of_below`: such a place differs from its complex\n  conjugate.\n* `New.GaloisRep.IsSplitPrimeToDisc.exists_place_above_ne`: if E satisfies\n  `New.HasPrimitiveRoot5040`, each such place of K has a place of E above it such that neither it\n  nor its conjugate equals one of two given places.\n* `New.GaloisRep.exists_isQuadraticStep`, `New.GaloisRep.exists_isStep_hasQuadSubfield`: the step\n  `E' = stepField χ`, for a character `χ` of `Gal(Ω/E)`, with the idele character of `χ`\n  (`New.GaloisRep.IsQuadraticStep`).\n\nNotions from other files:\n* `New.GaloisRep.IsSplitPrimeToDisc`: The prime u of ℚ(√−d) contains an element x = (1 + √−d)/2 − b,\n  b ∈ ℤ, that is coprime to its conjugate x̄.\n* `New.IsStep`: A step `E'/E`: `E` is stably unramified, and `E'` is a CM field Galois over `E` of\n  prime degree.\n* `New.QZChar`: Continuous characters of a group with values in `New.QZ` = ℚ/ℤ; `QZ.mk r` is the\n  class of `r : ℚ`, so `QZ.mk 2⁻¹` is `1 / 2`.",
+   "literature": "Known; see `Lib.GaloisRep.Main.OddRank` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Reduction/FirstMinimumShortBases.lean",
+    "src/Lib/ClassField/Grunwald.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Shimura/IntegralModel/PELDataExistence.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/CuspidalTypes.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/CuspidalTypes.lean",
+   "title": "Cuspidal types, multiplicity-free sums and the Hodge–Tate cocharacter",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 561,
+   "theorems": 11,
+   "note": "The file proves four results on unitary groups and Galois representations. Here `O_w` is the ring of\nintegers at a place `w` of `E` with uniformiser `ϖ`, and `χ` is the cyclotomic character.\n\n## Main definitions and results\n\n* `New.Variety.exists_isCuspidalType`: a character of `1 + ϖ M_N(O_w)`, trivial on\n  `1 + ϖ² M_N(O_w)`, that is nontrivial on every unipotent radical. It is\n  `k ↦ exp (2πi u (tr (b (k - 1))))` for an integral matrix `b` with irreducible characteristic\n  polynomial modulo `w` and an additive character `u : E_w / ϖ² → ℚ/ℤ` with `u ϖ ≠ 0`.\n* `New.Variety.exists_levelGU_invTransposeGL_le`: an open subgroup that contains the integral points\n  trivial at a finite set `S` of places contains a principal level `𝔑` (up to inverse transpose).\n  The primes of `𝔑` are those of a given `N` and of a set `B` meeting each pair `w, w̄` of `S`.\n* `New.GaloisRep.exists_rep_span_diagonal`: Galois representations `ρ τ`, one for each embedding `τ`\n  of `E` in `ℂ`, combine into one representation `r`. This `r` is multiplicity free (the span of its\n  image contains the diagonal matrices) and has the prescribed integers among its Hodge–Tate jumps\n  at every `τ`. It is built from the semisimplification of the sum of the `ρ τ`, keeping each\n  irreducible constituent once.\n* `New.Period.aeval_cocharacter_eq_zero`: let `x i ∈ ℂ_p` and integers `κ i` be given. A polynomial\n  over `ℂ_p` that vanishes at `(χ(g) ^ (-κ i) g(x i))_i` for all `g ∈ G_p` near `1` also vanishes at\n  `(T ^ (κ i) x i)_i`, with `T` the variable of the Laurent polynomials over `ℂ_p`.\n\nNotions from other files:\n* `New.localCongruence n w m`: the subgroup of `GL_n(E_w)` of integral matrices congruent to `1`\n  modulo `ϖ ^ (m + 1)`; so `m = 0` gives `1 + ϖ M_n(O_w)` and `m = 1` gives `1 + ϖ² M_n(O_w)`.\n* `New.stdLevel E n`: the integral points of the finite adelic unitary group, the stabiliser of\n  `Ô ^ n`.\n* `New.Variety.IsCuspidalType`: for every idempotent matrix ε ≠ 0, 1, the character is nontrivial on\n  the elements of its group that lie in 1 + εM_n(1 − ε).\n* `New.Variety.levelGU`: the principal level K(𝔑), the similitudes in `GL_n(Ô E)` that are congruent\n  to `1` modulo `𝔑`.\n* `New.Gf`: The finite adelic unitary group G_f: matrices g in GL_n(𝔸_f) with gᴴg = 1;\n  `New.Gf.trivialOn n S` is the subgroup of elements with component 1 at every place of `S`.\n* `New.Period.hodgeTateMaps`: The γ-semilinear maps f : T → ℂ_ℓ with f(gx) = χ(g)^(−u)·g f(x) for g\n  near 1; their dimension is the multiplicity `New.Period.jump` of the jump u at γ.",
+   "literature": "Known result: The Hodge-Tate cocharacter lies in the algebraic monodromy group. It is stated on\ncoordinates in C_p as the fact that a polynomial that vanishes at the cyclotomically twisted Galois\ntranslates of a point, near the identity, vanishes along the one-parameter torus. No algebraic\ngroups or Tannakian categories are used. Source: Serre, Groupes algébriques associés aux modules de\nHodge-Tate, Astérisque 65 (1979), §1; Sen, Ann. of Math. 97 (1973).\n\nSee also `Lib.GaloisRep.WeightCongruence`, `Lib.Adelic.Unitary.CongruenceLevels` and\n`Lib.GaloisRep.Main.OddRank`.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean",
+    "src/Lib/PadicHodge/Characters.lean",
+    "src/Lib/PadicHodge/Limit/TraceLimit.lean",
+    "src/Lib/Shimura/HeckeTower/HeckeData.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/SeedRepresentation.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/AttachedRepresentations.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/AttachedRepresentations.lean",
+   "title": "Attached Galois representations: traces, characteristic polynomials and rank one",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 434,
+   "theorems": 17,
+   "note": "This file sets up the statement that eigenforms on a definite unitary group have attached Galois\nrepresentations. Here `ιℓ` identifies `ℂ` with an algebraic closure of `ℚ_ℓ`, and `P` is a system of\ncomplex polynomials, one for each finite place. A continuous representation `ρ` with non-degenerate\ntrace form, with an open map `j` to the Galois group, is attached to `P` when, along most Frobenius\nelements (the filter `New.mostFrobenii`), its characteristic polynomials approach `ιℓ (P w)`. The\nfile shows that the characteristic polynomials are then determined by `P`, so two attached\nrepresentations have the same traces. It also shows that the representation attached to an\neigenform on the definite unitary group of rank one is the avatar of an algebraic Hecke character.\n\n## Main definitions and results\n\n* `New.GaloisRep.Attached`: a representation `ρ` of a topological group `H`, together with a map `j`\n  from `H` to the Galois group (by default the identity), is attached to `P`. This means that `ρ` is\n  continuous, has a non-degenerate trace form (`New.IsTraceNondeg`), `j` is open, and along most\n  Frobenius elements the characteristic polynomials of `ρ` approach `ιℓ (P w)`.\n* `New.GaloisRep.SphericalCompat`: the statement that an attached representation exists, and that\n  every attached representation satisfies `New.GaloisRep.IsCompatibleAt` (unramified or crystalline,\n  Hodge–Tate jumps, Hecke polynomial) at a place `w` where the form is spherical.\n* `New.GaloisRep.Attached.tendsto_charpoly_coeff`: `ιℓ (P w)` tends to `det (X - ρ x)` as the\n  Frobenius element at `w` tends to `j x`.\n* `New.GaloisRep.Attached.trace_eq`: two representations attached to `P` have the same traces.\n* `New.IsRankOneCharacter`: the infinity type of an algebraic Hecke character `θ` and its values at\n  split places are read off from a form on `U(1)` and its weight.\n* `New.GaloisRep.Attached.exists_det_eq_avatar`: in rank one, an attached representation is the\n  avatar of such a character `θ`.\n\nNotions from other files:\n* `New.Ω`: an algebraic closure of `ℚ`.\n* `New.Gf E n`: the finite adelic points of the definite unitary group of the CM field `E`.\n* `New.IsEigenform f P`: `f ≠ 0`, and at almost all `w` of prime norm, `w` is split and `f` is\n  spherical with Hecke polynomial `P w` (`New.HasHeckePolyAt`).\n* `New.mostFrobenii E`: a filter on triples `(w, A, s)` of a place `w` of prime norm, a place `A` of\n  `Ω` over `w` and a geometric Frobenius element `s` at `A` (`New.FrobeniusDatum`). \"Most\" means:\n  every non-empty open set of the Galois group has a non-empty open part `O` such that, for almost\n  all `w`, the property holds for every triple with `s` in `O`.\n* `New.mostFrobeniiAt E g`: the same filter, refined by the condition that `s` lies near `g`.",
+   "literature": "Known; see `Lib.GaloisRep.Main.OddRank` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GLn/SchurModule/SchurNorm.lean",
+    "src/Lib/PadicHodge/Characters.lean",
+    "src/Lib/Weil/DualPair/FiniteAction.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/SplitCase.lean",
+    "src/New/Congruences/Selmer/StickelbergerSystems.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/SeedRepresentation.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/SeedRepresentation.lean",
+   "title": "Seed representations: odd rank, a cuspidal type and free jumps",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 863,
+   "theorems": 20,
+   "note": "The Galois representation of a form `f` of odd rank on the definite unitary group, under two extra\nlocal hypotheses: a cuspidal type at a split place and free jumps.\n\n* `New.GaloisRep.exists_rep_of_cuspidal_type`: under these hypotheses, there is a continuous\n  representation with the characteristic polynomials of Frobenius given by the Hecke polynomials of\n  `f`, spherical at a further split place outside the ramification.\n\nThe proof transfers `f` to a form on the definite frames on which the centre acts by a character\n(`New.GaloisRep.exists_central_eigenform`), realizes its Hecke eigenvalues in the cohomology of a\nPEL model for each complex embedding of `E`, and joins the representations so obtained into one of\nrank `a` (`New.GaloisRep.exists_galRep_charpoly_eq_of_forall_embedding`).\n\nNotions from other files:\n* `New.jumps κ N σ`: the multiset {j − 1 − λ_j} if σ is in the CM type, else {λ_j + N − j},\n  1 ≤ j ≤ N, with λ the highest weight of κ at the place v of σ: λ_j = `κ.2 v` + Σ_{j ≤ h < N}\n  `κ.1 v h`.\n* `New.Variety.definiteForms 𝔑 ξ`: the functions `φ` on `GL n (𝔸f E)` with `φ (y x) = ξ y (φ x)` for\n  rational `y`, zero off the definite frames, and right invariant under the level `levelGU n 𝔑`.\n* `New.Variety.IsSafe 𝔑 w`: the place of `QuadField d` below `w` satisfies `IsSplitPrimeToDisc`, and\n  `𝔑` lies neither in `w` nor in any place above the conjugate of that place.\n* `New.GaloisRep.IsSphericalAbove r R J w P`: at every place above `w`, `r` is unramified or\n  crystalline, its jumps are related to the multisets `J` by `R` (`OccursIn`: each member of `J` is\n  among its jumps; `Eq`: they are exactly its jumps), and `P` kills its geometric Frobenius\n  elements.\n* `New.HasNoSmallRelations e`: two families of natural numbers with the same sum, at most\n  `(n + 1) ^ 2`, and the same sum weighted by the `e i`, are equal.",
+   "literature": "Known; see `Lib.GaloisRep.Main.OddRank` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/ClassField/Avatar/HeckeBaseChange.lean",
+    "src/Lib/GaloisRep/KillingPolynomials.lean",
+    "src/Lib/GaloisRep/Main/CuspidalTypes.lean",
+    "src/Lib/Shimura/Eigenspace.lean",
+    "src/Lib/Shimura/IntegralModel/PELDataExistence.lean",
+    "src/Lib/Shimura/IntegralModel/TowerExistence.lean",
+    "src/Lib/Shimura/ThetaModuli/UniversalFamily.lean",
+    "src/Lib/Shimura/Transfer/WeightOccurs.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/SplitCase.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/SplitCase.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/SplitCase.lean",
+   "title": "Attached Galois representations in odd rank: the split case",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 670,
+   "theorems": 14,
+   "note": "This file proves that eigenforms on the definite space `New.stdSpace` of odd rank have attached\nGalois representations in the split case. Here `E` is a CM field containing a primitive 5040th\nroot of unity and `ℚ(√−D)`, with `D ≡ 3 mod 4`. The spherical place `u` and the places above `ℓ`\nlie over split primes of `ℚ(√−D)`. The proof is an ℓ-adic limit argument. For it, the file\nconstructs places apart from given places and levels of a given type at a split place.\n\n## Main definitions and results\n\n* `New.GaloisRep.sphericalCompat_of_split`: in odd rank, eigenforms have attached Galois\n  representations compatible at a spherical place `u`, when `u` and the places above `ℓ` lie over\n  split primes of `ℚ(√−D)`. The eigenvalues of f are ℓ-adic limits of combinations of eigenvalues\n  of forms that satisfy the hypotheses of `New.GaloisRep.exists_rep_of_cuspidal_type`. The limit of\n  the traces of their representations is the trace of a representation attached to f\n  (`New.GaloisRep.Attached`), and the local properties at `u` pass to the limit.\n* `New.GaloisRep.exists_isTypeLevel`: Let `v` and `x` be split places with `v` apart from `x` and\n  its conjugate, `H` an open subgroup, and `ϑ` a character of the matrices `≡ 1` modulo `v` that is\n  trivial on those `≡ 1` modulo `v ^ 2`. Then there is a level of type `ϑ` at `v` that lies in `H`\n  away from `v` and `x`.\n\nNotions from other files:\n* `New.IsEigenform`: f ≠ 0, and almost all places w of prime norm are split and f has the Hecke\n  polynomial P w at w.\n* `New.GaloisRep.Attached` P r i: r is continuous with non-degenerate trace form, i (by default the\n  identity) is an open map to Gal(Ω/E), and at most Frobenius elements the characteristic\n  polynomials of r are ℓ-adically close to those given by P.\n* `New.InducesPlacePair` w τ: the place of E that the ℓ-adic embedding belonging to the infinite\n  place τ induces is w or its conjugate.\n* `New.GaloisRep.IsSplitPrimeToDisc` u: the place u of ℚ(√−D) contains some (1 + √−D)/2 − b\n  (b an integer) that is coprime to its conjugate; in particular u is split.",
+   "literature": "Known; see `Lib.GaloisRep.Main.OddRank` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Main/AttachedRepresentations.lean",
+    "src/Lib/GaloisRep/Main/SeedRepresentation.lean",
+    "src/Lib/GaloisRep/WeightCongruence.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/OddRank.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/OddRank.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/OddRank.lean",
+   "title": "Attached Galois representations in odd rank and their descent along weak base change",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 518,
+   "theorems": 12,
+   "note": "This file proves that eigenforms on the definite space `New.stdSpace` of odd rank over stably\nunramified CM fields have attached Galois representations. It first proves a descent result along\na step of weak base change. The general odd-rank case is then reduced to the split case of\n`Lib.GaloisRep.Main.SplitCase` by quadratic base changes, whose representations are glued on open\nsubgroups of the Galois group.\n\n## Main definitions and results\n\n* `New.IsWeakBaseChange.hasHeckePolyAt_of_decompGroup_le`: along a step of weak base change from f\n  to f', at a split place off S and its conjugate whose decomposition group lies in the open\n  subgroup N of the step, the Hecke polynomial of f passes to f'.\n* `New.IsWeakBaseChange.attached_comp_stepKerInclusion`: a representation r' attached to f',\n  restricted to N (`New.QZChar.stepKer`), is attached to the polynomials of f.\n* `New.IsWeakBaseChange.descendsAt`: the local conditions on r' pass to every representation\n  attached to f (`New.GaloisRep.DescendsAt`).\n* `New.GaloisRep.sphericalCompat_of_odd`: the statement `New.GaloisRep.SphericalCompat` (an\n  eigenform has an attached Galois representation, and every attached representation is compatible\n  at a spherical place w) for the definite space `New.stdSpace` of odd rank over a stably unramified\n  CM field (`New.HasPrimitiveRoot5040`). The split case is applied to base changes of f along\n  quadratic steps. The representations obtained on open subgroups are glued\n  (`New.GaloisRep.exists_attached_of_open_subgroups`), and the local properties at w descend from\n  one step (`New.IsWeakBaseChange.isCompatibleAt_of_attached`).\n\nNotions from other files:\n* `New.IsWeakBaseChange` μ Z f f': the set Z is finite and, for u above w ∉ Z ∪ Z̄, sphericity\n  passes from f to f' at `New.IsStepUnramifiedAt` places, and Hecke polynomials pass from f to f' at\n  `New.IsMatched` places.\n* `New.IsEigenform`: f ≠ 0, and almost all places w of prime norm are split and f has the Hecke\n  polynomial P w at w.\n* `New.GaloisRep.Attached` P r i: r is continuous with non-degenerate trace form, i (by default the\n  identity) is an open map to Gal(Ω/E), and at most Frobenius elements the characteristic\n  polynomials of r are ℓ-adically close to those given by P.",
+   "literature": "Galois representations attached to forms on definite unitary groups. The form proved\nis for the standard definite unitary group of odd rank over a stably unramified CM field\n(`New.HasPrimitiveRoot5040`). At a place whose local compact group fixes the form,\neach attached ℓ-adic representation is unramified or crystalline with the Hodge–Tate jumps of the\nweight, and each Hecke polynomial there kills geometric Frobenius. Here \"attached\" asks, beyond\ncontinuity and a non-degenerate trace form, only that Hecke polynomials are ℓ-adically close to\ncharacteristic polynomials at most Frobenius elements. The construction uses ℓ-adic limits, and\nquadratic base changes whose representations are glued on open subgroups of the Galois group.\nSource: Chenevier, Harris, Construction of automorphic Galois\nrepresentations II, Camb. J. Math. 1 (2013), Thm 3.2.3; with Labesse, Changement de base CM et\nséries discrètes (2011), Cor. 5.3, and Barnet-Lamb, Gee, Geraghty, Taylor, Potential automorphy and\nchange of weight (2014), Thm 2.1.1.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
+    "src/Lib/GaloisRep/Main/SplitCase.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/Avatar/LocalGlobalCompatibility.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/ThetaLift.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/ThetaLift.lean",
+   "title": "Theta lift of an algebraic form to a larger definite unitary group and its Hecke polynomials",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 513,
+   "theorems": 12,
+   "note": "This file constructs the theta lift from the definite unitary group of rank n to that of rank n + s.\nThe lift is used to separate the Galois representation of a form from those of its lifts. The file\nalso records how the monic and the reciprocal normalisations of the Hecke polynomial are related.\n\n## Main definitions and results\n\n* `New.exists_theta_lift_heckePoly`: the theta lift of a nonzero form is a nonzero form whose Hecke\n  polynomial at split places is the twisted old one times a string of linear factors.\n\nNotions from other files:\n* `New.AutChar.HasWeight`: `b.HasWeight c 1` says that `b u = ∏_v u_v ^ c v` whenever `u` has\n  integral finite part.\n* `New.WeilData`: Weil data on a stably unramified E. They consist of ȷ in E with ȷ = −ȷ̄, Im τȷ > 0\n  for every τ in the CM type and (1 − ȷ⁻¹)/2 integral; a finite idele α for which the completed\n  integers Ô are self-dual under (z, u) ↦ ψ_f(ȷαᾱzu); and a splitting character υ equal to −1 at\n  uniformisers of the places w with w = w̄.",
+   "literature": "Known result: Theta lift to larger rank, the step that reduces even rank to odd rank. Here a\nnon-zero theta lift in the convergent range from definite U(n) to U(n+s), with s > n, replaces\nendoscopic transfer. It keeps spherical places, and its Hecke polynomials are twisted and gain the\nstring of a character of U(1). Source: Blasius, Rogawski, Motives for Hilbert modular forms, Invent.\nMath. 114 (1993) and Shin, Ann. of Math. 173 (2011) for the idea (endoscopic transfer to odd rank);\nHarris, Soudry, Taylor, Invent. Math. 112 (1993) for theta lifts with a varying character.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/SiegelWeil/RallisInner/SharpData.lean",
+    "src/Lib/Weil/CompactLift/DefiniteThetaLift.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/AllRanks.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/GaloisRep/Main/AllRanks.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/GaloisRep/Main/AllRanks.lean",
+   "title": "Isotypic spaces of eigenforms and attached Galois representations in every positive rank. Its head has an overview of the theory.",
+   "folder": "GaloisRep: Galois representations",
+   "group": "Galois representations for definite unitary eigenforms",
+   "lines": 799,
+   "theorems": 24,
+   "note": "This file treats algebraic modular forms on a definite unitary group and their attached Galois\nrepresentations. The statement `New.GaloisRep.SphericalCompat` asserts the existence of an attached\nGalois representation and local–global compatibility at a place where the form is spherical.\n\n## Overview of this theory\n\nLet `ℓ` be a prime and `ι : ℂ ≃ ℚ̄_ℓ` a fixed isomorphism. Let `E` be a CM field with `New.WeilData`\n(auxiliary adelic data). Let `f` be an eigenform of weight `κ`, with Hecke polynomials `P w` at\nfinite places `w`, on the unitary group of the standard definite hermitian space of rank `n ≥ 1`. A\ncontinuous `r : Gal(Ω/E) → GL_n(ℚ̄_ℓ)` with non-degenerate trace form is `New.GaloisRep.Attached` to\n`P` if, for each `ε > 0`, `det (X - r s)` is coefficientwise within `ε` of `ι(P w)` for most\nFrobenii `s` at places `w` (`New.mostFrobenii`).\n\n* `New.GaloisRep.sphericalCompat_std`: such an `r` exists. If `f` has maximal level at `w`, every\n  such `r` is unramified or crystalline above `w`, with the Hodge–Tate jumps of `κ`; for split `w`\n  the Hecke polynomial kills geometric Frobenius. `New.GaloisRep.Attached.trace_eq`: `P` determines\n  `tr r`.\n* `New.GaloisRep.Attached.local_global_of_eigencharacter`: let `w` be split (`w̄ ≠ w`) and `A` a\n  place above it. Let `f` be a pro-`p` Iwahori eigenvector (`p` below `w`) with character\n  `ξ = (ξᵢ)`, where `‖ξᵢ(ϖ)‖` is non-increasing for the uniformiser `ϖ`. Then `r` is of finite type\n  at `A` (`New.GaloisRep.IsFiniteTypeAt`) and has the jumps of `κ`. Also `∏ (X - ι ξᵢ(x))` kills, in\n  the sense of `New.GaloisRep.PolyKillsAt`, each `s` in the decomposition group with `s⁻¹` the\n  `q^k`-th power on the residue field (`q` the residue cardinality, `k ≥ 0`). Here `x ∈ E_wˣ` has\n  order `k` and local Artin symbol the class of `s`.\n* `New.GaloisRep.Attached.isLabelledAt`: the first two conclusions also hold if `f` has a\n  `New.HasProductLabel` at `w`. Then a polynomial built from the values of the label's tame\n  characters kills each element of inertia, in the same sense.\n\nThese replace base change to `GL_n` (Labesse), Galois representations with local–global\ncompatibility (Shin, Chenevier–Harris, Barnet-Lamb–Gee–Geraghty–Taylor) and the local Langlands\ncorrespondence. Local polynomials kill but need not be characteristic. No Weil–Deligne\nrepresentation is built.\n\nPlan. `Lib.Shimura`: models of signature `(1, n - 1)`, the congruence relation and, for odd `n`,\neigenvalues of forms with a cuspidal type in cohomology. `Lib.Cohomology`: base change, fixed point\nformula. `Lib.PadicComparison`: cohomology above `ℓ` is crystalline; Hodge classes give jumps.\n`Main.SeedRepresentation` cuts it to rank `n` by `KillingPolynomials`. `Main.OddRank`: all forms by\n`ℓ`-adic limits (`WeightCongruence`, `Pseudocharacter`, `Lib.PadicHodge.Limit`), then fields with\nWeil data by `Main.QuadraticStep` and `BaseChange`. `Main.ThetaLift`, `Main.AllRanks`: two lifts to\nrank `2n + 1`, then cancel characters. `LocalGlobal`: tame base change down to the spherical case.\n\n## Main definitions and results\n\n* `New.GaloisRep.sphericalCompat_std`: `New.GaloisRep.SphericalCompat` holds in every positive rank\n  n. The proof lifts the eigenform to the odd rank 2n + 1 along two different characters and cancels\n  the n + 1 extra characters from each of the two representations.\n* `New.Patching.eigenformsAt`: forms spherical at `w` with given eigenvalues (no condition if `w` is\n  not split).\n* `New.Patching.Isotypic`: the isotypic spaces, each the `liminf` of the `New.Patching.eigenformsAt`\n  over the places. They are kept by operators supported at one place\n  (`New.Patching.Isotypic.map_mem`).\n* `New.Patching.Isotypic.iSupIndep_val`: the isotypic spaces are independent.\n* `New.Patching.Isotypic.galRep`, `New.Patching.Isotypic.attached_galRep`: a chosen Galois\n  representation of an isotypic space, attached to its Hecke polynomials when the space is nonzero\n  (`New.Patching.Isotypic.exists_attached`, `New.Patching.Isotypic.attached_galRep_of_exists`).\n\nNotions from other files:\n* `New.WeilData`: Weil data on a stably unramified E: ȷ in E with ȷ = −ȷ̄, Im τȷ > 0 for every τ in\n  the CM type and (1 − ȷ⁻¹)/2 integral; a finite idele α for which the completed integers Ô are\n  self-dual under (z, u) ↦ ψ_f(ȷαᾱzu); and a splitting character υ equal to −1 at uniformisers of\n  the places w with w = w̄.\n* `New.AutChar.HasWeight μ e ψ`: the character μ of U(1)(𝔸) has weight e and tame part ψ, that is\n  μ(u) = ∏_v u_v^{e(v)} · ∏_w ψ_w(u mod w) when u has integral finite part. From it,\n  `HasWeight.toAlgebraic k j` is the algebraic Hecke character μ(x/x̄) υ(x)^{−k} |x|^{j−k/2}, and\n  `New.heckeCoeff χ ∅ w` is the value of a Hecke character χ at the chosen uniformiser of w.\n* `New.IsTraceNondeg r`: the trace form on the span of the image of r is non-degenerate.\n* `New.Space`: a hermitian space with a point, given by a matrix J over E and x in GL_n(𝔸) with xᴴJx\n  equal to the diagonal matrix of its signs at the infinite places and 1 at the finite places.",
+   "literature": "Known; see `Lib.GaloisRep.Main.OddRank`, `Lib.ClassField.Global.CMSplittingCharacters` and\n`Lib.Adelic.AutomorphicForms.SmoothAlgebraicForms` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/ClassField/Avatar/LocalGlobalCompatibility.lean",
+    "src/Lib/GaloisRep/Main/ThetaLift.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean",
+    "src/Lib/GaloisRep/TaylorWiles.lean"
+   ],
+   "status": "open"
+  }
+ ]
+}

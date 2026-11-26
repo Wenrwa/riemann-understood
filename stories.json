@@ -1,67 +1,76 @@
-[
-  {
-    "id": "waves", "n": 1, "title": "Waves", "line": "The primes are made of waves", "live": true, "page": "waves.html",
-    "summary": "What the hypothesis says, where the zeros show up in a count of primes, and how the proof turns “nothing to the right of the line” into “everything on it”.",
-    "story": [
-      "The goal is fixed first. `Statements.lean` writes the hypotheses in Mathlib’s own terms, and `Main.lean` derives all five headline theorems from a single result, `grh`: no Dirichlet L-function vanishes to the right of the line Re s = 1/2.",
-      "The step from “nothing to the right” to “everything on the line” is the mirror symmetry of zeros (`New/Main`, `Lib/Analytic/ZeroSymmetry`). A zero off the line would have a twin on the other side, and one of the two would sit to the right.",
-      "The waves enter through a weighted count of primes. `PrimeError` defines its remainder R_q. Its transform has poles exactly at zeros of L-functions, so each zero contributes a wave to the count. `PrimeNumberTheorem` shows that R_q tends to 0, which the proof uses at a far-out second cut-off."
-    ],
-    "elsewhere": [
-      { "label": "Rubinstein’s explanation for ζ (whole proof)", "url": "https://www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/" },
-      { "label": "Tam Nguyen Duc: the proof in four levels", "url": "https://riemann.tamnd.com/proof/" }
-    ]
-  },
-  {
-    "id": "ceiling", "n": 2, "title": "A ceiling", "line": "A bound from above is enough",
-    "summary": "An upper bound on the prime remainder, never a lower one, rules out zeros to the right of the line. The main inequality supplies it.",
-    "story": [
-      "`Zeros/Criterion` is the key reduction. An eventual bound from above, R_q(x) ≤ A·x^(β−1), excludes zeros to the right of β. No floor is needed. Its notes trace the idea to Landau (1905) and recent work of Suzuki.",
-      "`OneSidedBound` proves that ceiling with exponent −1/2 + ε, which is exactly what the line Re s = 1/2 demands, and ends with `grh`. The GUIDE says the ε comes from log⁶ b / m, so the number of lifts m does the work.",
-      "Where does the ceiling come from? `MainInequality` measures one lattice of modular forms in two ways: from above (Theorems A and B, chapter 4) and from below (Theorem C, the bill). A “main amount” appears on both sides and cancels. What is left bounds the prime remainder from above. `Data`, `PrimeSums` and `Lattices` set up the scales, the prime sums and the heights and covolumes being compared."
-    ],
-    "elsewhere": [
-      { "label": "Tam Nguyen Duc: the window bound (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/vwin/" },
-      { "label": "Community INDEX: “The last step” table", "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/main/INDEX.md" }
-    ]
-  },
-  {
-    "id": "multiplicity", "n": 3, "title": "Multiplicity", "line": "Derivatives that count primes",
-    "summary": "A nonzero number can’t have more prime factors than its size. Derivatives of theta functions give numbers whose divisibility by primes is guaranteed.",
-    "story": [
-      "This is the whole-number version of Stepanov’s 1969 trick. A polynomial can’t have more roots, counted with multiplicity, than its degree. Likewise, a nonzero whole number can’t carry more prime factors, weighted by log p, than its own size. Guaranteed divisibility therefore becomes an upper bound on a sum over primes.",
-      "The numbers come from derivatives. A “jet” is a Taylor coefficient P(∂)F(0) of a theta function. `Derivatives/Divisibility` shows these derivatives are divisible by primes in a controlled way: the GUIDE calls them “derivatives that count primes”. `Field`, `FormalGroup` and `Vacuum` set up the algebra, and `Sharpness` shows the bound is attained.",
-      "The payoff is the gain: how many times each prime must divide the composite lift of chapter 4. Each extra layer of guaranteed divisibility plays the part of extra multiplicity."
-    ],
-    "elsewhere": [
-      { "label": "Tam Nguyen Duc: CM divisibility (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/cm-divisibility/" }
-    ]
-  },
-  {
-    "id": "chain", "n": 4, "title": "The chain", "line": "A chain of about √x theta lifts",
-    "summary": "Each lift adds a layer of divisibility. The chain’s length, between √x and 2√x lifts, balances cost against error at the square root.",
-    "story": [
-      "The GUIDE’s size table fixes the number of lifts m between √x and 2√x. That is the square root Alpöge singles out in his note: he says Claude suggested the chain’s length.",
-      "`UpperBound` builds the chain. Source forms are lifted m times between definite hermitian spaces X₀ → X_m and restricted to Y_m: the composite lift. The seesaw identity (`Seesaw/SeesawIdentity`) says that the lower chain applied to Poincaré series is a constant times this composite lift. `UpperBound/Divisibility` and `UpperBound/Size` then show the lifts are highly divisible and not too big.",
-      "That gives Theorem A (`Reduction/ShortAndEnough`): a multiple of the projected Poincaré series has short lifts and small index. `Spanning` proves Theorem B with a second-moment argument (Bessel functions, unfolding): a few translates span almost all of the target forms. Together they are the upper half of the main inequality."
-    ],
-    "elsewhere": [
-      { "label": "Tam Nguyen Duc: Bessel and seesaw (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/bessel-seesaw/" },
-      { "label": "Tam Nguyen Duc: theta matching (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/theta-matching/" },
-      { "label": "Epstein’s blueprint, §5–6: theta-lift chains of length about √X", "url": "https://github.com/jae-63/rh-alpoge-blueprint" }
-    ]
-  },
-  {
-    "id": "bill", "n": 5, "title": "Paying for the lifts", "line": "The lower bound, where most of the code lives",
-    "summary": "Theorem C: the lattice can’t be too small. This is where Galois representations, Selmer groups and L-values come in.",
-    "story": [
-      "Every lift has a price. Theorem C (`Determinant/Twist/LongForms`) is the lower half of the main inequality: covolume and twice the index together are at least about the main amount. Proving it is where most of the code lives.",
-      "`Determinant` chooses a twist for each prime, computes norms of theta lifts and of whole chains, and uses an exchange identity of Siegel–Weil type. `OneLift` studies a single lift: its volume and height, Hecke L-values as squared norms and their valuations, and “false lifts”.",
-      "`Congruences` controls the denominators. It uses Galois representations, anticyclotomic twists with small Selmer groups, the local loss, and the lifting of crystalline classes (p-adic Hodge theory). `Appendix` supplies discrete series with a large gap. This is the “everything” behind the remark that “the Riemann Hypothesis is proved by using everything”."
-    ],
-    "elsewhere": [
-      { "label": "Tam Nguyen Duc: determinants (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/determinants/" },
-      { "label": "Tam Nguyen Duc: the Galois row (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/galois-row/" }
-    ]
-  }
-]
+{
+  "parts": [
+    { "id": "statement", "n": 1, "title": "The statement and the last step", "line": "What is proved, and the final move",
+      "summary": "The five theorems in Mathlib’s terms, and how “no zeros to the right of the line” becomes “all zeros on it”.",
+      "story": [
+        "`Statements.lean` writes the hypotheses in Mathlib’s own terms. `Main.lean` derives all five headline theorems from one result, `grh`: no Dirichlet L-function vanishes to the right of Re s = 1/2.",
+        "The last move is mirror symmetry (`New/Main`, `Lib/Analytic/ZeroSymmetry`). Zeros come in pairs reflected across the line, so a zero off the line would have a twin to its right, and `grh` forbids that."
+      ],
+      "elsewhere": [ { "label": "The community GUIDE: “Where to start”", "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/main/GUIDE.md" } ] },
+    { "id": "zeros", "n": 2, "title": "From a bound to the zeros", "line": "A one-sided bound on primes rules out zeros",
+      "summary": "A weighted count of primes whose error “sees” the zeros, and why bounding that error from above is enough.",
+      "story": [
+        "`Zeros/PrimeError` defines a weighted prime count and its remainder R_q. Its transform has poles exactly at zeros of L-functions, so the zeros show up as waves in the count of primes.",
+        "`Zeros/Criterion` turns a bound into a zero-free region. An eventual bound from above, R_q(x) ≤ A·x^(β−1), excludes zeros to the right of β. No lower bound is needed. Its notes cite Landau (1905) and Suzuki (2024).",
+        "`OneSidedBound` proves the bound with β = 1/2 + ε, using the main inequality (part 4) and the prime number theorem at a far-out second cut-off (`Zeros/PrimeNumberTheorem`), and ends with `grh`."
+      ],
+      "elsewhere": [ { "label": "Tam Nguyen Duc: the window bound (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/vwin/" } ] },
+    { "id": "setup", "n": 3, "title": "The setup", "line": "The data, the scales and the yardsticks",
+      "summary": "The number field, the scales x, x₁, b and m, the prime sums being compared, and the heights and lattices used to measure.",
+      "story": [
+        "`Data` fixes everything the argument works with: a number field E built from ℚ(√−d) and roots of unity, its places, the level, the twists, and the scales. The GUIDE’s size table puts the number of lifts m between √x and 2√x.",
+        "`PrimeSums` defines the main amount and the remainder, the prime sums that the main inequality compares. `Lattices` provides heights over all places, twisted lattices, index and covolume: the yardsticks used to measure a family of forms from above and below.",
+        "Nearly every other part uses these files."
+      ],
+      "elsewhere": [ { "label": "The community GUIDE: glossary and sizes", "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/main/GUIDE.md" } ] },
+    { "id": "main", "n": 4, "title": "The three theorems and the main inequality", "line": "Where everything meets",
+      "summary": "Theorems A and B bound a family of forms from above, Theorem C from below; the main amount cancels and a bound on primes is left.",
+      "story": [
+        "`ShortAndEnough` states Theorem A (a multiple of the projected Poincaré series has short lifts and small index) and Theorem B (a few translates span almost all of the target forms). Theorem C, the lower bound, is in part 7.",
+        "`MainInequality` puts them together. Up to errors, main amount ≤ (V + 2δ)/dim ≤ main amount − (n/dim)·m·remainder. The main amount cancels, which leaves an upper bound on the remainder of the prime sum. That is the bound part 2 needs."
+      ],
+      "elsewhere": [ { "label": "Community INDEX: “The last step” table", "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/main/INDEX.md" } ] },
+    { "id": "theoremA", "n": 5, "title": "Theorem A: the composite lift", "line": "A chain of about √x theta lifts, highly divisible",
+      "summary": "Theta lifts chained m times, derivatives that count primes, the seesaw identity: short lifts with small index.",
+      "story": [
+        "`UpperBound` builds the chain. Source forms are lifted m times between definite hermitian spaces X₀ → X_m and restricted to Y_m: the composite lift. Its `Objects` folder defines the main objects, which much of the rest of the proof also uses. The seesaw identity (`Seesaw/SeesawIdentity`) says the lower chain applied to Poincaré series is a constant times the composite lift.",
+        "`Derivatives` supplies the divisibility: jets (Taylor coefficients) of theta functions are divisible by primes in a controlled way. The GUIDE calls them “derivatives that count primes”, and `Sharpness` shows the bound is attained. A nonzero number can’t have more prime factors than its size, so guaranteed divisibility becomes an upper bound on a sum over primes: Stepanov’s 1969 idea, done with whole numbers.",
+        "`UpperBound/Divisibility` and `UpperBound/Size` then show the composite lift is highly divisible and not too big. That is Theorem A."
+      ],
+      "elsewhere": [
+        { "label": "Tam Nguyen Duc: CM divisibility (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/cm-divisibility/" },
+        { "label": "Tam Nguyen Duc: theta matching (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/theta-matching/" },
+        { "label": "Epstein’s blueprint, §5–6: theta-lift chains of length about √X", "url": "https://github.com/jae-63/rh-alpoge-blueprint" } ] },
+    { "id": "theoremB", "n": 6, "title": "Theorem B: enough forms", "line": "A second moment shows a few translates span",
+      "summary": "A Petersson-type second moment, with Bessel functions and unfolding, shows a few translates span almost all target forms.",
+      "story": [
+        "`Spanning` proves Theorem B with a second-moment argument: the moments (`SecondMoment`), equal multiplicities (`Multiplicities`), measures and Bessel functions (`Bessel`), unfolding (`Unfolding`), a main term and the remaining terms.",
+        "Its conclusion is that a few translates of the normalised Poincaré map span almost all of the target forms."
+      ],
+      "elsewhere": [ { "label": "Tam Nguyen Duc: Bessel and seesaw (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/bessel-seesaw/" } ] },
+    { "id": "theoremC", "n": 7, "title": "Theorem C: the lower bound", "line": "Paying for the lifts",
+      "summary": "Determinants, one lift at a time, and congruences: covolume and twice the index are at least about the main amount.",
+      "story": [
+        "Theorem C (`Determinant/Twist/LongForms`) says that covolume plus twice the index is at least about the main amount: integral forms are long.",
+        "`Determinant` picks a twist for each prime, computes norms of theta lifts and of whole chains, and uses an exchange identity of Siegel–Weil type. `OneLift` studies a single lift: its volume and height, Hecke L-values as squared norms, their valuations, and “false lifts”.",
+        "`Congruences` controls denominators. It uses Galois representations, anticyclotomic twists with small Selmer groups, the local loss, and lifting crystalline classes. `Appendix` supplies discrete series with a large gap."
+      ],
+      "elsewhere": [
+        { "label": "Tam Nguyen Duc: determinants (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/determinants/" },
+        { "label": "Tam Nguyen Duc: the Galois row (original edition; matched by title)", "url": "https://riemann.tamnd.com/proof/galois-row/" } ] }
+  ],
+  "ideas": [
+    { "id": "waves", "n": 1, "title": "Waves", "line": "The primes are made of waves", "page": "waves.html",
+      "text": "The count of primes is a smooth curve plus one wave per zero of zeta. The hypothesis says every wave grows like √x and no faster.",
+      "where": ["statement", "zeros"] },
+    { "id": "ceiling", "n": 2, "title": "A ceiling", "line": "A bound from above is enough",
+      "text": "To rule out zeros to the right of the line, an upper bound on a weighted prime sum is enough. No lower bound is needed.",
+      "where": ["zeros", "main"] },
+    { "id": "multiplicity", "n": 3, "title": "Multiplicity", "line": "Derivatives that count primes",
+      "text": "A nonzero number can’t have more prime factors than its size. Derivatives of theta functions give numbers whose divisibility by primes is guaranteed.",
+      "where": ["theoremA"] },
+    { "id": "chain", "n": 4, "title": "The chain", "line": "About √x theta lifts",
+      "text": "Each lift adds a layer of divisibility, and each has a price. The number of lifts, between √x and 2√x, balances them at the square root.",
+      "where": ["setup", "theoremA", "theoremC"] }
+  ]
+}

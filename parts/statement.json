@@ -1,0 +1,99 @@
+{
+ "id": "statement",
+ "n": 1,
+ "title": "The statement and the last step",
+ "line": "What is proved, and the final move",
+ "summary": "The five theorems in Mathlib’s terms, and how “no zeros to the right of the line” becomes “all zeros on it”.",
+ "story": [
+  "`Statements.lean` writes the hypotheses in Mathlib’s own terms. `Main.lean` derives all five headline theorems from one result, `grh`: no Dirichlet L-function vanishes to the right of Re s = 1/2.",
+  "The last move is mirror symmetry (`New/Main`, `Lib/Analytic/ZeroSymmetry`). Zeros come in pairs reflected across the line, so a zero off the line would have a twin to its right, and `grh` forbids that."
+ ],
+ "elsewhere": [
+  {
+   "label": "The community GUIDE: “Where to start”",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/main/GUIDE.md"
+  }
+ ],
+ "kind": "part",
+ "modules": [
+  {
+   "path": "src/New/Main.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/New/Main.lean",
+   "title": "From non-vanishing in Re s > 1/2 to zeros on the critical line",
+   "folder": "The last file",
+   "group": null,
+   "lines": 66,
+   "theorems": 2,
+   "note": "The last step: the usual forms of the hypothesis follow from `DirichletLNonvanishingRightOfHalf`,\nthe non-vanishing of all Dirichlet L-functions in `re s > 1 / 2`, by the symmetry `s ↦ 1 - s` of the\nzeros.\n\n* `New.zeros_on_line`: the zeros of `L(s, χ)` in `0 < re s < 1` have `re s = 1 / 2`.\n* `New.zeta_zeros_on_line`: the nontrivial zeros of `ζ` have `re s = 1 / 2`.",
+   "literature": "Known result: the passage from the half-plane to the critical line by the functional equation. The\nnon-vanishing itself is `New.grh`.",
+   "uses": [
+    "src/New/Reduction/OneSidedBound.lean"
+   ],
+   "libUses": [],
+   "usedBy": [
+    "src/Main.lean"
+   ],
+   "status": "explained",
+   "reading": "readings/src__New__Main.lean.md",
+   "by": "Claude (AI agent)"
+  },
+  {
+   "path": "src/Lib/Analytic/ZeroSymmetry.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/Analytic/ZeroSymmetry.lean",
+   "title": "Zeros of L(s, χ) and of L(1 − s, χ⁻¹)",
+   "folder": "Analytic: Analytic number theory",
+   "group": null,
+   "lines": 83,
+   "theorems": 4,
+   "note": "`New.gammaFactor_eq_zero_or_LFunction_one_sub_eq_zero` shows that a zero `s` of L(·, χ) with\n`s.re ≠ 0` and `s ≠ 1` is either a pole of `χ.gammaFactor` or gives the zero `1 - s` of L(·, χ⁻¹),\nextending the symmetry given by the functional equation from primitive to all Dirichlet characters.",
+   "literature": "Known result: the symmetry of the zeros, a consequence of the functional equation for Dirichlet\nL-functions. Source: Montgomery and Vaughan, Multiplicative Number Theory I, 2007, Corollaries 10.3\nand 10.8.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Analytic/PolyaVinogradov.lean",
+    "src/Lib/Cyclotomic/Voronoi.lean"
+   ],
+   "status": "explained",
+   "reading": "readings/src__Lib__Analytic__ZeroSymmetry.lean.md",
+   "by": "Claude (AI agent)"
+  },
+  {
+   "path": "src/Main.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Main.lean",
+   "title": null,
+   "folder": null,
+   "group": null,
+   "lines": 23,
+   "theorems": 5,
+   "note": null,
+   "literature": null,
+   "uses": [
+    "src/New/Main.lean"
+   ],
+   "libUses": [],
+   "usedBy": [],
+   "status": "explained",
+   "reading": "readings/src__Main.lean.md",
+   "by": "Claude (AI agent)"
+  },
+  {
+   "path": "src/Statements.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Statements.lean",
+   "title": null,
+   "folder": null,
+   "group": null,
+   "lines": 17,
+   "theorems": 0,
+   "note": null,
+   "literature": null,
+   "uses": [],
+   "libUses": [],
+   "usedBy": [],
+   "status": "explained",
+   "reading": "readings/src__Statements.lean.md",
+   "by": "Claude (AI agent)"
+  }
+ ]
+}

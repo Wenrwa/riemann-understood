@@ -1,0 +1,1592 @@
+{
+ "id": "lib-General",
+ "n": 10,
+ "kind": "background",
+ "title": "General lemmas",
+ "line": "Background: Lib/General",
+ "summary": "Results classed as known in the literature and missing from Mathlib, proved here with their own definitions.",
+ "story": [],
+ "elsewhere": [],
+ "modules": [
+  {
+   "path": "src/Lib/Speed.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/Speed.lean",
+   "title": "Speed settings",
+   "folder": null,
+   "group": null,
+   "lines": 78,
+   "theorems": 1,
+   "note": "The three settings of this file make instance search and `simp` faster in all files of the\ndevelopment. They add no axiom, and no proof relies on them: with this file emptied, the other files\nstill compile, more slowly.",
+   "literature": null,
+   "uses": [],
+   "libUses": [],
+   "usedBy": [
+    "src/Lib/Base.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/Base.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/Base.lean",
+   "title": "The adjoint of a matrix for the Hermitian dot product",
+   "folder": null,
+   "group": null,
+   "lines": 18,
+   "theorems": 1,
+   "note": "The other files of `Lib` and `New`, except `Lib.Speed`, import this file, directly or not, and\nwith it the speed settings of `Lib.Speed`.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Speed.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Adeles/Basic.lean",
+    "src/Lib/Adelic/Hecke/Basic.lean",
+    "src/Lib/Adelic/TraceFormula/LineDeterminant.lean",
+    "src/Lib/Analytic/ZeroSymmetry.lean",
+    "src/Lib/ClassField/Places/GaloisDefs.lean",
+    "src/Lib/GLn/SchurModule/Basic.lean",
+    "src/Lib/General/Algebra/AbsIntegrallyClosed.lean",
+    "src/Lib/General/Algebra/AdicCompletion.lean",
+    "src/Lib/General/Analysis/FiniteFourier.lean",
+    "src/Lib/General/Analysis/GaussianIntegral.lean",
+    "src/Lib/General/Combinatorics.lean",
+    "src/Lib/General/Geometry/LineBundles.lean",
+    "src/Lib/General/Groups/CongruenceSubgroups.lean",
+    "src/Lib/General/Groups/IndexOfProduct.lean",
+    "src/Lib/General/LinearAlgebra/TensorChains.lean",
+    "src/Lib/General/Measure/FibreMeasure.lean",
+    "src/Lib/General/Measure/IdempotentKernel.lean",
+    "src/Lib/General/Topology.lean",
+    "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
+    "src/New/UpperBound/ElementaryDivisors/PieriCone.lean"
+   ],
+   "shared": [
+    "statement",
+    "theoremC",
+    "theoremA"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Combinatorics.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Combinatorics.lean",
+   "title": "The q-binomial theorem, fibre sums, and Schur polynomials in the coefficients",
+   "folder": "General: General lemmas",
+   "group": null,
+   "lines": 417,
+   "theorems": 11,
+   "note": "The q-binomial theorem is proved as a sum over the subspaces of a vector space over a field with `q`\nelements. There is a lemma on grouping a finite sum by the fibres of a map. Schur polynomials are\ndefined without division, as integer polynomials in the coefficients of a monic polynomial; `s_l(r)`\ndenotes the Schur polynomial with exponent tuple `l`, evaluated at a tuple of roots `r`. Three\nalgebraic facts serve to extract values of Schur polynomials from vanishing linear forms.\n\n## Main definitions and results\n\n* `New.q_binomial_submodule`: the sum of `New.heckePolyCoeff X U` over the subspaces `U` of `W` is\n  `New.SiegelWeil.qPochhammer q (dim W) X`.\n* `New.Variety.genericSchur`, `New.Variety.rootCoeffEval`: the Schur polynomial in the coefficients,\n  and evaluation at the coefficients of the monic polynomial with a given multiset of roots.\n* `New.Variety.rootCoeffEval_genericSchur_mul_det`: the value times the Vandermonde determinant is\n  `det (r i ^ l j)`.\n* `New.Variety.sum_lagrange_smul_rootCoeffEval`: for distinct elements r₁, …, r_a of a field,\n  summing s_l(r₁, …, X rᵢ, …) against the Lagrange factors ∏_{k ≠ i} (X rᵢ − r_k)/(rᵢ − r_k)\n  gives s_l(r)·∑ⱼ X^(l j).\n* `New.Variety.map_prod_rootCoeffEval_eq_zero`: a linear form that kills the families\n  j ↦ ∏_{i, σ} ∏_{t ∈ x(j, σ)} (1 − c(i, σ)(α) t) for all α, with the c(i, σ) algebraically\n  independent, kills the products over σ of polynomials of bounded degree in the coefficients of\n  ∏_{t ∈ x(j, σ)} (X − t).",
+   "literature": "Known results: the q-binomial theorem, counted over the subspaces of a finite vector space, and the\nbialternant formula for Schur polynomials.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Shimura/IntegralModel/TowerExistence.lean",
+    "src/Lib/Shimura/TraceFormula/MarkedDefiniteSums.lean",
+    "src/Lib/Shimura/Transfer/Lefschetz.lean",
+    "src/Lib/Weil/Unramified/HeckeTransfer.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Topology.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Topology.lean",
+   "title": "Open subgroups, a tube lemma, and procyclic images of ℓ-adic characters",
+   "folder": "General: General lemmas",
+   "group": null,
+   "lines": 179,
+   "theorems": 9,
+   "note": "This file collects auxiliary facts from topology and algebra. It characterises congruence modulo a\nprincipal ideal `(a)` by divisibility of the difference by `a`.\n\n## Main definitions and results\n\n* `IsCompact.eventually_forall_mem`: a form of the tube lemma for a jointly continuous map of two\n  variables, with the continuity hypothesis discharged by `fun_prop` by default.\n* `New.Selmer.exists_procyclic_generator`: a continuous character of a compact group with values in\n  1 + 4ℤ_ℓ has procyclic image.\n* `MonoidHom.IsGeneratorModKer`: an element generates a topological group modulo the kernel of a\n  homomorphism; `New.Selmer.exists_isGeneratorModKer` gives one for such a character of a profinite\n  group.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Unitary/Defs.lean",
+    "src/Lib/ClassField/Places/DecompositionCyclotomic.lean",
+    "src/Lib/ClassField/Places/ValuationSubrings.lean",
+    "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+    "src/Lib/General/Groups/ProfiniteCharacters.lean",
+    "src/Lib/Shimura/ComplexTheta/AppellHumbertData.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/AbsIntegrallyClosed.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/AbsIntegrallyClosed.lean",
+   "title": "Absolutely integrally closed rings and their stability properties; Frobenius powers",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 156,
+   "theorems": 10,
+   "note": "* `New.Variety.frobPow`: the ring endomorphism `x ↦ x ^ p ^ f`, for a prime `p` with `p = 0` in\n  the ring.\n* `New.Variety.IsAbsIntegrallyClosed`: every monic polynomial of positive degree has a root (the\n  ring need not be a domain).\n* The property passes to subrings that are integrally closed in the ring\n  (`New.Variety.IsAbsIntegrallyClosed.of_isIntegrallyClosedIn`), to quotients\n  (`New.Variety.IsAbsIntegrallyClosed.of_surjective`) and to localisations\n  (`New.Variety.IsAbsIntegrallyClosed.of_isLocalization`). For a field it means algebraically\n  closed: algebraically closed fields have it by an instance, and\n  `New.Variety.IsAbsIntegrallyClosed.isAlgClosed` gives the converse.\n* `New.Variety.IsAbsIntegrallyClosed.exists_root_map_eq`,\n  `New.Variety.IsAbsIntegrallyClosed.mem_range_of_isIntegralElem`: for `f : A →+* B` from an\n  absolutely integrally closed ring into a domain, roots in `B` of monic polynomials over `A` lift\n  to roots in `A`, so integral elements lie in the image.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/Etale/Basic.lean",
+    "src/Lib/General/Algebra/SeriesBounds.lean",
+    "src/Lib/PadicHodge/PeriodRings/AxTheorem.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/AdicCompletion.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/AdicCompletion.lean",
+   "title": "Adic completeness: p-adic tools, extension by continuity, topological bases",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 772,
+   "theorems": 42,
+   "note": "This file collects tools on adic completeness over a commutative ring. It covers normed fields over\n`ℚ_[p]`, divisibility by powers of an element `π`, maps of adic completions, monoid actions by ring\nendomorphisms, extension of linear maps by adic continuity, and topological bases. In the results on\ntopological bases, `I` is an ideal of `S`, often `I = (p, z)`, and `M` is an `S`-module. For\n`c : New.Lift.AdicBasis I M`, the `c.b i` are its vectors and the `c.coord i` its coordinate forms.\n\n## Main definitions and results\n\n* `New.shiftDiff`: the operator `(x_j) ↦ (x_j - π x_{j+1})` on sequences. By\n  `New.isPrecomplete_of_shiftDiff_surjective`, if it is onto for `π = x` and for `π = y`, then\n  `(x, y)`-adic Cauchy sequences converge.\n* `New.Adic.ringHom_ext_of_approx`: two ring maps `F`, `G` from `A` to a `p`-adically separated ring\n  are equal if every element of `A` is congruent, modulo each power of `p`, to an element on which\n  they agree.\n* `New.adicMap`: a ring map that carries `I` into `J` induces a map of adic completions.\n* `New.exists_adic_extension`: a linear map `g` into an `I`-adically complete module extends along a\n  map `β` with dense image, if `β f ∈ I ^ (n + n) • ⊤` implies `g f ∈ I ^ n • ⊤` for all `n`.\n* `New.Lift.exists_adicBasis`: an `I`-adic topological basis of `M` over `S` exists when\n  `I = (p, z)` is maximal, `S` is `I`-adically complete, `p` is zero or injective on `M`, and `z` is\n  injective on `M / p M`. It may be taken to contain given vectors independent modulo `I M`.\n* `New.free_finite_of_rank_le`: over a ring `S` that is complete for a maximal ideal `(p, z)`, a\n  separated module of finite rank on which `p, z` behave as a regular sequence (or `p = 0` and `z`\n  is regular) is finite and free. The proof uses the topological basis of\n  `New.Lift.exists_adicBasis`.\n\nNotions of this file:\n* `New.Lift.AdicBasis`: a topological basis of `M` over `S` for the `I`-adic topology: vectors `b i`\n  whose finite combinations are dense, with linear forms `coord i` on `M` that read off the\n  coefficients of a finite combination.",
+   "literature": "Known; see `Lib.PadicComparison.Completion` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/Places/ValuationSubrings.lean",
+    "src/Lib/General/Algebra/IntegralPowerSeries.lean",
+    "src/Lib/General/Algebra/SeriesCongruences.lean",
+    "src/Lib/General/NumberTheory/CoefficientRings.lean",
+    "src/Lib/PadicHodge/PeriodRings/AxTheorem.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/SeriesCongruences.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/SeriesCongruences.lean",
+   "title": "Power series with prime power exponents, congruences and convergent sums",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 396,
+   "theorems": 25,
+   "note": "This file studies power series of the form `∑_{i ∈ I} z ^ p ^ i` and congruences between power\nseries modulo a constant `π`, with the facts on continuity and convergent sums that are needed to\nwork with such congruences.\n\n## Main definitions and results\n\n* `New.primePowerSeries`: the series `∑_{i ∈ I} z ^ p ^ i`.\n* `New.primePowerSeries_even_pow`: in characteristic `p` the `p`-th power of `∑_{i even} z ^ p ^ i`\n  is `∑_{i odd} z ^ p ^ i`.\n* `New.exists_eq_pow_add_pow_of_coeff_mul_ne_zero`: a product of two series `∑_{i ∈ I} z ^ p ^ i`\n  has only terms of the degrees `p ^ i + p ^ j`.\n* `New.dvd_sum_pow_sub_sum`: for a prime `p` the `p ^ j`-th powers are additive modulo a divisor of\n  `p`.\n* `New.continuous_subst_of_constantCoeff_eq_zero`, `New.continuous_pderiv`: substitution of finitely\n  many series without constant term and differentiation are continuous.\n* `New.C_dvd_of_hasSum`: over the valuation ring of `ℂ_[p]` a convergent sum of power series\n  divisible by `π` is divisible by `π`.\n\nPower series carry the topology of coefficientwise convergence.",
+   "literature": "Known result: elementary facts on power series in characteristic `p`.\n\nKnown result: elementary facts on formal power series with the topology of coefficientwise\nconvergence. Source: Bourbaki, Algebra II, Chapter IV.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Algebra/AdicCompletion.lean"
+   ],
+   "usedBy": [
+    "src/New/Derivatives/Divisibility/NormalForm.lean",
+    "src/New/Derivatives/Divisibility/NullFrames.lean",
+    "src/New/Derivatives/FormalGroup/Exponent.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/CartanMap.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/CartanMap.lean",
+   "title": "Higman's criterion, dévissage and multiplicative functions on finite modules (Cartan map)",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 641,
+   "theorems": 22,
+   "note": "Tools that reduce a statement about finite `l`-power-torsion discrete `G`-modules to simple cases;\nthey serve the inequality of local duality (`Lib.ClassField.LocalDuality.DualityInequality`) and the\ncocycle counts of `Lib.ClassField.GreenbergWiles.CocycleCounts`.\n\n* `New.DiscreteModule.IsHigmanProjective`: Higman's criterion, some additive `τ` has `∑ g τ g⁻¹ = 1`\n  over `G ⧸ Q`.\n* `New.DiscreteModule.FiniteKilledFixedInj`: the module is finite, killed by `n` and fixed by `Q`,\n  and `ρ z - m` is injective on it.\n* `New.DiscreteModule.diagonalPermModule`: the functions `Y → A` with the diagonal action of `G`.\n* `New.DiscreteModule.devissage_induction`: dévissage to modules killed by `l` and fixed by a normal\n  subgroup `P`.\n* `New.DiscreteModule.exists_open_sylow`: an open `P ≥ U` of index prime to `l` whose elements have\n  an `l`-power power in `U`.\n* `New.DiscreteModule.IsMultiplicative.eq_one_of_eq_one_on_isHigmanProjective`: on the finite\n  modules killed by `l` and fixed by `U` with `ρ z - 1` injective, `z` central modulo `U`, a\n  function with values in `ℚ≥0` that is multiplicative in short exact sequences is `1` as soon as it\n  is `1` on the modules with Higman's property.\n\nNotions from other files:\n* `New.DiscreteModule R G`: an `R`-module with the discrete topology and a continuous `R`-linear\n  action `ρ` of the topological group `G`.",
+   "literature": "Known result: The Cartan map has finite cokernel. It is stated for multiplicative functions with\nnonnegative rational values on finite modules killed by a prime on which one element, central modulo\nthe level, fixes no nonzero vector, with projectivity read as Higman's property. It is proved using\nfunctions on two parallel affine hyperplanes instead of Brauer characters or Artin induction.\nSource: J.-P. Serre, Linear Representations of Finite Groups (1977), Thm 35; for the route by\ninduction from cyclic subgroups in the local Euler characteristic formula, Milne, Arithmetic Duality\nTheorems, I 2.10-2.12.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/ClassField/GaloisCohomology/ContinuousCocycles.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/LocalDuality/DualityInequality.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/LongExactSequences.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/LongExactSequences.lean",
+   "title": "Long exact sequences, four and five lemmas, and Ext with disjoint unions and products",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 570,
+   "theorems": 25,
+   "note": "Long exact sequences of abelian groups are packaged as a structure, so that diagram chases, among\nthem the four and five lemmas, are proved once for all cohomology sequences. In the category\n`New.Variety.AbFunctor C` of functors from `C` to abelian groups, with `New.Variety.H N F n`\ndenoting Ext^n(N, F), short exact sequences in either variable give long exact Ext sequences, and\ncomparison maps give morphisms between them.\n\n## Main definitions and results\n\n* `New.Variety.LongExactSeq`, `New.Variety.LongExactSeq.Hom`: the sequences and their morphisms.\n* `New.Variety.LongExactSeq.Hom.four_lemma` (four lemma) and\n  `New.Variety.LongExactSeq.Hom.five_lemma` (five lemma).\n* `New.Variety.LongExactSeq.contravariant`, `New.Variety.LongExactSeq.covariant`: the long exact Ext\n  sequences of a short exact sequence in the first and in the second variable;\n  `New.Variety.Comparison.pull_hom_contravariant` and `New.Variety.Comparison.pull_hom_covariant`\n  say that comparison maps give morphisms between them.\n* `New.Variety.isCohomEquiv_iff_subsingleton`: in a short exact sequence 0 → X₁ → X₂ → X₃ → 0, the\n  map X₁ → X₂ is an equivalence for F iff the quotient X₃ has no cohomology with values in F.\n* `New.Variety.H.sigma_bijective`: the cohomology `New.Variety.H (freeAb.obj Y) F n` of a disjoint\n  union `Y = New.Variety.sigma X` of set-valued functors is the product of the cohomology groups of\n  the `X i`, by pull-back (`New.Variety.H.map`) along the inclusions.\n* `New.Variety.H.pi_bijective`: the map Ext^n(N, ∏ F_i) → ∏ Ext^n(N, F_i) is bijective, for the\n  objectwise product `New.Variety.piAbFunctor`.\n\nNotions from other files:\n* `New.Variety.IsCohomEquiv`: α: N' → N is an equivalence for F: the pull-back\n  Ext^n(N,F) → Ext^n(N',F) is bijective for every n; `New.Variety.AllBijective f` says that every\n  map f n is bijective.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Cohomology/Etale/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/Etale/BijectiveComparisons.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/MultivariatePolynomials.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/MultivariatePolynomials.lean",
+   "title": "Multivariate polynomials: cost of vanishing, homogenization, Nullstellensatz, Hensel",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 441,
+   "theorems": 14,
+   "note": "This file collects lemmas on polynomials in several variables and on algebras of finite type. They\ncover commuting partial derivatives, generation by products of polynomials in two sets of variables,\nthe cost of monomials of polynomials that vanish to high order, and homogenization along a linear\nform.\n\n## Main definitions and results\n\n* `New.exists_le_weight_of_mem_vanishingIdeal_pow`: a nonzero polynomial that vanishes to order `d`\n  at enough suitable points has a monomial of cost at least `d`.\n* `New.exists_isHomogeneous_sub_one_dvd_sub` replaces a polynomial `P` of total degree at most `N`\n  by a form `G`, homogeneous of degree `N`, congruent to `P` modulo `F - 1` for a given linear form\n  `F`. So `G` and `P` have the same value at every point where `F` equals `1`\n  (`New.exists_homogenization`); points are `R`-algebra maps `φ` out of the polynomial ring, with\n  values in algebras in `Type`.\n* `New.nullstellensatz_exists_le_ker`: the weak Nullstellensatz for an algebra of finite type, with\n  points written as `k`-algebra homomorphisms `A → k`.\n* `New.exists_mem_colon_of_tangent`: a criterion for an ideal to cut out a section of an affine\n  scheme of finite type near a point. Tangent vectors at a `k`-valued point `o` along the fibre are\n  the `V`-algebra maps to the dual numbers `k[ε]` that reduce to `o`.\n* `New.Variety.IsAbsIntegrallyClosedLocal.multivariate_hensel` is a several-variable Hensel lemma\n  for systems `x i = p i (x)` whose coefficients lie in the maximal ideal. Over a local domain in\n  which every monic polynomial of positive degree has a root\n  (`New.Variety.IsAbsIntegrallyClosedLocal`), it follows from the local structure of étale algebras:\n  a standard étale algebra is given by a monic polynomial, whose residual root lifts.",
+   "literature": "All results are known. `New.exists_le_weight_of_mem_vanishingIdeal_pow` is a form of the\nCombinatorial Nullstellensatz with multiplicity, over any field. Each variable u has a positive\ninteger κ(u) and the weight 1/κ(u). In place of a grid it uses a set of at least ∏κ(u) points at\nwhich each u^κ(u) agrees with a polynomial of lower weighted degree. A nonzero polynomial vanishing\nto order d at all these points then has a monomial of weighted degree at least d. Source: Alon,\nCombinatorial Nullstellensatz (1999); Ball–Serra, Punctured combinatorial Nullstellensätze (2009).",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Cohomology/Etale/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/Hodge/FixedPointFormula.lean",
+    "src/Lib/Cohomology/PointClass/NoetherNormalization.lean",
+    "src/Lib/Cohomology/ProperBaseChange/LineCharts.lean",
+    "src/Lib/DiscreteSeries/Theta/FockDualPair.lean",
+    "src/Lib/General/Geometry/SerreTheorem.lean",
+    "src/Lib/Shimura/ThetaModuli/FlatClosure.lean",
+    "src/New/UpperBound/ElementaryDivisors/Depth.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/ResidueSums.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/ResidueSums.lean",
+   "title": "Sums of residues at simple real poles",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 114,
+   "theorems": 6,
+   "note": "This file computes sums of residues of rational functions whose denominator has simple real roots.\nLet `p = nodal univ x` be the monic polynomial with the distinct roots `x i`. The residue of `F / p`\nat `x i` is `F (x i) / p' (x i)`. This file also determines the sign of `p' (x i)` when the roots\nare ordered.\n\n## Main definitions and results\n\n* `New.DiscreteSeries.sum_eval_div_eval_derivative_nodal` and\n  `sum_eval_div_sub_mul_eval_derivative_nodal`: two sums of residues at simple poles.\n* `New.DiscreteSeries.eval_derivative_nodal`: the derivative of `nodal univ x`, the monic\n  polynomial with roots `x j`, at the root `x i` is the product of the `x i - x j` over `j ≠ i`.",
+   "literature": "The residue sums rest on Lagrange interpolation.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/DiscreteSeries/FlenstedJensen/Defs.lean"
+   ],
+   "usedBy": [
+    "src/New/Appendix/DiscreteSeries/StationaryPosition.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/CohomologyBaseChange.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/CohomologyBaseChange.lean",
+   "title": "Flat base change in functor cohomology, and the base change adjunction for algebras",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 306,
+   "theorems": 13,
+   "note": "Cohomology here is H^n(N, Φ) = Ext^n(N, Φ) in the category of functors from C to abelian groups,\nwhere Φ is a functor to S-modules. For a module M over an S-algebra T, the base change map\n`New.Variety.baseChangeMap` goes from M ⊗_S H^n(N, Φ) to H^n(N, M ⊗_S Φ).\n`New.Variety.HasFlatBaseChange N` says that this map is bijective for all S, T, Φ, n and all M flat\nover S. The file proves bijectivity for N = ℤ[h_A], with h_A the functor represented by A, by the\nYoneda lemma, shows that for flat M the maps admit dévissage in N, and transfers bijectivity along\nbijective comparisons. It also shows that base change of algebras is left adjoint to restriction of\nscalars, and that ring maps send powers of p to powers of p.\n\n## Main definitions and results\n\n* `New.Variety.HasBaseChange.baseChangeMap_bijective_freeAb_reprBy`: the base change map is\n  bijective for N = ℤ[h_A], by the Yoneda lemma.\n* `New.Variety.HasBaseChange.devissage`: for M flat it admits dévissage, being compatible with the\n  long exact sequences of short exact sequences.\n* `New.Variety.Comparison.IsBijective.baseChangeMap_bijective_iff`: along a bijective comparison\n  from an N with flat base change, base change by a flat M on the target holds exactly when the\n  comparison stays bijective after tensoring the coefficients with M.\n* `New.Variety.algBaseChangeAdj`: for a k-algebra S, the functor A ↦ S ⊗_k A\n  (`New.Variety.algBaseChange`) is left adjoint to restriction of scalars\n  (`New.Variety.restrictAlg`).\n* `New.Variety.pointMap_algBaseChange_unit_bijective`: the base change S ⊗_k B represents Hom(B, -)\n  on S-algebras.\n\nNotions from other files:\n* `New.Variety.moduleCoeff`: A functor F from C to k-modules, regarded as a functor to abelian\n  groups, so that it can serve as the coefficients of cohomology.\n* `New.Variety.freeAb`: The functor sending a set-valued functor Y to Z[Y], whose value at A is the\n  free abelian group on Y(A).\n* `New.Variety.tensorWith`: For a module M over the S-algebra T, the functor X ↦ M ⊗_S X from\n  S-modules to T-modules.",
+   "literature": "The arguments are the usual ones: the Yoneda lemma, exactness of tensoring with a flat module, and\nthe tensor-hom adjunction.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Cohomology/Etale/BijectiveComparisons.lean",
+    "src/Lib/PadicComparison/Descent/TestCategory.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/TorsionTheories.lean",
+    "src/Lib/PadicComparison/Completion.lean",
+    "src/Lib/PadicComparison/Descent/TestCovers.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/IntegralPowerSeries.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/IntegralPowerSeries.lean",
+   "title": "Integral power series over ℂ_p: jets, the chain rule and the exponential",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 286,
+   "theorems": 16,
+   "note": "A power series over `ℂ_[p]` is called integral if it comes, through `New.seriesToCp`, from a series\nwith coefficients in the ring of integers of `ℂ_[p]`.\n\n## Main definitions and results\n\n* `New.mem_range_seriesToCp`: a series in one variable is integral iff all its coefficients have\n  norm at most one.\n* `New.pderiv_subst`: the chain rule for partial derivatives of a substitution of power series.\n* `New.jet_subst_linearSeries`: for a linear substitution `M`, the jet `P(∂) (F ∘ M) (0)` is the jet\n  of `F` along the polynomial `New.linSubst M P` obtained from `P` by the transposed substitution.\n* `New.expSubst`: the exponential `exp a` of a power series `a` in several variables without\n  constant term; it turns finite sums into products (`New.expSubst_add`, `New.expSubst_sum`).\n* `New.padicValNat_factorial_mem_Icc`: `n / (p - 1) - v_p(n!)` lies in `[0, K]` for `n < p ^ K`.\n* `New.rpow_le_norm_factorial`: the lower bound `p ^ (-n / (p - 1)) ≤ ‖n!‖` for the `p`-adic norm.\n\nNotions from other files:\n* `New.jet`: the bilinear pairing `P(∂)F(0)` of a polynomial `P` with a power series `F`, the sum\n  over exponents `d` of `d!` times the product of the `d`-th coefficients of `P` and `F`.\n* `New.linearSeries`: the linear form `∑ c_i z_i`, as a power series in the variables `z_i`.\n* `New.linSubst`: for a matrix `M` over `R`, the `R`-algebra map of polynomial rings that sends\n  `X_b` to `∑_t M_(t b) X_t`.",
+   "literature": "Known results: the chain rule and the functional equation of the exponential for formal power\nseries, and Legendre's formula for the valuation of a factorial.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/CM/Sigma/Basic.lean",
+    "src/Lib/GLn/SchurModule/Basic.lean",
+    "src/Lib/General/Algebra/AdicCompletion.lean"
+   ],
+   "usedBy": [
+    "src/Lib/CM/Integrality/Doubling.lean",
+    "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/PerfectAlgebras.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/PerfectAlgebras.lean",
+   "title": "Perfect algebras, étale algebras over perfect rings, and constant Laurent polynomials",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 542,
+   "theorems": 26,
+   "note": "Fix a prime p (the class `ThePrime p`). An algebra is perfect when x ↦ x^p is bijective; for hp :\np = 0, `frobPow hp 1` is this map x ↦ x^p as a ring endomorphism, and O♭ denotes the tilt of the\nring of integers of ℂ_p. The file constructs perfections of quotients and perfected blow-up charts,\nand it shows that étale algebras lift along surjections and are perfect over a perfect base in which\np = 0. It also proves that a Laurent polynomial that is a polynomial both in T and in T⁻¹ is\nconstant.\n\n## Main definitions and results\n\n* `New.Variety.perfectRing_monoidAlgebra`: O♭[G] is perfect when G is a module over the non-negative\n  rationals.\n* `New.Variety.PerfectAlg.isClosedUnderColimitsOfShape_widePushoutShape`,\n  `New.Variety.perfectRing_tensor`: if p = 0 in S, perfect S-algebras are closed under wide\n  pushouts, so, for perfect S, under tensor products.\n* `New.Variety.exists_perfection_quotient`: the perfection of B/t, for p = 0 in the base.\n* `New.Variety.exists_perfect_blowup_charts`: for f, g in a perfect algebra B over a perfect ring\n  with p = 0, perfected charts B₁ (where g ∣ f) and B₂ (where f ∣ g) form an exact sequence\n  B → B₁ × B₂ → B₀ → 0; the proof splits Laurent polynomials by\n  `New.Variety.surjective_toLaurent_add_invert`.\n* `New.Variety.exists_etale_lift`: an étale algebra over a quotient of C lifts to an étale algebra\n  over C.\n* `New.Variety.perfectRing_of_etale`: an étale algebra over a perfect ring in which p = 0 is\n  perfect.\n\nNotions from other files:\n* `New.Variety.PadicTest.tilt`: The functor from p-adic tests to commutative O^♭-algebras sending a\n  test S to its tilt S^♭.",
+   "literature": "Known; see `Lib.PadicComparison.Descent.AlmostDescent` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/PadicComparison/Descent/TestCovers.lean"
+   ],
+   "usedBy": [
+    "src/Lib/PadicComparison/Descent/AlmostDescent.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/FittingIdealsAndLengths.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/FittingIdealsAndLengths.lean",
+   "title": "Relations, relative lengths and Fitting ideals for Selmer group estimates",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 721,
+   "theorems": 37,
+   "note": "This file gives linear algebra for the Selmer group estimates. Conditions on a function `c : Γ → Bⁿ`\nare written as relations: finitely supported matrix-valued `f` on `Γ` acting by `c ↦ ∑ γ, f γ • c γ`\n(`New.relEval`). Sizes are lengths of modules in `ℕ∞`, and `addVal` is the valuation of a discrete\nvaluation ring, normalised to be 1 at a uniformiser. The zeroth Fitting ideal of a quotient is\ncontrolled as relations are added.\n\n## Main definitions and results\n\n* `New.obeying R B`: the functions with values in `Bⁿ` killed by all relations in `R`. For\n  `New.cocycleRelations ρ` these are the cocycles (`New.mem_obeying_cocycleRelations`).\n* `New.relLength S T`: the length of `S / (S ⊓ T)`, with its monotonicity and additivity rules.\n* `New.length_obeying_relationsOn_le`: the relations `New.relationsOn Z` of a finitely generated `Z`\n  cut out a module of length at most `rank Z * length B`.\n* `New.length_ker_le_addVal_det`, `New.exists_matrix_addVal_det_le_length`: lengths compared with\n  valuations of determinants.\n* `New.Lift.relLength_le_of_relations`: if `p ^ t L ≤ L'` and any `m + 1` elements of `L` killed by\n  `p` modulo `L'` have a combination in `L'` with some coefficient `1`, the length of `L` modulo\n  `L'` is at most `t m`.\n* `New.Selmer.fittingIdeal.exists_addVal_le_relLength`: if `p ≠ 0`, `R` is Noetherian and\n  `Φ (p • v) ∈ N` for all `v`, then for a condition `V` on the linear forms modulo `p`, some `c` of\n  valuation at most the length modulo `V` of the forms that vanish on `Φ⁻¹ N` multiplies the Fitting\n  ideal of an enlargement `K` of `N` into that of `N`; here `K` contains `Φ v` for every `v` killed\n  by all the forms that satisfy `V`.",
+   "literature": "Three standard properties of Fitting ideals are proved in the cases that are used, for fixed\ngenerators: base change (Stacks Project, Tag 07ZA), the product rule for an exact sequence, and the\nbound by a length.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/LinearAlgebra/HermiteForm.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/SelmerModules.lean",
+    "src/Lib/General/Algebra/BlockFittingBound.lean",
+    "src/Lib/General/Algebra/SharpMinors.lean",
+    "src/Lib/General/NumberTheory/CoefficientRings.lean",
+    "src/New/Reduction/Lattices/Colength.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/BlockFittingBound.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/BlockFittingBound.lean",
+   "title": "A matrix of relations with small block determinant valuation",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 182,
+   "theorems": 7,
+   "note": "Linear algebra over a discrete valuation ring O (written `DVR O`) with normalized valuation\nv = `addVal O` and fraction field K. The valuation of a determinant of relations is bounded by the\nlength of a module of solutions, taken modulo an element p or in K/O.\n\n* `New.Selmer.exists_rows_addVal_det_le`: let ψ : A → M_d(O) be onto, N an A-submodule of A^ι, p ≠ 0\n  and b < v(p). If the vectors modulo p killed by ψ(N) lie in a module of length at most b, then\n  some square matrix B with rows in N has v(det ψ(B)) ≤ b, with ψ(B) read as a block matrix.\n* `New.Selmer.divQuot`: the map x ↦ x/p from O/p to K/O (`New.Selmer.DivisibleQuot`). For p ≠ 0 it\n  is injective with image the p-torsion.\n* `New.Selmer.exists_rows_addVal_det_le_of_divisible`: the same bound when the vectors with entries\n  in K/O killed by ψ(N) lie in a module of length at most b. It follows from the form modulo p and\n  is the form that Ribet's lemma uses.\n\nThe idea: as ψ is onto, any d linear forms in the span of the rows of the ψ(t), t ∈ N, are the rows\nof one ψ(t). So a basis of this span, divided into groups of d forms, gives B. The length of the\nsolutions bounds the determinant of such a basis by the duality lemma\n`New.exists_matrix_addVal_det_le_length` for lattices in O^n.",
+   "literature": "General linear algebra over a discrete valuation ring (elementary divisors).",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Algebra/FittingIdealsAndLengths.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Main/DivisibleSelmerModules.lean",
+    "src/New/Congruences/FirstOrder/FittingBlock.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/SeriesBounds.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/SeriesBounds.lean",
+   "title": "Integrality of exponentials, logarithms and roots of power series",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 427,
+   "theorems": 22,
+   "note": "The file first shows that, over an algebraically closed valued field, there is an integral point at\nwhich finitely many given polynomials are at least as large as all their coefficients. It then\nbounds the coefficients of power series built by exponentials, logarithms and roots over `ℂ_[p]`.\nThere `v` denotes the additive valuation with `v(p) = 1`, so that `‖c‖ = p ^ (-v(c))`, and `v(g)`\nfor a series `g` is the infimum of the valuations of its coefficients. `expSubst g` is `exp ℂ_[p]`\nsubstituted at `g`, written `exp g`, and `logOf f` is `log ℂ_[p]`, the series of `log (1 + X)`,\nsubstituted at `f - 1`, written `log f`. For `g(0) = 0` it proves that `exp g` is integral when\n`v(g) ≥ 1 / (p - 1)`, gives a divisibility criterion for `exp g - 1`, and shows that `exp g` lies in\na ring `𝒪[[T]]` if its `m`-th power does, for `m` prime to `p`.\n\nThe imported notions used in the statements are these.\n\n* `seriesToCp` is the inclusion of the series with integral coefficients into all series over\n  `ℂ_[p]`. Its range consists of the series whose coefficients have norm at most `1`.\n* `IsSeriesGenerator B T` says that `T = X + ⋯` and that `B` is the ring of all integral series in\n  `T`, written `B = 𝒪[[T]]`.\n\n## Main definitions and results\n\n* `New.exists_val_coeff_le_val_eval`: at one integral point, finitely many polynomials are at least\n  as large as all their coefficients.\n* `New.norm_coeff_expSubst_le_one`: `exp g` is integral if `g(0) = 0` and `v(g) ≥ 1 / (p - 1)`,\n  degree by degree.\n* `New.norm_coeff_expSubst_sub_one_le`, `New.IsSeriesGenerator.mem_of_expSubst_smul_eq`: for\n  `v(c) ≥ 1 / (p - 1)` and `g(0) = 0`, the number `c` divides `exp g - 1` if it divides `g`, and,\n  for `c ≠ 0` and in a ring `𝒪[[T]]`, `c` divides `g` if it divides `exp g - 1`.\n* `New.IsSeriesGenerator.expSubst_mem_of_pow_mem`: if `g(0) = 0` and `(exp g) ^ m ∈ 𝒪[[T]]` with `m`\n  prime to `p`, then `exp g ∈ 𝒪[[T]]`.",
+   "literature": "Known result: the Gauss norm equals the supremum norm on the unit polydisc over an algebraically\nclosed valued field. Source: Bosch, Güntzer and Remmert, *Non-Archimedean Analysis*.\n\nKnown result: the integrality of the `p`-adic exponential and logarithm on series of large enough\nvaluation, and of the binomial series with exponent in `ℤ_p`.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/CM/FormalGroup/IntegralParameter.lean",
+    "src/Lib/General/Algebra/AbsIntegrallyClosed.lean"
+   ],
+   "usedBy": [
+    "src/Lib/CM/Integrality/LogTheta.lean",
+    "src/New/Congruences/FirstOrder/HeckeStrings.lean",
+    "src/New/Derivatives/Divisibility/NormalForm.lean"
+   ],
+   "shared": [
+    "theoremC",
+    "theoremA"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/SharpMinors.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/SharpMinors.lean",
+   "title": "Maximal minors and lengths",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 276,
+   "theorems": 12,
+   "note": "Let `A` be a matrix over a discrete valuation ring `O` and let `a ≠ 0`. The length of the kernel of\n`A` on `(O / a) ^ k` is the least valuation of a maximal minor of the matrix formed by the rows of\n`A` and of `a • 1`. The kernel is isomorphic to the module of linear maps to `O / a` from the\nquotient of `O ^ k` by these rows, so it has the length of this quotient, which is computed by the\nSmith normal form and the multilinearity of the determinant.\n\n* `New.Selmer.maximalMinors`, `New.Selmer.matrixKernel`: the minors and the kernel.\n* `New.Selmer.isLeast_length_matrixKernel`: the statement for a matrix over a commutative ring `Λ`\n  and a ring homomorphism `ev : Λ →+* O` with `ev a ≠ 0`.\n\nNotions from other files:\n\n* `New.QuotSpan a`: the quotient ring `O / a O`.\n* `New.intGL k R`: the invertible matrices that, with their inverses, have entries in the subring\n  `R`. The Smith normal form is stated for these, and here `R` is all of `O`.",
+   "literature": "Known result: Length of a matrix kernel modulo `a` over a discrete valuation ring via maximal\nminors. A consequence of the theorem on elementary divisors.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Algebra/FittingIdealsAndLengths.lean"
+   ],
+   "usedBy": [
+    "src/New/Congruences/Selmer/OneSystem.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Algebra/LevelModulus.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Algebra/LevelModulus.lean",
+   "title": "Level moduli, residue data as Schwartz–Bruhat functions, and descent in positive degree",
+   "folder": "General: General lemmas",
+   "group": "Commutative algebra, cohomology and p-adic algebra",
+   "lines": 393,
+   "theorems": 14,
+   "note": "This file treats the modulus `M ^ c Q`, where `M` and `Q` are the products of two families of places\n(the chosen places and the twist places) and `c` is a natural number. For a principal modulus\n`(star g)` and a vector `x` with `g x` integral, it writes the translate of the vacuum by `x` as a\ncombination of the data `New.modDatum` of indicator functions of classes. Finally it proves a lemma\nof algebra: if ∏ (T - a i) = 0 with all a i ≠ 0 and ∏ (S T^k - α i a i^k) = 0 for every k > 0, then\n∏ (S - α i) = 0.\n\n## Main definitions and results\n\n* `New.Rows.places_levelModulus`: for `c ≠ 0` the places dividing `M ^ c Q` are the places of `M`\n  and of `Q`.\n* `New.isSchwartzBruhat_residueDatum`: the function `New.residueDatum w f` (`f` of the reductions\n  at the places `w i` on matrices integral there, `0` elsewhere) is Schwartz–Bruhat\n  (`New.IsSchwartzBruhat`) if no `w i` is conjugate to a `w j`.\n* `New.Rows.liftFn_eq_residueDatum`, `New.exists_modulus_places_eq`: it is the lift of a function\n  modulo a modulus `New.Modulus`, an ideal prime to its conjugate, with the same set of places;\n  such a modulus exists if no `w i` is conjugate to a `w j`.\n* `New.exists_rho_finVec_vacElem_eq_sum_modDatum`: if `𝔪 = (star g)` and `g x` is integral, the\n  translate of the vacuum by `x` is a combination of the data `New.modDatum` of the indicator\n  functions of classes modulo `𝔪`, with values of `New.stdLattice.selfDualAddChar` as coefficients.\n* `New.GaloisRep.eval₂_prod_eq_zero_of_mul_pow`: the lemma of algebra just stated, for S and T in a\n  ring that commute with the image of a ring homomorphism from a field K.\n\nNotions from other files:\n* `New.Modulus.liftFn`: A function Ψ of vectors mod 𝔪, read on finite adelic vectors: Ψ of the\n  reduction if the vector is integral at the places of 𝔪 (`New.Modulus.places`), and 0 otherwise.",
+   "literature": "Known; see `Lib.Weil.MixedModel.ZeroTerm` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/AutomorphicForms/PAdicGauge.lean",
+    "src/Lib/General/LinearAlgebra/BlockEmbeddings.lean",
+    "src/Lib/Weil/DualPair/KernelDecay.lean",
+    "src/Lib/Weil/DualPair/KernelLaws.lean"
+   ],
+   "usedBy": [
+    "src/Lib/SiegelWeil/RallisInner/SharpData.lean",
+    "src/New/UpperBound/Objects/AuxiliaryPair.lean",
+    "src/New/UpperBound/Objects/Columns.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Analysis/FiniteFourier.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Analysis/FiniteFourier.lean",
+   "title": "Orthogonality, Fourier inversion and matrix Gauss sums over a finite ring",
+   "folder": "General: General lemmas",
+   "group": "Real and complex analysis",
+   "lines": 261,
+   "theorems": 11,
+   "note": "Finite Fourier analysis on matrices over a finite commutative ring `R`, for a primitive additive\ncharacter `ψ` (no multiple `ψ (r * ·)` with `r ≠ 0` is trivial).\n\n* `New.exists_isPrimitive_apply_eq_of_surjective`, `New.exists_primitive_residue_addChar`: a\n  character of a ring `F` for which the subring `O` is self-dual induces a primitive character of a\n  suitable quotient ring of `O`.\n* `New.sum_addChar_dotProduct`, `New.sum_addChar_trace_mul`: orthogonality; the sum of `ψ` along\n  a nonzero linear form on vectors or on matrices is `0`.\n* `New.Exchange.matrixFourier`, `New.Exchange.matrixFourier_matrixFourier`: the transform\n  `ρ ↦ ∑ v, f v * ψ (tr (ρ v))`, not normalised, and its inversion formula.\n* `New.exists_sum_smul_addChar_trace_eq`: every function on matrices is a linear combination of\n  the characters `y ↦ ψ (tr (y u))`.\n* `New.Exchange.exists_matrixFourier_eq_mul_inv_det`: the transform of a function with\n  `S (g d) = χ (det g) S d`, for a multiplicative character `χ` (zero off the units) that is\n  primitive, `New.Exchange.IsPrimitiveMulChar`, and the modulus of the Gauss sum of `χ ∘ det`.",
+   "literature": "Known; see `Lib.Weil.TameGaussSum` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Adeles/LocalFactors.lean",
+    "src/New/Spanning/SecondMoment/PositiveType.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Analysis/GaussianIntegral.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Analysis/GaussianIntegral.lean",
+   "title": "Matrix norm estimates, the Ostrowski–Taussky inequality, and the complex Gaussian integral",
+   "folder": "General: General lemmas",
+   "group": "Real and complex analysis",
+   "lines": 237,
+   "theorems": 15,
+   "note": "This file proves estimates for complex matrices and computes the complex Gaussian integral on\n`ι → ℂ`. Here `‖A‖` is the `ℓ²` operator norm. For accretive `A`, the integral of\n`exp (-x* A (x - a))` against normalised Lebesgue measure is `(det A)⁻¹`.\n\n## Main definitions and results\n\n* `New.norm_apply_le_l2_opNorm`, `New.l2_opNorm_le_of_apply`: the operator norm bounds the entries,\n  and for an `m × n` matrix it is at most `|m| |n|` times a bound for the entries.\n* `New.ostrowski_taussky`: the Ostrowski–Taussky inequality, in the form\n  `|det H| ≤ 2 ^ card n |det Θ|` when `0 ≤ H ≤ Θ + Θᴴ`.\n* `Matrix.IsAccretive`: the matrices `A` with `A + Aᴴ` positive definite. Positive definite matrices\n  are accretive (`Matrix.PosDef.isAccretive`), and accretive matrices have nonzero determinant\n  (`Matrix.IsAccretive.det_ne_zero`).\n* `New.Fock.normalizedVolume`: Lebesgue measure divided by `π ^ card ι`, so that `exp (-|x|²)` has\n  integral `1`.\n* `New.Fock.map_mulVec_addHaar_eq_smul`, `New.lintegral_eq_norm_det_sq_mul_lintegral_mulVec`: the\n  change of variables by an invertible complex matrix `u`, whose real Jacobian is `‖det u‖ ^ 2`.\n* `New.Fock.integral_gauss`: if `A` is accretive, the integral of `exp (-x* A (x - a))` is\n  `(det A)⁻¹`.",
+   "literature": "The Ostrowski–Taussky inequality and the complex Gaussian integral are known results.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+    "src/Lib/General/LinearAlgebra/HermitianMatrices.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Analysis/FourierTransforms.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Analysis/FourierTransforms.lean",
+   "title": "Fourier inversion for periodic functions and decay of Fourier transforms",
+   "folder": "General: General lemmas",
+   "group": "Real and complex analysis",
+   "lines": 347,
+   "theorems": 14,
+   "note": "This file develops Fourier analysis on a compact quotient `B ⧸ B₀` of a topological abelian group,\nfor a family of characters given in advance. `New.IsContPeriodic B₀ F` says that `F` is continuous\nand `B₀`-periodic, and `New.quotMean B₀ F` is its mean over `B ⧸ B₀` for the Haar probability\nmeasure.\n\n## Main definitions and results\n\n* `New.IsDualFamily`: a family `χ i` of characters of `B` trivial on `B₀`, multiplicative in the\n  index, that separates the points of `B ⧸ B₀`.\n* `New.IsDualFamily.tsum_coeff_eq_quotMean`: the mean of a series of characters with summable\n  coefficients.\n* `New.IsDualFamily.fourier_inversion`: Fourier inversion, from `New.stone_weierstrass_span`.\n* `New.IsDualFamily.eq_zero_of_quotMean_mul_eq_zero`: a periodic function vanishes if its Fourier\n  coefficients vanish at the characters that respect its quasi-periods (`New.RespectsQuasiPeriods`).\n* `New.exists_pow_mul_norm_fourier_le`: for smooth `c` and `q`, with `c` supported in a compact set\n  `K`, for `0 < ‖a‖ ≤ 1` and every `M`, the norm of the Fourier transform of `c · exp (q / a)` at\n  `b` is at most a constant times the supremum over `K` of `‖exp (q / a)‖` divided by\n  `(‖a‖ * (1 + ‖b‖)) ^ M`.",
+   "literature": "The results of this file include the Stone–Weierstrass theorem for a monoid of functions, Fourier\ninversion on a compact quotient of an abelian group, and the decay of Fourier transforms by\nintegration by parts.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/QuotientMeasure/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Adeles/StrongApproximation.lean",
+    "src/Lib/Shimura/ComplexTheta/AppellHumbertData.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+   "title": "Strong operator integrals, analyticity of parameter integrals, and Hua's integral bound",
+   "folder": "General: General lemmas",
+   "group": "Real and complex analysis",
+   "lines": 692,
+   "theorems": 29,
+   "note": "In the strong integral, operator-valued functions are integrated vector by vector, so no\nmeasurability in the operator norm is needed. In the results on analytic families, E is a\nfinite-dimensional complex normed space, K a compact R₁ space and f : E → K → ℂ a family of\nfunctions on K with parameter in E. The file also contains the Schwarz lemma in normed spaces,\nholomorphy of dominated parameter integrals, a uniqueness result for analytic functions along\nsubmersions, and Euler's beta integral together with Hua's bound for negative powers of\ndeterminants.\n\n## Main definitions and results\n\n* `New.strongIntegral`: the operator `x ↦ ∫ y, F y x ∂μ`, when this map is a bounded operator.\n* `New.DiscreteSeries.IsAnalyticFamily`: the map x ↦ f(x, ·) into the Banach space C(K, ℂ) is\n  analytic at a point.\n* `New.DiscreteSeries.IsAnalyticFamily.analyticAt_integral`: then x ↦ ∫ f(x, k) dμ(k) is analytic,\n  for a finite Borel measure μ.\n* `New.analyticAt_of_eventually_differentiableAt`: a map between finite-dimensional complex spaces\n  that is differentiable near p is analytic at p.\n* `New.eventually_differentiableAt_integral`: an integral of holomorphic functions of a parameter in\n  a finite-dimensional space, dominated by an integrable function, is holomorphic.\n* `New.hua_integral_le`: Hua's bound for the integral of a negative power of `|det (M + Yᴴ Y)|`,\n  where `Y = X S + A`, over the rows of `X`, one row at a time;\n  `New.lintegral_norm_det_add_inv_pow_le` is a cruder form for `Y = S X + c` and at least seven\n  columns.",
+   "literature": "Known result: an upper bound for Hua's determinant integral. The integral is bounded only from\nabove, with an affine change of the rows, instead of being computed exactly. Source: Hua, Harmonic\nAnalysis of Functions of Several Complex Variables in the Classical Domains, AMS 1963.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Analysis/GaussianIntegral.lean",
+    "src/Lib/General/Groups/CongruenceSubgroups.lean",
+    "src/Lib/General/Measure/HaarNormalisation.lean",
+    "src/Lib/General/Topology.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/HeckeL/ContinuationAtOne.lean",
+    "src/Lib/DiscreteSeries/FlenstedJensen/RightDerivatives.lean",
+    "src/Lib/General/Geometry/SmoothnessCriterion.lean",
+    "src/Lib/General/LinearAlgebra/MinorProducts.lean",
+    "src/Lib/Shimura/ComplexTheta/DimensionFormula.lean",
+    "src/Lib/Shimura/Uniformisation/AppellHumbert.lean",
+    "src/Lib/Shimura/Uniformisation/LieExponential.lean",
+    "src/Lib/Weil/Construction/HeisenbergModel.lean",
+    "src/New/Spanning/Bessel/GramSection.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Analysis/PackingAndSobolev.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Analysis/PackingAndSobolev.lean",
+   "title": "Packing bounds for separated points and Sobolev trace inequalities",
+   "folder": "General: General lemmas",
+   "group": "Real and complex analysis",
+   "lines": 262,
+   "theorems": 6,
+   "note": "The first results count and sum over points `f i` of a finite-dimensional real normed space `V` at\nmutual distance at least `m > 0`. Here `d = finrank ℝ V`. The remaining results bound the value of a\nfunction at a point by `L²` norms of the function and of its derivatives, first on an interval and\nthen at the corner of a cube.\n\n## Main definitions and results\n\n* `New.encard_le_of_separated`: at most `(1 + 2R/m)^d` such points lie in the ball `‖x‖ ≤ R`,\n  where `R ≥ 0`, by comparing volumes.\n* `New.tsum_le_of_separated`: if `u i ≥ 1`, `‖f i‖ ≤ R * u i`, `R ≥ 0`, `d < A` and\n  `A ≤ c (A - d)`, then `∑ u i ^ (-A) ≤ (1 + 2R/m)^d * c`, by the layer bound\n  `New.DiscreteSeries.integral_rpow_neg_le_of_measure_le`.\n* `New.tsum_inv_pow_le_of_separated`: if the points satisfy `‖f i‖ ≥ m` and `n ≥ d + 2`, then\n  `∑ ‖f i‖⁻¹ ^ n ≤ (5/m)^n`.\n* `New.sobolev_trace`: if `‖g'‖ ≤ b` pointwise on `[0, ε]`, where `0 < ε ≤ 1`, then\n  `‖g 0‖² ≤ ∫₀^ε (2/ε) (‖g‖² + b²)`.\n* `New.sobolev_trace_cube`: its iteration over the coordinates of a cube `[0, ε] ^ D` and a\n  parameter space, for functions `f i` indexed by the words `i` in a finite alphabet, where the\n  norms of the partial derivatives of `f i` are bounded by `Λ ∑ l, ‖f (l :: i)‖`, the sum over the\n  letters `l`.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Measure/IntegralOperators.lean"
+   ],
+   "usedBy": [
+    "src/Lib/DiscreteSeries/Haar/TotalMass.lean",
+    "src/New/Spanning/MainTerm/Frequencies.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Analysis/MeanValueAndTaylor.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Analysis/MeanValueAndTaylor.lean",
+   "title": "Circle means, Taylor series at zero, a power bound, and smooth matrix operations",
+   "folder": "General: General lemmas",
+   "group": "Real and complex analysis",
+   "lines": 269,
+   "theorems": 18,
+   "note": "This file proves mean value facts for circle averages and a halving criterion for upper bounds. It\ndevelops the algebra of Taylor series at 0 of analytic functions and proves an elementary bound of\nx^l by a factorial and exponentials. It also gives smoothness rules for matrix operations and\nextends analytic germs to globally smooth maps.\n\nThe imported notion `New.taylorAtZero f` is the formal power series whose `n`-th coefficient is\n`iteratedDeriv n f 0 / n !`, the Taylor series of `f : ℂ → ℂ` at 0.\n\n## Main definitions and results\n\n* `New.taylorAtZero_mul`, `New.taylorAtZero_comp_mul`, `New.eq_of_taylorAtZero_eq`: Taylor series\n  at 0 of products and of `z ↦ f (a * z)`; such a series determines an entire function.\n* `New.integral_eq_of_circle_mean`: an integral is unchanged when the integrand is replaced by its\n  mean over a family of measure preserving maps indexed by the circle `ℝ / ℤ`.\n* `New.integral_comp_toCircle_eq_apply_zero`: the mean value property over the unit circle of a\n  function holomorphic on the closed unit disc, for the Haar probability measure of `ℝ / ℤ`.\n* `New.le_of_halving`: let `c ≥ 0`. A function bounded above is at most `c` if each of its bounds\n  can be halved at the points where it exceeds `c`.\n* `New.exists_contDiff_eventuallyEq`: a map on a finite-dimensional space that is of class `C^ω`\n  at a point agrees near it with a globally smooth map.",
+   "literature": "The results of this file include the mean value property of holomorphic functions and the fact that\nan entire function is determined by its Taylor series at 0.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/CM/Sigma/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Witt/SmoothWitt.lean",
+    "src/Lib/CM/Sigma/ThetaSections.lean",
+    "src/Lib/DiscreteSeries/Holomorphic/HighestVectorExtension.lean",
+    "src/Lib/Weil/MixedModel/FockSections.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/LineBundles.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/LineBundles.lean",
+   "title": "Line bundles on schemes via ring-valued points: descent and the Picard group",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 1002,
+   "theorems": 76,
+   "note": "Line bundles on a scheme `X` are described through ring-valued points `t : Spec A ⟶ X`, so that\nrestriction maps disappear. A function `f : New.PointFn X` gives an element of `A` for every such\npoint. `New.LandsIn t U` says that `t` lands in the open `U`, and `f` is regular on `U` when it is\nnatural in `A` on the points of `U`. The file shows that regular functions come from sections and\nthat functions, sections and frames descend along flat, surjective, quasi-compact morphisms, and it\ndefines the Picard group with its pull-back.\n\n## Main definitions and results\n\n* `New.LineBundle`: a line bundle as an open cover with a cocycle of regular functions, with the\n  operations `New.LineBundle.pull`, `New.LineBundle.one`, `New.LineBundle.inv`,\n  `New.LineBundle.mul`.\n* `New.LineBundle.IsSection`, `New.LineBundle.IsFrame`, `New.LineBundle.IsIsomorphic`,\n  `New.LineBundle.H0`: sections, nowhere vanishing sections, isomorphism, and the module of\n  sections.\n* `New.PointFn.exists_ofSection_glue`: descent of functions along a flat, surjective, quasi-compact\n  morphism.\n* `New.LineBundle.exists_isSection_eq_mul`, `New.LineBundle.exists_isFrame_of_fpqc`: descent of\n  sections and of frames along a flat, surjective, quasi-compact morphism.\n* `New.Pic`, `New.LineBundle.picClass`, `New.Pic.pull`: the Picard group, written additively, the\n  class of a line bundle, and the pull-back along a morphism.\n* `New.Pic.eq_zero_of_isLocalRing`: the Picard group of the spectrum of a local ring is trivial.",
+   "literature": "These are standard facts on line bundles and faithfully flat descent, in the language of ring-valued\npoints.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/Geometry/ProjectiveSpace.lean",
+    "src/Lib/Shimura/AbelianScheme/Basic.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/ProjectiveSpace.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/ProjectiveSpace.lean",
+   "title": "Projective space, linear systems and projective embeddings, with Segre and Veronese",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 867,
+   "theorems": 46,
+   "note": "This file treats projective space `New.ProjSpace ι = Proj ℤ[X i]` and maps to it through ring-valued\npoints. A linear system (`New.LineBundle.IsLinearSystem`) is a line bundle given by a cover `U i`\nand functions `g i j`. Each `g i j` is regular on all of `U i` and plays the part of `s j / s i`. A\nprojective embedding is a linear system `L` on `X` with a proper morphism `s : X ⟶ S`. In it, two\npoints of one chart with the same coordinates and the same image in `S` are equal. The file shows\nthat such embeddings determine morphisms and pass to closed subschemes and composites.\n\n## Main definitions and results\n\n* `New.ProjSpace.hyperplaneBundle`, `New.ProjSpace.isLinearSystem_hyperplaneBundle`: the standard\n  charts with `g i j = X j / X i` form a linear system.\n* `New.LineBundle.IsHomogeneousCoords`: homogeneous coordinates of a point. Under a projective\n  embedding, a point that lies in some chart is determined by its coordinates and its image in the\n  base (`New.LineBundle.IsProjEmbedding.eq_of_isHomogeneousCoords`). A vector with a unit entry is a\n  vector of coordinates of some point of projective space\n  (`New.ProjSpace.exists_isHomogeneousCoords`).\n* `New.LineBundle.IsProjEmbedding`, `New.isProjEmbedding_projSpace`: projective embeddings, by\n  linear systems that separate points. Projective space over a base, with a finite index set, is\n  one.\n* `New.LineBundle.exists_picClass_eq_pull_hyperplane`,\n  `New.LineBundle.IsLinearSystem.exists_hom_projSpace`: finite families of sections without common\n  zero, and finite linear systems, come from maps to projective space.\n* `New.LineBundle.IsProjEmbedding.exists_isClosedImmersion`: for finite `ι`, an embedding is a\n  closed immersion into ℙ^ι × S.\n* `New.LineBundle.isProjEmbedding_pi` (Segre), `New.LineBundle.IsProjEmbedding.pow` (Veronese): a\n  proper scheme with finitely many jointly separating maps to embedded schemes embeds, and the\n  `m`-th tensor power of a projective embedding is one for `m ≠ 0`.\n\nNotions from other files:\n* `New.PointFn`: a function on ring-valued points of X attaches an element of A to every point Spec\n  A → X, for every ring A, with no compatibility required. It is regular on an open U if its value\n  at Spec φ ≫ t is φ of its value at t, for every t landing in U and every ring map φ.\n* `New.LineBundle.IsSection`: the family (s_i) is a global section of L: each s_i is regular on U_i,\n  and s_i = g_ij s_j at points landing in U_i and U_j.\n* `New.LandsIn`: the morphism t : Y → X lands in the open U, that is, t⁻¹U is all of Y.\n* `New.PointFn.ofSection`: a section s over U as a function on ring-valued points: its value at t :\n  Spec A → X is t*s in A if t lands in U, and 0 otherwise.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Geometry/LineBundles.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/PointClass/NoetherNormalization.lean",
+    "src/Lib/General/Geometry/DenseComplexPoints.lean",
+    "src/Lib/Shimura/AbelianScheme/Pairings.lean",
+    "src/Lib/Shimura/Uniformisation/HolomorphicFamilies.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/DenseComplexPoints.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/DenseComplexPoints.lean",
+   "title": "Dense families of complex points: reduced closures, separation of maps, and arcs",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 432,
+   "theorems": 15,
+   "note": "Identities between functions or morphisms on a reduced scheme can be checked on a dense family of\ncomplex points. `New.IsDenseFamily ξ` says that the points `ξ z : Spec ℂ ⟶ X` have dense image, and\n`New.IsSeparatingFamily ξ` says that moreover `X` is reduced. Every family of complex points factors\nthrough its reduced closure, on which it is separating.\n\n## Main definitions and results\n\n* `New.exists_reduced_closure`: any family of complex points of `X` factors through a closed\n  subscheme in which it is `New.IsSeparatingFamily`, namely the reduced closure.\n* `New.IsSeparatingFamily.pointFn_ext`, `New.IsSeparatingFamily.hom_ext`: regular functions, and\n  morphisms over `S` to a scheme separated over `S`, that agree at the points are equal.\n* `New.IsSeparatingFamily.exists_map_of_coords`: if a linear system on `X` gives the points `e z`\n  the same coordinates as a projective embedding of `G` gives points `p z`, then it comes from a\n  morphism `X ⟶ G` that sends `e z` to `p z`.\n* `New.exists_valuative_arc_of_isDenseFamily` joins any point of a locally noetherian scheme with\n  finitely many dense complex points to one of them by an arc `Spec V → S`, with `V` the ring of a\n  valuation of `ℂ` in `ℝ≥0`.\n\nNotions from other files:\n* `New.PointFn X`: rules that attach an element of `A` to every ring-valued point `Spec A ⟶ X`.\n  It is regular on `U` (`IsRegularOn`) if, at points landing in `U`, it commutes with ring maps.\n* `New.LineBundle X ι`: an open cover `U_i` of `X` with transition functions `g_ij`.\n* `New.LineBundle.IsHomogeneousCoords`: `v` is a vector of homogeneous coordinates of the point `t`,\n  that is, `t` lands in `U_j` exactly when `v_j` is a unit, and then `g_jk(t) = v_k / v_j`.\n* `New.LineBundle.IsLinearSystem`: the data of a map to projective space, the model being\n  `g_ij = s_j / s_i` on `U_i = {s_i ≠ 0}` for sections `s_i` without common zero.\n* `New.LineBundle.IsProjEmbedding`: a linear system on a proper `X ⟶ S` for which points in one\n  chart with the same affine coordinates and the same image in `S` are equal.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Geometry/ProjectiveSpace.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/Geometry/GeometricPoints.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/GeometricPoints.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/GeometricPoints.lean",
+   "title": "Geometric points, specialisation, separating products and integral abelian varieties",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 499,
+   "theorems": 17,
+   "note": "Let `k` be an algebraically closed field. For schemes and morphisms locally of finite type, points\nwith values in `k` detect nonempty locally closed sets and images of morphisms, and this is used to\nspread properties over commutative group schemes.\nSmooth morphisms are shown to be geometrically reduced, and abelian schemes over `k` are shown to be\nintegral. The file also records that flat morphisms are injective on stalks. Finally it gives\ncriteria for families of complex points to be separating over a stalk of the base and on a product\nof flat schemes.\n\n## Main definitions and results\n\n* `New.exists_section_mem`, `New.exists_point_mem`: a nonempty locally closed set in a scheme\n  locally of finite type over `k` contains a `k`-point.\n* `New.IsDenseFamily.of_fibres`: if the complex points `η i` are dense in `S` and `A` is smooth over\n  `S`, a family containing every complex point of `A` over the `η i` is dense in `A`.\n* `New.AddObj.property_of_isOpenImmersion`: take a commutative group scheme (`New.AddObj`) locally\n  of finite type over `k`. A property induced by a property of ring maps spreads from a nonempty\n  open part to the whole scheme, by translation.\n* `New.AddObj.smoothOfRelativeDimension_of_fibres`: the relative dimension of an abelian scheme can\n  be read off the fibres through a dense family of points.\n* `New.isSeparatingFamily_stalk`: for `A` and `S` reduced and dense points of `A` with finitely many\n  images in `S`, the lifts of those that factor through a stalk of `S` separate the base change of\n  `A` to that stalk.\n* `New.IsSeparatingFamily.prod`: separating points of `B`, paired with dense points of the fibres of\n  `A` over their images in `S`, separate `A ×_S B`, for `A`, `B` flat and locally of finite type,\n  `A` reduced, and `S` reduced, locally noetherian, with finitely many dense complex points.\n\nNotions from other files:\n* `New.IsDenseFamily`: the images of a family of complex points are dense.\n* `New.IsSeparatingFamily`: the family is dense and the scheme is reduced.\n* `New.IsAbelianScheme`: a smooth proper commutative group scheme on which multiplication by every\n  `m ≠ 0` is surjective.\n* `New.translation`: translation x ↦ x + z by a section z of a commutative group scheme.",
+   "literature": "Known; see `Lib.Shimura.AbelianScheme.IsogenyFlatness` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Cohomology/Etale/Basic.lean",
+    "src/Lib/General/Geometry/DenseComplexPoints.lean",
+    "src/Lib/Shimura/AbelianScheme/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/Etale/ProperFunctors.lean",
+    "src/Lib/General/Geometry/GaloisCovers.lean",
+    "src/Lib/Shimura/AbelianScheme/IsogenyFlatness.lean",
+    "src/Lib/Shimura/ArcExtension.lean",
+    "src/Lib/Shimura/ThetaModuli/FlatClosure.lean",
+    "src/Lib/Shimura/Uniformisation/LieExponential.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/EtaleCharts.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/EtaleCharts.lean",
+   "title": "Functors of points on algebras: open subfunctors, étale charts, atlases, charted schemes",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 1062,
+   "theorems": 39,
+   "note": "A space over `k` is a functor `X` from commutative `k`-algebras (`New.Variety.CommAlg k`) to types.\n`New.Variety.reprBy A` is the functor represented by `A`, and `New.Variety.pointMap y` is the map\n`reprBy A ⟶ X` given by a point `y ∈ X(A)`. The file defines open subfunctors and separated\nfunctors. It also defines étale charts `a`, which are algebras `R` with étale coordinates and a\npoint `y ∈ X(R)` embedding `Spec R` as an open subfunctor `a.locus`. For `k` Noetherian it develops\nthe calculus of charts and shows that an atlas yields a cover by pieces étale over tori.\n\n## Main definitions and results\n\n* `New.Variety.IsOpenSubfunctor`, `New.Variety.IsSeparatedFunctor`: open subfunctors and separated\n  functors, each defined by an ideal attached to one or two points. `New.Variety.IsAffinelyCovered`:\n  separated, and covered by one affine after restriction along a functor `ι : C ⥤ CommAlg k`.\n* `New.Variety.EtaleChart`, `New.Variety.IsChartCovered`, `New.Variety.HasAtlas`: affine open charts\n  with étale coordinates, and covers of the field-valued points by charts.\n* `New.Variety.etale_polyEval_iff`: for `k` Noetherian and `R` of finite type, coordinates are étale\n  iff maps lift uniquely along square-zero extensions once the values of the coordinates are lifted.\n* `New.Variety.HasAtlas.exists_isCharting`: an atlas gives a subfunctor satisfying\n  `New.Variety.IsCharting`. It is found as a finite union of charts whose coordinates are units,\n  that is, of pieces étale over a torus.\n* `New.Variety.Comparison.isClosedClass`: for a comparison of cohomologies on categories over `D`,\n  the functors on `D` for which it is bijective form a closed class\n  (`New.Variety.IsClosedClass`: contains `0` and, given a short exact sequence whose first term is\n  in it, contains the second term iff the third).\n* `New.Variety.IsCharted`: a scheme is charted if its functor of points has a subfunctor satisfying\n  `New.Variety.IsCharting`.\n\nNotions from other files:\n* `New.Variety.IsPointwiseSurjective p`: the map `p : E ⟶ Y` of functors is surjective on `A`-points\n  for every object `A`.\n* `New.Variety.IsZariskiLocallyTop`: every point maps into the given subfunctor once some element\n  outside any given maximal ideal of the algebra is made a unit.\n* `CategoryTheory.Subfunctor.whisker`: for a subfunctor `U` of `Y` and `φ : C' ⥤ C`, the subfunctor\n  `φ ⋙ U` of `φ ⋙ Y`.\n* `New.Variety.restrictAlg k k'`: restriction of scalars, which regards a commutative `k'`-algebra\n  as a `k`-algebra.",
+   "literature": "Known; see `Lib.Cohomology.Etale.FilteredLimits` and `Lib.PadicComparison.ToricTower` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Cohomology/Etale/DenseSubfunctors.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/Hodge/Site.lean",
+    "src/Lib/General/Geometry/PointsOfProperSchemes.lean",
+    "src/Lib/PadicComparison/Descent/TestCovers.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/PointsOfProperSchemes.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/PointsOfProperSchemes.lean",
+   "title": "Functors of points of proper schemes: closed loci, atlases and descent of relations",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 551,
+   "theorems": 18,
+   "note": "Schemes over `Spec R` are studied through their functors of points. The functor of points of a\nproper scheme is proper and separated. On comparable rings (`New.Variety.IsComparableRing`), its\npoints all come from one affine scheme. If the scheme is smooth of relative dimension `d` after base\nchange to `k`, it also has an étale atlas.\n\n## Main definitions and results\n\n* `New.Variety.exists_ideal_le_ker_iff_factors`: for a closed immersion `i : Z ⟶ X` and a point `a`\n  of `X` with values in `S`, one ideal `I` of `S` describes the ring maps `γ : S →+* B` along which\n  `a` lands in `Z`, namely those that kill `I`. It is finitely generated if `i` is of finite\n  presentation.\n* `New.Variety.exists_locallyOfFiniteType_forall_factors`: a proper scheme `X` over `Spec R`\n  receives a morphism `Spec T ⟶ X` from one affine scheme, locally of finite type, through which\n  every point with values in a comparable ring (`New.Variety.IsComparableRing`) factors.\n* `New.Variety.isProperOver_pointsToBase`: the functor of points of `X` over `R` satisfies\n  `New.Variety.IsProperOver`.\n* `New.Variety.isSeparatedFunctor_algPointsOf`: for an `R`-algebra `k` and a proper scheme `W` over\n  `Spec R`, the points of `W` with values in `k`-algebras form a separated functor\n  (`New.Variety.IsSeparatedFunctor`).\n* `New.Variety.hasAtlas_algPointsOf`: if moreover `W` is smooth of relative dimension `d` after base\n  change to `k`, the functor has an atlas of dimension `d`.\n* `New.Variety.isAffinelyCovered_algPointsOf`: on rings satisfying `New.Variety.IsComparableRing`,\n  one affine scheme surjects onto the points of a proper `W`.\n* `New.Variety.exists_hom_of_rel` builds a homomorphism A → B of commutative group objects over S\n  from a homomorphism f : W → B and a relation between T-points of W and of A. The relation is\n  stable under pull-back and subtraction, compatible with f, and defined on an fpqc cover of A.\n\nNotions from other files:\n* `New.Variety.IsComparableRing`, applied to the identity map of a ring: for any a, b in the ring\n  there is an idempotent e with a ∣ e * b and b ∣ (1 - e) * a.\n* `New.Variety.pointsToBase`: For a morphism s: X → Spec R, the map from the functor of points of X\n  to the functor A ↦ Hom(R, A) that sends x ∈ X(A) to the ring map R → A of s∘x.\n* `New.Variety.HasAtlas`: X is separated and has finitely many charts, each with exactly d étale\n  coordinates, that contain every field-valued point.\n* `New.Variety.IsOpenSubfunctor`: V is an open subfunctor of X: each x ∈ X(A) has an ideal I of A\n  such that, for φ: A → B, φ(x) ∈ V(B) iff φ(I)B = B.\n* `New.IsAdditive`: The morphism f : A → B of commutative group objects is a homomorphism: composing\n  with f is additive on U-points for every U.",
+   "literature": "Known; see `Lib.Cohomology.Etale.FilteredLimits` and `Lib.PadicComparison.HodgeTate.PeriodMap` for\nsources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Cohomology/ProperBaseChange/PlaceSpace.lean",
+    "src/Lib/General/Geometry/EtaleCharts.lean",
+    "src/Lib/Shimura/AbelianScheme/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Cohomology/Etale/ProperFunctors.lean",
+    "src/Lib/Cohomology/PointClass/NoetherNormalization.lean",
+    "src/Lib/Shimura/AbelianScheme/IsogenyFlatness.lean",
+    "src/Lib/Shimura/AbelianScheme/TangentCoordinates.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/SerreTheorem.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/SerreTheorem.lean",
+   "title": "Absolute Frobenius, Serre's theorem on sections of powers, and projective embeddings",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 410,
+   "theorems": 14,
+   "note": "A line bundle (`New.LineBundle`) is an open cover `U i` with a cocycle `g i j`, and `L.picClass` is\nits class in the additively written Picard group. `New.LineBundle.IsLinearSystem` says that the\ntransition functions behave like the affine coordinates `s j / s i` of a map to a projective space.\nThe file shows that the absolute `l ^ f`-Frobenius multiplies the class of a linear system by\n`l ^ f`.\n\n## Main definitions and results\n\n* `New.Variety.absFrobenius f X`: the absolute `l ^ f`-Frobenius of a scheme `X` over a field of\n  characteristic `l`. It acts on `B`-valued points through `x ↦ x ^ l ^ f` on `B`\n  (`New.Variety.comp_absFrobenius`), commutes with all morphisms and fixes the underlying space.\n* `New.Variety.eventually_span_coordSection`: let `N` be a projective embedding of an integral\n  scheme over a field and `p` a base change to a noetherian ring. For large `m` the monomials of\n  degree `m` in the coordinates span the sections of `(p^* N) ^ m`.\n* The instance `New.isProper_pi`: the product in `Over S` of a finite family of proper schemes over\n  `S` is proper over `S`.\n* `New.Variety.HasProjEmbedding.of_isClosedImmersion_pi`: if finitely many `S`-schemes have\n  projective embeddings over `S`, so does every closed subscheme of their fibre product.\n\nNotions from other files:\n* `New.LineBundle.pull`, `New.LineBundle.pow`: the pull-back of a line bundle along a morphism, and\n  its `m`-th tensor power, whose charts are indexed by `m`-tuples of indices.\n* `New.LineBundle.IsProjEmbedding`: a linear system on a proper scheme whose affine coordinates\n  `g i j` separate the ring-valued points of each chart `U i` over the base.\n* `New.Variety.coordSection`: the `j`-th coordinate `s j` of a linear system as a global section.\n* `New.ThetaTori.formSpan R x m`: the values at a family `x` of the forms of degree `m` over `R`.",
+   "literature": "Known result: a case of the surjectivity half of Serre's theorem on sections of powers of a\nprojective embedding.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Algebra/MultivariatePolynomials.lean",
+    "src/Lib/Shimura/ThetaGroup.lean",
+    "src/Lib/Shimura/ThetaNormality/NormalGeneration.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Shimura/Deformation/TangentBound.lean",
+    "src/Lib/Shimura/IntegralModel/UniversalFamily.lean",
+    "src/Lib/Shimura/ThetaModuli/FamilyFromPoints.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/GaloisCovers.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/GaloisCovers.lean",
+   "title": "Complex points over countable rings, Zariski generic members and Galois coverings",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 836,
+   "theorems": 27,
+   "note": "This file collects tools for passing between points of schemes over a countable ring and complex\npoints, and for building Galois coverings from complex points: extensions of embeddings of countable\nrings into ℂ, an injective character of the algebraic closure of a finite field, Zariski generic\nmembers of holomorphic families, reduced closures of families of complex points, and criteria for\ncoverings to be étale or smooth.\n\n## Main definitions and results\n\n* `New.exists_ringEquiv_extend`: two embeddings of a countable ring, into `ℂ` and into an\n  algebraically closed field of the same cardinality, are matched by an isomorphism of the fields\n  (Steinitz's classification, relative to the ring).\n* `New.exists_ringHom_complex_extend` lets one view a point over a field of cardinality at most that\n  of ℂ as a complex point, compatibly with given embeddings of a countable base ring in the field\n  and in ℂ.\n* `New.Variety.exists_generic_member`: if `X` is locally of finite type over a countable ring and\n  `φ` is a holomorphic family of complex points of `X` on a connected open set `U`, some `φ b`\n  specialises, in the Zariski topology, to every `φ c`.\n* `New.Variety.ReducedClosure`: the reduced closure in a finite product of schemes over `S` of a\n  family of complex points; `New.Variety.ReducedClosure.exists_lift` constructs maps between two\n  such closures.\n* `New.Variety.isGaloisCovering_of_complex_points`: over a countable domain whose maps to fields of\n  characteristic 0 are injective, a surjective map from a proper to a separated scheme, with a\n  finite group acting simply transitively on its fibres of complex points, is a Galois covering.\n* `New.Variety.IsGaloisCovering.smoothOfRelativeDimension_baseChange`: for a Galois covering\n  `W → Z` over a domain `R`, with `W` proper and reduced and `Z` separated and smooth, the base\n  change of `W` to a field of characteristic 0 containing `R` is smooth.\n\nNotions from other files:\n* `New.Variety.IsGaloisCovering`: Δ is a finite group of automorphisms of W over c : W → Z, c is\n  surjective, and Δ acts simply transitively on the fibres of c on points with values in fields of\n  characteristic 0.\n* `New.LandsIn t U`: the morphism t lands in the open U, that is, the preimage of U is everything.\n* `New.HolomorphicAt φ w`: for every function regular on an open set containing φ w, the nearby\n  members of the family φ land in that open set and the function pulls back to one analytic at w.\n  The parameter space is a finite-dimensional complex normed space (`FinComplexSpace`).\n* `New.IsSeparatingFamily ξ`: the scheme is reduced and the complex points ξ z are dense in it.",
+   "literature": "The isomorphisms of fields come from Steinitz's theorem, and the étaleness criterion is that of\nChase–Harrison–Rosenberg.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Geometry/GeometricPoints.lean",
+    "src/Lib/LocalGL/Green/TauFunctions.lean",
+    "src/Lib/Shimura/Uniformisation/HolomorphicFamilies.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/NumberTheory/PadicLimitsValuation.lean",
+    "src/Lib/LocalGL/Green/LabelCharacters.lean",
+    "src/Lib/Shimura/IntegralModel/UniversalFamily.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Geometry/SmoothnessCriterion.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Geometry/SmoothnessCriterion.lean",
+   "title": "Smoothness near an arc from an immersive generic family and a bound on the tangent space",
+   "folder": "General: General lemmas",
+   "group": "Schemes through points, line bundles and charts",
+   "lines": 463,
+   "theorems": 18,
+   "note": "A criterion for smoothness of a scheme `X` over a normal domain `R` near an arc `Spec V ⟶ X`, where\n`V` is a valuation subring of `ℂ`.\n\n* `New.Variety.exists_landsIn_smoothOfRelativeDimension`: the criterion.\n\nIdea: by the tangent bound, `d` functions map `X` to affine `d`-space over `R`, unramified at the\nclosed point of the arc. The holomorphic family makes this map dominant, so it is étale there.\n\nNotions from other files:\n* `New.LandsIn`: The morphism t: Y → X lands in the open U, that is, t⁻¹U is all of Y.\n* `New.IsHolomorphicImmersionAt`: A family of complex points is holomorphic at a parameter and\n  constant to first order only in the direction 0.\n* `New.specMap`: The morphism of spectra given by a ring homomorphism.\n* `New.Variety.sqZeroReduction`: The morphism from Spec R to Spec (R ⊕ M) given by the projection\n  of the trivial square-zero extension.\n* `New.PointFn.ofSection`: The function on ring-valued points given by a section s over U: its value\n  at t is t*s if t lands in U, and 0 otherwise.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+    "src/Lib/Shimura/Uniformisation/HolomorphicFamilies.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Shimura/ThetaModuli/UniversalFamily.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Groups/CongruenceSubgroups.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Groups/CongruenceSubgroups.lean",
+   "title": "Integral, congruence and unitary matrix groups over a ring, with their topology",
+   "folder": "General: General lemmas",
+   "group": "Matrix groups, characters and group algebras",
+   "lines": 482,
+   "theorems": 39,
+   "note": "The file opens with a few general facts on induction, reindexing, compact, open and closed sets, and\nintegrability.\n\n* `New.intGL`, `New.congruenceGL`: the matrices of `GL n R` that are invertible over a subring `O`,\n  and the congruence subgroups among them; `New.intGL.toMatrix` reads such a matrix over `O`, and\n  `New.intGL.map` applies a ring map out of `O`.\n* `New.U`: the unitary group of a matrix `J`, the `g` in `GL n R` with `gᴴ * J * g = J`, with change\n  of ring `New.U.map`, change of basis `New.U.conj` and determinant `New.U.det`.\n* `New.U.isClosedEmbedding_coe`: for invertible `J`, `U J` is closed in the space of matrices; with\n  the bound on the entries of a unitary matrix, this gives that the complex unitary group of the\n  identity matrix is compact.\n\nThe file also supplies the Polish and Borel instances on units, the measurable and measure space\nstructures on matrices, the Polish instance on unitary groups and the Borel instance on complex\nones, local compactness of unitary groups, and the additive Haar measure on matrices.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Adeles/AdditiveCharacter.lean",
+    "src/Lib/Cohomology/Hodge/GrothendieckSymbol.lean",
+    "src/Lib/GLn/SchurModule/SchurMatrix.lean",
+    "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+    "src/Lib/General/Groups/BesselGroups.lean",
+    "src/Lib/General/LinearAlgebra/Eigenvalues.lean",
+    "src/Lib/General/LinearAlgebra/HermitianMatrices.lean",
+    "src/Lib/PadicHodge/TateSen.lean",
+    "src/Lib/Shimura/AbelianScheme/Basic.lean",
+    "src/Lib/Weil/DualPair/Kronecker.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Groups/IndexOfProduct.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Groups/IndexOfProduct.lean",
+   "title": "The index of a product of subgroups is the product of the indices",
+   "folder": "General: General lemmas",
+   "group": "Matrix groups, characters and group algebras",
+   "lines": 26,
+   "theorems": 1,
+   "note": "One lemma of group theory, `New.Seesaw.index_pi_univ`: in a finite product of groups, the index of a\nproduct of subgroups is the product of their indices (an infinite index is read as `0`).",
+   "literature": "Known result: the index of a product of subgroups in a finite product of groups is the product of\nthe indices. Mathlib's `Subgroup.index_pi` is the case where all the factors are the same group.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/New/Determinant/Norms/AdjointThetaLift.lean",
+    "src/New/Spanning/Unfolding/FillingAdmissible.lean"
+   ],
+   "shared": [
+    "theoremC",
+    "theoremB"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Groups/BesselGroups.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Groups/BesselGroups.lean",
+   "title": "Block triangular groups, unipotent Bessel groups, Levi and parahoric subgroups",
+   "folder": "General: General lemmas",
+   "group": "Matrix groups, characters and group algebras",
+   "lines": 308,
+   "theorems": 7,
+   "note": "This file treats matrix groups over a commutative ring `R`, with an involution where unitary groups\nare concerned. The space has the basis `e₁, …, e_ϱ`, then a middle block, then `e*₁, …, e*_ϱ`; the\nindex type is `New.SplitIndex ϱ μ`. The form `New.Shape.Form.splitGram T` consists of `ϱ` hyperbolic\nplanes and the middle Gram matrix `T`. In `New.Shape.BesselIndex` the middle block is `κ` and one\nmore vector `z`.\n\nThe file also defines the Kronecker product of a finite family of matrices and the character\n`New.wave` of `ℂ`.\n\n* `New.BesselIndex.level`, `New.Shape.besselFrame`, `New.Shape.Form.frameGram`: the levels of the\n  basis vectors, the frame `(e₁, …, e_ϱ, z)`, and the products of the frame with its image under\n  a matrix `γ`.\n* `New.parabolic`, `New.agreeWithOneOn`, `New.unitriangular`: the block upper triangular matrices\n  for a level function, the invertible matrices that agree with the identity on the entries picked\n  out by a relation, and the block upper triangular matrices with all diagonal blocks `1`.\n* `New.Shape.Form.besselU`, `New.Shape.Form.besselU0`: subgroups of the unitary group\n  `New.Shape.Form.G` cut out by such conditions, where `New.U` is the unitary group of a Gram\n  matrix.\n* `New.levi`, `New.parahoric`: the Levi subgroups and the parahoric subgroups of `GL_k` over a\n  commutative local ring.",
+   "literature": "Known; see `Lib.DiscreteSeries.Bruhat.FloorGroups` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Groups/CongruenceSubgroups.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/TraceFormula/LineCount.lean",
+    "src/Lib/General/LinearAlgebra/IntegralLattices.lean",
+    "src/Lib/LocalGL/Green/HallAlgebra.lean",
+    "src/New/Spanning/MainTerm/SieveSystem.lean",
+    "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
+    "src/New/UpperBound/ElementaryDivisors/TwistingData.lean"
+   ],
+   "shared": [
+    "theoremB",
+    "theoremA"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Groups/ProfiniteCharacters.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Groups/ProfiniteCharacters.lean",
+   "title": "ℚ/ℤ, characters of profinite groups, and extension of homomorphisms",
+   "folder": "General: General lemmas",
+   "group": "Matrix groups, characters and group algebras",
+   "lines": 414,
+   "theorems": 27,
+   "note": "`New.QZ` is `ℚ/ℤ` with the discrete topology, and a character of a profinite group `G`\n(`New.QZChar G`) is a continuous homomorphism `G → ℚ/ℤ`. The file first proves elementary facts:\nthe exponential embedding of `ℚ/ℤ` into `ℂˣ`, the embedding of `ZMod n` into `ℚ/ℤ`, extension of\nhomomorphisms into divisible groups, and equality of the orders of a finite abelian group and its\ndual. It then shows that characters separate points of the topological abelianisation of `G`, and\nthat additive maps from characters to `ℚ/ℤ` are evaluations at its points; these facts are used to\nbuild Artin maps from their values on characters. `New.QZChar.abelianLift χ` denotes the map\ninduced by `χ` on the abelianisation, with values written multiplicatively.\n\n## Main definitions and results\n\n* `New.QZ.exists_extend`: for abelian groups, homomorphisms to a divisible group extend along any\n  homomorphism whose kernel they kill.\n* `New.card_hom_QZ`: a finite abelian group and its dual have the same order.\n* `New.QZChar.mem_of_forall_abelianLift`, `New.QZChar.abelianization_ext`: characters separate a\n  point from a closed subgroup of the abelianisation, and hence separate points.\n* `New.QZChar.exists_hom_abelianLift_eq`: every additive map from characters to `ℚ/ℤ` is evaluation\n  at a point of the abelianisation, in a form that is multiplicative in a parameter.\n* `New.QZChar.continuous_iff_forall_isOpen_ker_comp`: a homomorphism from a commutative topological\n  group to the abelianisation is continuous exactly when its composite with each character has open\n  kernel.\n* `New.exists_monoidHom_extend`, deduced from `New.QZ.exists_extend`: a homomorphism\n  `θ` from a commutative group into a divisible commutative group, trivial on the preimage of a\n  subgroup `H` under a homomorphism `f` of commutative groups, factors through `f` by a homomorphism\n  trivial on `H`.\n\nNotions from other files:\n* `New.Z1 ρ`: the continuous 1-cocycles of `ρ`, that is the continuous `f : G → M` with\n  `f (g h) = f g + ρ g (f h)`; `New.QZChar G` is the case of the trivial action on `ℚ/ℤ`.\n* `New.QZChar.toHom χ`: the character `χ` as a group homomorphism to `ℚ/ℤ` written\n  multiplicatively; `New.QZChar.ker χ` is its kernel.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/ClassField/GaloisCohomology/ContinuousCocycles.lean",
+    "src/Lib/General/Topology.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/GaloisCohomology/ShapiroCorestriction.lean",
+    "src/Lib/ClassField/Places/Ideles.lean",
+    "src/Lib/ClassField/Places/LocalFields.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Groups/CharacterTheory.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Groups/CharacterTheory.lean",
+   "title": "Characters of finite groups: averages, virtual characters and central projections",
+   "folder": "General: General lemmas",
+   "group": "Matrix groups, characters and group algebras",
+   "lines": 846,
+   "theorems": 56,
+   "note": "This file sets up the character theory of a finite group `G` that is used for the characters of\n`GL n` over a finite field. From Wedderburn's theorem it derives criteria for irreducibility.\n\n## Main definitions and results\n\n* `New.IsIrreducibleChar`: characters of norm one that satisfy the convolution identity with every\n  class function.\n* `New.virtualChars S G`: the `S`-span of the characters, a subalgebra of `G → ℂ`; for `S = ℤ` these\n  are the virtual characters, for `S = ℕ` the characters (`New.isChar_of_mem_virtualChars`).\n* `New.IsCentralProj`: central idempotents e of the group algebra ℂ[H] of any group H. Their\n  coefficients are class functions; 1 − e, the image of e under a ring endomorphism of ℂ and tensor\n  products are again central idempotents.\n* `New.IsClassFunction.isIrreducibleChar_of_classInner_eq_intCast`,\n  `New.IsClassFunction.mem_virtualChars`, `New.IsClassFunction.exists_eq_mul_groupAlgElem_mul`:\n  criteria for a class function `f` to be an irreducible character, for `f` to be a combination of\n  characters with coefficients in a given semiring, and for an element of `ℂ[G]` to be recovered\n  from its product with `New.groupAlgElem f`. They are collected in\n  `New.isIrreducibleChar_and_mem_virtualChars_and_exists_mul`.\n* `New.IsCentralProj.isChar_card_mul_coeff`: for a central idempotent `e` of `ℂ[G]`, the function\n  `g ↦ |G| · e(g)` is a character. Its pairing with any character is the rank of an idempotent, so a\n  natural number. It is the character of a representation of dimension at most `|G|`\n  (`New.IsCentralProj.exists_character_eq_and_finrank_le_card`), so the coefficients of `e` have\n  norm at most `1` (`New.IsCentralProj.norm_coeff_le_one`).\n* `New.IsCentralProj.self_adjoint`, `New.IsCentralProj.sum_norm_sq_conv_le`: a central idempotent of\n  `ℂ[G]` acts self-adjointly for every `G`-invariant form that is sesquilinear for `σ⁻¹ ∘ conj ∘ σ`,\n  complex conjugation transported along an automorphism `σ` of `ℂ`. So it acts as an orthogonal\n  projection in every unitary representation. Hence convolution with it does not increase `ℓ²`\n  norms.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Unitary/Defs.lean"
+   ],
+   "usedBy": [
+    "src/Lib/LocalGL/Green/HallAlgebra.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/TensorChains.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/TensorChains.lean",
+   "title": "Chains of linear maps, tensor products of their data, and separation by forms",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 312,
+   "theorems": 19,
+   "note": "The file composes initial segments of a chain of linear maps and computes the index of the\nstabiliser of a nonzero vector in a finite general linear group. It extends a chain of bilinear\nsteps from pure data to arbitrary tensors of the data.\n\n## Main definitions and results\n\n* `New.index_stabilizer_GL_vector`: over a finite field `F`, the stabiliser in `GL n F` of a nonzero\n  vector has index `|F| ^ |n| - 1`, by orbit-stabiliser.\n* `New.TensorChain`: the tensor product `S (j-1) ⊗ (⋯ ⊗ (S 0 ⊗ ℂ))`, which is `ℂ` for `j = 0`.\n* `New.TensorChain.lift`, `New.TensorChain.lift_pure`: for `x` in `M 0`, the linear map to `M j`\n  that sends a pure tensor to the composite (`New.compUpTo`) of the maps `b i (f i)`, `i < j`,\n  applied to `x`.\n* `New.TensorChain.ofPairs`, `New.TensorChain.lift_ofPairs`: data of double steps regrouped into\n  single factors.\n* `New.tensor_eq_zero_of_separating`: over a principal ideal domain, if the forms `f i` on `U` have\n  no common zero but `0` and `V` is torsion-free, then the maps `U ⊗ V → V`,\n  `u ⊗ v ↦ f i u • v`, have no common zero but `0`.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/PadicHodge/Limit/TraceLimit.lean",
+    "src/Lib/Weil/DualPair/TwoEdges.lean",
+    "src/New/Spanning/Frames/FixedLines.lean",
+    "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
+    "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean"
+   ],
+   "shared": [
+    "theoremB",
+    "theoremA"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/Eigenvalues.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/Eigenvalues.lean",
+   "title": "Eigenvalues: traces of powers, common eigenvectors, Amitsur's theorem, Sylvester's law",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 786,
+   "theorems": 30,
+   "note": "This file collects linear algebra on eigenvalues and characteristic polynomials. It expresses traces\nof powers and determinants such as `det (1 - c N)` through the roots of the characteristic\npolynomial.\n\n## Main definitions and results\n\n* `New.exists_eigenvector_of_commute`: common eigenvectors of endomorphisms that preserve a\n  finite-dimensional subspace `S` and commute on it, over an algebraically closed field.\n* `New.exists_eigenvector_of_trace_mul_eq`: if twisted traces of a commuting family `A'` are\n  proportional to traces of a commuting family `A`, a generalised eigensystem of `A` on which one\n  operator has non-zero trace extends to an eigensystem of `A'` that is invariant under the twist.\n* `New.amitsur_charpoly_mem_of_span` (Amitsur): for an algebra map to matrices, it suffices to check\n  on a spanning set that the coefficients of the characteristic polynomials lie in the base ring.\n  The proof works with det (1 - t ρ(w)) modulo a power of t and factors 1 - t ρ(w) step by step.\n* `New.isConj_diagonal_of_isRoot_charpoly`: a complex square matrix whose characteristic polynomial\n  vanishes at pairwise distinct numbers x_i, one for each index i, is conjugate to the diagonal\n  matrix with entries x_i.\n* `New.sylvester_law_of_inertia`: Sylvester's law of inertia for sign matrices.",
+   "literature": "Known result: Amitsur's theorem that integral characteristic polynomials on a spanning set give them\non the whole algebra. It is a consequence of Amitsur's formula for the characteristic polynomial of\na sum of matrices. Source: S. A. Amitsur, On the characteristic polynomial of a sum of matrices,\nLinear and Multilinear Algebra 8 (1980), no. 3, 177-182; G. Chenevier, The p-adic analytic space of\npseudocharacters of a profinite group and pseudorepresentations over arbitrary rings, LMS Lecture\nNote Ser. 414 (2014), (1.5).",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Groups/CongruenceSubgroups.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/TraceFormula/ChangingSigns.lean",
+    "src/Lib/Adelic/TraceFormula/CoprimeFactors.lean",
+    "src/Lib/DiscreteSeries/Character/WeylCharacterFormula.lean",
+    "src/Lib/DiscreteSeries/Rigidity/HighestVectorsAndFiltration.lean",
+    "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+    "src/Lib/LocalGL/Iwahori/QuadraticRelation.lean",
+    "src/Lib/Weil/MixedModel/IsotropicSplitting.lean",
+    "src/Lib/Weil/Unramified/SplitHecke.lean",
+    "src/New/Congruences/FirstOrder/RibetMethod.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/HermitianMatrices.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/HermitianMatrices.lean",
+   "title": "Determinants of positive semidefinite matrices, principal minors and hermitian involutions",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 397,
+   "theorems": 25,
+   "note": "The file proves inequalities and identities for complex matrices. The norm of a matrix is the `L²`\noperator norm, and `≤` between matrices is the positive semidefinite order. It also studies a\nhermitian involution `J` and its unitary group `New.U J`, the group of invertible matrices `g` with\n`gᴴ * J * g = J`, with real coordinates on skew-hermitian matrices. For signs `ε i = ±1`,\n`New.signMatrix ε` is their diagonal matrix and `New.USign ε` its unitary group.\n\n## Main definitions and results\n\n* `New.norm_det_le_norm_det_of_posSemidef`: `0 ≤ P ≤ Q` implies `|det P| ≤ |det Q|`.\n* `New.norm_det_sq_le_of_posSemidef`: if the block matrix with rows `(P, A)` and `(B, Q)` is\n  positive semidefinite, then `|det A|² ≤ |det P| |det Q|`.\n* `New.principalMinor`: the principal minor on the indices satisfying a predicate `p`.\n* `New.jacobi_complementary_minor`: Jacobi's theorem, the principal minors of `x⁻¹` from the\n  complementary principal minors of `x`.\n* `New.IsHermitianInvolution J`: `J` is hermitian and `J * J = 1`. Examples are `1` and the diagonal\n  matrices of signs `New.signMatrix ε`.",
+   "literature": "Known; see `Lib.DiscreteSeries.Haar.TotalMass` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Analysis/GaussianIntegral.lean",
+    "src/Lib/General/Groups/CongruenceSubgroups.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Witt/SmoothWitt.lean",
+    "src/Lib/DiscreteSeries/CuspKernel.lean",
+    "src/Lib/DiscreteSeries/Haar/CayleyChart.lean",
+    "src/Lib/Weil/Fock/Basic.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/IntegralLattices.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/IntegralLattices.lean",
+   "title": "Integral matrices over subrings: Smith normal form, Gelfand's condition and lattices",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 839,
+   "theorems": 50,
+   "note": "This file studies matrices over a commutative ring `A` that are integral with respect to a subring\n`R`. The model is the ring of integral adeles inside the finite adeles. `New.IsIntMatrix R M` says\nthat all entries of `M` lie in `R`. The property `New.IsValuationPair R` says that of two elements\nof `A` one divides the other over `R`, piece by piece along an idempotent of `R`. The file also\ndefines column lattices and indices of lattices, and studies principal congruence subgroups of\nunitary groups.\n\n## Main definitions and results\n\n* `New.IsValuationPair.smith_normal_form`: a square matrix over `A` is diagonalized by row and\n  column operations over a subring `R` that satisfies `New.IsValuationPair`.\n* `New.exists_invTransposeGL_inv_eq`: for such a subring `O` of `R`, `gᵀ` lies in the double coset\n  `GL n O * g * GL n O`.\n* `New.IsHeckeFunction.heckeFun_adjoint`, `New.IsHeckeFunction.heckeFun_comm`: adjoints and\n  commutativity of Hecke operators for `K = GL n O`, with `O` a valuation subring of a field.\n* `New.submoduleIndex`, `New.denomIndex`: the relative index of two `R`-modules, and the index of\n  the denominator of `a`. An infinite index is read as `0`.\n* `New.colLattice`, `New.preimageLattice`: the span of the columns of `M`, and the vectors `M` makes\n  integral.\n* `New.unitaryLevel`: the principal congruence subgroup of the unitary group `New.U J`.\n\nNotions from other files:\n* `New.intGL n O`: for a subring `O` of `R`, the subgroup of `GL n R` of matrices that have,\n  together with their inverse, all entries in `O`.\n* `New.U J`: the unitary group of `J`, the `g` in `GL n R` with `gᴴ * J * g = J`.\n* `New.heckeFun π K f`: the operator `∑ f g • π g`, summed over chosen representatives `g` of\n  `G ⧸ K` (zero if infinitely many terms are nonzero).\n* `New.IsHeckeFunction K f`: `f` is left and right `K`-invariant and supported on finitely many\n  cosets `g K`.\n* `New.levelSpace π K`: the vectors of the representation `π` that are fixed by `K`.",
+   "literature": "Known result: Commutativity of the spherical Hecke algebra of GL_n. This file proves the case that\nis used, by Gelfand's trick: over a valuation subring of a field the Hecke operators commute on\nfixed vectors of a representation. Source: J. Tits, Reductive groups over local fields, Corvallis\n1979, 3.3.3; T. Tamagawa, On the zeta functions of a division algebra, Ann. Math. 77 (1963).\n\nPart of a known result: the valuation pairs and integral matrices of this file are groundwork for\nWitt's extension theorem for unimodular hermitian lattices and for the Iwasawa decomposition (see\n`Lib.Adelic.Witt.IwasawaDecomposition`).",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Hecke/Basic.lean",
+    "src/Lib/General/Groups/BesselGroups.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/Measure/HaarModulus.lean",
+    "src/New/Spanning/SecondMoment/PositiveType.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/MatricesNearIdentity.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/MatricesNearIdentity.lean",
+   "title": "Matrices near the identity: Jacobi's formula and norm estimates",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 406,
+   "theorems": 34,
+   "note": "This file collects known facts on complex matrices near the identity.\nIt proves Jacobi's formula for the derivative of the determinant at the identity and\n`det (exp M) = exp (tr M)`.\nEstimates in the Hilbert–Schmidt norm, which is the norm of all matrices in this file, control the\ninverse and the logarithm of `1 + X` and the exponential of `X`.\nThe logarithm of an element of `USign ε` near `1` lies in the Lie algebra.\nA matrix at distance less than `1` from the identity is accretive.\n\n## Main definitions and results\n\n* `New.hasDerivAt_det_of_eq_one`: along a differentiable curve of complex matrices through the\n  identity, the derivative of the determinant there is the trace of the velocity.\n* `New.DiscreteSeries.logOneAdd` and `exp_logOneAdd`: the logarithm of `1 + X` for `‖X‖ ≤ 1 / 2`.\n\nNotions from other files:\n* `signMatrix ε` is the diagonal matrix with entries `ε i = ±1`, and `USign ε` is its unitary group.\n* `unitaryLie J` is the space of matrices `X` with `Xᴴ * J + J * X = 0`.\n* `entryMask r X` keeps the entries `(i, j)` of `X` with `r i j` and replaces the others by `0`.\n* A matrix `A` is accretive (`A.IsAccretive`) if `A + Aᴴ` is positive definite.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/DiscreteSeries/FlenstedJensen/Defs.lean",
+    "src/Lib/Shimura/ComplexTheta/AppellHumbertData.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Weil/Fock/PolynomialVectors.lean",
+    "src/New/Appendix/DiscreteSeries/MinorSecondOrder.lean",
+    "src/New/Appendix/DiscreteSeries/SteepParameters.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/MinorProducts.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/MinorProducts.lean",
+   "title": "Products of principal minors, Fischer's inequality and the Cauchy–Binet formula",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 472,
+   "theorems": 27,
+   "note": "For an integer vector `w` and an invertible complex matrix `x`, m_w(x) = `New.weightMinors w x` is\nthe product over all integers `t` of the principal minors `New.principalMinor` of `x` on\n`{i | t ≤ w i}`. The factors with `t ≤ 0` are divided by `x.det`. The file develops the calculus of\nm_w and the closure properties of the invertible triangular matrices `New.IsBorelMatrix o`.\n\n## Main definitions and results\n\n* `New.weightMinors_eq_det_zpow_mul_prod`: the finite form `x.det ^ a * ∏_{a < t ≤ b}` of minors,\n  when `a ≤ w ≤ b`.\n* `New.fischer_det_inequality`: for a positive semidefinite matrix in 2×2 block form,\n  |det z| ≤ |det z₁₁| · |det z₂₂|.\n* `New.fischer_inequality`: for positive semidefinite z, the principal minor\n  (`New.principalMinor`) on a disjoint union of two index sets is at most, in absolute value, the\n  product of the two principal minors.\n* `New.hadamard_det_inequality`: for positive semidefinite z, |det z| is at most the product of\n  the |z_ii|.\n* `New.det_mul_eq_sum_minors`: the Cauchy–Binet formula.\n* `New.det_fromCols_eq_sum_minors`, `New.sum_norm_det_fromCols_sq_le`: the Laplace expansion along\n  a block of columns and a bound for its complementary minors.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/DiscreteSeries/FlenstedJensen/Defs.lean",
+    "src/Lib/General/Analysis/HolomorphicIntegrals.lean"
+   ],
+   "usedBy": [
+    "src/Lib/DiscreteSeries/Holomorphic/MaximalCompactMinors.lean",
+    "src/Lib/GLn/SchurModule/TensorModel.lean",
+    "src/Lib/General/LinearAlgebra/GramDeterminant.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/GramDeterminant.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/GramDeterminant.lean",
+   "title": "Gram determinants",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 140,
+   "theorems": 6,
+   "note": "* `New.exists_extend_basis_of_span_eq_top`: an independent family is completed to a basis by members\n  of a spanning set.\n* `New.det_gram_comp`: `det ⟨u x_i, u x_k⟩ = (normDet u)² det ⟨x_i, x_k⟩` for a family `x` of as\n  many vectors as the dimension of the source of `u`; here `(normDet u)² = det (u* u)`.\n* `New.norm_det_mul_det_gram_mul_det_le_one`: a bound on a Gram determinant times `conj (det u')`\n  and `det u` in a nonarchimedean field when the inner products of the families transformed by `u'`\n  and `u` have norm at most `1`.\n* `New.formGram`, `New.norm_det_formGram_le`, `New.norm_det_pairing_sq_le`: Gram matrices for a\n  form given by a matrix; a consequence of Hadamard's inequality and the Cauchy–Schwarz inequality\n  for determinants, for a positive semidefinite form.\n\nNotions from other files:\n\n* `Matrix.gram ℂ x`: the matrix of the inner products `⟨x_i, x_k⟩`.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/LinearAlgebra/MinorProducts.lean"
+   ],
+   "usedBy": [
+    "src/New/Reduction/Lattices/TwistedLattice.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/MatrixPolynomials.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/MatrixPolynomials.lean",
+   "title": "Minors, polynomials of matrices and twisted norms",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 226,
+   "theorems": 11,
+   "note": "This file contains general lemmas on matrices over commutative rings, and three definitions used\nelsewhere: a minor of a matrix of variables, a non-degeneracy condition on a trace form and a\nfreeness condition on a family of integers.\n\n## Main definitions and results\n\n* `New.Rows.variableMinor_ne_zero`: a minor of a matrix of variables with distinct rows and distinct\n  columns is not zero.\n* `New.IsTraceNondeg r`: the trace form is non-degenerate on the span of the matrices `r g`.\n* `New.HasNoSmallRelations e`: here `e : Fin n → ℤ`, with `n` a natural number. A sum of at most\n  `(n + 1) ^ 2` of the integers `e i`, together with the number of terms, determines how often each\n  `e i` occurs.\n* `New.det_eval_eq_zero_iff_not_linearIndependent`: over a field, finitely many functions\n  `v j : X → k` are linearly dependent if and only if all the determinants `det (v j (x i))` vanish.\n* `New.charpoly_dvd_charpoly_aeval_comp`, `New.isUnit_aeval_iff_isCoprime`: the characteristic\n  polynomial of `Y` divides that of `q(Y)` composed with `q`, and `z(Y)` is invertible iff `z` is\n  coprime to the characteristic polynomial of `Y`.\n* `New.exists_gl_map_eq_of_fixed`: an invertible matrix fixed by `σ` lifts along any injective\n  ring map whose image contains the fixed points of `σ`.\n\nNotions from other files:\n* `New.twistedNorm τ p δ`: the product `δ · τ(δ) ⋯ τ^(p-1)(δ)` in a monoid `M`, for `τ : M → M`.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/BaseChange/Defs.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Hilbert90/TameActions.lean",
+    "src/Lib/General/LinearAlgebra/IdempotentRadical.lean",
+    "src/Lib/LocalGL/Green/CuspidalFunctions.lean",
+    "src/Lib/Shimura/ThetaModuli/FlatClosure.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/IdempotentRadical.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/IdempotentRadical.lean",
+   "title": "The unipotent radical attached to an idempotent matrix",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 187,
+   "theorems": 14,
+   "note": "For an idempotent matrix `ε`, the matrices `1 + ε Y (1 - ε)` form the unipotent radical of the\nparabolic subgroup that keeps the image of `ε`. If a polynomial in `g` is a projection onto the\nimage of `ε`, then every translate of `g` by the radical is conjugate to `g` under the radical\n(`semiconjBy_radicalHom_aeval_sub`).",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/LinearAlgebra/MatrixPolynomials.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/TraceFormula/TestFunction.lean",
+    "src/Lib/Shimura/TraceFormula/MarkedDefiniteSums.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/HermiteForm.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/HermiteForm.lean",
+   "title": "Hermite forms over valuation pairs and integral matrices over valued fields",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 252,
+   "theorems": 9,
+   "note": "We reduce the columns and rows of matrices over a ring `A` by invertible matrices over a subring\n`R`, under the hypothesis `New.IsValuationPair`. It says that any two elements `a, b` of `A` are\n`R`-multiples of `a - e * (a - b)` for some idempotent `e` of `R`. It holds for a valuation domain\n`A` with `R = ⊤`. For a field with a valuation into `ℤᵐ⁰`, we bound the entries of matrix products\nand give a determinant test for integral invertible matrices.\n\n## Main definitions and results\n\n* `New.IsValuationPair.hermite`: Hermite form `y = U_ι * D` with `U ∈ GL_n(R)`, `D` block\n  triangular.\n* `New.IsValuationPair.exists_isPrimitiveMatrix_mul`: a matrix with a left inverse becomes primitive\n  (`New.IsPrimitiveMatrix`) after multiplication by an invertible block triangular matrix.\n* `New.IsValuationPair.exists_mul_clear_cols`: the transposed form, clearing the columns outside\n  the image of `ι`.\n* `New.mem_intGL_iff_det`: `g` lies in `New.intGL n 𝒪[F]` (the image of `GL n 𝒪[F]` in `GL n F`) iff\n  its entries are integral and `v (det g) = 1`.\n\nNotions from other files:\n* `New.intGL n R`: the subgroup `GL_n(R)` of `GL_n(A)` of matrices that have their entries and\n  those of their inverse in the subring `R`.\n* `New.transvectionGL`: for distinct indices `i, j` and `a` in `A`, the element `1 + aE_{ij}` of\n  `GL_n(A)`, with inverse `1 − aE_{ij}`.\n* `New.IsPrimitiveMatrix R X`: `X` has entries in `R` and a left inverse with entries in `R`.",
+   "literature": "The property `New.IsValuationPair` and the Smith normal form are in\n`Lib.General.LinearAlgebra.IntegralLattices`.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Witt/WittTheorem.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/Algebra/FittingIdealsAndLengths.lean",
+    "src/Lib/General/LinearAlgebra/PartnerAlgebra.lean",
+    "src/Lib/LocalGL/Iwahori/ParahoricStructure.lean",
+    "src/New/UpperBound/ElementaryDivisors/Edges.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/MatrixNormBounds.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/MatrixNormBounds.lean",
+   "title": "Auerbach's lemma, ultrametric matrix bounds and Gram norms",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 163,
+   "theorems": 5,
+   "note": "This file collects norm estimates for linear maps and matrices.\n\n## Main definitions and results\n\n* `New.exists_auerbach`: linear forms indexed by a compact space that vanish together only at `0`,\n  with images in a normed field depending continuously on the index, contain the coordinate forms\n  of a basis on whose vectors all forms of the family take values of image norm at most `1`. These\n  forms are chosen to maximise the norm of the image of their determinant; Cramer's rule gives the\n  bound.\n* `New.norm_mulVec_le_of_nonneg`, `New.norm_mulVec_le`: over an ultrametric field, a matrix whose\n  entries have norm at most `c ≥ 0` multiplies the sup norm of a vector by at most `c`, whatever its\n  size.\n* `New.sqrt_weylNormSq_le_of_dual`: a bound on the Gram norm of Weyl modules by duality.\n* `New.sqrt_weylNormSq_sum_le`: the triangle inequality for the Gram norm of Weyl modules.",
+   "literature": "Known result: Auerbach's lemma, here for a compact family of linear forms.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GLn/SchurModule/GramMatrix.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/AutomorphicForms/PAdicGauge.lean",
+    "src/Lib/GLn/Dual.lean",
+    "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+    "src/New/Congruences/Lifting/HodgeExpansion.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/PartnerAlgebra.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/PartnerAlgebra.lean",
+   "title": "Rows and columns of integral matrices, primitive matrices and the law of partners",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 373,
+   "theorems": 22,
+   "note": "This file develops linear algebra over a subring `O` of a commutative ring `R`, for the local\ncomputations with partner functions. The index set `n` is split by `e : b ⊕ a ≃ n`. For\n`k ∈ GL n R`, `New.firstCols e k` is the matrix of the columns `b` of `k`, and\n`New.invLastRows e k`, `New.invFirstRows e k` are the matrices of the rows `a` and `b` of `k⁻¹`.\n\n## Main definitions and results\n\n* `New.AreMatched`: two functions `Φ`, `Ψ` supported on the blocks `New.invLastRows e k` and\n  `New.firstCols e k` of `k ∈ GL n O`, whose values differ by the factor `χ (det k)`.\n* `New.IsPrimitiveMatrix.mul_iff`: for primitive `y`, the matrix `y * x` is primitive exactly if `x`\n  is primitive.\n* `New.exists_firstCols_eq_mul`: multiplying `firstCols e k` by an element of `GL b O` and\n  `invLastRows e k` by an element of `GL a O` gives the blocks of another element of `GL n O`,\n  whose determinant is computed.\n* `New.IsValuationPair.exists_firstCols_iff`: if `New.IsValuationPair O` holds, the primitive\n  matrices are the `firstCols e k` with `k` in `GL n O`.\n* `New.AreMatched.lift_of_reduction`: partners over `R` lift along a surjective local homomorphism\n  `O → R`; here `O` is a subring of another ring `F`.\n* `New.AreMatched.left_mul`, `New.AreMatched.right_mul`: the transformation laws of two partner\n  functions.\n\nNotions from other files:\n* `New.intGL n O`: the group `GL n O` as a subgroup of `GL n R`.\n* `New.IsPrimitiveMatrix O y`: the matrix `y` and some left inverse of it have entries in `O`.\n* `New.HasLeftInv X`: the matrix `X` has a left inverse over `R`.\n* `New.liftIntegralFn π f`: the function that is `f` at the image under `π` of a matrix over `O`\n  and zero at every other matrix.\n* `New.IsValuationPair O`: for all `u`, `v` in `R` there is an idempotent `ε` in `O` such that `u`\n  and `v` are `O`-multiples of `(1 - ε) u + ε v`.",
+   "literature": "Known; see `Lib.SiegelWeil.Tower.LargeSideConstantTerm` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Unitary/ComponentsAndBlockSums.lean",
+    "src/Lib/General/LinearAlgebra/HermiteForm.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Unitary/GramMatrix.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/PolarDecomposition.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/PolarDecomposition.lean",
+   "title": "Gram–Schmidt, tight frames, polar decomposition in U(p,q), forms representing one",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 242,
+   "theorems": 9,
+   "note": "This file collects four topics of linear algebra. The first is a Gram–Schmidt process\nwhose change of basis is block triangular for a weight on the columns. The second concerns tight\nframes of `ℂ^Φ` made of vectors of the lattice `𝔞₀` attached to a CM field. The third is the polar\ndecomposition in the unitary group of a diagonal sign form, with properties of accretive matrices.\nThe last gives a condition under which a Hermitian form takes the value `1` on a subspace.\n\n## Main definitions and results\n\n* `New.exists_orthonormal_mul`: the columns of a complex matrix with a left inverse\n  (`New.HasLeftInv`) become orthonormal after right multiplication by an invertible matrix `b` that\n  is block triangular for a given weight `wt` on the columns: `b i j = 0` whenever `wt j < wt i`.\n* `New.IsTightFrame`: vectors of `𝔞₀`, with multiplicities, that form a tight frame of `ℂ^Φ`.\n* `New.exists_polar`: `g = k * z` with `k` unitary and `z` positive definite and an exponential.\n* `New.isAccretive_blockDiagPart_inv_mul`: the block diagonal part of `g` is invertible and\n  `(blockDiagPart ε g)⁻¹ * g` is accretive.\n* `New.exists_mem_dotProduct_mulVec_eq_one`: a Hermitian form on `ℂ^m` that is not negative\n  semidefinite on a subspace takes the value `1` on that subspace.\n\nNotions from other files:\n* `New.signMatrix ε`: the diagonal matrix of the signs `ε`; `New.USign ε` is its unitary group, the\n  invertible complex matrices `g` with `gᴴ * signMatrix ε * g = signMatrix ε`.\n* `New.unitaryLie J`: the Lie algebra of this group for `J = signMatrix ε`: the real vector space\n  of complex matrices `X` with `Xᴴ * J + J * X = 0`; `New.expU X` is `exp X` in the group.\n* `Matrix.IsAccretive z`: the matrix `z + zᴴ` is positive definite.\n* `New.WeilData E`: data on a CM field `E`; only its finite idele `α` is used here.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/DiscreteSeries/Holomorphic/MaximalCompactMinors.lean",
+    "src/Lib/Weil/Construction/WeilData.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Reduction/MinkowskiTheorems.lean",
+    "src/Lib/Adelic/Witt/IwasawaDecomposition.lean",
+    "src/Lib/DiscreteSeries/Holomorphic/HighestVectorExtension.lean",
+    "src/Lib/Weil/Construction/ThetaJets.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/LinearAlgebra/BlockEmbeddings.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/LinearAlgebra/BlockEmbeddings.lean",
+   "title": "Extending columns, block matrices and block embeddings",
+   "folder": "General: General lemmas",
+   "group": "Linear algebra and matrix analysis",
+   "lines": 408,
+   "theorems": 24,
+   "note": "For an embedding `ι : r ↪ n` of index sets, `New.inclMatrix k ι` has the standard basis vectors\n`e (ι j)` as columns. Such a map splits `n` into two blocks, and the file studies the corresponding\nblock matrices. Over a field, independent columns extend to an invertible matrix. The embedding\n`a ↦ diag(a, 1)` of unitary groups of sign matrices is a proper map, and the norm of a block\ndiagonal matrix is the larger of those of its blocks, for the L² operator norm.\n\n## Main definitions and results\n\n* `New.extendGL`: the embedding g ↦ diag(g, 1); `New.submatrix_extendGL` and\n  `New.extendGL_apply_of_notMem_range` give its block g and its rows outside that block.\n* `New.rangeParabolic`, `New.mem_rangeParabolic_iff`: the opposite parabolic for the two blocks, and\n  its description in entries.\n* `New.index_rangeParabolic_mul_card_GL`, `New.index_stabilizer_inclMatrix`: the index of the\n  opposite parabolic times |GL_r(R)| is the index of the group that fixes the basis vectors of\n  the first block, and over a finite field the latter index is computed.\n* `New.residueDatum`: a function of adelic matrices given by their reductions at a family of\n  places.\n* `New.DiscreteSeries.isProperMap_inl`: the embedding `a ↦ diag(a, 1)` is a proper map.\n\nNotions from other files:\n* `New.parabolic`: the subgroup of GL_n(R) of matrices that are block upper triangular for a given\n  level function on the indices.\n* `New.U`, `New.U.sum`: U(J) is the group of g with gᴴJg = J; for a block diagonal sum J'' of J\n  and J', `New.U.sum` is the homomorphism U(J) × U(J') → U(J'') sending (g,h) to diag(g,h).",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Weil/DualPair/Defs.lean",
+    "src/Lib/Weil/Unramified/HeckeGL.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GLn/Dual.lean",
+    "src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
+    "src/Lib/General/Algebra/LevelModulus.lean",
+    "src/Lib/Weil/Periods/ConstantTerm.lean",
+    "src/Lib/Weil/Unramified/HeckeTransfer.lean",
+    "src/New/Appendix/DiscreteSeries/Periods.lean",
+    "src/New/OneLift/ComparisonOperator/OneExchange.lean",
+    "src/New/Spanning/Frames/FixedLines.lean",
+    "src/New/UpperBound/Objects/LiftChains.lean"
+   ],
+   "shared": [
+    "theoremC",
+    "theoremB",
+    "theoremA"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Measure/FibreMeasure.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Measure/FibreMeasure.lean",
+   "title": "Measures below a fibre measure",
+   "folder": "General: General lemmas",
+   "group": "Measure theory, Haar measures and integration",
+   "lines": 236,
+   "theorems": 11,
+   "note": "Let `π : X → B` be a map, `μ` a measure on `X` and `ν` a measure on `B`. For a submersion of\nmanifolds with smooth positive measures, the fibre measures `dμ / dν` on the fibres of `π` are\ndetermined by two properties: integrating over the fibres and then against `ν` is integrating\nagainst `μ`, and the fibre integrals of a continuous function of compact support are continuous on\n`B`. This file does not construct them. It defines the relation of being at most the fibre measure\nover a point and proves that it is kept by the usual operations on measures and maps.\n\n* `New.LeFibreMeasure`: a measure `l` is at most the fibre measure over a point `b`.\n* `New.LeFibreMeasure.of_coordinates`: a parametrisation `ψ t p` of a part of `X` with\n  `π (ψ t p) = t` and a weight `w t p`, both continuous at `t = b` and dominated by `μ`, give such a\n  measure.\n* `New.LeFibreMeasure.trans`: the relation for a pair of maps follows from the relations for the two\n  steps, the second map being continuous.\n* `New.LeFibreMeasure.map_prod`: the relation is kept by a family of maps that respect `π`.",
+   "literature": "Fibre measures: Weil, Sur la formule de Siegel dans la théorie des groupes classiques, no. 6.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/DiscreteSeries/Bruhat/FloorFibre.lean",
+    "src/Lib/DiscreteSeries/Haar/GramFibre.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Measure/IdempotentKernel.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Measure/IdempotentKernel.lean",
+   "title": "Fubini and convolution lemmas; idempotent kernels",
+   "folder": "General: General lemmas",
+   "group": "Measure theory, Haar measures and integration",
+   "lines": 226,
+   "theorems": 15,
+   "note": "General lemmas of measure and integration, and the notion of an idempotent kernel on a group.\n\n* `New.IsBoundedMeasurable`: a strongly measurable function whose norm is bounded by a constant.\n* `MeasureTheory.MeasurePreserving.integral_integral_comp`: Fubini's theorem along a\n  measure-preserving map from a product; `MeasureTheory.MeasurePreserving.fubini` adds the\n  integrability on the product.\n* `New.integrable_integral_skew_product`, `New.integral_integral_skew_product`: Fubini's theorem\n  after a substitution that preserves the measure on the space where it acts;\n  `New.integral_skew_product` is the conjunction of the two.\n* `New.integral_smul_integral_swap`, `New.integral_smul_integral_eq_integral_conv_smul`: the\n  integral `∫ x, k x • ∫ g, α g • F (j x * g)`, for `g` in a group, in the opposite order and as a\n  pairing with a convolution; `New.integral_conv` is the conjunction of the two.\n* `New.IsIdempotentKernel`: a continuous integrable function `e` on a group with\n  `e g⁻¹ = conj (e g)`, `e 1 ≠ 0` and `∫ e z * e ((z * x)⁻¹ * y) dz = e x⁻¹ / e 1 * e y`; in\n  particular `e * e = e` (`New.IsIdempotentKernel.convolution_self`).",
+   "literature": "The results of this file are standard. The lemmas on iterated integrals and on convolution on a\ngroup are forms of Fubini's theorem, and `New.sq_lintegral_le` is the Cauchy–Schwarz inequality for\nlower integrals, deduced from Hölder's inequality.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Base.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/QuotientMeasure/Basic.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Measure/HaarNormalisation.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Measure/HaarNormalisation.lean",
+   "title": "Uniqueness of Haar measure, integrals over subgroups and Gaussian normalisation of volumes",
+   "folder": "General: General lemmas",
+   "group": "Measure theory, Haar measures and integration",
+   "lines": 228,
+   "theorems": 7,
+   "note": "The file treats three topics of measure theory. Two additive Haar measures on a locally compact,\nsecond countable group agree if some real function has integral 1 for both. Integrals over compact\nor open subgroups are computed by translation invariance, orthogonality of characters and reduction\nto finite sums. A normalisation of volumes by Gaussian integrals is defined. It holds for `ℝ` and\n`ℂ` and passes to binary products and finite powers under σ-finiteness assumptions.\n\n## Main definitions and results\n\n* `New.addHaar_eq_of_integral_eq_one`: uniqueness of additive Haar measure, with the constant fixed\n  by the integral of one test function.\n* `New.setIntegral_char`: orthogonality for a multiplicative function over an open subgroup.\n* `New.setIntegral_eq_finsum`: over a compact `M`, a function constant on the cosets of an open\n  subgroup `L` integrates to `ν (L ∩ M)` times a finite sum over `M ⧸ (L ∩ M)`.\n* `New.HasGaussianIntegral`: the Gaussian normalisation of a volume.\n* `New.HasGaussianIntegral.pi`: the normalisation on a finite power.\n* `New.lintegral_inv_add_rpow`: the integral of `(c + q x) ^ (-s)`, computed through the Gamma\n  function.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Hecke/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/DiscreteSeries/Haar/CayleyChart.lean",
+    "src/Lib/General/Analysis/HolomorphicIntegrals.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Measure/IntegralOperators.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Measure/IntegralOperators.lean",
+   "title": "Product measures, layer cake bounds, cocompact subgroups and L² bounds of integral operators",
+   "folder": "General: General lemmas",
+   "group": "Measure theory, Haar measures and integration",
+   "lines": 451,
+   "theorems": 20,
+   "note": "This file rearranges the coordinates of finite powers of a σ-finite measure space, bounds integrals\nof negative powers under polynomial volume growth by a layer cake argument, shows that continuous\nfunctions on a group G that are left invariant under a cocompact subgroup Γ are integrable for\nfinite measures on G, and passes L² bounds of integral operators with measurable, integrable kernels\nto finite products. It also contains Tonelli's theorem for finite products, products of cocompact\nsubgroups, and two small constructions, `New.padTuple` and `New.unitOrOne`.\n\nAmong the imported notions in the statements are `Subgroup.FixesLeft Γ F`, meaning `F (γ g) = F g`\nfor `γ ∈ Γ`, and the following.\n\n* `Subgroup.IsCocompact Γ`: some compact set `C ⊆ G` meets every orbit `Γg`.\n\n## Main definitions and results\n\n* `New.lintegral_rpow_neg_le_of_measure_sublevel_le`: if the sublevel sets `{u ≤ R}` of a measurable\n  function `u ≥ 1` have measure at most `(K R^e)^d V`, with `K ≥ 0`, then the integral of `u^(-A)`\n  has an explicit bound for `A > e d`. The measure is arbitrary, so the result also bounds sums\n  (counting measure). For finite `V`, `New.integrable_rpow_neg_of_measure_sublevel_le` and\n  `New.integral_rpow_neg_le_of_measure_sublevel_le` are the forms for the Bochner integral;\n  `New.DiscreteSeries.integral_rpow_neg_le_of_measure_le` joins them.\n* `New.integrable_of_isCocompact`: continuous left Γ-invariant functions are integrable for finite\n  measures on G.\n* `New.IsL2Contraction`: a finite family of kernels defines an operator of norm at most one between\n  two `L²` spaces, tested on bounded measurable functions. By `New.IsL2Contraction.pi`, the bound\n  passes to the product of finitely many such families, for σ-finite measures and measurable kernels\n  that are integrable in the last variable.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/QuotientMeasure/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/DiscreteSeries/Bruhat/FloorMeasures.lean",
+    "src/Lib/General/Analysis/PackingAndSobolev.lean",
+    "src/Lib/Weil/Fock/Basic.lean",
+    "src/New/Spanning/MainTerm/SieveSystem.lean",
+    "src/New/UpperBound/ElementaryDivisors/DefectCount.lean"
+   ],
+   "shared": [
+    "theoremB",
+    "theoremA"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Measure/HaarModulus.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Measure/HaarModulus.lean",
+   "title": "Pushforward of Haar measures, the modulus of GL_n and the generalised index",
+   "folder": "General: General lemmas",
+   "group": "Measure theory, Haar measures and integration",
+   "lines": 492,
+   "theorems": 26,
+   "note": "This file compares Haar measures under pushforward and computes the factors by which maps scale\nthem. Mathlib's `distribHaarChar A g` is the factor by which `g` scales Haar measure on the additive\ngroup `A`. For a unit `a`, `New.genIndex a` is the inverse of this factor for multiplication by `a`.\nFor a pair `R ⊆ A` with `New.IsAdelic R`, the indices of column lattices are expressed through\n`genIndex` of determinants.\n\n## Main definitions and results\n\n* `New.measure_smul_map_restrict_eq_smul_inv`: the pushforward under a homomorphism of a\n  bi-invariant measure restricted to a set `O`, compared with a left invariant measure on the\n  target. The condition on `O` is `New.HasStableLifts`.\n* `New.inv_distribHaarChar_eq_relIndex_div`: the inverse of the scaling factor is a ratio of\n  relative indices of compact open subgroups.\n* `New.genIndex`: the generalised index of `a : R`, for a unit the inverse of the factor by which\n  `a` scales Haar measure on `R`, and `0` otherwise. Let `O` be a compact open subring and `a ∈ O`\n  a unit of `R`. Then it is the cardinality of `O / a O` (`New.genIndex_eq_card`).\n* `New.inv_distribHaarChar_GL_eq_genIndex_det`: `g : GL n R` scales Haar measure on `n → R` as\n  `det g` does on `R`, if `R` has a compact open subring with the property `New.IsValuationPair`.\n* `New.submoduleIndex_colLattice_div`: the ratio of the two indices between the column lattice of\n  an invertible matrix and the standard lattice is `genIndex` of the determinant.\n* `New.submoduleIndex_colLattice_intVectors`: if the matrix has entries in `R`, the index of its\n  column lattice in the standard lattice is `genIndex` of the determinant.\n\nNotions from other files:\n* `New.IsValuationPair O`: any two elements `a`, `b` of the ambient ring are `O`-multiples of\n  `(1 - e) a + e b` for some idempotent `e` of the subring `O`.\n* `New.IsAdelic R`: the subring `R` of `A` is open, compact, stable under `star` and satisfies\n  `New.IsValuationPair`, with further properties that are not used here.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/LinearAlgebra/IntegralLattices.lean"
+   ],
+   "usedBy": [
+    "src/Lib/ClassField/Places/Ideles.lean",
+    "src/Lib/Shimura/Uniformisation/AdelicFrames.lean",
+    "src/Lib/Weil/Fock/Basic.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/Measure/QuadricDisintegration.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/Measure/QuadricDisintegration.lean",
+   "title": "Measures on hermitian quadrics: existence and uniqueness of disintegrations",
+   "folder": "General: General lemmas",
+   "group": "Measure theory, Haar measures and integration",
+   "lines": 650,
+   "theorems": 32,
+   "note": "This file develops measure theory on hermitian quadrics over a \"place\" `A`. The result is a measure\nthat is written `Dirac(h(x, x) - Γ) dx` and is determined by the disintegration property. Quadrics\nand disintegrations are indexed by skew elements `b`, with `Γ = δ⁻¹ * b` for a skew unit δ.\n\n* `New.Floors.Place`: the data and properties of a place. Here `skewMeasure`, written ν, is a Haar\n  measure on the skew elements, and `skewUnit`, written δ, is a skew unit. For hermitian Γ, the\n  element δΓ is skew (`New.Floors.Place.skewUnitMul`).\n* `New.Floors.Place.flatChart`, `New.Floors.Place.quadricMeasure`: for hermitian `T`, an explicit\n  chart of `h(x, x) = δ⁻¹ * b`, and the image of the flat measure under it. Here `h` is a hyperbolic\n  plane plus `T` (`New.Floors.planeSumGram`).\n* `New.Floors.Place.IsDisintegration`: disintegrations along `h(x, x)`. For hermitian `T`, the chart\n  measures form a disintegration of the volume (`New.Floors.Place.isDisintegration_quadricMeasure`).\n  Disintegrations are unique at every skew `b` (`New.Floors.Place.IsDisintegration.unique`). They\n  move along a matrix `M` with `Mᴴ * J * M = T` that has a left inverse\n  (`New.Floors.Place.IsDisintegration.map`).\n\nNotation: for a ring with involution, `skewAdjoint A` is the group of elements with `star x = -x`,\nand `x⁻¹ʳ` is the ring inverse, which is zero at non-units. The vector `x ⊕ᵥ y` on a disjoint union\nof index sets is `x` on the first part and `y` on the second. The group `U T` consists of the\ninvertible matrices g with `gᴴ * T * g = T`.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Witt/WittTheorem.lean"
+   ],
+   "usedBy": [
+    "src/Lib/DiscreteSeries/Bruhat/FloorMeasures.lean",
+    "src/Lib/DiscreteSeries/Bruhat/QuadricBlocks.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/FrobeniusOrbits.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/FrobeniusOrbits.lean",
+   "title": "Frobenius orbits of roots over finite fields and residue fields at self-conjugate places",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 270,
+   "theorems": 16,
+   "note": "This file collects arithmetic lemmas on finite fields and on finite places of a CM field `E`. For\n`P` irreducible over a finite field with `q` elements and a root `x` of `P` in an extension `K`, the\nroots of `P` in `K` are the Frobenius conjugates `x^(q^i)`, `i < deg P`. For a CM field `E` with a\nprimitive root of unity of order `5040`, a place fixed by conjugation has a norm that is a square,\nso places of prime norm are split. The file also contains two summation lemmas.\n\n* `New.FinPlace E`: the finite places `w` of `E`, that is, the nonzero primes of `𝓞 E`; `star w` is\n  the complex conjugate of `w`.\n* `w.q`: the norm of `w`, that is, the number of elements of its residue field.\n* `w.IsSplit`: the statement `star w ≠ w`.\n\n## Main definitions and results\n\n* `New.card_selfAdjoint`: the size of a finite field with an involution that moves `√-1`.\n* `New.two_notMem_of_star_eq`: if `E` contains an integer of trace `1` and even norm over its\n  maximal real subfield, a place with `star w = w` does not lie above `2`;\n  `New.HasPrimitiveRoot5040.isSplit_of_two_mem` is the case of the hypothesis\n  `New.HasPrimitiveRoot5040 E`.\n* `New.exists_sq_eq_q_of_star_eq`: if moreover `E` contains `√-1`, such a place has norm\n  `w.q = r ^ 2` with `r % 4 = 3`; `New.HasPrimitiveRoot5040.exists_sq_eq_q_of_inert` is the case\n  of the hypothesis `New.HasPrimitiveRoot5040 E`.\n* `New.finite_prime_q_star_eq`, `New.isSplit_of_q_prime`: all but finitely many places of prime norm\n  are moved by the conjugation, and all of them under the hypothesis `New.HasPrimitiveRoot5040 E`.\n* `New.root_pow_card_pow_eq_self_iff`, `New.root_pow_card_pow_eq_iff_modEq`: `x^(q^n) = x` iff\n  `deg P ∣ n`, and `x^(q^a) = x^(q^b)` iff `a ≡ b` modulo `deg P`.\n* `New.aroots_eq_frobenius_orbit`, `New.aroots_pow_eq_frobenius_orbit`: with multiplicity, the roots\n  of `P` in `K` are the `x^(q^i)` for `i < deg P`, and the roots of `P^j` are the `x^(q^i)` for\n  `i < deg (P^j)`.",
+   "literature": "Known: standard facts on finite fields and on residue fields of CM fields.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Adeles/Basic.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Reduction/MinkowskiTheorems.lean",
+    "src/Lib/ClassField/Grunwald.lean",
+    "src/Lib/Cyclotomic/Stickelberger.lean",
+    "src/Lib/DiscreteSeries/FlenstedJensen/PsiKTypes.lean",
+    "src/Lib/LocalGL/Green/CuspidalFunctions.lean",
+    "src/Lib/Weil/Construction/FiniteCocycle.lean",
+    "src/New/Congruences/Selmer/AuxiliaryPrimes.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/EmbeddingsAndDifferent.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/EmbeddingsAndDifferent.lean",
+   "title": "Embeddings, differents and the maximal real subfield of a CM field",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 277,
+   "theorems": 20,
+   "note": "The file collects general lemmas on differents and root discriminants of number fields. It then\ncompares a CM field `E` with its maximal real subfield E⁺ (`maximalRealSubfield E`), covering the\ntrace, the norm, the different and the discriminant.\n\n* `star` is complex conjugation on the CM field `E` and on its integers `𝓞 E`.\n* `Φ v` is the complex embedding chosen at the infinite place `v`: by `New.PlaceEmbedding` in\n  general, and by `New.CMType`, which extends it, for CM fields.\n* `New.volÔ E` is `2 ^ r₂ / √|disc E|`, with `r₂` the number of complex places of `E`.\n\n## Main definitions and results\n\n* `New.differentIdeal_eq_span_of_dvd`: a criterion for `f'(x)` to generate the different and for\n  `𝓞 L = A[x]`.\n* `New.mem_maximalRealSubfield_iff_star_eq`, `New.trace_maximalRealSubfield_eq_add_star`,\n  `New.norm_maximalRealSubfield_eq_mul_star`: E⁺ is the fixed field of conjugation, and the trace\n  and norm from `E` to E⁺ are `x + x̄` and `x x̄`.\n* `New.differentIdeal_eq_top`, `New.abs_discr_eq_discr_maximalRealSubfield_sq`: under\n  `New.HasPrimitiveRoot5040` the relative different is trivial and |disc E| = (disc E⁺)².\n* `New.volÔ_eq`: the mass `New.volÔ` of the integral finite adeles in terms of the root\n  discriminant.\n* `New.exists_mixedEquiv_maximalRealSubfield`: the Minkowski space of E⁺ as real functions on the\n  infinite places of `E`.\n* `New.Variety.prod_embeddings_eq_prod_pairs`: a product over the complex embeddings of a totally\n  complex field, grouped into conjugate pairs.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Adeles/AdditiveCharacter.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Adeles/StrongApproximation.lean",
+    "src/Lib/General/NumberTheory/ImaginaryQuadraticField.lean",
+    "src/Lib/Shimura/AbelianScheme/Pairings.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/ImaginaryQuadraticField.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/ImaginaryQuadraticField.lean",
+   "title": "The imaginary quadratic field ℚ(√−d): characters, Frobenius and splitting of primes",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 589,
+   "theorems": 34,
+   "note": "This file studies the imaginary quadratic field `K = ℚ(√-d)` (`New.QuadField`) for `d ≡ 3 mod 4`,\nrealised inside `ℂ`, and the Dirichlet characters attached to it. Throughout, `New.chiK d p` is the\nLegendre symbol `(p / d)` of `p` modulo the prime `d`, and `New.QuadField.betaK d` is the algebraic\ninteger `(1 + √-d) / 2`. A finite place of `K` (`New.FinPlace`) is a nonzero prime of its ring of\nintegers. Below, `w` is a finite place that contains the rational prime `p`, and `w.q` is its\nabsolute norm. For a prime `d ≡ 7 mod 8` the file determines the ring of integers and the different\nof `K`. For `d ≡ 3 mod 4` it shows how a rational prime `p` decomposes in `K`. It also proves two\nconsequences of lifting the exponent at `2` for integers, which do not involve `K`.\n\n## Main definitions and results\n\n* `New.chiK`, `New.quadTwist`: the Legendre symbol `(·/d)` as an integer-valued character, and its\n  product with a complex character `χ` modulo `N`, a character modulo `N * d`.\n* `New.QuadField`: the field. For `d ≡ 3` modulo `4` it is a quadratic CM field\n  (the degree is `New.QuadField.finrank_eq_two`). For a prime `d ≡ 3` modulo `4` it embeds in any\n  field of characteristic zero with a primitive `d`-th root of unity\n  (`New.QuadField.embOfPrimitiveRoot`).\n* `New.QuadField.different_eq_span_and_adjoin_betaK`: for a prime `d ≡ 7` modulo `8`, the integers\n  of `K` are `ℤ[(1 + √-d) / 2]` and the different is `(√-d)`.\n* `New.FinPlace.q_eq_pow_inertiaDeg`, `New.FinPlace.inertiaDeg_dvd_iff_forall_pow_eq`: the norm of\n  `w` is `p ^ f` with `f` the residue degree, and `f` is the order of Frobenius;\n  `New.FinPlace.exists_q_eq_pow` states both together.\n* `New.QuadField.q_eq_iff_chiK_ne_neg_one`: for `d` a prime `≡ 7 mod 8`\n  (`New.PrimeSevenModEight`), `w` has degree one iff the Legendre symbol `(p / d)` is not `-1`.\n* `New.QuadField.span_eq_or_exists_span_eq_mul`: `p` is inert in `K`, or it is the product of two\n  places of degree one; `New.QuadField.prime_inert_or_eq_mul` also lists the places above `p`.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/NumberTheory/EmbeddingsAndDifferent.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Analytic/EntireLFunction.lean",
+    "src/Lib/CM/Sigma/Basic.lean",
+    "src/Lib/Shimura/HeckeTower/HeckeData.lean",
+    "src/New/Reduction/Data/FieldsAndPlaces.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/SUnitsAndClassNumber.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/SUnitsAndClassNumber.lean",
+   "title": "Principal ideal powers, S-units and a class number bound",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 281,
+   "theorems": 10,
+   "note": "For every ideal `I` of a ring of integers of a number field some power `I ^ n` with `n ≠ 0` is\nprincipal. For ideals of norm greater than 1 the generators can be chosen large at every complex\nembedding.\n\n## Main definitions and results\n\n* `New.ThetaTori.exists_pow_eq_span_inv_lt`: for an ideal of norm greater than 1, some power is\n  principal with a non-unit generator of arbitrarily large absolute value at every complex\n  embedding.\n* `New.SUnit.dirichlet_unit_theorem`: for a finite set `S` of finite places of a number field `K`,\n  the `S`-units are finitely generated of rank `#S + #(infinite places) - 1`. This follows from\n  Mathlib's unit theorem and the finiteness of the class number, in the form\n  `New.exists_valuation_eq_exp_mul`. Valuations are multiplicative, with values in `ℤᵐ⁰`, and a\n  uniformiser has valuation `exp (-1)`.\n* `New.eq_zero_of_forall_norm_lt_one`: an algebraic integer of absolute value below `1` at every\n  infinite place is `0`. Here `Φ v`, from an instance of `New.PlaceEmbedding`, is a chosen complex\n  embedding that induces the infinite place `v`.\n* `New.classNumber_le`: a number field of degree `n` and discriminant `d` has class number at most\n  `(2 ^ n * |d|) ^ (n + 1)`.\n\nMinkowski's bound is at most `2 ^ n * |d|` (`New.minkowski_bound_le_two_pow_mul_discr`), so each\nclass has an integral ideal of norm `k ≤ 2 ^ n * |d|` as a member. Such an ideal is generated by\n`k` and one more element, and the proof counts the possible pairs.\n\n* `New.conj_mem_quadInt`: for a prime `d ≡ 7` mod `8`, the ring `New.quadInt d`, the image of the\n  ring of integers of ℚ(√−d) in ℂ, is stable under complex conjugation.",
+   "literature": "Dirichlet's `S`-unit theorem is deduced from the unit theorem in Mathlib, and the class number bound\nis a crude explicit form of the finiteness of the class number, deduced from Minkowski's bound in\nMathlib.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/CM/Sigma/Basic.lean",
+    "src/Lib/ClassField/Places/Ideles.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/Reduction/FiniteVolume.lean",
+    "src/Lib/Adelic/Reduction/FirstMinimumShortBases.lean",
+    "src/Lib/CM/Sigma/ThetaSections.lean",
+    "src/Lib/ClassField/Global/AlbertBrauerHasseNoether.lean",
+    "src/Lib/Shimura/GoodReduction/MultiplicativeNorm.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/CMFields.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/CMFields.lean",
+   "title": "Criteria for CM fields",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 213,
+   "theorems": 9,
+   "note": "This file gives two ways to show that a number field is CM. The first asks that the field contain a\ntotally complex field, and that complex conjugation be induced, in all embeddings at once, by a map\nof the field to itself. The second shows that adjoining to a CM field a root of a suitable\npolynomial gives a CM field, whose finite adeles it also describes.\n\nWe write `𝔸f K` for the ring of finite adeles of a number field `K`. For an extension `L / K` of\nnumber fields, `𝔸f L` is an algebra over `𝔸f K`, and complex conjugation `star` of a CM field\nextends to its finite adeles.\n\n## Main definitions and results\n\n* `New.isCMField_of_forall_exists_conj`: a number field is CM if it contains a totally complex field\n  and complex conjugation is induced, in all embeddings at once, by a map of the field to itself.\n* `New.isCMField_adjoinRoot_of_forall_root_mul_star_eq`: let `E` be a CM field and `P` an\n  irreducible polynomial over `E`. If all complex roots of `P` have the same rational square\n  absolute value `ν`, then `L = E[X]/(P)` is again CM.\n* `New.aeval_root_finAdele_surjective`, `New.aeval_root_finAdele_eq_zero_iff`: for monic `P`, the\n  finite adeles `𝔸f L` are obtained from `𝔸f E` by adjoining a root of `P`.\n* `New.IsFinAdelePresentation`: a map from polynomials over `𝔸f E` presents `𝔸f L` as the quotient\n  by `P`, compatibly with `E[X] → L` and with complex conjugation.\n* `New.adjoinRoot_cm_presentation`: these facts about `L` and `𝔸f L` in one statement.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Adeles/IdeleModulus.lean"
+   ],
+   "usedBy": [
+    "src/Lib/Adelic/TraceFormula/ChangingSigns.lean",
+    "src/Lib/ClassField/Grunwald.lean",
+    "src/Lib/GaloisRep/BaseChange/GlobalRoot.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/CoefficientRings.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/CoefficientRings.lean",
+   "title": "Coefficient rings of ℓ-adic lattices, and length versus cardinality of modules",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 215,
+   "theorems": 12,
+   "note": "The coefficient rings over which ℓ-adic lattices are taken, and, for modules over an ℓ-adic\ninteger ring, a comparison of length with cardinality.\n\n* `New.card_eq_pow_length`: over an ℓ-adic integer ring R with residue field k, a module of finite\n  length has #k ^ length elements.\n* `New.length_le_of_card_le`, `New.length_le_of_card_dvd`: an inequality of cardinalities (the\n  smaller module being finite) or a divisibility of cardinalities gives an inequality of lengths.\n* `New.CoeffRing ℓ`: the rings of integers O of finite Galois extensions of ℚ_ℓ inside ℚ̄_ℓ. Each is\n  a finite ℤ_ℓ-module, compact, and a discrete valuation ring with divisibility read from the norm\n  (`New.CoeffRing.dvd_iff_norm_le`).\n* `New.CoeffRing.eventually_mem`: an element of norm at most 1 lies in all sufficiently large\n  coefficient rings. That the rings are directed by inclusion is an instance.\n\nThree imported notions occur in the statements:\n\n* `New.ThePrime ℓ`: the class saying that ℓ is prime, which fixes the prime ℓ in scope;\n* `New.DVR O`: O is an integral domain and a discrete valuation ring;\n* `New.PadicIntegerRing R ℓ`: R is a discrete valuation ring of characteristic 0, finite and free\n  over ℤ_ℓ, with finite quotients by nonzero ideals.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/Algebra/AdicCompletion.lean",
+    "src/Lib/General/Algebra/FittingIdealsAndLengths.lean"
+   ],
+   "usedBy": [
+    "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+    "src/Lib/General/NumberTheory/PadicLimitsValuation.lean",
+    "src/Lib/PadicHodge/Crystalline/HodgeTateForms.lean",
+    "src/New/Congruences/Selmer/SelmerData.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/LatticeCovolumes.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/LatticeCovolumes.lean",
+   "title": "Lattice indices, primitive matrices, Jacobi's identity and covolumes of fundamental domains",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 802,
+   "theorems": 27,
+   "note": "The first part is lattice algebra over an adelic pair `R ⊆ A` (`New.IsAdelic`; among its conditions,\n`R` is open and compact in `A`), modelled on `New.Ô` inside the finite adeles. The file proves\nresults on indices and determinants under integral base change. For a CM field `E`, it then gives\ntools for computing, coordinate by coordinate, the covolume of an arithmetic subgroup of a unipotent\ngroup.\n\n## Main definitions and results\n\n* `New.genIndex_det_conj_of_isIntMatrix`: the size of a determinant does not change under an\n  integral base change with integral inverse.\n* `New.exists_isPrimitiveMatrix_mul_fromBlocks`, `New.exists_preimageLattice_eq_colLattice`: a left\n  invertible matrix becomes primitive after multiplication by an invertible (block triangular)\n  matrix.\n* `New.exists_mulVec_eq_of_orthogonal`: for `J` hermitian and invertible, if the left invertible `F`\n  and `n` have orthogonal columns, as many in all as `J` has rows, the orthogonal complement of `n`\n  lies in the span of `F`.\n* `New.genIndex_det_orthogonal_mul_submoduleIndex_sq`: Jacobi's identity between a lattice and its\n  orthogonal complement; `New.Filling.jacobi_perp_discriminant` joins it with the previous result.\n* `New.exists_fundamental_domain_classLattice`: the covolume of a lattice in `(E ⊗ ℝ)ⁿ` cut out by a\n  finite adelic matrix and rescaled at the infinite places.\n* `New.Filling.existsUnique_mul_mem_box`: suppose a group `Γ` shifts the coordinates of `G` in a\n  triangular way by additive submonoids. Then the box over strict fundamental domains of these\n  submonoids meets each coset `xΓ` exactly once.\n* `New.Filling.exists_fundamental_domain_im_skew`: the covolume of the group\n  `New.Filling.imSkewLattice` of rescaled purely imaginary integers of `E`, if `E` contains a\n  primitive 5040th root of unity.\n\nNotions from other files:\n* `New.genIndex`: on units the inverse of the factor by which multiplication scales Haar measure,\n  and `0` elsewhere; `New.submoduleIndex M M'`: the index of `M ∩ M'` in `M'`, as additive groups\n  (`0` if infinite).\n* `New.IsPrimitiveMatrix`: a matrix with entries in `R` and a left inverse with entries in `R`.\n* `New.colLattice`: the `R`-module spanned by the columns of `M`; `New.preimageLattice`: the\n  `R`-module of vectors `v` over `A` such that `M v` has entries in `R`.\n* `New.Variety.classLattice g S Q`: the image, under the CM embedding followed by the linear map\n  `Q`, of the group of `y` in `Eⁿ` such that the class of `g⁻¹ y` in `(𝔸_f/Ô)ⁿ` lies in `S`.",
+   "literature": "Known; see `Lib.Adelic.Adeles.Basic` and `New.Spanning.RemainingTerms.SiegelLemma` for sources.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/Adelic/Reduction/MinkowskiTheorems.lean",
+    "src/Lib/Shimura/Uniformisation/AdelicFrames.lean"
+   ],
+   "usedBy": [
+    "src/New/Spanning/RemainingTerms/SiegelLemma.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/PadicLimitsValuation.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/PadicLimitsValuation.lean",
+   "title": "Algebraicity from ℓ-adic bounds, roots of unity as limits, and the ℓ-adic valuation",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 370,
+   "theorems": 24,
+   "note": "This file proves three groups of facts. `New.isAlgebraic_of_norm_complexToCp_le` shows that a\ncomplex number that stays ℓ-adically bounded under all isomorphisms ℂ ≅ ℚ̄_ℓ, for one prime ℓ, is\nalgebraic. The second section approximates the roots of unity ζ in ℂ_p with ζ^{q_p} = ζ by images of\nintegers of K = ℚ(√−d); the third collects properties of the ℓ-adic valuation and of coefficient\nrings.\n\n* `quadInt d` is the ring of integers of K inside ℂ, and a `PadicPlace p` fixes a map ιₚ : ℂ → ℂ_p.\n* `primeNorm d p` is the number q_p, equal to p² if the Legendre symbol `chiK d p` = (p/d) is −1 and\n  to p otherwise.\n* v = `New.ellVal` is the normalised valuation on ℚ̄_ℓ = `PadicAlgCl ℓ`, truncated to 0 on elements\n  of norm at least 1, so that its values lie in [0, ∞].\n* O denotes a ring in `New.CoeffRing ℓ`: the ring of integers of a finite Galois extension of ℚ_ℓ\n  inside ℚ̄_ℓ. `ThePrime ℓ` says that ℓ is prime.\n\n## Main definitions and results\n\n* `New.mem_normPairClosure_of_pow_eq`: an element `ζ` of `ℂ_p` of norm 1 with `ζ ^ q_p = ζ` is a\n  limit of images of integers `α` of `K`, in such a way that the image of `α ᾱ` tends to\n  `ζ ^ (p + 1)`.\n* `New.CoeffRing.normLength`, `New.CoeffRing.normLength_addVal`: the rescaling of lengths of\n  O-modules that sends the additive valuation of x to v(x), so that they become comparable for\n  different O.\n* `New.CoeffRing.eventually_exists_isPrimitiveRoot`: all large O hold a primitive k-th root of\n  unity.",
+   "literature": "Known result: Teichmüller representatives as limits of powers. Source: Serre, Local Fields, Chapter\nII.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/GaloisRep/Main/SelmerModules.lean",
+    "src/Lib/General/Geometry/GaloisCovers.lean",
+    "src/Lib/General/NumberTheory/CoefficientRings.lean"
+   ],
+   "usedBy": [
+    "src/Lib/CM/FormalGroup/PrimeNotation.lean",
+    "src/Lib/CM/Integrality/LogTheta.lean",
+    "src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean",
+    "src/Lib/General/NumberTheory/GaussValuation.lean",
+    "src/Lib/General/NumberTheory/LargeResidueField.lean",
+    "src/Lib/PadicHodge/Characters.lean",
+    "src/Lib/PadicHodge/Limit/CrystallineLimit.lean",
+    "src/New/Congruences/FirstOrder/EvenClasses.lean",
+    "src/New/Congruences/LocalLoss/Basic.lean",
+    "src/New/Derivatives/Divisibility/NormalForm.lean",
+    "src/New/Reduction/Lattices/Heights.lean"
+   ],
+   "shared": [
+    "theoremC",
+    "theoremA",
+    "setup"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/GaussValuation.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/GaussValuation.lean",
+   "title": "The Gauss valuation of a polynomial over the ring of integers of ℚ̄_ℓ",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 508,
+   "theorems": 43,
+   "note": "The function `New.ellVal` agrees with the valuation `v` only on integral elements of `ℚ̄_ℓ`, so\nalmost everything is stated over their ring `ℤ̄_ℓ`. The first sections collect the rules of `v`\nthere and show that monic polynomials split, that every nonnegative rational number is the valuation\nof some element, and that the residue field is algebraically closed. For a rational number `ρ ≥ 0`,\ncalled the radius, and `g = ∑ y_i Y ^ i` put `v_ρ(g) = min_i (v(y_i) + ρ i)`.\n\n* `New.Selmer.gaussVal`, `New.Selmer.gaussVal_le_eval`: `v(g(y)) ≥ v_ρ(g)` if `v(y) ≥ ρ`.\n* `New.Selmer.exists_forall_ellVal_eval_eq_gaussVal`: for finitely many polynomials equality holds\n  at one such point.\n* `New.Selmer.gaussVal_mul`, `New.Selmer.gaussVal_eq_add_sum_roots`: `v_ρ` is additive on products,\n  and it is given by `v₀(g)` and the valuations of the integral roots.\n* `New.Selmer.exists_one_add_pow_eq`: a solution of `(1 + x') ^ j = 1 + x` of large valuation.\n* `New.Selmer.le_ellVal_geom_sum`, `New.Selmer.ellVal_pow_sub_one_le`: bounds for the valuations of\n  geometric sums of elements near `1` and of `ζ ^ j - 1` for roots of unity `ζ` of `ℓ`-power order.\n\nNotions from other files:\n* `New.ellVal`: the valuation `v` on `ℚ̄_ℓ` with `v ℓ = 1`, cut off below at `0`; `New.intQpBar ℓ`\n  is the ring `ℤ̄_ℓ` of integral elements, and `x.1` is `x` as an element of `ℚ̄_ℓ`.\n* `New.ThePrime ℓ`: `ℓ` is prime.",
+   "literature": "Known result: Gauss norms and Gauss's lemma for polynomials over the integral elements of ℚ̄_ℓ.\nSource: Bosch, Güntzer, Remmert, Non-Archimedean Analysis.",
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/NumberTheory/PadicLimitsValuation.lean"
+   ],
+   "usedBy": [
+    "src/Lib/General/NumberTheory/CoefficientInclusion.lean",
+    "src/New/Congruences/Selmer/RootsOfUnity.lean",
+    "src/New/Congruences/Selmer/StickelbergerSystems.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/LargeResidueField.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/LargeResidueField.lean",
+   "title": "Coefficient rings with a large residue field",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 164,
+   "theorems": 6,
+   "note": "Adjoining the roots of unity of order `ℓ ^ k - 1` to a finite extension of `ℚ_ℓ` multiplies the\ndegree by at most `k` and gives a residue field with at least `ℓ ^ k - 1` elements. The extension is\nunramified, but this is not needed: the ramification index is at most the degree, which grows\nlinearly in `k`, while `ℓ ^ k` grows faster.\n\n* `New.Selmer.frequently_lt_card_residueField`: beyond every coefficient ring there is one whose\n  residue field is large compared with the ramification index.\n\nNotions from other files:\n* `New.CoeffRing ℓ`: rings of integers of finite Galois extensions of `ℚ_ℓ` inside `ℚ̄_ℓ`, ordered\n  by inclusion;\n* `New.ThePrime ℓ`: the class saying that `ℓ` is prime.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/NumberTheory/PadicLimitsValuation.lean"
+   ],
+   "usedBy": [
+    "src/New/Congruences/Selmer/TwistingTheorem.lean"
+   ],
+   "status": "open"
+  },
+  {
+   "path": "src/Lib/General/NumberTheory/CoefficientInclusion.lean",
+   "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Lib/General/NumberTheory/CoefficientInclusion.lean",
+   "title": "Coefficient rings inside the ring of all integral elements",
+   "folder": "General: General lemmas",
+   "group": "Number fields, local fields, adeles and lattices",
+   "lines": 105,
+   "theorems": 7,
+   "note": "Elementary facts on the inclusion of a coefficient ring into `ℤ̄_ℓ`, and a divisibility statement\nfor geometric sums in a ring with a divisibility-reflecting map to `ℤ̄_ℓ`.\n\n* `New.CoeffRing.toIntQpBar`: the inclusion, which reflects divisibility\n  (`New.CoeffRing.dvd_of_toIntQpBar_dvd`).\n* `New.Selmer.pow_dvd_geom_sum`: for `α` near `1`, a high power of `ℓ` divides `∑ i < ℓ ^ N, α ^ i`.\n\nNotions from other files:\n* `New.CoeffRing`: rings of integers of finite Galois extensions of `ℚ_ℓ` inside `ℚ̄_ℓ`;\n  `New.CoeffRing.normLength` rescales `ℕ∞`-valued lengths over such a ring, a uniformiser `ϖ` having\n  length `v(ϖ)`, so that lengths over different rings are comparable.\n* `New.ellVal`: the valuation `v` on `ℚ̄_ℓ` with `v ℓ = 1`, cut off below at `0`; `New.intQpBar ℓ`\n  is the ring `ℤ̄_ℓ` of integral elements; throughout, the instance `ThePrime ℓ` fixes `ℓ` as the\n  prime in play.",
+   "literature": null,
+   "uses": [],
+   "libUses": [
+    "src/Lib/General/NumberTheory/GaussValuation.lean"
+   ],
+   "usedBy": [
+    "src/New/Congruences/Selmer/Line.lean"
+   ],
+   "status": "open"
+  }
+ ]
+}

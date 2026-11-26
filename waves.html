@@ -50,7 +50,7 @@
   <footer><a href="./">← Back to all four ideas</a></footer>
 </main>
 <script type="module">
-  import { loadZeros, loadChapter, renderChapter } from './common.js';
+  import { loadZeros } from './common.js';
   const Z = await loadZeros();
 
   // ψ(x): log p at every prime power p^k ≤ x.
@@ -149,8 +149,13 @@
   addEventListener('resize', redraw);
   redraw();
 
-  // The story, what others wrote, and the files of this chapter.
-  renderChapter(document.getElementById('chapter'), await loadChapter('waves'));
+  // Where this idea lives in the proof.
+  const map = await (await fetch('map.json')).json();
+  const idea = map.ideas.find((i) => i.id === 'waves');
+  const parts = idea.where.map((id) => map.parts.find((p) => p.id === id));
+  document.getElementById('chapter').innerHTML = `<h2>Where this lives in the proof</h2>
+    <p class="muted">In the Lean, the zeros enter through a weighted prime count whose error has a pole at every zero. The proof shows no zero lies to the right of the line, then mirror pairs put every zero on it. Read the files, with their authors’ notes and our plain-words explanations, here:</p>
+    <div class="chapters">${parts.map((p) => `<a class="chapter" href="chapter.html?c=${p.id}"><div class="num">Part ${p.n}</div><h3>${p.title}</h3><p class="muted small">${p.summary}</p><div class="meta">${p.modules.length} files</div></a>`).join('')}</div>`;
 </script>
 </body>
 </html>
